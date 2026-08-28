@@ -1,0 +1,92 @@
+{
+    "AI": {
+        "Page": {
+            "opportunityTitle": "FROM OPPORTUNITY TO MONITORED SYSTEM",
+            "opportunityDesc": "We validate the use case before building, integrate it into real workflows, and keep its behaviour visible after launch.",
+            "Three": {
+                "category": "How We Work",
+                "title": "Flexible Engagement"
+            },
+            "opportunity": [
+                {
+                    "number": "01",
+                    "title": "Discover",
+                    "desc": "Identify the workflow, available data and desired outcome."
+                },
+                {
+                    "number": "02",
+                    "title": "Validate & Architect",
+                    "desc": "Test feasibility, sample outputs and review requirements."
+                },
+                {
+                    "number": "03",
+                    "title": "Build & Integrate",
+                    "desc": "Develop the solution and connect it with existing systems."
+                },
+                {
+                    "number": "04",
+                    "title": "Control & Improve",
+                    "desc": "Monitor performance, manage risks and refine the workflow."
+                }
+            ],
+            "practicalAI": [
+                {
+                    "title": "Document Intelligence",
+                    "desc": "Extract, classify and organise information from documents, forms and reports."
+                },
+                {
+                    "title": "Knowledge Assistants",
+                    "desc": "Help users find reliable answers from approved business content."
+                },
+                {
+                    "title": "Workflow Automation",
+                    "desc": "Connect requests, rules, approvals and system actions."
+                },
+                {
+                    "title": "AI Product Features",
+                    "desc": "Add search, summarisation, recommendations or intelligent assistance to existing products."
+                }
+            ],
+            "footerMessage": {
+                "description": "Have a process that could work smarter?",
+                "buttonText": "Discuss an AI Opportunity"
+            }
+        },
+        "ConceptAI": {
+            "altText": "Concept AI Workflow Demonstration"
+        },
+        "Hero": {
+            "category": "AI & AUTOMATION",
+            "title1": "INTELLIGENT SYSTEMS.",
+            "title2": "HUMAN DECISIONS.",
+            "description": "Schoq designs AI-assisted products and automated workflows that help teams understand complex information, prepare better decisions and move work forward - with people remaining in control.",
+            "cta": "Discuss an AI Opportunity",
+            "imageAlts": {
+                "main": "AI & Automation Workflow",
+                "fragment1": "Process Flow Indicator",
+                "fragment2": "Review Required Card"
+            }
+        },
+        "Practical": {
+            "title": "Practical AI Transformation",
+            "subtitle": "We bridge the gap between fragmented manual tools and unified automated outcomes.",
+            "manualComplexity": {
+                "header": "MANUAL COMPLEXITY",
+                "items": [
+                    "Disconnected Legacy Tools",
+                    "Bottlenecks & Sync Delays",
+                    "Unstructured Data Silos"
+                ]
+            },
+            "intelligentFlow": {
+                "badge": "RECOMMENDED",
+                "header": "INTELLIGENT FLOW",
+                "items": [
+                    "Automated Contextual Extraction",
+                    "Heuristic-Led Rule Application",
+                    "Integrated Human-in-the-Loop Review"
+                ]
+            }
+        }
+    }
+}

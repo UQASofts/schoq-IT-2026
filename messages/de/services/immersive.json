@@ -1,0 +1,101 @@
+{
+    "ImmersiveExperience": {
+        "Page": {
+            "pipeline": {
+                "mainTitle": "DIE IMMERSIVE PIPELINE",
+                "desc": "Ein konsequenter, strukturierter Ansatz zur Übersetzung komplexer räumlicher Konzepte in leistungsstarke digitale Realitäten.",
+                "items": [
+                    {
+                        "number": "01",
+                        "title": "Entdecken & Definieren",
+                        "desc": "Definition räumlicher Interaktionen und Kartierung von User Journeys in drei Dimensionen."
+                    },
+                    {
+                        "number": "02",
+                        "title": "Räumliches Design",
+                        "desc": "Architektur von 3D-Assets, Beleuchtungsumgebungen und intuitiver räumlicher Benutzeroberfläche."
+                    },
+                    {
+                        "number": "03",
+                        "title": "Bauen & Integrieren",
+                        "desc": "Entwicklung leistungskraftoptimierter WebGL- und nativer immersiver Erlebnisse."
+                    },
+                    {
+                        "number": "04",
+                        "title": "Testen & Starten",
+                        "desc": "Strenge Qualitätssicherung über verschiedene Geräte hinweg mit Fokus auf Bildraten und Interaktionstreue."
+                    }
+                ]
+            },
+            "capabilities": {
+                "mainTitle": "IMMERSIVE FÄHIGKEITEN",
+                "subTitle": "WAS WIR BAUEN KÖNNEN",
+                "items": [
+                    {
+                        "title": "Interaktive 3D-Erlebnisse",
+                        "desc": "Ermöglichen Sie Nutzern das Drehen, Überprüfen und Konfigurieren von Produkten oder Umgebungen."
+                    },
+                    {
+                        "title": "Augmented Reality",
+                        "desc": "Platzieren Sie Produkte und Informationen in realen Räumen."
+                    },
+                    {
+                        "title": "Virtuelle Umgebungen",
+                        "desc": "Erstellen Sie geführte Räume für Schulungen, Demonstrationen und Storytelling."
+                    },
+                    {
+                        "title": "Immersive Web-Erlebnisse",
+                        "desc": "Bringen Sie 3D-Interaktion direkt in browserbasierte Produkte."
+                    }
+                ]
+            },
+            "experties": {
+                "subTitle": "VERNETZTE EXPERTISE",
+                "mainTitle": "ALLES, WAS IHRE WEBPLATTFORM ÜBER DIE BENUTZEROBERFLÄCHE HINAUS BENÖTIGEN KÖNNTE.",
+                "items": [
+                    {
+                        "id": "custom-software",
+                        "firstLine": "INDIVIDUELLE",
+                        "secondLine": "SOFTWARE"
+                    },
+                    {
+                        "id": "product-design",
+                        "firstLine": "PRODUKT",
+                        "secondLine": "DESIGN"
+                    },
+                    {
+                        "id": "ai-solutions",
+                        "firstLine": "KI-",
+                        "secondLine": "LÖSUNGEN"
+                    },
+                    {
+                        "id": "cloud-engineering",
+                        "firstLine": "CLOUD-",
+                        "secondLine": "ENGINEERING"
+                    }
+                ]
+            },
+            "footer": {
+                "buttonText": "KI-Möglichkeit besprechen",
+                "desc": "Haben Sie einen Prozess, der intelligenter funktionieren könnte?"
+            }
+        },
+        "Hero": {
+            "header": {
+                "subtitle": "IMMERSIVE ERLEBNISSE",
+                "title": "DIGITALE ERLEBNISSE, DIE ÜBER DEN BILDSCHIRM HINAUSGEHEN.",
+                "description": "Schoq entwickelt interaktive 3D-, Augmented- und immersive Erlebnisse, die Menschen dabei helfen, Produkte, Räume und Informationen auf ansprechendere Weise zu erkunden.",
+                "cta": "Immersives Erlebnis besprechen"
+            },
+            "images": {
+                "mainShowcaseAlt": "Präsentation eines interaktiven 3D-Möbelerlebnisses",
+                "sidebar": {
+                    "ergonomicAlt": "Übersicht über ergonomisches Design",
+                    "materialsAlt": "Material- und Stoffoptionen",
+                    "specsAlt": "Produktspezifikationskarte",
+                    "controlsAlt": "Interaktive Steuerungsleiste"
+                }
+            }
+        }
+    }
+}

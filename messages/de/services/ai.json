@@ -1,0 +1,92 @@
+{
+    "AI": {
+        "Page": {
+            "opportunityTitle": "VON DER CHANCE ZUM ÜBERWACHTEN SYSTEM",
+            "opportunityDesc": "Wir validieren den Anwendungsfall vor der Entwicklung, integrieren ihn in reale Arbeitsabläufe und halten sein Verhalten nach dem Start transparent.",
+            "Three": {
+                "category": "Wie wir arbeiten",
+                "title": "Flexible Zusammenarbeit"
+            },
+            "opportunity": [
+                {
+                    "number": "01",
+                    "title": "Entdecken",
+                    "desc": "Identifizieren Sie den Arbeitsablauf, die verfügbaren Daten und das gewünschte Ergebnis."
+                },
+                {
+                    "number": "02",
+                    "title": "Validieren & Architektieren",
+                    "desc": "Machtbarkeit testen, Beispielergebnisse prüfen und Anforderungen überprüfen."
+                },
+                {
+                    "number": "03",
+                    "title": "Bauen & Integrieren",
+                    "desc": "Entwickeln Sie die Lösung und verbinden Sie sie mit bestehenden Systemen."
+                },
+                {
+                    "number": "04",
+                    "title": "Steuern & Verbessern",
+                    "desc": "Leistung überwachen, Risiken verwalten und den Arbeitsablauf optimieren."
+                }
+            ],
+            "practicalAI": [
+                {
+                    "title": "Dokumenten-Intelligenz",
+                    "desc": "Extrahieren, klassifizieren und organisieren Sie Informationen aus Dokumenten, Formularen und Berichten."
+                },
+                {
+                    "title": "Wissensassistenten",
+                    "desc": "Helfen Sie Benutzern, zuverlässige Antworten aus freigegebenen Unternehmensinhalten zu finden."
+                },
+                {
+                    "title": "Workflow-Automatisierung",
+                    "desc": "Verbinden Sie Anfragen, Regeln, Genehmigungen und Systemaktionen."
+                },
+                {
+                    "title": "KI-Produktfunktionen",
+                    "desc": "Ergänzen Sie bestehende Produkte um Suche, Zusammenfassung, Empfehlungen oder intelligente Unterstützung."
+                }
+            ],
+            "footerMessage": {
+                "description": "Haben Sie einen Prozess, der intelligenter ablaufen könnte?",
+                "buttonText": "KI-Chance besprechen"
+            }
+        },
+        "ConceptAI": {
+            "altText": "Demonstration des Konzept-KI-Workflows"
+        },
+        "Hero": {
+            "category": "KI & AUTOMATISIERUNG",
+            "title1": "INTELLIGENTE SYSTEME.",
+            "title2": "MENSCHLICHE ENTSCHEIDUNGEN.",
+            "description": "Schoq entwickelt KI-gestützte Produkte und automatisierte Workflows, die Teams dabei helfen, komplexe Informationen zu verstehen, bessere Entscheidungen vorzubereiten und Arbeitsabläufe voranzutreiben – wobei der Mensch stets die Kontrolle behält.",
+            "cta": "KI-Potenzial besprechen",
+            "imageAlts": {
+                "main": "KI & Automatisierungs-Workflow",
+                "fragment1": "Prozessablauf-Indikator",
+                "fragment2": "Überprüfung-erforderlich-Karte"
+            }
+        },
+        "Practical": {
+            "title": "Praktische KI-Transformation",
+            "subtitle": "Wir schließen die Lücke zwischen isolierten manuellen Werkzeugen und einheitlichen automatisierten Ergebnissen.",
+            "manualComplexity": {
+                "header": "MANUELLE KOMPLEXITÄT",
+                "items": [
+                    "Getrennte Altsysteme & Tools",
+                    "Engpässe & Synchronisationsverzögerungen",
+                    "Unstrukturierte Datensilos"
+                ]
+            },
+            "intelligentFlow": {
+                "badge": "EMPFOHLEN",
+                "header": "INTELLIGENTER ABLAUF",
+                "items": [
+                    "Automatisierte kontextbezogene Extraktion",
+                    "Heuristikgestützte Regelanwendung",
+                    "Integrierte Mensch-in-der-Schleife-Überprüfung"
+                ]
+            }
+        }
+    }
+}

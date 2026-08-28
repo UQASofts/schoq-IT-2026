@@ -1,0 +1,96 @@
+{
+    "Home": {
+        "Main": {
+            "titleOne": "STOP TALKING.",
+            "titleTwo": "START BUILDING.",
+            "description": "We combine Swiss precision with deep technical expertise to architect, design, and engineer world-class software solutions for ambitious leaders.",
+            "buttonDiscuss": "Let's Discuss Your Project",
+            "tags": [
+                "Strategy",
+                "Code",
+                "Human Experience",
+                "Optimization",
+                "Quality"
+            ],
+            "scroll": "SCROLL TO BUILD"
+        },
+        "Ideas": {
+            "titleLine1": "IDEAS BROUGHT",
+            "titleLine2": "TO LIFE",
+            "description": "Explore selected platforms, applications and digital experiences designed and developed by Schoq.",
+            "buttonStartProject": "Start a Project",
+            "aria": {
+                "previousSlide": "Previous slide",
+                "nextSlide": "Next slide",
+                "goToSlide": "Go to slide"
+            },
+            "projects": {
+                "myAnza": "MyAnza",
+                "workforceManagement": "Workforce Management System for HR"
+            }
+        },
+        "Launch": {
+            "titleLine1": "LAUNCH",
+            "titleLine2": "YOUR MVP IN",
+            "titleLine3": "6-8 WEEKS.",
+            "subtitle": "Design • Development • Testing • Launch",
+            "description": "All under one roof. No noise, just engineering excellence.",
+            "noLabel": "NO",
+            "painPoints": [
+                "Freelancer chaos",
+                "Agency chains",
+                "Friction"
+            ],
+            "timeline": {
+                "weekPrefix": "Week",
+                "steps": {
+                    "brief": "Brief",
+                    "prototype": "Prototype",
+                    "interface": "Interface",
+                    "development": "Development",
+                    "testing": "Testing",
+                    "launch": "Launch"
+                }
+            },
+            "footerTag": "8 WEEKS TO MVP"
+        },
+        "OneTeam": {
+            "header": {
+                "title1": "ONE TEAM. COMPLETE",
+                "title2": "PRODUCT EXPERTISE.",
+                "description": "From product strategy and UX to web, mobile, AI and cloud, Schoq brings the expertise required to design, build and scale digital products.",
+                "cta": "Start a Project"
+            },
+            "services": [
+                {
+                    "title": "Custom Software",
+                    "description": "Tailored enterprise software solutions and custom system development for unique business requirements."
+                },
+                {
+                    "title": "AI & Machine Learning",
+                    "description": "Tailored enterprise software solutions and custom system development for unique business requirements."
+                },
+                {
+                    "title": "Web Development",
+                    "description": "From business websites to custom web applications, delivering fast, reliable, and user-focused digital experiences."
+                },
+                {
+                    "title": "Mobile Apps",
+                    "description": "Tailored enterprise software solutions and custom system development for unique business requirements."
+                },
+                {
+                    "title": "UI/UX Design",
+                    "description": "Tailored enterprise software solutions and custom system development for unique business requirements."
+                },
+                {
+                    "title": "SaaS Development",
+                    "description": "Build and scale secure, multi-tenant software-as-a-service platforms globally."
+                },
+                {
+                    "title": "DevOps & Cloud Infrastructure",
+                    "description": "Tailored enterprise software solutions and custom system development for unique business requirements."
+                }
+            ]
+        }
+    }
+}

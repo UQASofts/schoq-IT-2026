@@ -1,0 +1,106 @@
+{
+    "Web": {
+        "Page": {
+            "conceptToLaunchTitle": "Vom Konzept bis zum Launch.",
+            "conceptToLaunchDesc": "Wir bieten ein vollständiges Produktbereitstellungs-Paket, von der Strategie bis zur Bereitstellung.",
+            "Three": {
+                "category": "Wie wir arbeiten",
+                "title": "Flexible Zusammenarbeit"
+            },
+            "conceptToLaunch": [
+                {
+                    "number": "01",
+                    "title": "Entdecken",
+                    "desc": "Definition des MVP-Umfangs, Auswahl des Technologie-Stacks und Analyse der Markttauglichkeit."
+                },
+                {
+                    "number": "02",
+                    "title": "Architektur",
+                    "desc": "High-Fidelity-UI-Systeme, interaktive Prototypen und User-Journey-Mapping."
+                },
+                {
+                    "number": "03",
+                    "title": "Bauen",
+                    "desc": "Native iOS/Android- oder plattformübergreifende Entwicklung mit einem robusten Backend."
+                },
+                {
+                    "number": "04",
+                    "title": "Starten & Skalieren",
+                    "desc": "Kontinuierliches Testen, automatisierte Qualitätssicherung und nahtlose Store-Bereitstellung."
+                }
+            ],
+            "flexibleEngagement": [
+                {
+                    "title": "Neue Web-Plattform",
+                    "desc": "End-to-End-Entwicklung eines modernen digitalen Ökosystems von Grund auf."
+                },
+                {
+                    "title": "Modernisierung",
+                    "desc": "Migration von Altsystemen auf moderne, headless Frontend-Architekturen."
+                },
+                {
+                    "title": "Team-Erweiterung",
+                    "desc": "Frontend-, Backend- und Produktspezialisten, die in Ihr bestehendes Team integriert werden."
+                }
+            ],
+            "expertiseItemsTitle": "Alles, was Ihre Web-Plattform über die Benutzeroberfläche hinaus benötigen könnte.",
+            "expertiseItemsSubTitle": "Vernetzte Expertise",
+            "expertiseItems": [
+                {
+                    "id": "custom-software",
+                    "firstLine": "INDIVIDUELLE",
+                    "secondLine": "SOFTWARE"
+                },
+                {
+                    "id": "mobile-dev",
+                    "firstLine": "Mobile",
+                    "secondLine": "Entwicklung"
+                },
+                {
+                    "id": "product-design",
+                    "firstLine": "PRODUKT-",
+                    "secondLine": "DESIGN"
+                },
+                {
+                    "id": "ai-solutions",
+                    "firstLine": "KI-",
+                    "secondLine": "LÖSUNGEN"
+                },
+                {
+                    "id": "cloud-engineering",
+                    "firstLine": "CLOUD-",
+                    "secondLine": "ENGINEERING"
+                }
+            ],
+            "footerMessage": {
+                "description": "Haben Sie eine Herausforderung, die es wert ist, gelöst zu werden? ",
+                "buttonText": "Web-Plattform besprechen"
+            }
+        },
+        "Hero": {
+            "category": "Webplattformen & Entwicklung.",
+            "title": "Webplattformen – Entwickelt für Leistung, Anpassung und Wachstum.",
+            "description": "Wir entwickeln hochleistungsfähige Web-Ökosysteme, die über statische Seiten hinausgehen und fehlerfreie, skalierbare Arbeitsabläufe sowie nahtlose Nutzungserlebnisse ermöglichen.",
+            "cta": "Projekt starten",
+            "leftCard": {
+                "title": "Statische Seite",
+                "subtitle": "Nur Informationen"
+            },
+            "rightCard": {
+                "cms": "CMS",
+                "userAuth": "Benutzerauthentifizierung",
+                "integrations": "Integrationen",
+                "platform": "Plattform"
+            }
+        },
+        "OnePlatform": {
+            "title": "Eine Plattform. Jeder Bildschirm.",
+            "subtitle": "Eine Codebasis, unendliche Darstellungsbereiche.",
+            "imageAlts": {
+                "desktop": "Desktop-Plattform-Ansicht",
+                "laptop": "Laptop-Ansichten",
+                "mobile": "Mobile Ansicht"
+            }
+        }
+    }
+}

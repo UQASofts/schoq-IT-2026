@@ -1,0 +1,31 @@
+{
+    "About": {
+        "Page": {
+            "description": "Have a challenge worth solving?",
+            "buttonText": "Start a Project"
+        },
+        "Section1": {
+            "title1": "HUMAN",
+            "title2": "THINKING",
+            "aboutSchoq": "ABOUT SCHOQ",
+            "mainHeading": {
+                "part1": "TECHNOLOGY SHOULD FEEL",
+                "part2": "CLEAR-",
+                "part3": "EVEN WHEN THE",
+                "part4": "CHALLENGE IS COMPLEX."
+            },
+            "description": "Schoq brings product thinking, human-centred design and software engineering together to create digital systems built around real business needs.",
+            "engineeredDelivery1": "ENGINEERED",
+            "engineeredDelivery2": "DELIVERY"
+        },
+        "Section2": {
+            "heading": "A TECHNOLOGY PARTNER BUILT AROUND CLARITY, COLLABORATION AND EXECUTION.",
+            "description": "Schoq was created to make sophisticated digital technology more accessible, practical and useful. We work with businesses, founders and organisations to turn ideas and complex requirements into products that can be launched, maintained and scaled.",
+            "team": {
+                "managingDirector": "MANAGING DIRECTOR",
+                "ceo": "CHIEF EXECUTIVE OFFICER",
+                "director": "DIRECTOR"
+            }
+        }
+    }
+}

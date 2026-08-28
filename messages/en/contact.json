@@ -1,0 +1,59 @@
+{
+    "Contact": {
+        "Page": {
+            "description": "Have a challenge worth solving?",
+            "buttonText": "Start a project"
+        },
+        "Form": {
+            "conversationLabel": "START A CONVERSATION",
+            "mainTitle1": "TELL US",
+            "mainTitle2": "WHAT YOU'RE",
+            "mainTitle3": "BUILDING.",
+            "subtitle": "Share your idea, current challenge or existing product. We'll review the details and help define the next practical step.",
+            "contactInfo": {
+                "directLineLabel": "DIRECT LINE",
+                "emailLabel": "EMAIL ADDRESS"
+            },
+            "form": {
+                "nameLabel": "NAME",
+                "companyLabel": "COMPANY",
+                "phoneLabel": "PHONE",
+                "phonePlaceholder": "Phone (optional)",
+                "languageLabel": "PREFERRED LANGUAGE",
+                "languageOptions": {
+                    "enDe": "English / Deutsch",
+                    "de": "Deutsch",
+                    "en": "English"
+                },
+                "projectDescriptionLabel": "BRIEFLY DESCRIBE YOUR PROJECT",
+                "projectDescriptionPlaceholder": "We want to start...",
+                "submitButton": "Send Project Details →"
+            }
+        },
+        "GetInTouch": {
+            "title1": "WHAT HAPPENS AFTER",
+            "title2": "YOU GET IN TOUCH?",
+            "description": "Our engineering audit process is designed for clarity and speed. We move from initial contact to a concrete technical recommendation within 5 business days.",
+            "steps": [
+                {
+                    "stepNumber": "01",
+                    "category": "REVIEW",
+                    "title": "INTERNAL ASSESSMENT",
+                    "desc": "We analyze your brief against our expertise modules. We identify potential technical blockers and architectural opportunities before our first call."
+                },
+                {
+                    "stepNumber": "02",
+                    "category": "CONVERSATION",
+                    "title": "DISCOVERY SESSION",
+                    "desc": "A focused 30-minute technical deep-dive. No sales pitch - just engineering talk to understand your stack, timeline, and core goals."
+                },
+                {
+                    "stepNumber": "03",
+                    "category": "RECOMMENDATION",
+                    "title": "ROADMAP & PROPOSAL",
+                    "desc": "You receive a detailed breakdown of how we would build it, including suggested technologies, team structure, and estimated fixed-cost modules."
+                }
+            ]
+        }
+    }
+}

@@ -1,0 +1,15 @@
+{
+    "Shared": {
+        "Two": {
+            "title": "{mainTitle}",
+            "description": "{mainDesc}"
+        },
+        "Three": {
+            "category": "Wie wir arbeiten",
+            "title": "Flexible Zusammenarbeit"
+        },
+        "Five": {
+            "category": "Vernetzte Expertise"
+        }
+    }
+}

@@ -1,0 +1,59 @@
+{
+    "Contact": {
+        "Page": {
+            "description": "Haben Sie eine Herausforderung, die es wert ist, gelöst zu werden?",
+            "buttonText": "Projekt starten"
+        },
+        "Form": {
+            "conversationLabel": "EIN GESPRÄCH BEGINNEN",
+            "mainTitle1": "SAGEN SIE",
+            "mainTitle2": "UNS, WAS.",
+            "mainTitle3": "SIE BAUEN.",
+            "subtitle": "Teilen Sie Ihre Idee, aktuelle Herausforderung oder Ihr bestehendes Produkt mit uns. Wir prüfen die Details und helfen dabei, den nächsten praktischen Schritt zu definieren.",
+            "contactInfo": {
+                "directLineLabel": "DIREKTE DURCHWAHL",
+                "emailLabel": "E-MAIL-ADRESSE"
+            },
+            "form": {
+                "nameLabel": "NAME",
+                "companyLabel": "UNTERNEHMEN",
+                "phoneLabel": "TELEFON",
+                "phonePlaceholder": "Telefon (optional)",
+                "languageLabel": "BEVORZUGTE SPRACHE",
+                "languageOptions": {
+                    "enDe": "Englisch / Deutsch",
+                    "de": "Deutsch",
+                    "en": "Englisch"
+                },
+                "projectDescriptionLabel": "BESCHREIBEN SIE IHR PROJEKT KURZ",
+                "projectDescriptionPlaceholder": "Wir möchten starten...",
+                "submitButton": "Projektdetails senden →"
+            }
+        },
+        "GetInTouch": {
+            "title1": "WAS PASSIERT, NACHDEM SIE",
+            "title2": "SICH GEMELDET HABEN?",
+            "description": "Unser Engineering-Audit-Prozess ist auf Klarheit und Schnelligkeit ausgelegt. Wir bewegen uns vom Erstkontakt bis zu einer konkreten technischen Empfehlung innerhalb von 5 Werktagen.",
+            "steps": [
+                {
+                    "stepNumber": "01",
+                    "category": "PRÜFUNG",
+                    "title": "INTERNE BEWERTUNG",
+                    "desc": "Wir analysieren Ihr Briefing anhand unserer Fachbereichsmodule. Wir identifizieren potenzielle technische Hürden und architektonische Chancen vor unserem ersten Gespräch."
+                },
+                {
+                    "stepNumber": "02",
+                    "category": "GESPRÄCH",
+                    "title": "DISCOVERY-SESSION",
+                    "desc": "Ein fokussierter 30-minütiger technischer Vertiefungstermin. Kein Verkaufsgespräch – reiner technischer Austausch, um Ihren Stack, Zeitplan und Ihre Hauptziele zu verstehen."
+                },
+                {
+                    "stepNumber": "03",
+                    "category": "EMPFEHLUNG",
+                    "title": "ROADMAP & ANGEBOT",
+                    "desc": "Sie erhalten eine detaillierte Aufschlüsselung, wie wir es umsetzen würden, einschließlich vorgeschlagener Technologien, Teamstruktur und geschätzter Festpreismodule."
+                }
+            ]
+        }
+    }
+}

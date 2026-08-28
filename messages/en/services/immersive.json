@@ -1,0 +1,101 @@
+{
+    "ImmersiveExperience": {
+        "Page": {
+            "pipeline": {
+                "mainTitle": "THE IMMERSIVE PIPELINE",
+                "desc": "A rigorous, structured approach to translating complex spatial concepts into performant digital realities.",
+                "items": [
+                    {
+                        "number": "01",
+                        "title": "Discover & Define",
+                        "desc": "Defining spatial interactions and mapping user journeys in three dimensions."
+                    },
+                    {
+                        "number": "02",
+                        "title": "Spatial Design",
+                        "desc": "Architecting 3D assets, lighting environments, and intuitive spatial UI."
+                    },
+                    {
+                        "number": "03",
+                        "title": "Build & Integrate",
+                        "desc": "Developing performance-optimized WebGL and native immersive experiences."
+                    },
+                    {
+                        "number": "04",
+                        "title": "Test & Launch",
+                        "desc": "Rigorous QA across devices, focusing on frame rates and interaction fidelity."
+                    }
+                ]
+            },
+            "capabilities": {
+                "mainTitle": "IMMERSIVE CAPABILITIES",
+                "subTitle": "WHAT WE CAN BUILD",
+                "items": [
+                    {
+                        "title": "Interactive 3D Experiences",
+                        "desc": "Let users rotate, inspect and configure products or environments."
+                    },
+                    {
+                        "title": "Augmented Reality",
+                        "desc": "Place products and information inside real-world spaces."
+                    },
+                    {
+                        "title": "Virtual Environments",
+                        "desc": "Create guided spaces for training, demonstrations and storytelling."
+                    },
+                    {
+                        "title": "Immersive Web Experiences",
+                        "desc": "Bring 3D interaction directly into browser-based products."
+                    }
+                ]
+            },
+            "experties": {
+                "subTitle": "CONNECTED EXPERTISE",
+                "mainTitle": "EVERYTHING YOUR WEB PLATFORM MAY NEED BEYOND THE INTERFACE.",
+                "items": [
+                    {
+                        "id": "custom-software",
+                        "firstLine": "CUSTOM",
+                        "secondLine": "SOFTWARE"
+                    },
+                    {
+                        "id": "product-design",
+                        "firstLine": "PRODUCT",
+                        "secondLine": "DESIGN"
+                    },
+                    {
+                        "id": "ai-solutions",
+                        "firstLine": "AI",
+                        "secondLine": "SOLUTIONS"
+                    },
+                    {
+                        "id": "cloud-engineering",
+                        "firstLine": "CLOUD",
+                        "secondLine": "ENGINEERING"
+                    }
+                ]
+            },
+            "footer": {
+                "buttonText": "Discuss an AI opportunity",
+                "desc": "Have a process that could work smarter?"
+            }
+        },
+        "Hero": {
+            "header": {
+                "subtitle": "IMMERSIVE EXPERIENCES",
+                "title": "DIGITAL EXPERIENCES THAT MOVE BEYOND THE SCREEN.",
+                "description": "Schoq designs interactive 3D, augmented and immersive experiences that help people explore products, spaces and information in more engaging ways.",
+                "cta": "Discuss an Immersive Experience"
+            },
+            "images": {
+                "mainShowcaseAlt": "Interactive 3D Furniture Experience Showcase",
+                "sidebar": {
+                    "ergonomicAlt": "Ergonomic Design Overview",
+                    "materialsAlt": "Material & Fabric Options",
+                    "specsAlt": "Product Specifications Card",
+                    "controlsAlt": "Interactive Controls Bar"
+                }
+            }
+        }
+    }
+}

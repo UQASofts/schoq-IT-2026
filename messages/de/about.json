@@ -1,0 +1,31 @@
+{
+    "About": {
+        "Page": {
+            "description": "Haben Sie eine Herausforderung, die es zu lösen lohnt?",
+            "buttonText": "Projekt starten"
+        },
+        "Section1": {
+            "title1": "MENSCHLICHES",
+            "title2": "DENKEN",
+            "aboutSchoq": "ÜBER SCHOQ",
+            "mainHeading": {
+                "part1": "TECHNOLOGIE SOLLTE KLAR",
+                "part2": "SEIN–",
+                "part3": "SELBST WENN DIE",
+                "part4": "HERAUSFORDERUNG KOMPLEX IST."
+            },
+            "description": "Schoq vereint Produktdenken, nutzerzentriertes Design und Software-Engineering, um digitale Systeme zu schaffen, die auf reale Unternehmensbedürfnisse zugeschnitten sind.",
+            "engineeredDelivery1": "PREZISE",
+            "engineeredDelivery2": "UMSETZUNG"
+        },
+        "Section2": {
+            "heading": "EIN TECHNOLOGIEPARTNER, DER AUF KLARHEIT, ZUSAMMENARBEIT UND UMSETZUNG AUFBAUT.",
+            "description": "Schoq wurde gegründet, um anspruchsvolle digitale Technologie zugänglicher, praktischer und nützlicher zu machen. Wir arbeiten mit Unternehmen, Gründern und Organisationen zusammen, um Ideen und komplexe Anforderungen in Produkte zu verwandeln, die gestartet, gewartet und skaliert werden können.",
+            "team": {
+                "managingDirector": "GESCHÄFTSFÜHRER",
+                "ceo": "CHIEF EXECUTIVE OFFICER",
+                "director": "DIREKTOR"
+            }
+        }
+    }
+}

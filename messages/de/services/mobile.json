@@ -1,0 +1,88 @@
+{
+    "Mobile": {
+        "Page": {
+            "productBlueprintTitle": "Produkt-Blueprint",
+            "productBlueprintTitleDesc": "Wir bieten ein vollständiges Produktbereitstellungs-Paket, von der Strategie bis zur Bereitstellung.",
+            "Three": {
+                "category": "Wie wir arbeiten",
+                "title": "Flexible Zusammenarbeit"
+            },
+            "productBlueprint": [
+                {
+                    "number": "01",
+                    "title": "Produktrichtung",
+                    "desc": "Definition des MVP-Umfangs, Auswahl des Technologie-Stacks und Analyse der Markttauglichkeit."
+                },
+                {
+                    "number": "02",
+                    "title": "Erlebnisdesign",
+                    "desc": "High-Fidelity-UI-Systeme, interaktive Prototypen und User-Journey-Mapping."
+                },
+                {
+                    "number": "03",
+                    "title": "Entwicklung",
+                    "desc": "Native iOS/Android- oder plattformübergreifende Entwicklung mit einem robusten Backend."
+                },
+                {
+                    "number": "04",
+                    "title": "Qualität",
+                    "desc": "Kontinuierliches Testen, automatisierte Qualitätssicherung und nahtlose Store-Bereitstellung."
+                }
+            ],
+            "flexibleEngagement": [
+                {
+                    "title": "Neues Produkt entwickeln",
+                    "desc": "Vollständige Übernahme der mobilen Produktentwicklung von Grund auf."
+                },
+                {
+                    "title": "Legacy-Modernisierung",
+                    "desc": "Neuentwicklung und Optimierung bestehender mobiler Anwendungen."
+                },
+                {
+                    "title": "Team-Erweiterung",
+                    "desc": "Dedizierte Entwickler, die direkt in Ihr internes Team integriert werden."
+                }
+            ],
+            "expertiseItemsTitle": "Alles, was Ihr mobiles Produkt über die App hinaus benötigen könnte.",
+            "expertiseItemsSubTitle": "Vernetzte Expertise",
+            "expertiseItems": [
+                {
+                    "id": "custom-software",
+                    "firstLine": "INDIVIDUELLE",
+                    "secondLine": "SOFTWARE"
+                },
+                {
+                    "id": "product-design",
+                    "firstLine": "PRODUKT-",
+                    "secondLine": "DESIGN"
+                },
+                {
+                    "id": "ai-solutions",
+                    "firstLine": "KI-",
+                    "secondLine": "LÖSUNGEN"
+                },
+                {
+                    "id": "cloud-engineering",
+                    "firstLine": "CLOUD-",
+                    "secondLine": "ENGINEERING"
+                }
+            ],
+            "footerMessage": {
+                "description": "Haben Sie eine mobile App, die es wert ist, gebaut zu werden?",
+                "buttonText": "Mobile App entwickeln"
+            }
+        },
+        "ProductDemo": {
+            "title": "Produkt-Demonstration",
+            "imageAlts": {
+                "mockup": "Produkt-Demonstrations-Mockup-Präsentation"
+            }
+        },
+        "Hero": {
+            "category": "Mobile App-Entwicklung",
+            "title": "Mobile Produkte, die Menschen gerne dauerhaft nutzen.",
+            "description": "Schoq konzipiert und entwickelt intuitive, skalierbare mobile Anwendungen – von der frühen Produktstrategie und UX bis hin zur Entwicklung, dem Launch und der kontinuierlichen Verbesserung.",
+            "cta": "Mobile App entwickeln"
+        }
+    }
+}

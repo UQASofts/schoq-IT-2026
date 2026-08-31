@@ -236,7 +236,7 @@ const Header: React.FC = () => {
               })}
             </nav>
 
-            <div className="flex items-center gap-6">
+            <div className="flex items-center gap-1 md:gap-2 lg:gap-4 xl:gap-6">
               <div
                 className="hidden h-6 w-px bg-[#B9CACB] lg:block"
                 aria-hidden="true"

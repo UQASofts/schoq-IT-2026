@@ -161,7 +161,7 @@ const Header: React.FC = () => {
     <>
       <header
         ref={headerRef}
-        className="fixed inset-x-0 top-[37px] z-50 flex justify-center px-4"
+        className="fixed inset-x-0 top-[24px] md:top-[28px] lg:top-[37px] z-50 flex justify-center px-4"
       >
         <div className="flex w-full max-w-[1000px] items-center justify-between  bg-white/40 px-4 md:px-6 py-4 shadow-[0_4px_24px_0_rgba(0,0,0,0.1)] backdrop-blur-md rounded-global-sm md:rounded-global-md lg:rounded-global-lg xl:rounded-global-xl 2xl:rounded-global-2xl">
           <div ref={logoRef} className="shrink-0">

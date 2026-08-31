@@ -128,16 +128,16 @@ const config: Config = {
         "p-nav-xl": ["14px", { lineHeight: "140%", fontWeight: "400" }],
         "p-nav-2xl": ["14px", { lineHeight: "140%", fontWeight: "400" }],
         "p-contact": [
-          "32px",
-          { lineHeight: "125%", letterSpacing: "-0.64px", fontWeight: "500" },
+          "22px",
+          { lineHeight: "125%", letterSpacing: "-0.4px", fontWeight: "500" },
         ],
         "p-contact-sm": [
-          "32px",
-          { lineHeight: "125%", letterSpacing: "-0.64px", fontWeight: "500" },
+          "24px",
+          { lineHeight: "125%", letterSpacing: "-0.44px", fontWeight: "500" },
         ],
         "p-contact-md": [
-          "32px",
-          { lineHeight: "125%", letterSpacing: "-0.64px", fontWeight: "500" },
+          "26px",
+          { lineHeight: "125%", letterSpacing: "-0.52px", fontWeight: "500" },
         ],
         "p-contact-lg": [
           "32px",

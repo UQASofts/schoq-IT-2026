@@ -1,15 +1,19 @@
 "use client";
 
 import { useRef } from "react";
-import { ArrowRight } from "lucide-react";
+import { Geist } from "next/font/google";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import { useGSAP } from "@gsap/react";
 import { useTranslations } from "next-intl";
 
-import { heroBgImage } from "@/public";
+const geist = Geist({
+  subsets: ["latin"],
+  weight: "700",
+});
 
 gsap.registerPlugin(ScrollTrigger);
+
 const Launch: React.FC = () => {
   const container = useRef<HTMLDivElement>(null);
   const t = useTranslations("Home.Launch");
@@ -22,7 +26,6 @@ const Launch: React.FC = () => {
     { week: "7", key: "testing" },
     { week: "8", key: "launch" },
   ] as const;
-  // const painPoints = ["Freelancer chaos", "Agency chains", "Friction"];
   const painPoints = t.raw("painPoints") as string[];
 
   useGSAP(
@@ -41,8 +44,7 @@ const Launch: React.FC = () => {
           trigger: ".header-one",
           start: "top 90%",
           end: "top 50%",
-          // markers: true, // Keep for debugging
-          toggleActions: "play none none reset", // Play animation when element enters viewport
+          toggleActions: "play none none reset",
         },
       });
 
@@ -55,7 +57,6 @@ const Launch: React.FC = () => {
           trigger: ".header-two",
           start: "top 90%",
           end: "top 55%",
-          // markers: true, // Keep for debugging
           toggleActions: "play none none reset",
         },
       });
@@ -69,7 +70,6 @@ const Launch: React.FC = () => {
           trigger: ".header-three",
           start: "top 90%",
           end: "top 55%",
-          // markers: true, // Keep for debugging
           toggleActions: "play none none reset",
         },
       });
@@ -84,7 +84,6 @@ const Launch: React.FC = () => {
           trigger: ".timeline-wrapper",
           start: "top 85%",
           end: "bottom 65%",
-          // markers: true, // Keep for debugging
           toggleActions: "play none none reset",
         },
       });
@@ -95,98 +94,104 @@ const Launch: React.FC = () => {
   return (
     <section
       ref={container}
-      // style={{ backgroundImage: `url(${heroBgImage.src})` }}
-      className="relative bg-linear-to-l from-[#575EE3]/30 via-[#575EE3]/10 to-white w-full lg:pl-6 md:pl-12 lg:pl-20 py-16 md:py-24 lg:py-15 overflow-x-hidden"
+      className="relative w-full overflow-hidden bg-white"
     >
-      <div className="w-full mx-auto">
-        <div className="w-full flex flex-col md:flex-row items-center justify-between gap-8 md:gap-12 lg:gap-16 mb-16 md:mb-20 xl:pl-50 2xl:pl-80 lg:pt-10">
-          {/* Left Block */}
-          <div className="flex flex-col gap-5 w-[50%]">
-            <h2 className="text-center md:text-start w-full text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold tracking-tight text-gray-900 leading-[1.1]">
-              {t("titleLine1")}
-              <br />
-              {t("titleLine2")}
-              <br />
-              {t("titleLine3")}
-            </h2>
-            <p className="text-center md:text-start text-base sm:text-lg md:text-xl text-gray-600 leading-relaxed">
+      <div className="relative flex w-full flex-col h-auto lg:h-[580px] xl:h-[640px]">
+        <div className="flex flex-1 flex-col justify-center py-12 lg:py-0 pl-[4%] sm:pt-20 lg:pt-0 md:pl-[8.61%]">        
+            <div className="relative w-full">
+          <div className="pointer-events-none absolute inset-0 z-0 overflow-visible">
+            <div
+              className="absolute top-10 2xl:-top-32  -right-30 md:-right-40 h-[450px] blur-[156px] w-[100%] origin-center -translate-y-62 rounded-[869px] rotate-[21.142deg] scale-50 md:scale-75 lg:scale-100"
+              style={{
+                background:
+                  "linear-gradient(90deg, rgba(87, 94, 227, 0.50) 0%, rgba(86, 213, 154, 0.50) 100%)",
+              }}
+            />
+          </div>
+          <div className="relative z-10">
+            <div className="w-full max-w-[524px]">
+              <h2
+                className={`${geist.className} header-one text-h1 uppercase text-heading sm:text-h1-sm md:text-h1-md lg:text-h1-lg xl:text-h1-xl 2xl:text-h1-2xl`}
+              >
+                {t("titleLine1")}
+                <br />
+                {t("titleLine2")}
+                <br />
+                {t("titleLine3")}
+              </h2>
+
+            </div>
+            <div className="mt-8 flex justify-end lg:absolute lg:inset-y-0 lg:right-0 lg:z-30 lg:mt-0 lg:items-center">
+              <div className="header-three flex h-[150px] w-[min(100%,547px)] items-center rounded-r-none bg-global px-6 sm:h-[210px] sm:px-8 md:h-[200px] md:w-[550px] md:px-10 lg:w-[520px] xl:w-[550px] rounded-l-global sm:rounded-l-global-sm md:rounded-l-global-md lg:rounded-l-global-lg xl:rounded-l-global-xl 2xl:rounded-l-global-2xl">
+                <div className="flex h-full w-full items-center gap-2">
+                  <div
+                    className={`${geist.className} origin-left shrink-0 scale-x-[0.85] scale-y-[2] text-[3.5rem] font-bold leading-none text-white uppercase tracking-wider sm:text-[4.5rem] md:text-[5rem] ${t("noLabel") === "KEIN" ? "md:text-[6rem]" : ""}`}
+                  >
+                    {t("noLabel")}
+                  </div>
+                  <div className="min-w-0">
+                    {painPoints.map((point) => (
+                      <div key={point} className="py-0.5 sm:py-1">
+                        <span className="text-base leading-tight font-semibold tracking-tight text-white sm:text-xl md:text-[1.5rem]">
+                          {point}
+                        </span>
+                      </div>
+                    ))}
+                  </div>
+                </div>
+              </div>
+            </div>
+
+
+          </div>
+        </div>
+          <div className="">
+            <p className="header-two mt-4 text-p sm:text-p-sm md:text-p-md lg:text-p-lg xl:text-p-xl 2xl:text-p-2xl">
               {t("subtitle")}
               <br />
               {t("description")}
             </p>
           </div>
-
-          {/* Right Block */}
-          <div className="header-three hidden md:block min-w-0 h-fit rounded-lg bg-linear-to-r from-[#4A4CE6] via-[#34A1B4] to-[#4BE191] px-6 md:px-8 lg:px-10">
-            <div className="grid grid-cols-2 items-center gap-4">
-              <div
-                className={`${t("noLabel") === "KEIN" ? "text-[6rem]" : "text-[5rem]"} font-bold text-white uppercase tracking-wider mb-2 transform scale-y-[1.3] scale-x-[0.85] origin-left`}
-              >
-                {t("noLabel")}
-              </div>
-
-              <div className="min-w-0 lg:block hidden">
-                {painPoints.map((point, index) => (
-                  <div key={index} className="flex items-center py-1">
-                    <span className="text-[1.5rem] text-white font-normal leading-tight tracking-tight break-words">
-                      {point}
-                    </span>
-                  </div>
-                ))}
-              </div>
-            </div>
-          </div>
         </div>
 
-        {/* Timeline Block */}
-        <div className="timeline-wrapper relative pb-10 z-20">
-          {/* Desktop Timeline horizontal bar connecting circles */}
-          <div className="w-[90%] xl:w-[93%] 2xl:w-[91%] hidden md:block absolute top-7 right-0 h-0.5 bg-[#575EE3] z-0" />
 
-          <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-6 gap-4 md:gap-0 relative">
-            {timelineSteps.map((step, index) => (
-              <div
-                key={step.key}
-                className="flex flex-col items-center p-2"
-              >
-                {/* Desktop view Circle */}
-                <div className="hidden md:flex items-center justify-center w-10 h-10 rounded-full bg-[#575EE3] text-white text-sm font-bold relative z-10">
-                  {step.week}
-                </div>
 
-                {/* Mobile view Card */}
-                <div className="bg-white md:hidden w-full gray-50 rounded-lg p-4 border border-gray-100">
-                  <div className="text-xs font-medium text-[#000000] uppercase tracking-wider mb-1">
-                    {t("timeline.weekPrefix")} {step.week}
+        <div className="timeline-wrapper relative z-20 px-[4%]">
+          <div className="relative hidden md:block">
+            <div className="absolute top-5 right-[8.333%] left-[8.333%] h-0.5 bg-[#575EE3]" />
+            <div className="relative grid grid-cols-6 ">
+              {timelineSteps.map((step) => (
+                <div
+                  key={step.key}
+                  className="timeline-item flex flex-col items-center"
+                >
+                  <div className="relative z-10 flex h-10 w-10 items-center justify-center rounded-full bg-[#575EE3] text-sm font-bold text-white">
+                    {step.week}
                   </div>
-                  <div className="text-base font-semibold text-gray-900">
+                  <div className="mt-3 text-heading text-p sm:text-p-sm md:text-p-md lg:text-p-lg xl:text-p-xl 2xl:text-p-2xl">
                     {t(`timeline.steps.${step.key}`)}
                   </div>
                 </div>
+              ))}
+            </div>
+          </div>
 
-                {/* Desktop view Label below the circle */}
-                <div className="hidden md:block mt-3 text-sm font-medium text-[#000000]">
+          <div className="grid grid-cols-1 gap-3 sm:grid-cols-2 md:hidden">
+            {timelineSteps.map((step) => (
+              <div
+                key={step.key}
+                className="timeline-item rounded-global border border-gray-100 bg-white p-4"
+              >
+                <div className="mb-1 text-xs font-medium tracking-wider text-[#696B78] uppercase">
+                  {t("timeline.weekPrefix")} {step.week}
+                </div>
+                <div className="text-base font-semibold text-[#1A1B21]">
                   {t(`timeline.steps.${step.key}`)}
                 </div>
-
-                {/* Mobile view vertical connectors */}
-                {/* {index < timelineSteps.length - 1 && (
-                  <div className="md:hidden w-px h-6 bg-gray-200 mx-auto" />
-                )} */}
               </div>
             ))}
           </div>
-
-          {/* Desktop right-aligned footer element
-          <div className="hidden md:flex justify-end mt-8">
-            <div className="flex items-center gap-2 text-gray-400 text-sm font-medium">
-              <span>{t("footerTag")}</span>
-              <ArrowRight className="w-4 h-4" />
-            </div>
-          </div> */}
         </div>
-          <div className="absolute bottom-0 left-0 w-full h-80 bg-linear-to-t from-white via-white to-transparent z-0">
-          </div>
       </div>
     </section>
   );

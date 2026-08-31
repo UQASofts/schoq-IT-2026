@@ -84,20 +84,20 @@ export default function ServicesSectionTwo({
   return (
     <section
       ref={sectionRef}
-      className="w-full min-h-screen py-20 px-4 sm:px-6 lg:px-8 bg-linear-to-br from-[#eef2ff] via-[#f0f9ff] to-[#ecfdf5] flex items-center justify-center selection:bg-indigo-100"
+      className="flex w-full items-center justify-center bg-linear-to-br from-[#eef2ff] via-[#f0f9ff] to-[#ecfdf5] px-[4%] py-global selection:bg-indigo-100 sm:py-global-sm md:py-global-md lg:px-[8%] lg:py-global-lg xl:py-global-xl 2xl:py-global-2xl"
     >
-      <div className="max-w-7xl mx-auto w-full space-y-12 md:space-y-16">
+      <div className=" mx-auto w-full space-y-12 md:space-y-16">
         {/* Section Header */}
         <div className="text-center space-y-3 max-w-5xl mx-auto">
           <h2
             ref={headingRef}
-            className="text-3xl sm:text-4xl md:text-4xl font-extrabold text-slate-900 tracking-tight uppercase"
+            className="uppercase text-heading text-h2 sm:text-h2-sm md:text-h2-md lg:text-h2-lg xl:text-h2-xl 2xl:text-h2-2xl"
           >
             {mainTitle}
           </h2>
           <p
             ref={descriptionRef}
-            className="text-slate-600 text-sm sm:text-base md:text-lg font-medium leading-relaxed"
+            className="text-neutral-500 text-p sm:text-p-sm md:text-p-md lg:text-p-lg xl:text-p-xl 2xl:text-p-2xl"
           >
             {mainDesc}
           </p>
@@ -118,12 +118,12 @@ export default function ServicesSectionTwo({
                   {card.number}
                 </span>
 
-                <h3 className="text-xl sm:text-2xl font-bold text-slate-900 leading-snug">
+                <h3 className="text-heading text-h3 sm:text-h3-sm md:text-h3-md lg:text-h3-lg xl:text-h3-xl 2xl:text-h3-2xl">
                   {card.title}
                 </h3>
               </div>
 
-              <p className="mt-2 text-slate-500 text-xs sm:text-sm leading-relaxed font-normal">
+              <p className="mt-2 text-neutral-500 text-p sm:text-p-sm md:text-p-md lg:text-p-lg xl:text-p-xl 2xl:text-p-2xl">
                 {card.desc}
               </p>
             </div>

@@ -1,12 +1,18 @@
 "use client";
 
 import { useRef } from "react";
+import { Geist } from "next/font/google";
 import { Share2, ArrowUpRight } from "lucide-react";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import { useGSAP } from "@gsap/react";
 
 import { useTranslations } from "next-intl";
+
+const geist = Geist({
+  subsets: ["latin"],
+  weight: "500",
+});
 
 if (typeof window !== "undefined") {
   gsap.registerPlugin(ScrollTrigger);
@@ -91,19 +97,19 @@ export default function Form() {
   return (
     <section
       ref={containerRef}
-      className="min-h-screen w-full bg-white text-neutral-900 px-6 py-12 md:px-30 md:py-24 flex items-center justify-center overflow-hidden"
+      className="flex min-h-screen w-full items-center justify-center overflow-hidden bg-white py-6 text-neutral-900 md:py-18"
     >
-      <div className="max-w-7xl w-full grid grid-cols-1 lg:grid-cols-12 gap-0 lg:gap-16 items-start">
+      <div className="px-[4%] md:px-[8.61%] lg:px-[10.61%] w-full grid grid-cols-1 lg:grid-cols-12 gap-0 lg:gap-16 items-start">
         {/* LEFT COLUMN: Text & Contact Information */}
         <div className="Container-One lg:col-span-6 flex flex-col justify-between h-full pt-4">
           <div>
             {/* Small uppercase label */}
-            <p className="Conversation text-xs font-semibold tracking-[0.25em] uppercase text-neutral-500 mb-4">
+            <p className="Conversation mb-4 text-xs font-semibold uppercase tracking-[0.25em] text-slate-800 sm:text-sm">
               {t("conversationLabel")}
             </p>
 
             {/* Bold main title */}
-            <h1 className="Tell-Us text-4xl sm:text-5xl md:text-6xl font-extrabold uppercase leading-[0.95] tracking-tight text-neutral-950 mb-6">
+            <h1 className="Tell-Us mb-6 uppercase text-heading text-h1 sm:text-h1-sm md:text-h1-md lg:text-h1-lg xl:text-h1-xl 2xl:text-h1-2xl">
               {t("mainTitle1")}
               <br />
               {t("mainTitle2")}
@@ -112,7 +118,7 @@ export default function Form() {
             </h1>
 
             {/* Subtitle paragraph */}
-            <p className="Share-Idea text-neutral-500 text-sm md:text-base leading-relaxed max-w-lg mb-12">
+            <p className="Share-Idea mb-12 max-w-lg text-neutral-500 text-p sm:text-p-sm md:text-p-md lg:text-p-lg xl:text-p-xl 2xl:text-p-2xl">
               {t("subtitle")}
             </p>
           </div>
@@ -125,10 +131,8 @@ export default function Form() {
                 <p className="text-xs font-semibold tracking-[0.2em] uppercase text-neutral-400 mb-2">
                   {t("contactInfo.directLineLabel")}
                 </p>
-                <h3 className="text-xl sm:text-2xl font-bold text-neutral-900 leading-snug">
-                  +49 (0) 30 820
-                  <br />
-                  910
+                <h3 className="font-inter not-italic text-contact text-p-contact sm:text-p-contact-sm md:text-p-contact-md lg:text-p-contact-lg xl:text-p-contact-xl 2xl:text-p-contact-2xl">
+                  +49 (0) 30 820 910
                 </h3>
               </div>
 
@@ -137,7 +141,7 @@ export default function Form() {
                 <p className="text-xs font-semibold tracking-[0.2em] uppercase text-neutral-400 mb-2">
                   {t("contactInfo.emailLabel")}
                 </p>
-                <h3 className="text-xl sm:text-2xl font-bold text-neutral-900">
+                <h3 className="font-inter not-italic text-contact text-p-contact sm:text-p-contact-sm md:text-p-contact-md lg:text-p-contact-lg xl:text-p-contact-xl 2xl:text-p-contact-2xl">
                   hello@schoq.eng
                 </h3>
               </div>
@@ -167,7 +171,7 @@ export default function Form() {
         </div>
 
         {/* RIGHT COLUMN: Soft Gradient Contact Form Card */}
-        <div className="Container-Two lg:col-span-6 bg-linear-to-br from-teal-50/60 via-sky-100/40 to-emerald-50/50 p-6 sm:p-10 rounded-2xl border border-teal-100/50 shadow-sm">
+        <div className="Container-Two lg:col-span-6 rounded-global bg-global-soft p-6 shadow-sm sm:rounded-global-sm sm:p-10 md:rounded-global-md lg:rounded-global-lg xl:rounded-global-xl 2xl:rounded-global-2xl">
           <form className="space-y-5" onSubmit={(e) => e.preventDefault()}>
             {/* Name Input */}
             <div>
@@ -208,7 +212,7 @@ export default function Form() {
             {/* Preferred Language Select */}
             <div>
               <label className="block text-xs font-bold tracking-wider uppercase text-neutral-700 mb-2">
-                placeholder={t("form.languageLabel")}
+                {t("form.languageLabel")}
               </label>
               <div className="relative">
                 <select className="w-full px-4 py-3 bg-white/70 backdrop-blur-sm border border-white/60 rounded-lg text-sm text-neutral-500 appearance-none focus:outline-none focus:ring-2 focus:ring-teal-400/50 transition-all cursor-pointer">
@@ -229,7 +233,6 @@ export default function Form() {
             {/* Project Description Textarea */}
             <div>
               <label className="block text-xs font-bold tracking-wider uppercase text-neutral-700 mb-2">
-                BRIEFLY DESCRIBE YOUR PROJECT
                 {t("form.projectDescriptionLabel")}
               </label>
               <textarea
@@ -243,7 +246,7 @@ export default function Form() {
             <div className="pt-2">
               <button
                 type="submit"
-                className="w-full py-3.5 px-6 rounded-lg bg-linear-to-r from-indigo-600 via-blue-500 to-emerald-400 hover:opacity-95 text-white font-semibold text-sm flex items-center justify-center gap-2 shadow-sm transition-all cursor-pointer"
+                className="flex w-full cursor-pointer items-center justify-center gap-2 bg-global px-6 py-3.5 text-sm font-semibold text-white shadow-sm transition-all hover:opacity-95 rounded-global sm:rounded-global-sm md:rounded-global-md lg:rounded-global-lg xl:rounded-global-xl 2xl:rounded-global-2xl"
               >
                 {t("form.submitButton")}
               </button>

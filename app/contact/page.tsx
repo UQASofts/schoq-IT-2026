@@ -12,7 +12,7 @@ const ContactPage = async () => {
 
   return (
     <NextIntlClientProvider messages={pick(messages, ["Contact"])}>
-      <main className="min-h-screen bg-background text-foreground flex flex-col pb-12 pt-10">
+      <main className="flex min-h-screen flex-col bg-white pt-[120px] text-foreground">
         <Form />
         <GetInTouch />
         <Section3 description={t("description")} buttonText={t("buttonText")} />

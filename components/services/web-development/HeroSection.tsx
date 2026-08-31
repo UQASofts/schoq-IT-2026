@@ -74,20 +74,20 @@ export default function SectionMain() {
   return (
     <main
       ref={containerRef}
-      className="min-h-screen bg-white text-slate-900 flex flex-col items-center px-4 justify-start pt-24 pb-16 md:py-24 font-sans selection:bg-purple-100"
+      className="flex min-h-screen flex-col items-center justify-center bg-white px-[4%] lg:px-[8%] pt-[120px] pb-16 font-sans text-slate-900 selection:bg-purple-100"
     >
       {/* Container-One: Text Header Section */}
-      <div className="max-w-4xl mx-auto text-center space-y-3">
+      <div className="mx-auto w-full max-w-6xl text-center space-y-3 md:space-y-4 lg:space-y-5 xl:max-w-7xl">
         <div ref={textHeaderRef} className="space-y-3">
-          <h3 className="text-xs sm:text-sm font-semibold uppercase tracking-[0.25em] text-slate-800">
+          <h3 className="Conversation text-xs font-semibold tracking-[0.25em] uppercase text-neutral-500 mb-4">
             {t("category")}
           </h3>
 
-          <h1 className="text-3xl sm:text-5xl md:text-5xl font-black tracking-tight leading-[1.08] text-slate-900 uppercase max-w-8xl mx-auto">
+          <h1 className="mx-auto uppercase text-heading text-h1 sm:text-h1-sm md:text-h1-md lg:text-h1-lg xl:text-h1-xl 2xl:text-h1-2xl">
             {t("title")}
           </h1>
 
-          <p className="text-slate-600 text-sm sm:text-base md:text-lg max-w-2xl mx-auto leading-relaxed font-normal">
+          <p className="mx-auto max-w-2xl text-neutral-500 text-p sm:text-p-sm md:text-p-md lg:text-p-lg xl:text-p-xl 2xl:text-p-2xl">
             {t("description")}
           </p>
         </div>
@@ -96,7 +96,7 @@ export default function SectionMain() {
         <div ref={containerOneButtonRef} className="pt-2">
           <Link
             href="#"
-            className="inline-block px-7 py-3 text-sm sm:text-base font-semibold text-white rounded-lg bg-linear-to-r from-[#4A4CE6] via-[#34A1B4] to-[#4BE191] shadow-md hover:shadow-lg hover:scale-105 transition-all duration-300 cursor-pointer"
+            className="inline-block cursor-pointer bg-global px-7 py-3 text-sm font-semibold text-white shadow-md transition-all duration-300 hover:scale-105 hover:shadow-lg sm:text-base rounded-global sm:rounded-global-sm md:rounded-global-md lg:rounded-global-lg xl:rounded-global-xl 2xl:rounded-global-2xl"
           >
             {t("cta")}
           </Link>
@@ -106,12 +106,12 @@ export default function SectionMain() {
       {/* Container-Two: Process Illustration Section */}
       <div
         ref={containerTwoRef}
-        className="w-full max-w-4xl mx-auto mt-16 md:mt-24 flex flex-col md:flex-row items-center justify-center gap-6 md:gap-8 px-4"
+        className="mx-auto mt-8 flex w-full max-w-7xl flex-col items-center justify-center gap-6 sm:gap-6 md:mt-16 md:flex-row md:gap-2 lg:mt-20 lg:gap-4 xl:gap-10 2xl:gap-8"
       >
         {/* Left Card: Static Page */}
         <div
           ref={leftCol}
-          className="w-full md:w-95 h-55 rounded-xl border border-slate-200 bg-white shadow-xs p-6 flex flex-col items-center justify-center text-center"
+          className="w-full md:w-8xl h-40 md:h-55 rounded-xl border border-slate-200 bg-white shadow-xs p-6 flex flex-col items-center justify-center text-center"
         >
           {/* Small Top Bar Decorative Graphic */}
           <div className="w-16 h-1.5 bg-slate-300 rounded-full mb-8" />
@@ -127,34 +127,34 @@ export default function SectionMain() {
         <div className="flex items-center justify-center py-2 md:py-0">
           <div className="flex items-center gap-1 text-slate-300">
             <div className="border-t-2 border-dashed border-slate-300 w-16 md:w-24" />
-            <ArrowRight className="w-4 h-4 text-slate-400 -ml-2" />
+            <img src="/arrow-right.png" alt="Arrow Right" className="h-full w-full text-slate-400 -ml-2" />
           </div>
         </div>
 
         {/* Right Card: Dynamic Platform Grid (With Gradient Border) */}
         <div
           ref={rightCol}
-          className="w-full md:w-105 h-55 rounded-xl bg-linear-to-r from-[#4A4CE6] via-[#34A1B4] to-[#4BE191] p-[1.5px] shadow-xs"
+          className="w-full md:w-8xl h-40 md:h-55 rounded-xl bg-global p-[1.5px] shadow-xs"
         >
           <div className="w-full h-full bg-white rounded-[10px] p-5 flex items-center justify-center">
             <div className="grid grid-cols-2 gap-3.5 w-full">
               {/* CMS Block */}
-              <div className="h-16 rounded-lg border border-slate-200 bg-white flex items-center justify-center text-xs font-semibold text-slate-700 shadow-2xs">
+              <div className="md:h-16 h-12 rounded-lg border border-slate-200 bg-white flex items-center justify-center text-xs font-semibold text-slate-700 shadow-2xs">
                 {t("rightCard.cms")}
               </div>
 
               {/* User Auth Block */}
-              <div className="h-16 rounded-lg border border-slate-200 bg-white flex items-center justify-center text-xs font-semibold text-slate-700 shadow-2xs">
+              <div className="md:h-16 h-12 rounded-lg border border-slate-200 bg-white flex items-center justify-center text-xs font-semibold text-slate-700 shadow-2xs">
                 {t("rightCard.userAuth")}
               </div>
 
               {/* Integrations Block */}
-              <div className="h-16 rounded-lg border border-slate-200 bg-white flex items-center justify-center text-xs font-semibold text-slate-700 shadow-2xs">
+              <div className="md:h-16 h-12 rounded-lg border border-slate-200 bg-white flex items-center justify-center text-xs font-semibold text-slate-700 shadow-2xs">
                 {t("rightCard.integrations")}
               </div>
 
               {/* Highlighted Platform Block */}
-              <div className="h-16 rounded-lg bg-[#0D52D6] text-white flex items-center justify-center text-xs font-semibold shadow-md">
+              <div className="md:h-16 h-12 rounded-lg bg-[#0D52D6] text-white flex items-center justify-center text-xs font-semibold shadow-md">
                 {t("rightCard.platform")}
               </div>
             </div>

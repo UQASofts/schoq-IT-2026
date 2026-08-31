@@ -16,7 +16,7 @@ export default async function Home() {
       <Main />
       <Launch />
       <OneTeam />
-      <Ideas />
+      {/* <Ideas /> */}
       <IdeasBrought/>
     </NextIntlClientProvider>
   );

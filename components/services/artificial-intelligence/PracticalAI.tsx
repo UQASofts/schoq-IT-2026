@@ -140,13 +140,13 @@ export default function PracticalAI() {
         <div className="max-w-3xl mx-auto text-center space-y-3">
           <h2
             ref={textHeaderRef}
-            className="text-3xl sm:text-4xl md:text-5xl font-black tracking-tight leading-[1.08] text-slate-900 uppercase"
+            className="uppercase text-heading text-h2 sm:text-h2-sm md:text-h2-md lg:text-h2-lg xl:text-h2-xl 2xl:text-h2-2xl"
           >
             {t("title")}
           </h2>
           <p
             ref={textSubref}
-            className="text-slate-600 text-sm sm:text-base md:text-lg max-w-2xl mx-auto font-normal"
+            className="mx-auto max-w-2xl text-neutral-500 text-p sm:text-p-sm md:text-p-md lg:text-p-lg xl:text-p-xl 2xl:text-p-2xl"
           >
             {t("subtitle")}
           </p>

@@ -136,20 +136,20 @@ export default function ImmersiveHeroSection() {
   return (
     <main
       ref={containerRef}
-      className="min-h-screen bg-white text-slate-900 flex flex-col items-center px-4 sm:px-6 lg:px-8 justify-start pt-16 pb-16 md:pt-20 md:pb-24 font-sans selection:bg-purple-100 overflow-hidden"
+      className="flex min-h-screen flex-col items-center justify-center overflow-hidden bg-white px-[4%] pt-[120px] pb-16 font-sans text-slate-900 selection:bg-purple-100 lg:px-[8%]"
     >
       {/* SECTION 1: HEADER & HERO TEXT */}
-      <div className="max-w-4xl mx-auto text-center space-y-6 mb-12 md:mb-16">
-        <div ref={textHeaderRef} className="space-y-4">
-          <h3 className="text-xs sm:text-sm font-bold uppercase tracking-[0.25em] text-slate-800">
+      <div className="mx-auto w-full max-w-6xl space-y-3 text-center md:space-y-4 lg:space-y-5 xl:max-w-7xl">
+        <div ref={textHeaderRef} className="space-y-3">
+          <h3 className="Conversation mb-4 text-xs font-semibold uppercase tracking-[0.25em] text-neutral-500">
             {t("header.subtitle")}
           </h3>
 
-          <h1 className="text-3xl sm:text-5xl md:text-6xl lg:text-7xl font-black tracking-tight leading-[1.05] text-slate-900 uppercase max-w-5xl mx-auto">
+          <h1 className="mx-auto uppercase text-heading text-h1 sm:text-h1-sm md:text-h1-md lg:text-h1-lg xl:text-h1-xl 2xl:text-h1-2xl">
             {t("header.title")}
           </h1>
 
-          <p className="text-slate-600 text-sm sm:text-base md:text-lg max-w-2xl mx-auto leading-relaxed font-normal">
+          <p className="mx-auto max-w-2xl text-neutral-500 text-p sm:text-p-sm md:text-p-md lg:text-p-lg xl:text-p-xl 2xl:text-p-2xl">
             {t("header.description")}
           </p>
         </div>
@@ -157,8 +157,8 @@ export default function ImmersiveHeroSection() {
         {/* CTA Button Wrapper */}
         <div ref={ctaButtonRef} className="pt-2">
           <Link
-            href="#"
-            className="inline-flex items-center justify-center px-8 py-3.5 text-sm sm:text-base font-semibold text-white rounded-lg bg-gradient-to-r from-[#635BFF] via-[#3B82F6] to-[#10B981] shadow-md hover:shadow-lg hover:opacity-95 transform hover:-translate-y-0.5 transition-all duration-200"
+            href="/contact"
+            className="inline-block cursor-pointer bg-global px-7 py-3 text-sm font-semibold text-white shadow-md transition-all duration-300 hover:scale-105 hover:shadow-lg sm:text-base rounded-global sm:rounded-global-sm md:rounded-global-md lg:rounded-global-lg xl:rounded-global-xl 2xl:rounded-global-2xl"
           >
             {t("header.cta")}
           </Link>
@@ -168,7 +168,7 @@ export default function ImmersiveHeroSection() {
       {/* SECTION 2: PROCESS & MAIN SHOWCASE CONTAINER */}
       <div
         ref={showcaseContainerRef}
-        className="w-full max-w-5xl mx-auto flex flex-col lg:grid lg:grid-cols-12 gap-6 items-stretch justify-center"
+        className="mx-auto mt-8 flex w-full max-w-7xl flex-col items-stretch justify-center gap-6 lg:mt-20 lg:grid lg:grid-cols-12 md:mt-16 xl:mt-24 2xl:mt-28"
       >
         {/* Right Area: Main Interactive 3D Showcase Image */}
         <div
@@ -195,7 +195,7 @@ export default function ImmersiveHeroSection() {
               ref={(el) => {
                 if (el) sidebarItemsRef.current[index] = el;
               }}
-              className="w-full flex flex-col items-center"
+              className=""
             >
               <div className="w-full relative overflow-hidden rounded-xl bg-slate-900/5 shadow-sm border border-slate-100">
                 <Image
@@ -209,11 +209,7 @@ export default function ImmersiveHeroSection() {
               </div>
 
               {/* Connecting indicator between cards (Desktop only) */}
-              {step.showConnector && (
-                <div className="hidden lg:flex py-1 justify-center items-center">
-                  <span className="text-slate-300 text-xs font-light">↓</span>
-                </div>
-              )}
+             
             </div>
           ))}
         </div>

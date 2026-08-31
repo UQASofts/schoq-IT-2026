@@ -79,17 +79,17 @@ export default function OnePlatform() {
   return (
     <section
       ref={mainContainer}
-      className="w-full min-screen pt-16 sm:pt-20 md:pt-28 pb-0 px-4 sm:px-6 lg:px-8 bg-linear-to-br from-[#f0f9ff] via-[#eef2ff] to-[#ecfdf5] flex flex-col justify-between font-sans overflow-hidden"
+      className="w-full min-screen pt-18 md:pt-24 lg:pt-28 pb-0 px-[4%] lg:px-[8%] bg-linear-to-br from-[#f0f9ff] via-[#eef2ff] to-[#ecfdf5] flex flex-col justify-between font-sans overflow-hidden"
     >
       {/* Section Header */}
       <div
         ref={textHeaderRef}
         className="max-w-4xl w-full mx-auto text-center space-y-3 pt-4"
       >
-        <h2 className="text-3xl sm:text-4xl md:text-5xl font-black text-slate-900 tracking-tight uppercase">
+        <h2 className="uppercase text-heading text-h2 sm:text-h2-sm md:text-h2-md lg:text-h2-lg xl:text-h2-xl 2xl:text-h2-2xl">
           {t("title")}
         </h2>
-        <p className="text-slate-600 text-base sm:text-lg font-normal">
+        <p className="text-neutral-500 text-p sm:text-p-sm md:text-p-md lg:text-p-lg xl:text-p-xl 2xl:text-p-2xl">
           {t("subtitle")}
         </p>
       </div>

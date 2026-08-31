@@ -46,7 +46,7 @@ export default function ProductDemonstration() {
       >
         {/* Section Header */}
         <div className=" text-center space-y-2">
-          <h2 className="text-3xl sm:text-4xl md:text-5xl font-black text-slate-900 tracking-tight uppercase">
+          <h2 className="uppercase text-heading text-h2 sm:text-h2-sm md:text-h2-md lg:text-h2-lg xl:text-h2-xl 2xl:text-h2-2xl">
             {t("title")}
           </h2>
         </div>

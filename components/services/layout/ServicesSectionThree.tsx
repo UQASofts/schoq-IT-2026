@@ -86,15 +86,15 @@ export default function ServicesSectionThree({
   return (
     <section
       ref={sectionRef}
-      className="w-full bg-white py-16 md:py-24 px-4 sm:px-6 lg:px-8 flex flex-col items-center justify-center font-sans overflow-hidden"
+      className="flex w-full flex-col items-start justify-center overflow-hidden bg-white py-global font-sans sm:py-global-sm md:py-global-md lg:py-global-lg xl:py-global-xl 2xl:py-global-2xl"
     >
-      <div className="max-w-5xl w-full mx-auto space-y-10 md:space-y-12">
+      <div className="w-full px-[4%] lg:px-[8%] space-y-10 md:space-y-12">
         {/* Header Section */}
         <div ref={headingRef} className="Main-Heading space-y-3 text-left">
-          <h3 className="text-xs sm:text-sm font-semibold uppercase tracking-[0.25em] text-slate-800">
+          <h3 className="Conversation text-xs font-semibold tracking-[0.25em] uppercase text-neutral-500 mb-4">
             {subTitle}
           </h3>
-          <h2 className="text-3xl sm:text-4xl md:text-5xl font-black text-slate-900 tracking-tight uppercase leading-tight">
+          <h2 className="uppercase text-heading text-h2 sm:text-h2-sm md:text-h2-md lg:text-h2-lg xl:text-h2-xl 2xl:text-h2-2xl">
             {mainTitle}
           </h2>
         </div>
@@ -109,10 +109,10 @@ export default function ServicesSectionThree({
             >
               {/* Inner card content */}
               <div className="w-full bg-white rounded-[14px] p-6 sm:p-8 md:p-10 flex flex-col justify-center space-y-2.5">
-                <h3 className="text-xl sm:text-2xl font-bold text-slate-900 tracking-tight">
+                <h3 className="text-heading text-h3 sm:text-h3-sm md:text-h3-md lg:text-h3-lg xl:text-h3-xl 2xl:text-h3-2xl">
                   {card.title}
                 </h3>
-                <p className="text-slate-600 text-sm sm:text-base leading-relaxed font-normal">
+                <p className="text-neutral-500 text-p sm:text-p-sm md:text-p-md lg:text-p-lg xl:text-p-xl 2xl:text-p-2xl">
                   {card.desc}
                 </p>
               </div>

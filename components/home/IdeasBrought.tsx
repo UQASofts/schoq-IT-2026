@@ -7,8 +7,6 @@ import { useGSAP } from "@gsap/react";
 import { Plus_Jakarta_Sans } from "next/font/google";
 import Image from "next/image";
 import {
-    ChevronLeft,
-    ChevronRight,
     ArrowUpRight,
 } from "lucide-react";
 import {
@@ -63,11 +61,14 @@ export default function IdeasBrought() {
     const [dragOffset, setDragOffset] = useState(0);
     const [isDragging, setIsDragging] = useState(false);
     const [isInView, setIsInView] = useState(false);
+    const [previewId, setPreviewId] = useState<string | null>(null);
+    const [isSmallScreen, setIsSmallScreen] = useState(false);
 
     const sectionRef = useRef<HTMLElement>(null);
     const headingRef = useRef<HTMLDivElement>(null);
     const cardsRef = useRef<HTMLDivElement>(null);
     const controlsRef = useRef<HTMLDivElement>(null);
+    const cardItemRefs = useRef<(HTMLElement | null)[]>([]);
 
     const dragStartX = useRef(0);
     const dragOffsetRef = useRef(0);
@@ -98,6 +99,14 @@ export default function IdeasBrought() {
         return () => observer.disconnect();
     }, []);
 
+    useEffect(() => {
+        const media = window.matchMedia("(max-width: 767px)");
+        const update = () => setIsSmallScreen(media.matches);
+        update();
+        media.addEventListener("change", update);
+        return () => media.removeEventListener("change", update);
+    }, []);
+
     /*
     |--------------------------------------------------------------------------
     | NAVIGATION
@@ -114,6 +123,7 @@ export default function IdeasBrought() {
     const next = useCallback(() => {
         setActive((prev) => (prev + 1) % cases.length);
         setDragOffset(0);
+        setPreviewId(null);
     }, []);
 
     const prev = useCallback(() => {
@@ -123,6 +133,7 @@ export default function IdeasBrought() {
                 cases.length
         );
         setDragOffset(0);
+        setPreviewId(null);
     }, []);
 
     /*
@@ -132,19 +143,16 @@ export default function IdeasBrought() {
     */
 
     useEffect(() => {
-        if (!isInView || paused || isDragging) {
+        if (!isInView || paused || isDragging || previewId) {
             return;
         }
 
         const timer = setInterval(() => {
-            setActive(
-                (prevIndex) =>
-                    (prevIndex + 1) % cases.length
-            );
+            next();
         }, 5500);
 
         return () => clearInterval(timer);
-    }, [isInView, paused, isDragging]);
+    }, [isInView, paused, isDragging, previewId, next]);
 
     /*
     |--------------------------------------------------------------------------
@@ -152,26 +160,30 @@ export default function IdeasBrought() {
     |--------------------------------------------------------------------------
     */
 
+    const resetDragTransform = useCallback(() => {
+        cardItemRefs.current.forEach((el) => {
+            if (!el) return;
+            gsap.set(el, { x: 0, yPercent: -50 });
+        });
+    }, []);
+
     const finishDrag = useCallback(() => {
         const offset = dragOffsetRef.current;
 
         dragOffsetRef.current = 0;
         setIsDragging(false);
+        setDragOffset(0);
+        resetDragTransform();
 
         if (offset < -70) {
-            setDragOffset(0);
             next();
             return;
         }
 
         if (offset > 70) {
-            setDragOffset(0);
             prev();
-            return;
         }
-
-        setDragOffset(0);
-    }, [next, prev]);
+    }, [next, prev, resetDragTransform]);
 
     const handlePointerDown = (
         event: React.PointerEvent<HTMLDivElement>
@@ -252,14 +264,12 @@ export default function IdeasBrought() {
     const getCardStyle = (
         position: number
     ): React.CSSProperties => {
-        // ACTIVE CARD
         if (position === 0) {
             return {
-                width: "60%",
-                height: "500px",
-                right: "5%",
+                width: isSmallScreen ? "75%" : "58%",
+                height: "92%",
+                left: isSmallScreen ? "25%" : "42%",
                 top: "50%",
-                transform: `translateY(-50%) translateX(${dragOffset}px)`,
                 opacity: 1,
                 zIndex: 30,
                 background: "#ffffff",
@@ -269,15 +279,13 @@ export default function IdeasBrought() {
             };
         }
 
-        // SECOND CARD
         if (position === 1) {
             return {
-              width: "52%",
-              height: "450px",
-              right: "30%",
+              width: isSmallScreen ? "65%" : "50%",
+              height: "82%",
+              left: isSmallScreen ? "10%" : "18%",
               top: "50%",
-              transform: "translateY(-50%)",
-              opacity: 0.92,
+              opacity: 1,
               zIndex: 20,
               background: "white",
               border: "1px solid #E8E8E8",
@@ -286,14 +294,12 @@ export default function IdeasBrought() {
             };
         }
 
-        // THIRD CARD
         return {
-          width: "44%",
-          height: "400px",
-          left: "5%",
+          width: isSmallScreen ? "58%" : "46%",
+          height: "72%",
+          left: "0%",
           top: "50%",
-          transform: "translateY(-50%)",
-          opacity: 0.78,
+          opacity: 1,
           zIndex: 10,
           background: "white",
           border: "1px solid #E8E8E8",
@@ -304,159 +310,119 @@ export default function IdeasBrought() {
 
     /*
     |--------------------------------------------------------------------------
-    | GSAP SCROLL ANIMATIONS
+    | HEADER ANIMATION
     |--------------------------------------------------------------------------
     */
 
     useGSAP(
         () => {
-            if (!sectionRef.current) return;
+            const headerTimeline = gsap.timeline({
+                scrollTrigger: {
+                    trigger: sectionRef.current,
+                    start: "top 60%",
+                    end: "bottom 60%",
+                    toggleActions: "play reverse play reverse",
+                },
+            });
 
-            const ctx = gsap.context(() => {
-                if (headingRef.current) {
-                    gsap.from(
-                        headingRef.current,
-                        {
-                            y: 40,
-                            opacity: 0,
-                            duration: 0.85,
-                            ease: "power3.out",
-                            scrollTrigger: {
-                                trigger:
-                                    headingRef.current,
-                                start: "top 80%",
-                                once: true,
-                            },
-                        }
-                    );
-                }
-
-                if (cardsRef.current) {
-                    gsap.from(
-                        cardsRef.current,
-                        {
-                            y: 40,
-                            opacity: 0,
-                            duration: 0.85,
-                            delay: 0.15,
-                            ease: "power3.out",
-                            scrollTrigger: {
-                                trigger:
-                                    cardsRef.current,
-                                start: "top 80%",
-                                once: true,
-                            },
-                        }
-                    );
-                }
-
-                if (controlsRef.current) {
-                    gsap.from(
-                        controlsRef.current,
-                        {
-                            y: 40,
-                            opacity: 0,
-                            duration: 0.75,
-                            delay: 0.2,
-                            ease: "power3.out",
-                            scrollTrigger: {
-                                trigger:
-                                    controlsRef.current,
-                                start: "top 85%",
-                                once: true,
-                            },
-                        }
-                    );
-                }
-            }, sectionRef);
-
-            return () => ctx.revert();
+            headerTimeline.from(".header-two", {
+                y: "100%",
+                duration: 1.1,
+                ease: "power4.out",
+            });
         },
-        {
-            scope: sectionRef,
-        }
+        { scope: sectionRef },
     );
 
-    /*
-    |--------------------------------------------------------------------------
-    | CARD TRANSITION
-    |--------------------------------------------------------------------------
-    */
+
+    useGSAP(
+        () => {
+            const entranceConfigs = [
+                { x: 250, y: 0, rotation: 8 },
+                { x: 0, y: 180, rotation: -5 },
+                { x: 0, y: 180, rotation: -5 },
+            ];
+
+            cardItemRefs.current.forEach((el) => {
+                if (!el) return;
+                gsap.set(el, { yPercent: -50 });
+            });
+
+            const cardsTl = gsap.timeline({
+                scrollTrigger: {
+                    trigger: ".start-btn",
+                    start: "top 85%",
+                    toggleActions: "play none play reverse",
+                },
+                defaults: {
+                    duration: 0.9,
+                    ease: "power3.out",
+                },
+            });
+
+            entranceConfigs.forEach((config, index) => {
+                const el = cardItemRefs.current[index];
+                if (!el) return;
+
+                gsap.set(el, { yPercent: -50 });
+
+                cardsTl.fromTo(
+                    el,
+                    {
+                        x: config.x,
+                        y: config.y,
+                        yPercent: -50,
+                        opacity: 0,
+                        rotation: config.rotation,
+                    },
+                    {
+                        x: 0,
+                        y: 0,
+                        yPercent: -50,
+                        rotation: 0,
+                        opacity: 1,
+                        duration: 0.9,
+                        ease: "power3.out",
+                    },
+                    index === 0 ? 0 : "-=0.7",
+                );
+            });
+        },
+        { scope: sectionRef, dependencies: [] },
+    );
 
     useEffect(() => {
-        if (!cardsRef.current) return;
-
-        const cards =
-            cardsRef.current.querySelectorAll<HTMLElement>(
-                "[data-case-card]"
-            );
-
-        if (!cards.length) return;
-
-        gsap.fromTo(
-            cards,
-            {
-                opacity: 0.5,
-            },
-            {
-                opacity: 1,
-                duration: 0.35,
-                stagger: 0.03,
-                ease: "power2.out",
-            }
-        );
-    }, [active]);
-
-    /*
-    |--------------------------------------------------------------------------
-    | RENDER
-    |--------------------------------------------------------------------------
-    */
+        cardItemRefs.current.forEach((el, index) => {
+            if (!el) return;
+            const isActiveCard = getPosition(index) === 0;
+            gsap.set(el, {
+                x: isDragging && isActiveCard ? dragOffset : 0,
+                yPercent: -50,
+            });
+        });
+    }, [dragOffset, isDragging, active]);
 
     return (
       <section
         ref={sectionRef}
         id="our-work"
-        className="relative w-full overflow-x-clip bg-cover bg-center bg-no-repeat py-8 md:py-16"
-        style={{
-          backgroundImage: "url('/homePagePic/ServicesBanner.png')",
-        }}
+        className="relative w-full overflow-x-clip bg-white py-8 md:py-16"
       >
-        {/* TOP GRADIENT */}
+        <div className="pointer-events-none absolute inset-0 bg-[radial-gradient(ellipse_at_center_top,#ffffff_0%,#ffffff_38%,#eef3ff_72%,#eafaf8_100%)]" />
+        <div className="pointer-events-none absolute -top-10 left-[8%] h-64 w-64 rounded-full bg-[#4A4CE6]/18 blur-3xl" />
+        <div className="pointer-events-none absolute top-[18%] right-[12%] h-72 w-72 rounded-full bg-[#575EE3]/12 blur-3xl" />
+        <div className="pointer-events-none absolute bottom-0 right-[18%] h-72 w-80 rounded-full bg-[#4BE191]/16 blur-3xl" />
 
-        <div className="pointer-events-none absolute inset-x-0 top-0 h-16 bg-gradient-to-b from-white to-transparent" />
+        <div className="relative mx-auto flex w-full  flex-col items-center gap-2 px-[4%] sm:gap-3 md:px-[8.61%]">
 
-        <div className="relative mx-auto flex w-full max-w-[1400px] flex-col items-center gap-2 sm:gap-3">
-          {/* ======================================================
-                    HEADING
-                ====================================================== */}
-
-          <div className="relative z-10 w-full px-4">
+          <div className="relative z-10 w-full">
             <div className="header-one mb-2">
-              <h2
-                className="
-                              text-center
-                              font-bold
-                              tracking-tight
-                              text-gray-900
-                              leading-[1.02]
-                
-                              text-[40px]
-                              sm:text-[46px]
-                              md:text-[54px]
-                              lg:text-[64px]
-                              xl:text-[68px]
-                            "
-              >
+              <h2 className="text-center uppercase text-heading text-h2 sm:text-h2-sm md:text-h2-md lg:text-h2-lg xl:text-h2-xl 2xl:text-h2-2xl">
                 {t("titleLine1")}
                 <br />
                 {t("titleLine2")}
               </h2>
             </div>
-
-            {/* =================================================
-                            DESCRIPTION + BUTTON
-                        ================================================= */}
 
             <div
               className="
@@ -466,6 +432,8 @@ export default function IdeasBrought() {
                             grid-cols-1
                             place-items-center
                             gap-4
+                            overflow-hidden
+                            py-1
                 
                             sm:mb-10
                             sm:gap-5
@@ -473,57 +441,20 @@ export default function IdeasBrought() {
                             md:mb-12
                           "
             >
-              <p
-                className="
-                              w-[92%]
-                              max-w-[620px]
-                              text-center
-                              text-gray-600
-                              leading-relaxed
-                
-                              text-[14px]
-                              sm:text-[15px]
-                              md:text-[16px]
-                              lg:text-[17px]
-                            "
-              >
+              <p className="w-[92%] max-w-[620px] text-center text-neutral-500 text-p sm:text-p-sm md:text-p-md lg:text-p-lg xl:text-p-xl 2xl:text-p-2xl">
                 {t("description")}
               </p>
 
               <div className="flex items-center justify-center">
                 <Link
                   href="#"
-                  className="
-                                start-btn
-                                inline-block
-                                rounded-[4px]
-                                bg-gradient-to-r
-                                from-[#4A4CE6]
-                                via-[#34A1B4]
-                                to-[#4BE191]
-                                px-5
-                                py-2.5
-                                text-sm
-                                font-medium
-                                text-white
-                                transition-all
-                                duration-300
-                                hover:scale-[1.02]
-                                hover:shadow-xl
-                
-                                sm:px-6
-                                sm:py-3
-                              "
+                  className="start-btn inline-block bg-global px-5 py-2.5 text-sm font-medium text-white transition-all duration-300 hover:scale-[1.02] hover:shadow-xl rounded-global sm:rounded-global-sm sm:px-6 sm:py-3 md:rounded-global-md lg:rounded-global-lg xl:rounded-global-xl 2xl:rounded-global-2xl"
                 >
                   {t("buttonStartProject")}
                 </Link>
               </div>
             </div>
           </div>
-
-          {/* ======================================================
-                    CAROUSEL
-                ====================================================== */}
 
           <div
             ref={cardsRef}
@@ -532,15 +463,11 @@ export default function IdeasBrought() {
             onMouseLeave={() => setPaused(false)}
           >
             {/* TOP GLOW */}
-            <div className="pointer-events-none absolute left-0 top-0 z-0 h-[55%] w-full bg-gradient-to-r from-[#4A4CE6]/10 via-white to-[#4A4CE6]/10 blur-xl" />
+            <div className="pointer-events-none absolute left-0 top-0 z-0 h-[55%] w-full bg-gradient-to-r from-[#4A4CE6]/15 via-white to-[#4A4CE6]/15 blur-3xl" />
 
-            {/* BOTTOM GLOW */}
+            <div className="pointer-events-none absolute bottom-0 left-0 z-0 h-[55%] w-full bg-gradient-to-r from-[#4BE191]/15 via-white to-[#4BE191]/15 blur-3xl" />
             <div
-              className=" pointer-events-none absolute bottom-0 left-0 z-0 h-[55%] w-full bg-gradient-to-r from-[#4BE191]/10 via-white to-[#4BE191]/10 blur-xl
-          "
-            />
-            <div
-              className={`relative mx-auto h-[560px] w-full max-w-[1400px] touch-pan-y select-none [overflow-anchor:none] sm:h-[500px] md:h-[500px] xl:h-[560px] ${
+              className={`relative mx-auto h-[420px] w-full touch-pan-y select-none [overflow-anchor:none] sm:h-[460px] md:h-[500px] xl:h-[560px] ${
                 isDragging ? "cursor-grabbing" : "cursor-grab"
               }`}
               onPointerDown={handlePointerDown}
@@ -558,36 +485,44 @@ export default function IdeasBrought() {
                 return (
                   <article
                     key={item.id}
+                    ref={(el) => {
+                      cardItemRefs.current[index] = el;
+                    }}
                     data-case-card
                     onClick={() => {
-                      if (didDrag.current || isActive) {
+                      if (didDrag.current) {
                         return;
                       }
 
-                      goTo(index);
+                      setPreviewId((current) =>
+                        current === item.id ? null : item.id,
+                      );
+
+                      if (!isActive) {
+                        goTo(index);
+                      }
                     }}
-                    className="absolute overflow-hidden rounded-lg"
+                    className="group absolute overflow-hidden rounded-global sm:rounded-global-sm md:rounded-global-md lg:rounded-global-lg xl:rounded-global-xl 2xl:rounded-global-2xl"
                     style={{
                       ...cardStyle,
 
                       transition: isDragging
                         ? "none"
-                        : "right 0.5s ease, width 0.5s ease, height 0.5s ease, transform 0.5s ease, opacity 0.5s ease",
+                        : "left 0.7s cubic-bezier(0.215, 0.61, 0.355, 1), width 0.7s cubic-bezier(0.215, 0.61, 0.355, 1), height 0.7s cubic-bezier(0.215, 0.61, 0.355, 1), opacity 0.7s cubic-bezier(0.215, 0.61, 0.355, 1)",
                     }}
                   >
-                    <div className="flex h-full w-full flex-col md:flex-row">
-                      {/* ==================================================
-                                                CONTENT
-                                            ================================================== */}
+                    <div className={`flex h-full w-full flex-col ${isActive ? "lg:flex-row" : ""}`}>
 
                       <div
-                        className={`flex h-[60%] w-full shrink-0 flex-col justify-between gap-1 overflow-hidden p-3 sm:h-[50%] md:h-full md:w-[40%] md:gap-3 md:p-4 xl:p-6 ${
-                          !isActive
-                            ? "pointer-events-none bg-gradient-to-r from-[#575EE3]/10 to-[#56D59A]/10 "
-                            : "bg-white"
+                        className={`flex h-full w-full shrink-0 flex-col justify-between gap-1 p-3 transition-opacity duration-300 md:gap-3 md:p-4 xl:p-6 md:max-lg:group-hover:opacity-0 ${
+                          previewId === item.id ? "max-md:opacity-0" : ""
+                        } ${
+                          isActive
+                            ? "bg-white lg:w-[42%] lg:overflow-hidden"
+                            : "pointer-events-none bg-gradient-to-r from-[#575EE3]/10 to-[#56D59A]/10"
                         }`}
                       >
-                        <div className="flex h-full flex-col gap-2 overflow-hidden md:gap-3 lg:gap-5">
+                        <div className="flex flex-col gap-2 md:gap-3 lg:h-full lg:gap-5 lg:overflow-hidden">
                           <span className="inline-flex w-fit rounded-full border border-[#575EE3]/25 bg-gradient-to-r from-[#575EE3]/10 to-[#56D59A]/10 px-3 py-1 text-[10px] font-semibold uppercase tracking-wide text-[#575EE3]">
                             {item.category}
                           </span>
@@ -598,7 +533,7 @@ export default function IdeasBrought() {
                             {item.title}
                           </h3>
 
-                          <p className="text-xs text-[#434655] lg:text-sm xl:text-base">
+                          <p className="shrink-0 text-[#434655] text-p sm:text-p-sm md:text-p-md lg:shrink lg:text-p-lg xl:text-p-xl 2xl:text-p-2xl">
                             {item.description}
                           </p>
                         </div>
@@ -621,13 +556,32 @@ export default function IdeasBrought() {
                                                 IMAGE
                                             ================================================== */}
 
-                      <div className="relative h-[40%] w-full bg-[#F7F8FC]/40 sm:h-[50%] md:h-full md:w-[60%]">
+                      <div
+                        className={`pointer-events-none absolute inset-0 z-10 opacity-0 transition-opacity duration-300 md:group-hover:opacity-100 lg:hidden ${
+                          previewId === item.id ? "max-md:opacity-100" : ""
+                        }`}
+                      >
                         <Image
                           src={item.image}
                           alt={`${item.title} case study`}
                           fill
                           draggable={false}
-                          sizes="(max-width: 768px) 100vw, 60vw"
+                          sizes="(max-width: 1023px) 100vw, 0px"
+                          className="object-cover object-center"
+                        />
+                      </div>
+
+                      <div
+                        className={`relative hidden h-full w-[60%] bg-[#F7F8FC]/40 ${
+                          isActive ? "lg:block" : ""
+                        }`}
+                      >
+                        <Image
+                          src={item.image}
+                          alt={`${item.title} case study`}
+                          fill
+                          draggable={false}
+                          sizes="60vw"
                           className="object-cover object-center"
                         />
                       </div>
@@ -636,48 +590,26 @@ export default function IdeasBrought() {
                 );
               })}
             </div>
-
-            {/* ======================================================
-                        CONTROLS
-                    ====================================================== */}
-
             <div
               ref={controlsRef}
-              className="flex items-center justify-center gap-4"
+              className="relative z-[100] mt-3 flex justify-center gap-1.5 sm:mt-5 sm:gap-2"
             >
-              <button
-                type="button"
-                aria-label="Previous case"
-                onClick={prev}
-                className="flex h-11 w-11 items-center justify-center rounded-full border border-[#E5E7EB] bg-white text-[#0B1C30] shadow-sm transition hover:border-[#56D59A] hover:text-[#575EE3] z-10"
-              >
-                <ChevronLeft size={20} />
-              </button>
-
-              <div className="flex items-center gap-2">
-                {cases.map((item, index) => (
-                  <button
-                    key={item.id}
-                    type="button"
-                    aria-label={`Go to ${item.title}`}
-                    onClick={() => goTo(index)}
-                    className={`h-2.5 rounded-full transition-all ${
-                      index === active
-                        ? "w-8 bg-gradient-to-r from-[#575EE3] to-[#56D59A] z-10"
-                        : "w-2.5 bg-[#D1D5DB] hover:bg-[#B0B5BD] z-10"
-                    }`}
-                  />
-                ))}
-              </div>
-
-              <button
-                type="button"
-                aria-label="Next case"
-                onClick={next}
-                className="flex h-11 w-11 items-center justify-center rounded-full border border-[#E5E7EB] bg-white text-[#0B1C30] shadow-sm transition hover:border-[#575EE3] hover:text-[#56D59A] z-10"
-              >
-                <ChevronRight size={20} />
-              </button>
+              {cases.map((item, index) => (
+                <button
+                  key={item.id}
+                  type="button"
+                  aria-label={`Go to ${item.title}`}
+                  onClick={() => {
+                    setPreviewId(null);
+                    goTo(index);
+                  }}
+                  className={`h-[7px] w-[7px] rounded-full transition-all duration-300 ${
+                    index === active
+                      ? "bg-gray-500"
+                      : "bg-gray-300 hover:bg-gray-400"
+                  }`}
+                />
+              ))}
             </div>
           </div>
         </div>

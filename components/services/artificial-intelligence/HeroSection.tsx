@@ -111,22 +111,22 @@ export default function AIHeroSection() {
   return (
     <main
       ref={containerRef}
-      className="min-h-screen bg-white text-slate-900 flex flex-col items-center px-4 justify-start pt-24 pb-16 md:py-24 font-sans selection:bg-purple-100"
+      className="flex min-h-screen flex-col items-center justify-center bg-white px-[4%] pt-[120px] pb-16 font-sans text-slate-900 selection:bg-purple-100 lg:px-[8%]"
     >
       {/* Container-One: Text Header Section */}
-      <div className="max-w-4xl mx-auto text-center space-y-6">
-        <div ref={textHeaderRef} className="space-y-4">
-          <h3 className="text-xs sm:text-sm font-semibold uppercase tracking-[0.25em] text-slate-800">
+      <div className="mx-auto w-full max-w-6xl space-y-3 text-center md:space-y-4 lg:space-y-5 xl:max-w-7xl">
+        <div ref={textHeaderRef} className="space-y-3">
+          <h3 className="Conversation mb-4 text-xs font-semibold uppercase tracking-[0.25em] text-neutral-500">
             {t("category")}
           </h3>
 
-          <h1 className="text-3xl sm:text-5xl md:text-6xl font-black tracking-tight leading-[1.08] text-slate-900 uppercase max-w-4xl mx-auto">
+          <h1 className="mx-auto uppercase text-heading text-h1 sm:text-h1-sm md:text-h1-md lg:text-h1-lg xl:text-h1-xl 2xl:text-h1-2xl">
             {t("title1")}
             <br />
             {t("title2")}
           </h1>
 
-          <p className="text-slate-600 text-sm sm:text-base md:text-lg max-w-2xl mx-auto leading-relaxed font-normal">
+          <p className="mx-auto max-w-2xl text-neutral-500 text-p sm:text-p-sm md:text-p-md lg:text-p-lg xl:text-p-xl 2xl:text-p-2xl">
             {t("description")}
           </p>
         </div>
@@ -134,8 +134,8 @@ export default function AIHeroSection() {
         {/* CTA Button */}
         <div ref={containerOneButtonRef} className="pt-2">
           <Link
-            href="#"
-            className="inline-block px-7 py-3.5 text-sm sm:text-base font-medium text-white rounded-md bg-linear-to-r from-[#5063ed] via-[#3b82f6] to-[#10b981] shadow-sm hover:shadow-md hover:opacity-95 transition-all duration-200 cursor-pointer"
+            href="/contact"
+            className="inline-block cursor-pointer bg-global px-7 py-3 text-sm font-semibold text-white shadow-md transition-all duration-300 hover:scale-105 hover:shadow-lg sm:text-base rounded-global sm:rounded-global-sm md:rounded-global-md lg:rounded-global-lg xl:rounded-global-xl 2xl:rounded-global-2xl"
           >
             {t("cta")}
           </Link>
@@ -145,7 +145,7 @@ export default function AIHeroSection() {
       {/* Container-Two: Process Illustration Section */}
       <div
         ref={containerTwoRef}
-        className="w-full max-w-3xl mx-auto mt-10 sm:mt-12 md:mt-16 relative rounded-xl sm:rounded-2xl overflow-hidden  shadow-xl "
+        className="relative mx-auto mt-8 w-full max-w-3xl overflow-hidden rounded-xl shadow-xl sm:rounded-2xl md:mt-16 lg:mt-20"
       >
         <div className="relative w-full aspect-4/3 sm:aspect-16/10 md:aspect-21/9 min-h-80 flex items-center justify-center overflow-hidden">
           {/* Main Background Image */}

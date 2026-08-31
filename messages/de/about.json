@@ -22,9 +22,12 @@
             "heading": "EIN TECHNOLOGIEPARTNER, DER AUF KLARHEIT, ZUSAMMENARBEIT UND UMSETZUNG AUFBAUT.",
             "description": "Schoq wurde gegründet, um anspruchsvolle digitale Technologie zugänglicher, praktischer und nützlicher zu machen. Wir arbeiten mit Unternehmen, Gründern und Organisationen zusammen, um Ideen und komplexe Anforderungen in Produkte zu verwandeln, die gestartet, gewartet und skaliert werden können.",
             "team": {
-                "managingDirector": "GESCHÄFTSFÜHRER",
-                "ceo": "CHIEF EXECUTIVE OFFICER",
-                "director": "DIREKTOR"
+                "director": "DIREKTOR",
+                "coFounder": "MITGRÜNDERIN",
+                "directorName": "UBAID FAROOQ",
+                "coFounderName": "MARIE LOUISE SCHNEIDER",
+                "directorBio": "Er verbindet Unternehmertum, soziales Denken und Technologie, um anspruchsvolle digitale Produkte zugänglicher zu machen.",
+                "coFounderBio": "Ihre Forschungserfahrung hat Schoqs Überzeugung geprägt, dass starke Ideen nicht an Kosten oder Komplexität der Technologie scheitern sollten."
             }
         }
     }

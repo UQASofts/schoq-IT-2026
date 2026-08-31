@@ -22,9 +22,12 @@
             "heading": "A TECHNOLOGY PARTNER BUILT AROUND CLARITY, COLLABORATION AND EXECUTION.",
             "description": "Schoq was created to make sophisticated digital technology more accessible, practical and useful. We work with businesses, founders and organisations to turn ideas and complex requirements into products that can be launched, maintained and scaled.",
             "team": {
-                "managingDirector": "MANAGING DIRECTOR",
-                "ceo": "CHIEF EXECUTIVE OFFICER",
-                "director": "DIRECTOR"
+                "director": "DIRECTOR",
+                "coFounder": "CO-FOUNDER",
+                "directorName": "UBAID FAROOQ",
+                "coFounderName": "MARIE LOUISE SCHNEIDER",
+                "directorBio": "Bringing together entrepreneurship, social thinking and technology to make sophisticated digital products more accessible.",
+                "coFounderBio": "Her experience in research helped shape Schoq's belief that strong ideas should not be held back by the cost or complexity of technology."
             }
         }
     }

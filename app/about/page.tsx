@@ -12,7 +12,7 @@ export default async function AboutPage() {
 
   return (
     <NextIntlClientProvider messages={pick(messages, ["About"])}>
-      <main className="min-h-screen bg-background text-foreground flex flex-col pb-12 pt-20">
+      <main className="flex flex-col bg-white text-foreground">
         <Section1 />
         <Section2 />
         <Section3

@@ -13,7 +13,6 @@ const geist = Geist({
   subsets: ["latin"],
 });
 
-// Next-intl imports
 import LanguageSwitcher from "./LanguageSwitch";
 import { useTranslations } from "next-intl";
 
@@ -162,69 +161,67 @@ const Header: React.FC = () => {
     <>
       <header
         ref={headerRef}
-        className="absolute left-[5%] sm:left-[15%] xl:left-[20%] top-4 z-50 w-[90%] sm:w-[70%] xl:w-[60%] mx-auto /5 backdrop-blur-md border-white/20 shadow-lg transition-all rounded-lg"
+        className="fixed inset-x-0 top-[37px] z-50 flex justify-center px-4"
       >
-        <div className="bg-white w-full mx-auto rounded-lg py-1 md:py-2">
-          <div className="flex items-center justify-between gap-2">
-            <div ref={logoRef}>
-              <Link
-                href="/"
-                className={`${geist.className} pl-4 text-xl md:text-2xl xl:text-3xl font-extrabold tracking-tight bg-linear-to-r from-[#4A4CE6] via-[#34A1B4] to-[#4BE191] bg-clip-text text-transparent hover:scale-105 transition-transform inline-block`}
-              >
-                SCHOQ
-              </Link>
-            </div>
+        <div className="flex w-full max-w-[1000px] items-center justify-between  bg-white/40 px-6 py-4 shadow-[0_4px_24px_0_rgba(0,0,0,0.1)] backdrop-blur-md rounded-global-sm md:rounded-global-md lg:rounded-global-lg xl:rounded-global-xl 2xl:rounded-global-2xl">
+          <div ref={logoRef} className="shrink-0">
+            <Link
+              href="/"
+              className={`${geist.className} text-2xl leading-none font-extrabold tracking-tight`}
+            >
+              <span className="text-[#575EE3]">SCHO</span>
+              <span className="text-[#56D59A]">Q</span>
+            </Link>
+          </div>
+
+          <div className="flex items-center gap-5">
             <nav
               ref={navRef}
-              className="hidden lg:flex items-center space-x-1 text-sm 2xl:text-base font-medium"
+              className="hidden items-center gap-12 text-p-nav sm:text-p-nav-sm md:text-p-nav-md lg:flex lg:text-p-nav-lg xl:text-p-nav-xl 2xl:text-p-nav-2xl"
             >
               {NAV_LINKS.map((link) => {
+                const hasChildren = Boolean(
+                  link.children && link.children.length > 0,
+                );
                 const isActive =
                   (link.href !== "#" &&
                     (pathname === link.href ||
                       pathname.startsWith(`${link.href}/`))) ||
-                  (link.name === "Services" &&
-                    pathname.startsWith("/services"));
-
-                const hasChildren = link.children && link.children.length > 0;
+                  (hasChildren && pathname.startsWith("/services"));
 
                 return (
                   <div key={link.name} className="relative group">
                     <Link
                       href={link.href}
-                      className={`relative flex items-center p-2 gap-2 rounded-lg transition-all duration-200 ${
+                      className={`relative inline-flex items-center transition-colors duration-200 ${
                         isActive
-                        ? "text-[#3B494B] font-regular font-inter text-sm 2xl:text-base"
-                        : "text-[#43575a] hover:text-[#151a1b] hover:bg-gray-100/50"
+                          ? "text-[#1A1B21]"
+                          : "text-[#3B494B] hover:text-[#1A1B21]"
                       }`}
                     >
                       <span className="relative inline-block">
                         {link.name}
                         {isActive && (
                           <div className="absolute -bottom-1 left-0 right-0">
-                            <HeaderBorderStyle className="w-full h-1.5" />
+                            <HeaderBorderStyle className="h-1.5 w-full" />
                           </div>
                         )}
                       </span>
-                      {hasChildren && (
-                        <ChevronDown className="w-4 h-4 transition-transform duration-200 group-hover:rotate-180" />
-                      )}
                     </Link>
 
-                    {/* Desktop Hover Dropdown Menu */}
                     {hasChildren && (
-                      <div className="absolute top-full left-0 pt-2 w-56 invisible opacity-0 translate-y-1 group-hover:visible group-hover:opacity-100 group-hover:translate-y-0 transition-all duration-200 ease-out z-50">
-                        <div className="bg-white/95 backdrop-blur-md rounded-xl shadow-xl border border-gray-100 p-2 flex flex-col gap-1">
-                          {link.children.map((child) => {
+                      <div className="invisible absolute top-full left-0 z-50 w-56 pt-3 translate-y-1 opacity-0 transition-all duration-200 ease-out group-hover:visible group-hover:translate-y-0 group-hover:opacity-100">
+                        <div className="flex flex-col gap-1 rounded-global border border-gray-100 bg-white/95 p-2 shadow-[0_4px_24px_0_rgba(0,0,0,0.1)] backdrop-blur-md">
+                          {link.children?.map((child) => {
                             const isChildActive = pathname === child.href;
                             return (
                               <Link
                                 key={child.title}
                                 href={child.href}
-                                className={`px-3 py-2 rounded-lg text-sm font-medium transition-colors ${
+                                className={`rounded-lg px-3 py-2 transition-colors text-p-nav sm:text-p-nav-sm md:text-p-nav-md lg:text-p-nav-lg xl:text-p-nav-xl 2xl:text-p-nav-2xl ${
                                   isChildActive
-                                  ? "underline text-[#3B494B] font-regular font-inter text-sm xl:text-base"
-                                    : "text-gray-600 hover:text-gray-900 hover:bg-gray-50"
+                                    ? "text-[#1A1B21] underline"
+                                    : "text-[#3B494B] hover:bg-gray-50 hover:text-[#1A1B21]"
                                 }`}
                               >
                                 {child.title}
@@ -238,30 +235,34 @@ const Header: React.FC = () => {
                 );
               })}
             </nav>
-            <div className="flex items-center md:space-x-4">
-            <div className="text-gray-300 hidden lg:block h-6 w-[2px] bg-[#B9CACB]"/>
+
+            <div className="flex items-center gap-6">
+              <div
+                className="hidden h-6 w-px bg-[#B9CACB] lg:block"
+                aria-hidden="true"
+              />
               <div ref={languageRef}>
                 <LanguageSwitcher />
               </div>
 
               <div ref={ctaRef}>
                 <Link
-                  href="#"
-                  className="hidden lg:inline-block bg-linear-to-r from-[#4A4CE6] via-[#34A1B4] to-[#4BE191] text-white text-sm xl:text-base px-4 py-3 rounded-lg font-semibold hover:shadow-lg hover:scale-105 transition-all duration-300"
+                  href="/contact"
+                  className="hidden rounded-global bg-global px-4 py-2.5 text-sm font-medium text-white transition-shadow duration-300 hover:shadow-lg sm:rounded-global-sm md:rounded-global-md lg:inline-block lg:rounded-global-lg xl:rounded-global-xl 2xl:rounded-global-2xl"
                 >
-                  Start a Project
+                  {t("startProject")}
                 </Link>
               </div>
 
               <button
-                className="lg:hidden p-2 rounded-lg hover:bg-gray-100/80 transition-colors"
+                className="rounded-lg p-2 transition-colors hover:bg-white/50 lg:hidden"
                 onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
                 aria-label="Toggle Menu"
               >
                 {isMobileMenuOpen ? (
-                  <X className="w-6 h-6 text-gray-700" />
+                  <X className="h-6 w-6 text-[#1A1B21]" />
                 ) : (
-                  <Menu className="w-6 h-6 text-gray-700" />
+                  <Menu className="h-6 w-6 text-[#1A1B21]" />
                 )}
               </button>
             </div>
@@ -271,36 +272,39 @@ const Header: React.FC = () => {
 
       <div
         ref={overlayRef}
-        className="fixed inset-0 bg-black/50 backdrop-blur-sm z-40 lg:hidden"
+        className="fixed inset-0 z-40 bg-black/50 backdrop-blur-sm lg:hidden"
         style={{ opacity: 0, display: "none" }}
         onClick={() => setIsMobileMenuOpen(false)}
       />
 
       <div
         ref={mobileMenuRef}
-        className="fixed top-0 right-0 h-full w-full bg-white shadow-2xl z-50 lg:hidden flex flex-col"
+        className="fixed top-0 right-0 z-50 flex h-full w-full flex-col bg-white shadow-2xl lg:hidden"
         style={{ transform: "translateX(100%)", opacity: 0 }}
       >
-        <div className="flex items-center justify-between p-6 border-b border-gray-100">
+        <div className="flex items-center justify-between border-b border-gray-100 p-6">
           <Link
             href="/"
-            className="text-2xl font-extrabold bg-linear-to-r from-[#4A4CE6] via-[#34A1B4] to-[#4BE191] bg-clip-text text-transparent"
+            className={`${geist.className} text-2xl font-extrabold`}
             onClick={() => setIsMobileMenuOpen(false)}
           >
-            SCHOQ
+            <span className="text-[#575EE3]">SCHO</span>
+            <span className="text-[#56D59A]">Q</span>
           </Link>
           <button
             onClick={() => setIsMobileMenuOpen(false)}
-            className="p-2 rounded-lg hover:bg-gray-100 transition-colors"
+            className="rounded-lg p-2 transition-colors hover:bg-gray-100"
           >
-            <X className="w-6 h-6 text-gray-700" />
+            <X className="h-6 w-6 text-[#1A1B21]" />
           </button>
         </div>
 
-        <div className="flex-1 overflow-y-auto p-6 space-y-2">
+        <div className="flex-1 space-y-2 overflow-y-auto p-6">
           {NAV_LINKS.map((link) => {
             const isActive = pathname === link.href;
-            const hasChildren = link.children && link.children.length > 0;
+            const hasChildren = Boolean(
+              link.children && link.children.length > 0,
+            );
             const isExpanded = expandedMobileMenu === link.name;
 
             return (
@@ -308,10 +312,10 @@ const Header: React.FC = () => {
                 <div className="flex items-center justify-between">
                   <Link
                     href={link.href}
-                    className={`relative flex-1 px-4 py-3 text-lg font-medium rounded-lg transition-colors ${
+                    className={`relative flex-1 rounded-lg px-4 py-3 transition-colors text-p-nav sm:text-p-nav-sm md:text-p-nav-md lg:text-p-nav-lg xl:text-p-nav-xl 2xl:text-p-nav-2xl ${
                       isActive
-                        ? "text-gray-900 font-semibold bg-gray-50/80 after:absolute after:bottom-1 after:left-4 after:right-4 after:h-0.5 after:bg-linear-to-r after:from-[#4A4CE6] after:via-[#34A1B4] after:to-[#4BE191] after:rounded-full"
-                        : "text-gray-700 hover:bg-gray-50"
+                        ? "bg-gray-50/80 text-[#1A1B21]"
+                        : "text-[#3B494B] hover:bg-gray-50"
                     }`}
                     onClick={() => setIsMobileMenuOpen(false)}
                   >
@@ -324,7 +328,7 @@ const Header: React.FC = () => {
                       aria-label={`Toggle ${link.name} submenu`}
                     >
                       <ChevronDown
-                        className={`w-5 h-5 transition-transform duration-200 ${
+                        className={`h-5 w-5 transition-transform duration-200 ${
                           isExpanded ? "rotate-180" : ""
                         }`}
                       />
@@ -332,14 +336,13 @@ const Header: React.FC = () => {
                   )}
                 </div>
 
-                {/* Mobile Submenu */}
                 {hasChildren && isExpanded && (
-                  <div className="ml-4 pl-2 border-l-2 border-gray-100 space-y-1 mt-1">
-                    {link.children.map((child) => (
+                  <div className="mt-1 ml-4 space-y-1 border-l-2 border-gray-100 pl-2">
+                    {link.children?.map((child) => (
                       <Link
                         key={child.title}
                         href={child.href}
-                        className="block px-4 py-2 text-base text-gray-600 hover:text-gray-900 hover:bg-gray-50 rounded-md transition-colors"
+                        className="block rounded-md px-4 py-2 text-[#3B494B] transition-colors hover:bg-gray-50 hover:text-[#1A1B21] text-p-nav sm:text-p-nav-sm md:text-p-nav-md lg:text-p-nav-lg xl:text-p-nav-xl 2xl:text-p-nav-2xl"
                         onClick={() => setIsMobileMenuOpen(false)}
                       >
                         {child.title}
@@ -351,13 +354,13 @@ const Header: React.FC = () => {
             );
           })}
 
-          <div className="pt-6 border-t border-gray-100 mt-6 mobile-link">
+          <div className="mobile-link mt-6 border-t border-gray-100 pt-6">
             <Link
-              href="#"
-              className="block w-full text-center bg-linear-to-r from-[#4A4CE6] via-[#34A1B4] to-[#4BE191] text-white font-semibold py-3.5 rounded-lg hover:shadow-lg transition-all duration-300"
+              href="/contact"
+              className="block w-full rounded-global bg-global py-3.5 text-center font-semibold text-white transition-all duration-300 hover:shadow-lg sm:rounded-global-sm md:rounded-global-md lg:rounded-global-lg xl:rounded-global-xl 2xl:rounded-global-2xl"
               onClick={() => setIsMobileMenuOpen(false)}
             >
-              Start a Project
+              {t("startProject")}
             </Link>
           </div>
         </div>

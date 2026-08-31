@@ -57,7 +57,7 @@ export default async function AiServices() {
 
   return (
     <NextIntlClientProvider messages={pick(messages, ["AI", "Shared"])}>
-      <main className="min-h-screen bg-background text-foreground flex flex-col pb-12 pt-10">
+      <main className="min-h-screen bg-background text-foreground flex flex-col pt-10">
         <AIHeroSection />
         <ServicesSectionTwo
           descriptionData={opportunity}

@@ -1,6 +1,7 @@
 "use client";
 
 import { useRef } from "react";
+import Link from "next/link";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import { useTranslations } from "next-intl";
@@ -117,59 +118,61 @@ export default function ServicesHero() {
   return (
     <main
       ref={containerRef}
-      className="min-h-screen bg-white text-slate-900 flex flex-col items-center px-4 justify-start pt-24 pb-16 md:py-24 font-sans selection:bg-purple-100"
+      className="flex min-h-screen flex-col items-center justify-center bg-white px-[4%] pt-[120px] pb-16 font-sans text-slate-900 selection:bg-purple-100 lg:px-[8%]"
     >
       {/* Container-One: Text Header Section */}
-      <div className="max-w-4xl mx-auto text-center space-y-3">
+      <div className="mx-auto w-full max-w-6xl space-y-3 text-center md:space-y-4 lg:space-y-5 xl:max-w-7xl">
         {/* Animated Text Container */}
         <div ref={textHeaderRef} className="space-y-3">
-          <h3 className="text-xs sm:text-sm font-semibold uppercase tracking-[0.25em] text-slate-800">
+          <h3 className="Conversation mb-4 text-xs font-semibold uppercase tracking-[0.25em] text-neutral-500">
             {t("category")}
           </h3>
 
-          <h1 className="text-3xl sm:text-5xl md:text-5xl font-black tracking-tight leading-[1.08] text-slate-900 uppercase max-w-8xl mx-auto">
+          <h1 className="mx-auto uppercase text-heading text-h1 sm:text-h1-sm md:text-h1-md lg:text-h1-lg xl:text-h1-xl 2xl:text-h1-2xl">
             {t("title")}
           </h1>
 
-          <p className="text-slate-600 text-sm sm:text-base md:text-lg max-w-2xl mx-auto leading-relaxed font-normal">
+          <p className="mx-auto max-w-2xl text-neutral-500 text-p sm:text-p-sm md:text-p-md lg:text-p-lg xl:text-p-xl 2xl:text-p-2xl">
             {t("description")}
           </p>
         </div>
 
-        {/* CTA Button (Smooth slide-in without bounce) */}
+        {/* CTA Button */}
         <div ref={containerOneButtonRef} className="pt-2">
-          <button className="px-6 py-3.5 text-sm sm:text-base font-medium text-white rounded-md bg-linear-to-r from-[#5063ed] via-[#488beb] to-[#45d197] shadow-sm hover:shadow-md hover:opacity-95 transition-all duration-200 cursor-pointer">
+          <Link
+            href="/contact"
+            className="inline-block cursor-pointer bg-global px-7 py-3 text-sm font-semibold text-white shadow-md transition-all duration-300 hover:scale-105 hover:shadow-lg sm:text-base rounded-global sm:rounded-global-sm md:rounded-global-md lg:rounded-global-lg xl:rounded-global-xl 2xl:rounded-global-2xl"
+          >
             {t("cta")}
-          </button>
+          </Link>
         </div>
       </div>
 
       {/* Container-Two: Process Illustration Section */}
       <div
         ref={containerTwoRef}
-        className=" w-full max-w-6xl mx-auto mt-8 md:mt-16 px-4 py-6"
+        className="relative mx-auto mt-8 flex w-full max-w-7xl flex-col items-center justify-center gap-6 sm:gap-6 md:mt-16 md:flex-row md:gap-2 lg:mt-20 lg:gap-3 xl:gap-5 2xl:gap-8"
       >
-        <div className="relative flex flex-col md:flex-row items-center justify-center gap-6 md:gap-6 py-8 px-4 w-full">
           {/* 1. Dashed Wireframe SVG */}
           <div
             ref={dashedWireframeRef}
-            className="relative z-10 shrink-0 w-fit max-w-xs md:max-w-none flex justify-center"
+            className="relative z-10 flex w-full max-w-[240px] shrink-0 justify-center sm:max-w-[280px] md:max-w-[220px] lg:max-w-[260px] xl:max-w-[340px] 2xl:max-w-[440px] [&>svg]:h-auto [&>svg]:w-full"
           >
             <DashedWireframeGrouped />
           </div>
 
-          {/* 2. Curved Line SVG (Hidden on mobile as curved lines break stacked layouts) */}
+          {/* 2. Curved Line SVG (Hidden on small screens as curved lines break stacked layouts) */}
           <div
             ref={curvedLineRef}
-            className="hidden md:flex absolute bottom-25 inset-0 z-0 items-center justify-center pointer-events-none"
+            className="pointer-events-none absolute inset-0 z-0 hidden items-center justify-center md:flex [&>svg]:h-auto [&>svg]:w-full"
           >
             <CurvedLine />
           </div>
 
-          {/* 3. Double Arrow Icons SVG (Rotates down on mobile) */}
+          {/* 3. Double Arrow Icons SVG (Rotates down on small screens) */}
           <div
             ref={doubleArrowsRef}
-            className="relative z-10 shrink-0 px-1 rotate-90 md:rotate-0"
+            className="relative z-10 shrink-0 rotate-90 px-1 md:rotate-0"
           >
             <DoubleArrowIcons />
           </div>
@@ -177,14 +180,13 @@ export default function ServicesHero() {
           {/* 4. Mockups / Wireframe Group */}
           <div
             ref={wireframeGroupRef}
-            className="relative z-10 flex flex-wrap md:flex-nowrap justify-center items-center gap-3"
+            className="relative z-10 flex flex-wrap items-center justify-center gap-2 sm:gap-3 md:flex-nowrap md:gap-2 xl:gap-3 [&>svg]:h-[150px] [&>svg]:w-auto sm:[&>svg]:h-[170px] md:[&>svg]:h-[140px] lg:[&>svg]:h-[160px] xl:[&>svg]:h-[190px] 2xl:[&>svg]:h-[222px]"
           >
             <MobileWireframePurple />
             <MobileWireframeGreen />
             <MobileWireframePurple />
             <MobileWireframeGreen />
           </div>
-        </div>
       </div>
     </main>
   );

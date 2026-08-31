@@ -27,7 +27,7 @@ export default async function RootLayout({
     <html lang={locale} className={`${inter.variable}`}>
       <body className="min-h-full flex flex-col">
         <NextIntlClientProvider messages={pick(messages, ["Layout"])}>
-          <div className="relative flex flex-col min-h-screen">
+          <div className="relative flex min-h-screen flex-col overflow-x-clip bg-white">
             <Header />
             <main className="flex-1">{children}</main>
             <Footer />

@@ -46,14 +46,14 @@ export default function ServicesSectionFive({
   );
 
   return (
-    <section className="w-full bg-white py-16 md:py-24 px-4 sm:px-6 lg:px-8 flex flex-col items-center justify-center font-sans">
-      <div className="max-w-6xl w-full mx-auto space-y-12 md:space-y-16 text-center">
+    <section className="flex w-full flex-col items-center justify-center bg-white py-global font-sans px-[4%] lg:px-[8%] sm:py-global-sm md:py-global-md lg:py-global-lg xl:py-global-xl 2xl:py-global-2xl">
+      <div className="max-w-7xl w-full mx-auto space-y-12 md:space-y-16 text-center">
         {/* Header Section */}
-        <div className="space-y-4 max-w-4xl mx-auto">
+        <div className="space-y-4 max-w-5xl mx-auto">
           <p className="text-xs sm:text-sm font-semibold uppercase tracking-[0.25em] text-slate-800">
             {subTitle}
           </p>
-          <h2 className="text-3xl sm:text-5xl md:text-4xl font-black text-slate-900 tracking-tight leading-[1.08] uppercase max-w-3xl mx-auto">
+          <h2 className=" uppercase text-h2 sm:text-h2-sm md:text-h2-md lg:text-h2-lg xl:text-h2-xl 2xl:text-h2-2xl">
             {mainTitle}
           </h2>
         </div>
@@ -61,12 +61,12 @@ export default function ServicesSectionFive({
         {/* Pill-Shaped Cards Grid */}
         <div
           ref={cardContainer}
-          className="flex flex-wrap lg:flex-nowrap justify-center items-center gap-3 sm:gap-4 md:gap-6 max-w-6xl mx-auto px-4 sm:px-8 lg:px-12"
+          className="flex flex-wrap items-center justify-center gap-6 md:gap-8 lg:gap-10 xl:gap-12 2xl:gap-14 lg:flex-nowrap"
         >
           {expertiseItems.map((item) => (
             <div
               key={item.id}
-              className="flex justify-center items-center w-[calc(50%-0.375rem)] lg:w-auto lg:flex-1 lg:max-w-none"
+              className="flex w-[calc(50%-0.75rem)] justify-center md:w-[calc(33.333%-1rem)] lg:w-auto lg:max-w-none lg:flex-1"
             >
               {/* Card Container */}
               <div className="group relative w-full max-w-[200px] aspect-4/5 rounded-[90px] p-[1.5px] bg-gradient-to-br from-indigo-200 via-sky-200 to-emerald-200 hover:from-indigo-300 hover:via-sky-300 hover:to-emerald-300 transition-all duration-300 shadow-xs cursor-pointer mx-auto">
@@ -79,10 +79,10 @@ export default function ServicesSectionFive({
 
                   {/* Gradient Title Text */}
                   <div className="text-center font-bold text-xs sm:text-base leading-tight uppercase tracking-tight">
-                    <span className="bg-gradient-to-r from-[#5063ed] via-[#3b82f6] to-[#10b981] bg-clip-text text-transparent block">
+                    <span className="block bg-global bg-clip-text text-transparent">
                       {item.firstLine}
                     </span>
-                    <span className="bg-gradient-to-r from-[#5063ed] via-[#3b82f6] to-[#10b981] bg-clip-text text-transparent block">
+                    <span className="block bg-global bg-clip-text text-transparent">
                       {item.secondLine}
                     </span>
                   </div>

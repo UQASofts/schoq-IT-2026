@@ -1,16 +1,23 @@
 "use client";
 
 import { useRef } from "react";
+import { Geist } from "next/font/google";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import { useGSAP } from "@gsap/react";
-import { useTranslations } from "next-intl";
+import { useTranslations, useLocale } from "next-intl";
+
+const geist = Geist({
+  subsets: ["latin"],
+  weight: "500",
+});
 
 gsap.registerPlugin(ScrollTrigger);
 
 export default function Section1() {
   const containerRef = useRef<HTMLDivElement>(null);
   const t = useTranslations("About.Section1");
+  const isDe = useLocale() === "de";
 
   useGSAP(
     () => {
@@ -77,19 +84,19 @@ export default function Section1() {
   return (
     <section
       ref={containerRef}
-      className="grid grid-cols-1 md:grid-cols-[40%_60%] grid-rows-1 md:grid-rows-2 flex-1 mt-13 mb-10 bg-white text-foreground relative"
+      className="relative grid h-auto grid-cols-1 overflow-x-clip bg-white pt-[170px] md:pt-[100px] text-foreground md:h-screen md:grid-cols-[40%_60%] md:grid-rows-[1.25fr_0.75fr]"
     >
-      {/* Vertical divider - hidden on mobile */}
       <div className="hidden md:block absolute left-[40%] top-1/2 -translate-y-1/2 h-[180%] w-0.5 bg-linear-to-r from-emerald-400 to-blue-600 opacity-30 mask-image:linear-gradient(to_bottom,transparent_0%,black_15%,black_85%,transparent_100%)" />
 
-      {/* Horizontal divider - hidden on mobile */}
-      {/* <div className="hidden md:block absolute top-1/2 left-0 right-0 h-px bg-gray-200 -translate-y-1/2" /> */}
-      <div className="hidden md:block absolute top-1/2 left-0 right-0 h-0.5 bg-linear-to-r from-emerald-400 to-blue-600 -translate-y-1/2 opacity-30" />
+      <div className="hidden md:block absolute top-[64%] left-0 right-0 h-0.5 bg-linear-to-r from-emerald-400 to-blue-600 -translate-y-1/2 opacity-30" />
 
-      {/* TOP-LEFT cell - Human Thinking */}
-      <div className="human-thinking-2 flex items-center justify-center px-2 py-8 md:py-4 border-b border-gray-100 md:border-none">
+      <div className="human-thinking-2 flex items-end justify-center border-b border-gray-100 px-2 pb-8 pt-4 md:items-center md:border-none md:px-0 md:py-4">
         <div
-          className={`${t("title2") === "DENKEN" ? "text-3xl md:text-4xl " : "text-3xl"}  font-extrabold uppercase leading-[0.85] tracking-tight text-neutral-900 text-center md:text-left w-full`}
+          className={`w-full text-center uppercase text-heading md:text-left text-h1 sm:text-h1-sm md:text-h1-md ${
+            isDe
+              ? "pl-3 sm:pl-4 md:pl-2 lg:pl-4 xl:pl-6 2xl:pl-12 md:text-h1-sm lg:text-h1-md xl:text-h1-lg 2xl:text-h1-xl"
+              : "pl-4 sm:pl-8 md:pl-10 lg:pl-[72px] xl:pl-24 2xl:pl-[200px] lg:text-h1-lg xl:text-h1-xl 2xl:text-h1-2xl"
+          }`}
         >
           {t("title1")}
           <br />
@@ -97,39 +104,41 @@ export default function Section1() {
         </div>
       </div>
 
-      {/* TOP-RIGHT cell - About Schoq content */}
-      <div className="about-schoq-1 flex flex-col justify-center px-6 md:px-8 py-8 md:py-4 gap-2 md:gap-1.5 order-2 md:order-0 text-center md:text-left items-center md:items-start">
-        <p className="text-[10px] font-semibold tracking-[0.3em] uppercase text-neutral-400">
+      <div className="about-schoq-1 flex flex-col justify-end px-6 pb-8 md:pl-12 md:pb-12 lg:pl-18 lg:pb-18 order-2 md:order-0 text-center md:text-left items-center md:items-start space-y-3 md:space-y-2">
+        <p
+          className={`${geist.className} self-stretch text-[16px] font-medium not-italic uppercase leading-[90%] tracking-[5px] text-heading`}
+        >
           {t("aboutSchoq")}
         </p>
 
-        <h2 className="text-xl sm:text-2xl md:text-3xl font-bold uppercase leading-[1.2] md:leading-[1.1] text-neutral-900">
+        <h2 className="uppercase leading-[1.2] md:leading-[1.1] tracking-tight text-neutral-900 text-h2 sm:text-h2-sm md:text-h2-md lg:text-h2-lg xl:text-h2-xl 2xl:text-h2-2xl">
           {t("mainHeading.part1")}
           <br />
           {t("mainHeading.part2")}
-          <span className="bg-linear-to-r from-emerald-400 to-blue-600 bg-clip-text text-transparent">
+          <span className="bg-global bg-clip-text text-transparent">
             {t("mainHeading.part3")}
             <br />
             {t("mainHeading.part4")}
           </span>
         </h2>
 
-        <p className="about-shoq-content text-sm md:text-xs text-neutral-500 max-w-sm leading-relaxed mt-2 md:mt-1">
+        <p className="about-shoq-content max-w-md text-neutral-500 text-p sm:text-p-sm md:text-p-md lg:text-p-lg xl:text-p-xl 2xl:text-p-2xl">
           {t("description")}
         </p>
       </div>
 
-      {/* BOTTOM-LEFT cell - empty spacer */}
       <div className="hidden md:block px-8 py-4" />
 
-      {/* BOTTOM-RIGHT cell - Engineered Delivery */}
-      <div className="delivery-3 flex items-center justify-center md:justify-start px-4 md:px-8 py-8 md:py-4 order-3 md:order-0">
+      <div className="delivery-3 flex items-start justify-center md:justify-start md:pl-12 lg:pl-18 py-6 order-3 md:order-0 gap-0 md:gap-4 xl:gap-28 2xl:gap-32">
         <div
-          className={`${t("engineeredDelivery1") === "PREZISE" ? "text-5xl sm:text-6xl md:text-5xl " : "text-5xl sm:text-6xl md:text-6xl "} font-extrabold uppercase leading-[0.85] tracking-tight text-neutral-900 text-center md:text-left`}
+          className="text-h1 sm:text-h1 md:text-h1-xs lg:text-h1-sm xl:text-h1-md 2xl:text-h1-lg font-extrabold uppercase leading-[0.85] tracking-tight text-neutral-900 text-center md:text-left"
         >
           {t("engineeredDelivery1")}
           <br />
           {t("engineeredDelivery2")}
+        </div>
+        <div className="hidden md:block w-[160px] shrink-0 lg:w-[200px] xl:w-[240px]">
+          <img src="/engineering-delivered.png" alt="Engineered Delivery" className="h-[70%] xl:h-[80%] 2xl:h-[90%] w-[70%] xl:w-[80%] 2xl:w-[90%] object-contain" />
         </div>
       </div>
     </section>

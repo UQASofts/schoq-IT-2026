@@ -106,20 +106,20 @@ export default function GetInTouch() {
   return (
     <section
       ref={containerRef}
-      className="w-full bg-white text-neutral-900 px-6 py-16 md:px-16 md:py-24 flex items-center justify-center overflow-hidden"
+      className="w-full bg-white text-neutral-900 px-6 py-16 md:px-16 flex items-center justify-center overflow-hidden"
     >
       <div className="max-w-7xl w-full">
         {/* TOP SECTION: Title and Paragraph Split Layout */}
         <div className="Container-One grid grid-cols-1 md:grid-cols-12 gap-8 md:gap-12 items-start mb-16 md:mb-20">
           <div className="Container-Text md:col-span-6 lg:col-span-7">
-            <h2 className="text-3xl sm:text-4xl md:text-5xl font-extrabold uppercase leading-[0.95] tracking-tight text-neutral-950">
+            <h2 className="uppercase text-heading text-h2 sm:text-h2-sm md:text-h2-md lg:text-h2-lg xl:text-h2-xl 2xl:text-h2-2xl">
               {t("title1")}
               <br />
               {t("title2")}
             </h2>
           </div>
           <div className="Container-Desc Info md:col-span-6 lg:col-span-5 md:pt-2">
-            <p className="text-neutral-500 text-sm md:text-base leading-relaxed">
+            <p className="text-neutral-500 text-p sm:text-p-sm md:text-p-md lg:text-p-lg xl:text-p-xl 2xl:text-p-2xl">
               {t("description")}
             </p>
           </div>
@@ -156,10 +156,10 @@ export default function GetInTouch() {
             <p className="text-[11px] font-semibold tracking-[0.2em] uppercase text-emerald-500 mb-3">
               {steps[0].stepNumber} / {steps[0].category}
             </p>
-            <h3 className="text-xl sm:text-2xl font-extrabold uppercase leading-tight tracking-tight text-neutral-900 mb-4">
+            <h3 className="mb-4 uppercase text-heading text-h3 sm:text-h3-sm md:text-h3-md lg:text-h3-lg xl:text-h3-xl 2xl:text-h3-2xl">
               {steps[0].title}
             </h3>
-            <p className="text-neutral-500 text-xs sm:text-sm leading-relaxed">
+            <p className="text-neutral-500 text-p sm:text-p-sm md:text-p-md lg:text-p-lg xl:text-p-xl 2xl:text-p-2xl">
               {steps[0].desc}
             </p>
           </div>
@@ -169,10 +169,10 @@ export default function GetInTouch() {
             <p className="text-[11px] font-semibold tracking-[0.2em] uppercase text-neutral-400 mb-3">
               {steps[1].stepNumber} / {steps[1].category}
             </p>
-            <h3 className="text-xl sm:text-2xl font-extrabold uppercase leading-tight tracking-tight text-neutral-900 mb-4">
+            <h3 className="mb-4 uppercase text-heading text-h3 sm:text-h3-sm md:text-h3-md lg:text-h3-lg xl:text-h3-xl 2xl:text-h3-2xl">
               {steps[1].title}
             </h3>
-            <p className="text-neutral-500 text-xs sm:text-sm leading-relaxed">
+            <p className="text-neutral-500 text-p sm:text-p-sm md:text-p-md lg:text-p-lg xl:text-p-xl 2xl:text-p-2xl">
               {steps[1].desc}
             </p>
           </div>
@@ -182,10 +182,10 @@ export default function GetInTouch() {
             <p className="text-[11px] font-semibold tracking-[0.2em] uppercase text-neutral-400 mb-3">
               {steps[2].stepNumber} / {steps[2].category}
             </p>
-            <h3 className="text-xl sm:text-2xl font-extrabold uppercase leading-tight tracking-tight text-neutral-900 mb-4">
+            <h3 className="mb-4 uppercase text-heading text-h3 sm:text-h3-sm md:text-h3-md lg:text-h3-lg xl:text-h3-xl 2xl:text-h3-2xl">
               {steps[2].title}
             </h3>
-            <p className="text-neutral-500 text-xs sm:text-sm leading-relaxed">
+            <p className="text-neutral-500 text-p sm:text-p-sm md:text-p-md lg:text-p-lg xl:text-p-xl 2xl:text-p-2xl">
               {steps[2].desc}
             </p>
           </div>

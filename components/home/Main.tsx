@@ -170,7 +170,7 @@ const Main: React.FC = () => {
               {t("titleTwo")}
             </h1>
 
-            <p className="mx-auto mt-3 max-w-2xl text-center text-white text-p sm:mt-4 sm:text-p-sm md:text-p-md lg:mx-0 lg:text-left lg:text-p-lg xl:text-p-xl 2xl:text-p-2xl">
+            <p className="w-11/12 mx-auto mt-6 max-w-2xl text-center text-white text-p sm:mt-5 sm:text-p-sm md:mt-4 md:text-p-md lg:mx-0 lg:text-left lg:text-p-lg xl:text-p-xl 2xl:text-p-2xl">
               {t("description")}
             </p>
 

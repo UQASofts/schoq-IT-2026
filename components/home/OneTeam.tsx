@@ -162,7 +162,7 @@ const OneTeam: React.FC = () => {
           <div className="overflow-hidden py-2 px-4">
             <div className="reveal-btn">
               <Link
-                href="#"
+                href="/contact"
                 className="inline-block bg-global text-white text-base sm:text-lg font-medium px-8 py-3.5 rounded-global hover:shadow-xl transition-all duration-300 hover:scale-[1.02] sm:rounded-global-sm md:rounded-global-md lg:rounded-global-lg xl:rounded-global-xl 2xl:rounded-global-2xl"
               >
                 {t("header.cta")}

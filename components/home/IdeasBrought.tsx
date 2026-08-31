@@ -451,7 +451,7 @@ export default function IdeasBrought() {
 
               <div className="flex items-center justify-center">
                 <Link
-                  href="#"
+                  href="/contact"
                   className="start-btn inline-block bg-global px-5 py-2.5 text-sm font-medium text-white transition-all duration-300 hover:scale-[1.02] hover:shadow-xl rounded-global sm:rounded-global-sm sm:px-6 sm:py-3 md:rounded-global-md lg:rounded-global-lg xl:rounded-global-xl 2xl:rounded-global-2xl"
                 >
                   {t("buttonStartProject")}
@@ -537,7 +537,7 @@ export default function IdeasBrought() {
                             {item.title}
                           </h3>
 
-                          <p className="shrink-0 text-[#434655] text-p sm:text-p-sm md:text-p-md lg:shrink lg:text-p-lg xl:text-p-xl 2xl:text-p-2xl">
+                          <p className="text-[#434655] text-p sm:text-p-sm md:text-p-md lg:shrink lg:text-p-lg xl:text-p-xl 2xl:text-p-2xl">
                             {item.description}
                           </p>
                         </div>

@@ -544,7 +544,7 @@ export default function IdeasBrought() {
                             target="_blank"
                             rel="noopener noreferrer"
                             onClick={(e) => e.stopPropagation()}
-                            className="inline-flex w-fit shrink-0 items-center gap-2 rounded-full bg-gradient-to-r from-[#575EE3] to-[#56D59A] px-4 py-1 text-xs text-white transition hover:opacity-95 md:py-2 md:text-sm md:font-semibold"
+                            className="inline-flex w-fit shrink-0 items-center gap-2 rounded-full bg-global px-4 py-1 text-xs text-white transition hover:opacity-95 md:py-2 md:text-sm md:font-semibold"
                           >
                             Visit
                             <ArrowUpRight size={16} />

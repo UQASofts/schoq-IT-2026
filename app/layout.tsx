@@ -12,7 +12,7 @@ const inter = Inter({ subsets: ["latin"], variable: "--font-inter" });
 
 export const metadata: Metadata = {
   title: "SCHOQ",
-  description: "UQA Soft Landing Page",
+  description: "Ideas Brought to Life",
 };
 
 export default async function RootLayout({

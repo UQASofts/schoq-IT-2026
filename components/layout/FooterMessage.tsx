@@ -12,7 +12,7 @@ export default async function FooterMessage({
 }: Message) {
   const t = await getTranslations("Layout.FooterMessage");
   return (
-    <section className="min-h-[40vh] md:min-h-[80vh] bg-gradient-to-r from-indigo-600 via-sky-500 to-emerald-400 text-foreground relative flex items-center justify-center px-6 md:px-10 py-16 md:py-20">
+    <section className="min-h-[40vh] md:min-h-[80vh] bg-global text-foreground relative flex items-center justify-center px-6 md:px-10 py-16 md:py-20">
       <div className="max-w-4xl mx-auto text-center flex flex-col items-center">
         {/* Quote in italic, bold white typography */}
         <h1 className="mb-6 font-bold italic text-white leading-[1.2] md:leading-[1.1] tracking-tight text-h2 sm:text-h2-sm md:text-h2-md lg:text-h2-lg xl:text-h2-xl 2xl:text-h2-2xl md:mb-8">

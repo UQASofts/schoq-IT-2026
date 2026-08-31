@@ -14,7 +14,7 @@ const config: Config = {
         },
       },
       backgroundImage: {
-        global: "linear-gradient(to right, #4A4CE6, #34A1B4, #4BE191)",
+        global: "linear-gradient(to right, #4A4CE6, #34A1B4,rgb(61, 231, 141))",
         "global-soft":
           "linear-gradient(180deg, rgba(52, 161, 180, 0.38) 0%, rgba(74, 76, 230, 0.12) 28%, rgba(75, 225, 145, 0.20) 62%, #DCE8EA 100%)",
       },

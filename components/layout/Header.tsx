@@ -165,12 +165,14 @@ const Header: React.FC = () => {
       >
         <div className="flex w-full max-w-[1000px] items-center justify-between  bg-white/40 px-6 py-4 shadow-[0_4px_24px_0_rgba(0,0,0,0.1)] backdrop-blur-md rounded-global-sm md:rounded-global-md lg:rounded-global-lg xl:rounded-global-xl 2xl:rounded-global-2xl">
           <div ref={logoRef} className="shrink-0">
-            <Link
-              href="/"
-              className={`${geist.className} text-2xl leading-none font-extrabold tracking-tight`}
-            >
-              <span className="text-[#575EE3]">SCHO</span>
-              <span className="text-[#56D59A]">Q</span>
+            <Link href="/" className={`${geist.className} relative isolate block`}>
+              <img
+                src="/schoq-logo.svg"
+                alt="SCHOQ"
+                width={98}
+                height={39}
+                className="h-[39px] w-[98px] object-contain object-left"
+              />
             </Link>
           </div>
 
@@ -193,11 +195,10 @@ const Header: React.FC = () => {
                   <div key={link.name} className="relative group">
                     <Link
                       href={link.href}
-                      className={`relative inline-flex items-center transition-colors duration-200 ${
-                        isActive
+                      className={`relative inline-flex items-center transition-colors duration-200 ${isActive
                           ? "text-[#1A1B21]"
                           : "text-[#3B494B] hover:text-[#1A1B21]"
-                      }`}
+                        }`}
                     >
                       <span className="relative inline-block">
                         {link.name}
@@ -218,11 +219,10 @@ const Header: React.FC = () => {
                               <Link
                                 key={child.title}
                                 href={child.href}
-                                className={`rounded-lg px-3 py-2 transition-colors text-p-nav sm:text-p-nav-sm md:text-p-nav-md lg:text-p-nav-lg xl:text-p-nav-xl 2xl:text-p-nav-2xl ${
-                                  isChildActive
+                                className={`rounded-lg px-3 py-2 transition-colors text-p-nav sm:text-p-nav-sm md:text-p-nav-md lg:text-p-nav-lg xl:text-p-nav-xl 2xl:text-p-nav-2xl ${isChildActive
                                     ? "text-[#1A1B21] underline"
                                     : "text-[#3B494B] hover:bg-gray-50 hover:text-[#1A1B21]"
-                                }`}
+                                  }`}
                               >
                                 {child.title}
                               </Link>
@@ -312,11 +312,10 @@ const Header: React.FC = () => {
                 <div className="flex items-center justify-between">
                   <Link
                     href={link.href}
-                    className={`relative flex-1 rounded-lg px-4 py-3 transition-colors text-p-nav sm:text-p-nav-sm md:text-p-nav-md lg:text-p-nav-lg xl:text-p-nav-xl 2xl:text-p-nav-2xl ${
-                      isActive
+                    className={`relative flex-1 rounded-lg px-4 py-3 transition-colors text-p-nav sm:text-p-nav-sm md:text-p-nav-md lg:text-p-nav-lg xl:text-p-nav-xl 2xl:text-p-nav-2xl ${isActive
                         ? "bg-gray-50/80 text-[#1A1B21]"
                         : "text-[#3B494B] hover:bg-gray-50"
-                    }`}
+                      }`}
                     onClick={() => setIsMobileMenuOpen(false)}
                   >
                     {link.name}
@@ -328,9 +327,8 @@ const Header: React.FC = () => {
                       aria-label={`Toggle ${link.name} submenu`}
                     >
                       <ChevronDown
-                        className={`h-5 w-5 transition-transform duration-200 ${
-                          isExpanded ? "rotate-180" : ""
-                        }`}
+                        className={`h-5 w-5 transition-transform duration-200 ${isExpanded ? "rotate-180" : ""
+                          }`}
                       />
                     </button>
                   )}

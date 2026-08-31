@@ -173,7 +173,7 @@ const OneTeam: React.FC = () => {
         <div className="mt-16 relative services-section space-y-4 lg:space-y-6 relative">
           <div className="pointer-events-none absolute inset-0 z-0 flex items-center justify-center">
             <div
-              className="w-full h-full md:h-[50%] rotate-90 scale-[2.2] rounded-[1750px] blur-[186px] md:rotate-0 md:scale-100"
+              className="w-full h-full md:h-[30%] rotate-90 scale-[2.2]   blur-[186px] rounded-[1750px] md:rotate-0 md:scale-100"
               style={{
                 background:
                   "linear-gradient(90deg, rgba(87, 94, 227, 0.60) 0%, rgba(86, 213, 154, 0.60) 100%)",
@@ -186,7 +186,7 @@ const OneTeam: React.FC = () => {
             {firstRow.map((service, index) => (
               <div
                 key={index}
-                className="flex flex-col gap-2 service-card group bg-white rounded-global p-6 border border-gray-100 hover:border-gray-300 transition-all duration-300 hover:shadow-lg shadow-lg z-20 sm:rounded-global-sm md:rounded-global-md lg:rounded-global-lg xl:rounded-global-xl 2xl:rounded-global-2xl"
+                className="flex flex-col gap-2 service-card group rounded-global p-6 border border-gray-100 hover:border-gray-300 transition-all duration-300 hover:shadow-lg shadow-lg z-20 sm:rounded-global-sm md:rounded-global-md lg:rounded-global-lg xl:rounded-global-xl 2xl:rounded-global-2xl"
               >
                 <div className="w-15 h-15 rounded-global bg-gray-900/5 flex items-center justify-center group-hover:bg-gray-900/10 transition-colors sm:rounded-global-sm md:rounded-global-md lg:rounded-global-lg xl:rounded-global-xl 2xl:rounded-global-2xl">
                   <Image
@@ -213,7 +213,7 @@ const OneTeam: React.FC = () => {
             {secondRow.map((service, index) => (
               <div
                 key={index}
-                className="flex flex-col gap-2 service-card group bg-white rounded-global p-6 border border-gray-100 hover:border-gray-300 transition-all duration-300 hover:shadow-lg shadow-lg z-20 sm:rounded-global-sm md:rounded-global-md lg:rounded-global-lg xl:rounded-global-xl 2xl:rounded-global-2xl"
+                className="flex flex-col gap-2 service-card group rounded-global p-6 border border-gray-100 hover:border-gray-300 transition-all duration-300 hover:shadow-lg shadow-lg z-20 sm:rounded-global-sm md:rounded-global-md lg:rounded-global-lg xl:rounded-global-xl 2xl:rounded-global-2xl"
               >
                 <div className="w-15 h-15 rounded-global bg-gray-900/5 flex items-center justify-center mb-4 group-hover:bg-gray-900/10 transition-colors sm:rounded-global-sm md:rounded-global-md lg:rounded-global-lg xl:rounded-global-xl 2xl:rounded-global-2xl">
                   <Image

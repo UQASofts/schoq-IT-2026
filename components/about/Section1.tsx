@@ -95,7 +95,7 @@ export default function Section1() {
           className={`w-full text-center uppercase text-heading md:text-left text-h1 sm:text-h1-sm md:text-h1-md ${
             isDe
               ? "pl-3 sm:pl-4 md:pl-2 lg:pl-4 xl:pl-6 2xl:pl-12 md:text-h1-sm lg:text-h1-md xl:text-h1-lg 2xl:text-h1-xl"
-              : "pl-4 sm:pl-8 md:pl-10 lg:pl-[72px] xl:pl-24 2xl:pl-[200px] lg:text-h1-lg xl:text-h1-xl 2xl:text-h1-2xl"
+              : "sm:pl-8 md:pl-10 lg:pl-[72px] xl:pl-24 2xl:pl-[200px] lg:text-h1-lg xl:text-h1-xl 2xl:text-h1-2xl"
           }`}
         >
           {t("title1")}

@@ -27,7 +27,28 @@
             "projects": {
                 "myAnza": "MyAnza",
                 "workforceManagement": "Personalverwaltungssystem für HR"
-            }
+            },
+            "visit": "Besuchen",
+            "cases": [
+                {
+                    "id": "myanza",
+                    "title": "MyAnza",
+                    "category": "Soziale Plattform",
+                    "description": "MyAnza ist eine privacy-first soziale Plattform für sichere, authentische und bedeutungsvolle digitale Interaktionen. Nutzer können Inhalte teilen, sich vernetzen, Nachrichten austauschen und in Echtzeit kommunizieren – in einem modernen, responsiven Erlebnis, das auf Skalierbarkeit, Sicherheit und Vertrauen ausgelegt ist."
+                },
+                {
+                    "id": "hilfehafen",
+                    "title": "Hilfehafen",
+                    "category": "Workforce-Plattform",
+                    "description": "Hilfehafen ist eine Plattform für Anwesenheit und Workforce-Management, entwickelt für Klarheit und Zuverlässigkeit. Sie vereinfacht den Tagesbetrieb mit intuitiven Workflows, präzisem Tracking und einem Produkterlebnis für Teams, die Tempo brauchen, ohne die Kontrolle zu verlieren."
+                },
+                {
+                    "id": "amin-hotel",
+                    "title": "Amin Hotel",
+                    "category": "Hospitality-Erlebnis",
+                    "description": "Die Website von Amin Hotel bietet Gästen ein nahtloses digitales Erlebnis, um Zimmer, Ausstattung, Gastronomie und Services zu entdecken. Gäste können Zimmerdetails ansehen, verfügbare Optionen prüfen, ihren Aufenthalt online buchen und Speisen direkt aus dem hoteleigenen Restaurant bestellen. Die Plattform macht jeden Teil des Gästeerlebnisses einfach, bequem und angenehm."
+                }
+            ]
         },
         "Launch": {
             "titleLine1": "LAUNCHEN SIE",
@@ -63,7 +84,7 @@
             },
             "services": [
                 {
-                    "title": "Individualsoftware",
+                    "title": "Individual Software",
                     "description": "Maßgeschneiderte Enterprise-Softwarelösungen und individuelle Systementwicklung für einzigartige Unternehmensanforderungen."
                 },
                 {

@@ -23,39 +23,43 @@ const plusJakarta = Plus_Jakarta_Sans({
     weight: ["700"],
 });
 
-const cases = [
+const CASE_ASSETS = [
     {
         id: "myanza",
-        title: "MyAnza",
-        category: "Social Platform",
-        description:
-            "MyAnza is a privacy-first social platform built for secure, authentic, and meaningful digital interactions. Users can share content, connect, exchange messages, and engage in real-time conversations through a modern responsive experience designed for scalability, security, and trust.",
         image: "/Idea1.webp",
         href: "https://myanza.com",
     },
     {
         id: "hilfehafen",
-        title: "Hilfehafen",
-        category: "Workforce Platform",
-        description:
-            "Hilfehafen is an employee attendance and workforce management platform engineered for clarity and reliability. It streamlines daily operations with intuitive workflows, accurate tracking, and a product experience built for teams that need speed without sacrificing control.",
         image: "/Idea2.webp",
         href: "https://hilfehafen.de/",
     },
     {
         id: "amin-hotel",
-        title: "Amin Hotel",
-        category: "Hospitality Experience",
-        description:
-            "Amin Hotel website offers guests a seamless digital experience to explore the hotel’s rooms, amenities, dining options, and services. Guests can easily browse room details, check available options, book their stay online, and order delicious food directly from the hotel’s internal restaurant. The platform is designed to make every part of the guest experience simple, convenient, and enjoyable.",
         image: "/Idea3.webp",
         href: "https://aminhotel.com/",
     },
 ];
 
+type TranslatedCase = {
+    id: string;
+    title: string;
+    category: string;
+    description: string;
+};
 
 export default function IdeasBrought() {
     const t = useTranslations("Home.Ideas");
+    const translatedCases = t.raw("cases") as TranslatedCase[];
+    const cases = CASE_ASSETS.map((asset) => {
+        const copy = translatedCases.find((item) => item.id === asset.id);
+        return {
+            ...asset,
+            title: copy?.title ?? asset.id,
+            category: copy?.category ?? "",
+            description: copy?.description ?? "",
+        };
+    });
     const [active, setActive] = useState(0);
     const [paused, setPaused] = useState(false);
     const [dragOffset, setDragOffset] = useState(0);
@@ -546,7 +550,7 @@ export default function IdeasBrought() {
                             onClick={(e) => e.stopPropagation()}
                             className="inline-flex w-fit shrink-0 items-center gap-2 rounded-full bg-global px-4 py-1 text-xs text-white transition hover:opacity-95 md:py-2 md:text-sm md:font-semibold"
                           >
-                            Visit
+                            {t("visit")}
                             <ArrowUpRight size={16} />
                           </a>
                         )}

@@ -7,7 +7,7 @@ import { Geist } from "next/font/google";
 import { gsap } from "gsap";
 import { useGSAP } from "@gsap/react";
 import { heroBgImage } from "@/public";
-import { useTranslations } from "next-intl";
+import { useLocale, useTranslations } from "next-intl";
 
 const geist = Geist({
   subsets: ["latin"],
@@ -21,6 +21,7 @@ const REVEAL_EASE = "power3.inOut";
 const Main: React.FC = () => {
   const container = useRef<HTMLElement>(null);
   const t = useTranslations("Home.Main");
+  const locale = useLocale();
   const TAGS = t.raw("tags") as string[];
 
   useGSAP(
@@ -30,6 +31,24 @@ const Main: React.FC = () => {
       mm.add(
         "(prefers-reduced-motion: no-preference) and (min-width: 1024px)",
         () => {
+          const firstLetters = () =>
+            gsap.utils.toArray<HTMLElement>(".tag-first", container.current);
+
+          firstLetters().forEach((el) => {
+            el.classList.remove(
+              "bg-global",
+              "bg-clip-text",
+              "text-transparent",
+            );
+          });
+
+          gsap.set(".main-container", {
+            clipPath: "inset(0% 99% 0% 0%)",
+            x: "50%",
+          });
+          gsap.set(".main-tags", { xPercent: -20, x: "-100%", opacity: 1 });
+          gsap.set(".tag-rest", { opacity: 1, width: "auto" });
+
           const tl = gsap.timeline({
             defaults: { duration: REVEAL_DURATION, ease: REVEAL_EASE },
             delay: REVEAL_DELAY,
@@ -55,9 +74,6 @@ const Main: React.FC = () => {
             0,
           );
 
-          const firstLetters = () =>
-            gsap.utils.toArray<HTMLElement>(".tag-first", container.current);
-
           tl.add(() => {
             firstLetters().forEach((el) => {
               el.classList.add("bg-global", "bg-clip-text", "text-transparent");
@@ -80,6 +96,9 @@ const Main: React.FC = () => {
       mm.add(
         "(prefers-reduced-motion: no-preference) and (max-width: 1023px)",
         () => {
+          gsap.set(".m-main-container", { opacity: 0, y: 40, scale: 0.95 });
+          gsap.set(".m-tags", { opacity: 0, y: 20, scale: 0.9 });
+
           const tl = gsap.timeline({
             defaults: { duration: 1.2, ease: "power3.out" },
             delay: 0.5,
@@ -125,7 +144,7 @@ const Main: React.FC = () => {
 
       return () => mm.revert();
     },
-    { scope: container },
+    { scope: container, dependencies: [locale] },
   );
 
   const scrollToNext = () => {

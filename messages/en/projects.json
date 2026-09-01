@@ -1,0 +1,45 @@
+{
+    "Projects": {
+        "Hero": {
+            "category": "Our Work",
+            "title1": "Digital Products That",
+            "title2": "Make An Impact",
+            "description": "We partner with businesses and founders to design and build digital products that solve real problems and create meaningful value.",
+            "cta": "Start a Project"
+        },
+        "Page": {
+            "description": "Have a challenge worth solving?",
+            "buttonText": "Start a Project"
+        },
+        "Tabs": {
+            "ariaLabel": "Project categories",
+            "all": "All Projects",
+            "web": "Web Platforms",
+            "mobile": "Mobile Apps",
+            "custom": "Custom Software"
+        },
+        "List": {
+            "visit": "Visit",
+            "items": [
+                {
+                    "id": "amin-hotel",
+                    "category": "Hospitality Experience",
+                    "title": "Amin Hotel",
+                    "description": "Amin Hotel website offers guests a seamless digital experience to explore the hotel's rooms, amenities, dining options, and services. Guests can easily browse room details, check available options, book their stay online, and order delicious food directly from the hotel's internal restaurant. The platform is designed to make every part of the guest experience simple, convenient, and enjoyable."
+                },
+                {
+                    "id": "myanza",
+                    "category": "Social Platform",
+                    "title": "MyAnza",
+                    "description": "MyAnza is a privacy-first social platform built for secure, authentic, and meaningful digital interactions. Users can share content, connect, exchange messages, and engage in real-time conversations through a modern responsive experience designed for scalability, security, and trust."
+                },
+                {
+                    "id": "hilfehafen",
+                    "category": "Workforce Platform",
+                    "title": "HilfeHafen",
+                    "description": "Hilfehafen is an employee attendance and workforce management platform engineered for clarity and reliability. It streamlines daily operations with intuitive workflows, accurate tracking, and a product experience built for teams that need speed without sacrificing control."
+                }
+            ]
+        }
+    }
+}

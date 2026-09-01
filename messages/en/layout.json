@@ -1,6 +1,7 @@
 {
     "Layout": {
         "Header": {
+            "home": "Home",
             "services": "Services",
             "projects": "Projects",
             "about": "About",

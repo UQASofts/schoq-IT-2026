@@ -33,6 +33,7 @@ const Header: React.FC = () => {
   const menuTimelineRef = useRef<gsap.core.Timeline | null>(null);
   const t = useTranslations("Layout.Header");
   const NAV_LINKS = [
+    { name: t("home"), href: "/" },
     {
       name: t("services"),
       href: "#",
@@ -179,23 +180,25 @@ const Header: React.FC = () => {
           <div className="flex items-center gap-5">
             <nav
               ref={navRef}
-              className="hidden items-center gap-12 text-p-nav sm:text-p-nav-sm md:text-p-nav-md lg:flex lg:text-p-nav-lg xl:text-p-nav-xl 2xl:text-p-nav-2xl"
+              className="hidden items-center gap-8 text-p-nav sm:text-p-nav-sm md:text-p-nav-md lg:flex lg:text-p-nav-lg xl:gap-12 xl:text-p-nav-xl 2xl:text-p-nav-2xl"
             >
               {NAV_LINKS.map((link) => {
                 const hasChildren = Boolean(
                   link.children && link.children.length > 0,
                 );
                 const isActive =
-                  (link.href !== "#" &&
-                    (pathname === link.href ||
-                      pathname.startsWith(`${link.href}/`))) ||
-                  (hasChildren && pathname.startsWith("/services"));
+                  link.href === "/"
+                    ? pathname === "/"
+                    : (link.href !== "#" &&
+                        (pathname === link.href ||
+                          pathname.startsWith(`${link.href}/`))) ||
+                      (hasChildren && pathname.startsWith("/services"));
 
                 return (
                   <div key={link.name} className="relative group">
                     <Link
                       href={link.href}
-                      className={`relative inline-flex items-center transition-colors duration-200 ${isActive
+                      className={`relative inline-flex items-center gap-1 transition-colors duration-200 ${isActive
                           ? "text-[#1A1B21]"
                           : "text-[#3B494B] hover:text-[#1A1B21]"
                         }`}
@@ -208,6 +211,9 @@ const Header: React.FC = () => {
                           </div>
                         )}
                       </span>
+                      {hasChildren && (
+                        <ChevronDown className="h-4 w-4 shrink-0 transition-transform duration-200 group-hover:rotate-180" />
+                      )}
                     </Link>
 
                     {hasChildren && (

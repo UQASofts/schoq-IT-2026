@@ -1,0 +1,45 @@
+{
+    "Projects": {
+        "Hero": {
+            "category": "Unsere Arbeit",
+            "title1": "Digitale Produkte,",
+            "title2": "Die Wirkung Erzielen",
+            "description": "Wir arbeiten mit Unternehmen und Gründern zusammen, um digitale Produkte zu gestalten und zu entwickeln, die echte Probleme lösen und nachhaltigen Mehrwert schaffen.",
+            "cta": "Projekt starten"
+        },
+        "Page": {
+            "description": "Haben Sie eine Herausforderung, die es zu lösen lohnt?",
+            "buttonText": "Projekt starten"
+        },
+        "Tabs": {
+            "ariaLabel": "Projektkategorien",
+            "all": "Alle Projekte",
+            "web": "Webplattformen",
+            "mobile": "Mobile Apps",
+            "custom": "Individual Software"
+        },
+        "List": {
+            "visit": "Besuchen",
+            "items": [
+                {
+                    "id": "amin-hotel",
+                    "category": "Hospitality-Erlebnis",
+                    "title": "Amin Hotel",
+                    "description": "Die Website von Amin Hotel bietet Gästen ein nahtloses digitales Erlebnis, um Zimmer, Ausstattung, Gastronomie und Services zu entdecken. Gäste können Zimmerdetails ansehen, Verfügbarkeiten prüfen, ihren Aufenthalt online buchen und Speisen direkt aus dem hoteleigenen Restaurant bestellen. Die Plattform macht jeden Teil des Gästeerlebnisses einfach, bequem und angenehm."
+                },
+                {
+                    "id": "myanza",
+                    "category": "Soziale Plattform",
+                    "title": "MyAnza",
+                    "description": "MyAnza ist eine privacy-first soziale Plattform für sichere, authentische und bedeutungsvolle digitale Interaktionen. Nutzer können Inhalte teilen, sich vernetzen, Nachrichten austauschen und in Echtzeit kommunizieren – in einem modernen, responsiven Erlebnis, das auf Skalierbarkeit, Sicherheit und Vertrauen ausgelegt ist."
+                },
+                {
+                    "id": "hilfehafen",
+                    "category": "Workforce-Plattform",
+                    "title": "HilfeHafen",
+                    "description": "Hilfehafen ist eine Plattform für Anwesenheit und Workforce-Management, entwickelt für Klarheit und Zuverlässigkeit. Sie vereinfacht den Tagesbetrieb mit intuitiven Workflows, präzisem Tracking und einem Produkterlebnis für Teams, die Tempo brauchen, ohne die Kontrolle zu verlieren."
+                }
+            ]
+        }
+    }
+}

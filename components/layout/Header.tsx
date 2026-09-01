@@ -203,7 +203,7 @@ const Header: React.FC = () => {
                           : "text-[#3B494B] hover:text-[#1A1B21]"
                         }`}
                     >
-                      <span className="relative inline-block">
+                      <span className={`relative inline-block${link.href === "/contact" ? " capitalize" : ""}`}>
                         {link.name}
                         {isActive && (
                           <div className="absolute -bottom-1 left-0 right-0">
@@ -318,7 +318,7 @@ const Header: React.FC = () => {
                 <div className="flex items-center justify-between">
                   <Link
                     href={link.href}
-                    className={`relative flex-1 rounded-lg px-4 py-3 transition-colors text-p-nav sm:text-p-nav-sm md:text-p-nav-md lg:text-p-nav-lg xl:text-p-nav-xl 2xl:text-p-nav-2xl ${isActive
+                    className={`relative flex-1 rounded-lg px-4 py-3 transition-colors text-p-nav sm:text-p-nav-sm md:text-p-nav-md lg:text-p-nav-lg xl:text-p-nav-xl 2xl:text-p-nav-2xl ${link.href === "/contact" ? "capitalize " : ""}${isActive
                         ? "bg-gray-50/80 text-[#1A1B21]"
                         : "text-[#3B494B] hover:bg-gray-50"
                       }`}

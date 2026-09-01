@@ -9,6 +9,7 @@ async function loadMessages(locale: string) {
     import(`../messages/${locale}/about.json`),
     import(`../messages/${locale}/contact.json`),
     import(`../messages/${locale}/projects.json`),
+    import(`../messages/${locale}/impressum.json`),
     import(`../messages/${locale}/services/ai.json`),
     import(`../messages/${locale}/services/mobile.json`),
     import(`../messages/${locale}/services/shared.json`),

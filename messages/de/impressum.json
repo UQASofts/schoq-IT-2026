@@ -1,0 +1,69 @@
+{
+    "Impressum": {
+        "Hero": {
+            "category": "Rechtliches",
+            "title": "Impressum",
+            "description": "Angaben zum Unternehmen, Verantwortlichkeiten und rechtliche Informationen — klar und transparent dargestellt."
+        },
+        "Page": {
+            "description": "Haben Sie eine Herausforderung, die es zu lösen lohnt?",
+            "buttonText": "Projekt starten"
+        },
+        "Legal": {
+            "sidebar": {
+                "label": "Unternehmensangaben",
+                "company": "Schoq UG",
+                "registeredOfficeLabel": "Sitz",
+                "registeredOffice": ["Bochumer Str. 17", "10555 Berlin", "Deutschland"],
+                "registerLabel": "Handelsregister",
+                "register": ["Amtsgericht Charlottenburg", "HRB 276178"],
+                "directorsLabel": "Geschäftsführung",
+                "directors": ["Marie Louise Schneider", "Ubaid Farooq"],
+                "emailLabel": "E-Mail",
+                "email": "info@schoq.com",
+                "phoneLabel": "Telefon",
+                "phone": "+49 176 22569816",
+                "footer": "Rechtliche Angaben und Kontaktdaten der Schoq UG."
+            },
+            "headingLabel": "Rechtliche Angaben",
+            "title": "Transparent. Klar. Vollständig.",
+            "notice": "Impressum",
+            "sectionNumber": "01",
+            "sectionTitle": "Angaben gemäß § 5 TMG und inhaltliche Verantwortung gemäß § 55 Abs. 2 RStV",
+            "companyName": "Schoq UG",
+            "details": [
+                { "label": "Unternehmen", "value": "Schoq UG" },
+                { "label": "Handelsregister", "value": "Amtsgericht Charlottenburg, HRB 276178" },
+                { "label": "Geschäftsanschrift", "value": "Bochumer Str. 17, 10555 Berlin, Deutschland" },
+                { "label": "Vertreten durch", "value": "Marie Louise Schneider & Ubaid Farooq" }
+            ],
+            "founderLabel": "Gründer & Gesellschafter",
+            "founders": ["Marie Louise Schneider", "Ubaid Farooq"],
+            "extraSections": [
+                {
+                    "number": "02",
+                    "title": "Haftung für Inhalte",
+                    "body": "Als Diensteanbieter sind wir gemäß § 7 Abs. 1 TMG für eigene Inhalte auf diesen Seiten nach den allgemeinen Gesetzen verantwortlich. Nach §§ 8 bis 10 TMG sind wir als Diensteanbieter jedoch nicht verpflichtet, übermittelte oder gespeicherte fremde Informationen zu überwachen oder nach Umständen zu forschen, die auf eine rechtswidrige Tätigkeit hinweisen. Verpflichtungen zur Entfernung oder Sperrung der Nutzung von Informationen nach den allgemeinen Gesetzen bleiben hiervon unberührt. Eine diesbezügliche Haftung ist jedoch erst ab dem Zeitpunkt der Kenntnis einer konkreten Rechtsverletzung möglich. Bei Bekanntwerden von entsprechenden Rechtsverletzungen werden wir diese Inhalte umgehend entfernen."
+                },
+                {
+                    "number": "03",
+                    "title": "Haftung für Links",
+                    "body": "Unser Angebot enthält Links zu externen Websites Dritter, auf deren Inhalte wir keinen Einfluss haben. Deshalb können wir für diese fremden Inhalte auch keine Gewähr übernehmen. Für die Inhalte der verlinkten Seiten ist stets der jeweilige Anbieter oder Betreiber der Seiten verantwortlich. Die verlinkten Seiten wurden zum Zeitpunkt der Verlinkung auf mögliche Rechtsverstöße überprüft. Rechtswidrige Inhalte waren zum Zeitpunkt der Verlinkung nicht erkennbar. Eine permanente inhaltliche Kontrolle der verlinkten Seiten ist jedoch ohne konkrete Anhaltspunkte einer Rechtsverletzung nicht zumutbar. Bei Bekanntwerden von Rechtsverletzungen werden wir derartige Links umgehend entfernen."
+                },
+                {
+                    "number": "04",
+                    "title": "Urheberrecht",
+                    "body": "Die durch die Seitenbetreiber erstellten Inhalte und Werke auf diesen Seiten unterliegen dem deutschen Urheberrecht. Die Vervielfältigung, Bearbeitung, Verbreitung und jede Art der Verwertung außerhalb der Grenzen des Urheberrechtes bedürfen der schriftlichen Zustimmung des jeweiligen Autors bzw. Erstellers. Downloads und Kopien dieser Seite sind nur für den privaten, nicht kommerziellen Gebrauch gestattet. Soweit die Inhalte auf dieser Seite nicht vom Betreiber erstellt wurden, werden die Urheberrechte Dritter beachtet. Insbesondere werden Inhalte Dritter als solche gekennzeichnet. Sollten Sie trotzdem auf eine Urheberrechtsverletzung aufmerksam werden, bitten wir um einen entsprechenden Hinweis. Bei Bekanntwerden von Rechtsverletzungen werden wir derartige Inhalte umgehend entfernen."
+                },
+                {
+                    "number": "05",
+                    "title": "Datenschutz",
+                    "body": "Die Nutzung unserer Website ist in der Regel ohne Angabe personenbezogener Daten möglich. Name und E-Mail-Adresse werden im Kontaktformular abgefragt, wenn Sie eine Anfrage haben und von uns kontaktiert werden oder eine Antwort erhalten möchten. Ihre Daten werden ausschließlich zu diesem Zweck verwendet. Eine Weitergabe an Dritte erfolgt ausdrücklich nicht. Wir weisen darauf hin, dass die Datenübertragung im Internet (z. B. bei der Kommunikation per E-Mail) Sicherheitslücken aufweisen kann. Ein lückenloser Schutz der Daten vor dem Zugriff durch Dritte ist nicht möglich. Wenn Sie der elektronischen Datenübertragung nicht vertrauen, können Sie uns jederzeit telefonisch kontaktieren. Die Nutzung der im Rahmen dieses Impressums veröffentlichten Kontaktdaten durch Dritte zur Übersendung von nicht ausdrücklich angeforderter Werbung ist untersagt. Die Schoq UG behält sich ausdrücklich rechtliche Schritte im Falle der unverlangten Zusendung von Werbeinformationen, etwa durch Spam-Mails, vor.",
+                    "link": "Datenschutzerklärung ansehen →",
+                    "href": "/datenschutz",
+                    "note": "Hinweis für die finale Veröffentlichung: Die rechtlichen Formulierungen oben wurden inhaltlich aus dem bestehenden Schoq-Legal Notice übernommen. Gesetzesverweise und Pflichtangaben sollten vor dem Go-live rechtlich geprüft bzw. auf den aktuellen Stand gebracht werden."
+                }
+            ]
+        }
+    }
+}

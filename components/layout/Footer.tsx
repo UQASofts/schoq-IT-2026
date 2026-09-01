@@ -27,7 +27,7 @@ const Footer: React.FC = async () => {
               <ul className="space-y-3">
                 <li>
                   <Link
-                    href="#"
+                    href="/"
                     className="text-gray-500 transition-colors hover:text-black text-p-nav sm:text-p-nav-sm md:text-p-nav-md lg:text-p-nav-lg xl:text-p-nav-xl 2xl:text-p-nav-2xl"
                   >
                     {t("links.home")}
@@ -35,7 +35,7 @@ const Footer: React.FC = async () => {
                 </li>
                 <li>
                   <Link
-                    href="#"
+                    href="/about"
                     className="text-gray-500 transition-colors hover:text-black text-p-nav sm:text-p-nav-sm md:text-p-nav-md lg:text-p-nav-lg xl:text-p-nav-xl 2xl:text-p-nav-2xl"
                   >
                     {t("links.aboutUs")}
@@ -43,16 +43,16 @@ const Footer: React.FC = async () => {
                 </li>
                 <li>
                   <Link
-                    href="#"
-                    className="text-gray-500 transition-colors hover:text-black text-p-nav sm:text-p-nav-sm md:text-p-nav-md lg:text-p-nav-lg xl:text-p-nav-xl 2xl:text-p-nav-2xl"
+                    href="/contact"
+                    className="capitalize text-gray-500 transition-colors hover:text-black text-p-nav sm:text-p-nav-sm md:text-p-nav-md lg:text-p-nav-lg xl:text-p-nav-xl 2xl:text-p-nav-2xl"
                   >
                     {t("links.contactUs")}
                   </Link>
                 </li>
                 <li>
                   <Link
-                    href="#"
-                    className="text-gray-500 transition-colors hover:text-black text-p-nav sm:text-p-nav-sm md:text-p-nav-md lg:text-p-nav-lg xl:text-p-nav-xl 2xl:text-p-nav-2xl"
+                    href="/impressum"
+                    className="capitalize text-gray-500 transition-colors hover:text-black text-p-nav sm:text-p-nav-sm md:text-p-nav-md lg:text-p-nav-lg xl:text-p-nav-xl 2xl:text-p-nav-2xl"
                   >
                     {t("links.imprint")}
                   </Link>

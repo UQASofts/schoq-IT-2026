@@ -1,0 +1,69 @@
+{
+    "Impressum": {
+        "Hero": {
+            "category": "Legal",
+            "title": "Impressum",
+            "description": "Company details, responsibilities and legal information — presented clearly and transparently."
+        },
+        "Page": {
+            "description": "Have a challenge worth solving?",
+            "buttonText": "Start a Project"
+        },
+        "Legal": {
+            "sidebar": {
+                "label": "Company Information",
+                "company": "Schoq UG",
+                "registeredOfficeLabel": "Registered Office",
+                "registeredOffice": ["Bochumer Str. 17", "10555 Berlin", "Germany"],
+                "registerLabel": "Commercial Register",
+                "register": ["Amtsgericht Charlottenburg", "HRB 276178"],
+                "directorsLabel": "Managing Directors",
+                "directors": ["Marie Louise Schneider", "Ubaid Farooq"],
+                "emailLabel": "Email",
+                "email": "info@schoq.com",
+                "phoneLabel": "Phone",
+                "phone": "+49 176 22569816",
+                "footer": "Legal information and contact details for Schoq UG."
+            },
+            "headingLabel": "Legal Information",
+            "title": "Transparent. Clear. Complete.",
+            "notice": "Legal Notice",
+            "sectionNumber": "01",
+            "sectionTitle": "Information pursuant to § 5 TMG and responsibility for content pursuant to § 55 para. 2 RStV",
+            "companyName": "Schoq UG",
+            "details": [
+                { "label": "Company", "value": "Schoq UG" },
+                { "label": "Handelsregister", "value": "Amtsgericht Charlottenburg, HRB 276178" },
+                { "label": "Business Address", "value": "Bochumer Str. 17, 10555 Berlin, Germany" },
+                { "label": "Represented by", "value": "Marie Louise Schneider & Ubaid Farooq" }
+            ],
+            "founderLabel": "Founder & Shareholder",
+            "founders": ["Marie Louise Schneider", "Ubaid Farooq"],
+            "extraSections": [
+                {
+                    "number": "02",
+                    "title": "Liability for Content",
+                    "body": "In accordance with § 7 (1) of the German Telemedia Act (TMG), we are responsible for our own content on these pages under general laws. However, according to §§ 8 to 10 TMG, we as service providers are not obligated to monitor transmitted or stored third-party information or to investigate circumstances that indicate illegal activity. Obligations to remove or block the use of information under general laws remain unaffected. However, liability in this regard is only possible from the moment of knowledge of a specific legal violation. Upon becoming aware of such legal infringements, we will remove the content immediately."
+                },
+                {
+                    "number": "03",
+                    "title": "Liability for Links",
+                    "body": "Our website contains links to external websites of third parties, over whose content we have no control. Therefore, we cannot assume any liability for these external contents. The respective provider or operator of the linked sites is always responsible for their content. The linked pages were checked for possible legal violations at the time of linking. Illegal content was not identifiable at the time of linking. However, a permanent content check of the linked pages is not reasonable without concrete evidence of a legal violation. If we become aware of any legal infringements, we will remove such links immediately."
+                },
+                {
+                    "number": "04",
+                    "title": "Copyright",
+                    "body": "The content and works created by the website operators on these pages are subject to German copyright law. Reproduction, editing, distribution, and any kind of use beyond the limits of copyright law require the written consent of the respective author or creator. Downloads and copies of this site are permitted for private, non-commercial use only. Insofar as the content on this site was not created by the operator, the copyrights of third parties are respected. In particular, third-party content is marked as such. If you become aware of a copyright infringement, please let us know. Upon becoming aware of such violations, we will remove the content immediately."
+                },
+                {
+                    "number": "05",
+                    "title": "Privacy Policy",
+                    "body": "The use of our website is generally possible without providing personal data. Name and email address are requested in the contact form if you have an inquiry and wish to be contacted or receive a response from us. Your data will be used exclusively for this purpose. We explicitly do not pass your data on to third parties. However, we point out that data transmission over the internet (e.g., communication via email) is never 100% secure. A complete protection of your data is not possible. If you do not trust electronic data transmission, you are welcome to contact us by phone at any time. The use of the contact details published in this legal notice for advertising purposes by third parties is strictly prohibited. Schoq UG reserves the right to take legal action against unsolicited advertising or spam messages.",
+                    "link": "View Privacy Policy →",
+                    "href": "/datenschutz",
+                    "note": "Note for the final publication: The legal formulations above were taken in terms of content from the existing Schoq Legal Notice. Statutory references and mandatory information should be legally checked or brought up to date before the go-live."
+                }
+            ]
+        }
+    }
+}

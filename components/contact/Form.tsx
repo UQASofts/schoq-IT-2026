@@ -132,7 +132,7 @@ export default function Form() {
                   {t("contactInfo.directLineLabel")}
                 </p>
                 <h3 className="font-inter not-italic text-contact text-p-contact sm:text-p-contact-sm md:text-p-contact-md lg:text-p-contact-lg xl:text-p-contact-xl 2xl:text-p-contact-2xl">
-                  +49 (176) 22 56 98 16
+                  +49 176 22569816
                 </h3>
               </div>
 

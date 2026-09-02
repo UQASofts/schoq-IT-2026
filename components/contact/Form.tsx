@@ -157,7 +157,7 @@ export default function Form() {
                 <Share2 className="w-4 h-4" />
               </button>
 
-              <a
+              {/* <a
                 href="https://linkedin.com"
                 target="_blank"
                 rel="noreferrer"
@@ -165,7 +165,7 @@ export default function Form() {
               >
                 LINKEDIN
                 <ArrowUpRight className="w-3.5 h-3.5" />
-              </a>
+              </a> */}
             </div>
           </div>
         </div>

@@ -31,17 +31,6 @@ const Main: React.FC = () => {
       mm.add(
         "(prefers-reduced-motion: no-preference) and (min-width: 1024px)",
         () => {
-          const firstLetters = () =>
-            gsap.utils.toArray<HTMLElement>(".tag-first", container.current);
-
-          firstLetters().forEach((el) => {
-            el.classList.remove(
-              "bg-global",
-              "bg-clip-text",
-              "text-transparent",
-            );
-          });
-
           gsap.set(".main-container", {
             clipPath: "inset(0% 99% 0% 0%)",
             x: "50%",
@@ -74,20 +63,7 @@ const Main: React.FC = () => {
             0,
           );
 
-          tl.add(() => {
-            firstLetters().forEach((el) => {
-              el.classList.add("bg-global", "bg-clip-text", "text-transparent");
-            });
-          });
-
           return () => {
-            firstLetters().forEach((el) => {
-              el.classList.remove(
-                "bg-global",
-                "bg-clip-text",
-                "text-transparent",
-              );
-            });
             tl.kill();
           };
         },
@@ -190,7 +166,9 @@ const Main: React.FC = () => {
                 key={tag}
                 className={`${geist.className} tags inline-block w-fit whitespace-nowrap text-[40px] font-bold not-italic leading-[120%] tracking-[-3px] text-[#696B78]`}
               >
-                <span className="tag-first inline-block">{tag.charAt(0)}</span>
+                <span className="tag-first inline-block bg-global bg-clip-text text-transparent">
+                  {tag.charAt(0)}
+                </span>
                 <span className="tag-rest inline-block overflow-hidden align-bottom whitespace-nowrap text-bg-global">
                   {tag.slice(1)}
                 </span>

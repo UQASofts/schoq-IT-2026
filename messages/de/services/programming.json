@@ -48,8 +48,8 @@
                     },
                     {
                         "id": "ai-solutions",
-                        "firstLine": "AI",
-                        "secondLine": "SOLUTIONS"
+                        "firstLine": "KI-",
+                        "secondLine": "LÖSUNGEN"
                     }
                 ]
             },
@@ -60,16 +60,16 @@
         },
         "Hero": {
             "category": "Programmierdienstleistungen",
-            "title1": "ENGINEERING BUILT",
-            "title2": "TO DELIVER.",
+            "title1": "Engineering gemacht",
+            "title2": "um abzuliefern.",
             "description": "Schoq liefert zuverlässige und wartbare Software für Frontend, Backend, APIs und Integrationen.",
             "cta": "Programm besprechen",
             "imageAlt": "Programmier-Workflow vom Code bis zum Deploy"
         },
         "Stack": {
             "subTitle": "Engineering-Kompetenzen",
-            "mainTitle1": "PROGRAMMING SUPPORT ACROSS",
-            "mainTitle2": "THE PRODUCT STACK.",
+            "mainTitle1": "Unterstützung während des gesamten",
+            "mainTitle2": "technischen Aufbaus.",
             "items": [
                 {
                     "number": "01",

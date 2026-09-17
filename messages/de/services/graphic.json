@@ -80,8 +80,8 @@
                     },
                     {
                         "id": "ai-solutions",
-                        "firstLine": "AI",
-                        "secondLine": "SOLUTIONS"
+                        "firstLine": "KI-",
+                        "secondLine": "LÖSUNGEN"
                     }
                 ]
             },
@@ -100,9 +100,9 @@
         },
         "ComplexToClear": {
             "category": "Von komplex zu klar",
-            "title1": "GOOD DESIGN GIVES PEOPLE A",
-            "title2": "CLEARER NEXT STEP.",
-            "description": "Das Ziel ist nicht Dekoration, sondern Hierarchie, Sicherheit und Konsistenz.",
+            "title1": "Ein gutes und klares Design führt zu mehr",
+            "title2": "Sicherheit bei den nächsten Schritten.",
+            "description": "Das Ziel ist nicht Dekoration, sondern Klarheit, Sicherheit und Konsistenz.",
             "beforeAlt": "Vorher: unübersichtliches Layout",
             "afterAlt": "Nachher: klare visuelle Hierarchie",
             "arrowAlt": "Von komplex zu klar"

@@ -10,7 +10,11 @@
             "webDevelopment": "Webentwicklung",
             "mobileDevelopment": "Mobile Entwicklung",
             "artificialIntelligence": "Künstliche Intelligenz",
-            "immersiveExperience": "Immersive Erlebnisse"
+            "immersiveExperience": "Immersive Erlebnisse",
+            "cloudInfrastructure": "Cloud & Infrastruktur",
+            "customSoftware": "Individuelle Software",
+            "graphicDesign": "Grafikdesign",
+            "programmingServices": "Programmierleistungen"
         },
         "FooterMessage": {
             "quote1": "Großartige Technologie definiert sich",

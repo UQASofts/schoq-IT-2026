@@ -840,3 +840,4 @@ export const HeaderBorderStyle = ({ className = "" }) => (
     </defs>
   </svg>
 );
+

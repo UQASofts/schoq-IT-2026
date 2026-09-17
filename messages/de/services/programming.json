@@ -1,0 +1,174 @@
+{
+    "ProgrammingServices": {
+        "Page": {
+            "pipeline": {
+                "mainTitle": "VON DER ANFORDERUNG ZUM ZUVERLÄSSIGEN RELEASE.",
+                "desc": "Wir klären, was funktionieren muss, wählen die richtige technische Struktur und liefern Software, die nach dem Launch leichter zu warten ist.",
+                "items": [
+                    {
+                        "number": "01",
+                        "title": "Definieren",
+                        "desc": "Anforderungen, Rahmenbedingungen, Nutzer und technische Abhängigkeiten klären."
+                    },
+                    {
+                        "number": "02",
+                        "title": "Architektur",
+                        "desc": "Anwendungsstruktur, Daten, APIs und den Entwicklungsansatz planen."
+                    },
+                    {
+                        "number": "03",
+                        "title": "Bauen & Testen",
+                        "desc": "In klaren Schritten entwickeln — mit Review, Tests und Qualitätschecks."
+                    },
+                    {
+                        "number": "04",
+                        "title": "Deployen & Verbessern",
+                        "desc": "Sicher releasen, das Verhalten überwachen und das System weiter verbessern."
+                    }
+                ]
+            },
+            "experties": {
+                "subTitle": "VERNETZTE EXPERTISE",
+                "mainTitle": "INFRASTRUKTUR, DIE FÜR DAS NÄCHSTE BEREIT IST?",
+                "items": [
+                    {
+                        "id": "custom-software",
+                        "firstLine": "INDIVIDUELLE",
+                        "secondLine": "SOFTWARE"
+                    },
+                    {
+                        "id": "mobile-dev",
+                        "firstLine": "MOBILE",
+                        "secondLine": "DEV"
+                    },
+                    {
+                        "id": "product-design",
+                        "firstLine": "PRODUKT-",
+                        "secondLine": "DESIGN"
+                    },
+                    {
+                        "id": "ai-solutions",
+                        "firstLine": "KI-",
+                        "secondLine": "LÖSUNGEN"
+                    },
+                    {
+                        "id": "immersive-experience",
+                        "firstLine": "IMMERSIVE",
+                        "secondLine": "ERLEBNISSE"
+                    }
+                ]
+            },
+            "footer": {
+                "buttonText": "Software besprechen",
+                "desc": "Haben Sie einen Prozess, der intelligenter funktionieren könnte?"
+            }
+        },
+        "Hero": {
+            "category": "PROGRAMMIERLEISTUNGEN",
+            "title1": "ENGINEERING, DAS",
+            "title2": "AUSGELIEFERT WIRD.",
+            "description": "Schoq liefert zuverlässige, wartbare Software über Frontend, Backend, APIs und Integrationen.",
+            "cta": "Programm besprechen",
+            "imageAlt": "Programmier-Workflow vom Code bis zum Deploy"
+        },
+        "Stack": {
+            "subTitle": "ENGINEERING-FÄHIGKEITEN",
+            "mainTitle1": "PROGRAMMIERUNG ÜBER DEN",
+            "mainTitle2": "GESAMTEN PRODUKT-STACK.",
+            "items": [
+                {
+                    "number": "01",
+                    "title": "Frontend-Engineering",
+                    "desc": "Responsive Oberflächen und Anwendungserlebnisse für echte Nutzer."
+                },
+                {
+                    "number": "02",
+                    "title": "Backend-Engineering",
+                    "desc": "Geschäftslogik, Services, Datenverarbeitung und Anwendungsfundament."
+                },
+                {
+                    "number": "03",
+                    "title": "APIs & Integrationen",
+                    "desc": "Plattformen, Drittanbieter-Services und interne Systeme verbinden."
+                },
+                {
+                    "number": "04",
+                    "title": "Datenbank & Data Services",
+                    "desc": "Strukturierte Datenmodelle, Zugriffsmuster und zuverlässige Persistenz."
+                },
+                {
+                    "number": "05",
+                    "title": "Legacy-Code-Modernisierung",
+                    "desc": "Bestehende Anwendungen modernisieren, ohne unnötige Rewrites."
+                },
+                {
+                    "number": "06",
+                    "title": "Engineering-Team-Erweiterung",
+                    "desc": "Erfahrene Entwickler direkt in ein bestehendes Produktteam bringen."
+                }
+            ]
+        },
+        "CleanCode": {
+            "category": "ALS SYSTEM GEBAUT",
+            "title1": "SAUBERER CODE IST NUR EIN",
+            "title2": "TEIL ZUVERLÄSSIGER SOFTWARE.",
+            "description": "Gutes Engineering verbindet Oberfläche, Geschäftslogik, Integrationen, Daten und Infrastruktur zu einem wartbaren System.",
+            "layers": [
+                {
+                    "title": "Benutzeroberfläche",
+                    "desc": "Frontend-Erfahrung"
+                },
+                {
+                    "title": "Anwendungslogik",
+                    "desc": "Regeln und Workflows"
+                },
+                {
+                    "title": "APIs & Integrationen",
+                    "desc": "Verbundene Services"
+                },
+                {
+                    "title": "Daten",
+                    "desc": "Modelle und Persistenz"
+                },
+                {
+                    "title": "Infrastruktur",
+                    "desc": "Runtime und Delivery"
+                }
+            ]
+        },
+        "ShipChanges": {
+            "category": "DELIVERY-PIPELINE",
+            "title1": "ÄNDERUNGEN AUSLIEFERN,",
+            "title2": "OHNE DIE KONTROLLE ZU VERLIEREN.",
+            "description": "Eine klare Development-Pipeline macht Releases einfacher zu prüfen, zu testen und bereitzustellen.",
+            "steps": ["Code", "Review", "Test", "Build", "Deploy", "Monitor"]
+        },
+        "Tomorrow": {
+            "category": "ENGINEERING-QUALITÄT",
+            "title1": "GEBAUT, UM MORGEN",
+            "title2": "WEITERGEARBEITET ZU WERDEN.",
+            "items": [
+                {
+                    "number": "01",
+                    "title": "Wartbarkeit",
+                    "desc": "Klare Struktur und Konventionen, die künftige Änderungen erleichtern."
+                },
+                {
+                    "number": "02",
+                    "title": "Zuverlässigkeit",
+                    "desc": "Tests und vorhersagbares Verhalten in den wichtigen Abläufen."
+                },
+                {
+                    "number": "03",
+                    "title": "Sicherheit",
+                    "desc": "Angemessener Zugriff, Validierung und sichere Engineering-Praktiken."
+                },
+                {
+                    "number": "04",
+                    "title": "Performance",
+                    "desc": "Reaktionsfähige Systeme ohne unnötigen technischen Overhead."
+                }
+            ]
+        }
+    }
+}

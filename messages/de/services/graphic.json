@@ -1,0 +1,115 @@
+{
+    "GraphicDesign": {
+        "Page": {
+            "pipeline": {
+                "mainTitle": "VON DER IDEE ZU EINEM KOHÄRENTEN VISUELLEN SYSTEM.",
+                "desc": "Wir vereinfachen, was kommuniziert werden muss, bauen die passende visuelle Sprache und sorgen dafür, dass das Design in jedem Format konsistent funktioniert.",
+                "items": [
+                    {
+                        "number": "01",
+                        "title": "Verstehen",
+                        "desc": "Zielgruppe, Botschaft, Produkt und Geschäftskontext klären."
+                    },
+                    {
+                        "number": "02",
+                        "title": "Erkunden",
+                        "desc": "Visuelle Richtung, Hierarchie und zentrale Designprinzipien entwickeln."
+                    },
+                    {
+                        "number": "03",
+                        "title": "Gestalten",
+                        "desc": "Die zentralen Oberflächen, Assets, Komponenten und das visuelle System erstellen."
+                    },
+                    {
+                        "number": "04",
+                        "title": "Verfeinern",
+                        "desc": "Finale, wiederverwendbare Design-Assets für die Produktion vorbereiten."
+                    }
+                ]
+            },
+            "capabilities": {
+                "mainTitle1": "VISUELLE ARBEIT, DIE SICH UM",
+                "mainTitle2": "DIE BOTSCHAFT DREHT.",
+                "subTitle": "WAS WIR GESTALTEN",
+                "items": [
+                    {
+                        "number": "01",
+                        "title": "Produkt-UX/UI",
+                        "desc": "Klare Oberflächen und Abläufe für Web- und Mobile-Produkte."
+                    },
+                    {
+                        "number": "02",
+                        "title": "Web & Landingpages",
+                        "desc": "Responsive, conversion-orientierte digitale Erlebnisse."
+                    },
+                    {
+                        "number": "03",
+                        "title": "Marke & visuelle Identität",
+                        "desc": "Typografie, Farbe, grafische Sprache und Markensysteme."
+                    },
+                    {
+                        "number": "04",
+                        "title": "Designsysteme",
+                        "desc": "Wiederverwendbare Komponenten und visuelle Regeln, die Produkte konsistent halten."
+                    },
+                    {
+                        "number": "05",
+                        "title": "Kampagnen- & Social-Design",
+                        "desc": "Hochwirksames Creative für Kampagnen, Launches und Social Content."
+                    }
+                ]
+            },
+            "experties": {
+                "subTitle": "VERNETZTE EXPERTISE",
+                "mainTitle": "INFRASTRUKTUR, DIE FÜR DAS NÄCHSTE BEREIT IST?",
+                "items": [
+                    {
+                        "id": "custom-software",
+                        "firstLine": "INDIVIDUELLE",
+                        "secondLine": "SOFTWARE"
+                    },
+                    {
+                        "id": "mobile-dev",
+                        "firstLine": "MOBILE",
+                        "secondLine": "DEV"
+                    },
+                    {
+                        "id": "product-design",
+                        "firstLine": "PRODUKT-",
+                        "secondLine": "DESIGN"
+                    },
+                    {
+                        "id": "ai-solutions",
+                        "firstLine": "KI-",
+                        "secondLine": "LÖSUNGEN"
+                    },
+                    {
+                        "id": "immersive-experience",
+                        "firstLine": "IMMERSIVE",
+                        "secondLine": "ERLEBNISSE"
+                    }
+                ]
+            },
+            "footer": {
+                "buttonText": "Design besprechen",
+                "desc": "Haben Sie einen Prozess, der intelligenter funktionieren könnte?"
+            }
+        },
+        "Hero": {
+            "category": "GRAFIKDESIGN",
+            "title1": "DESIGN, DAS IDEEN",
+            "title2": "KLAR FÜHLEN LÄSST.",
+            "description": "Von Produktoberflächen und Websites bis zu Markensystemen und Kampagnenvisuals schafft Schoq Design, das Klarheit, Konsistenz und Persönlichkeit an jeden Touchpoint bringt.",
+            "cta": "Design besprechen",
+            "imageAlt": "Visuelles System für Grafikdesign"
+        },
+        "ComplexToClear": {
+            "category": "VON KOMPLEX ZU KLAR",
+            "title": "GUTES DESIGN GIBT MENSCHEN DEN NÄCHSTEN KLAREN SCHRITT.",
+            "description": "Das Ziel ist nicht Dekoration. Es ist Hierarchie, Zuversicht und Konsistenz.",
+            "beforeAlt": "Vorher: unübersichtliches Layout",
+            "afterAlt": "Nachher: klare visuelle Hierarchie",
+            "arrowAlt": "Von komplex zu klar"
+        }
+    }
+}

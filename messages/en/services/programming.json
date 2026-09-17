@@ -1,0 +1,174 @@
+{
+    "ProgrammingServices": {
+        "Page": {
+            "pipeline": {
+                "mainTitle": "FROM REQUIREMENT TO RELIABLE RELEASE.",
+                "desc": "We understand what needs to work, choose the right technical structure and deliver software that is easier to maintain after launch.",
+                "items": [
+                    {
+                        "number": "01",
+                        "title": "Define",
+                        "desc": "Clarify requirements, constraints, users and technical dependencies."
+                    },
+                    {
+                        "number": "02",
+                        "title": "Architect",
+                        "desc": "Plan the application structure, data, APIs and development approach."
+                    },
+                    {
+                        "number": "03",
+                        "title": "Build & Test",
+                        "desc": "Develop in clear increments with review, testing and quality checks."
+                    },
+                    {
+                        "number": "04",
+                        "title": "Deploy & Improve",
+                        "desc": "Release safely, monitor behaviour and continue improving the system."
+                    }
+                ]
+            },
+            "experties": {
+                "subTitle": "CONNECTED EXPERTISE",
+                "mainTitle": "NEED INFRASTRUCTURE READY FOR WHAT COMES NEXT?",
+                "items": [
+                    {
+                        "id": "custom-software",
+                        "firstLine": "CUSTOM",
+                        "secondLine": "SOFTWARE"
+                    },
+                    {
+                        "id": "mobile-dev",
+                        "firstLine": "MOBILE",
+                        "secondLine": "DEV"
+                    },
+                    {
+                        "id": "product-design",
+                        "firstLine": "PRODUCT",
+                        "secondLine": "DESIGN"
+                    },
+                    {
+                        "id": "ai-solutions",
+                        "firstLine": "AI",
+                        "secondLine": "SOLUTIONS"
+                    },
+                    {
+                        "id": "immersive-experience",
+                        "firstLine": "IMMERSIVE",
+                        "secondLine": "EXPERIENCES"
+                    }
+                ]
+            },
+            "footer": {
+                "buttonText": "Discuss Your Software",
+                "desc": "Have a process that could work smarter?"
+            }
+        },
+        "Hero": {
+            "category": "PROGRAMMING SERVICES",
+            "title1": "ENGINEERING BUILT",
+            "title2": "TO DELIVER.",
+            "description": "Schoq delivers reliable, maintainable software across frontend, backend, APIs and integrations.",
+            "cta": "Discuss Your Program",
+            "imageAlt": "Programming workflow from code to deploy"
+        },
+        "Stack": {
+            "subTitle": "ENGINEERING CAPABILITIES",
+            "mainTitle1": "PROGRAMMING SUPPORT ACROSS",
+            "mainTitle2": "THE PRODUCT STACK.",
+            "items": [
+                {
+                    "number": "01",
+                    "title": "Frontend Engineering",
+                    "desc": "Responsive interfaces and application experiences built for real users."
+                },
+                {
+                    "number": "02",
+                    "title": "Backend Engineering",
+                    "desc": "Business logic, services, data handling and application foundations."
+                },
+                {
+                    "number": "03",
+                    "title": "APIs & Integrations",
+                    "desc": "Connect platforms, third-party services and internal systems."
+                },
+                {
+                    "number": "04",
+                    "title": "Database & Data Services",
+                    "desc": "Structured data models, access patterns and reliable persistence."
+                },
+                {
+                    "number": "05",
+                    "title": "Legacy Code Modernisation",
+                    "desc": "Improve ageing applications without unnecessary rewrites."
+                },
+                {
+                    "number": "06",
+                    "title": "Engineering Team Extension",
+                    "desc": "Add experienced developers directly to an existing product team."
+                }
+            ]
+        },
+        "CleanCode": {
+            "category": "BUILT AS A SYSTEM",
+            "title1": "CLEAN CODE IS ONLY ONE",
+            "title2": "PART OF RELIABLE SOFTWARE.",
+            "description": "Good engineering connects the interface, business logic, integrations, data and infrastructure into one maintainable system.",
+            "layers": [
+                {
+                    "title": "User Interface",
+                    "desc": "Frontend experience"
+                },
+                {
+                    "title": "Application Logic",
+                    "desc": "Rules and workflows"
+                },
+                {
+                    "title": "APIs & Integrations",
+                    "desc": "Connected services"
+                },
+                {
+                    "title": "Data",
+                    "desc": "Models and persistence"
+                },
+                {
+                    "title": "Infrastructure",
+                    "desc": "Runtime and delivery"
+                }
+            ]
+        },
+        "ShipChanges": {
+            "category": "DELIVERY PIPELINE",
+            "title1": "SHIP CHANGES WITHOUT",
+            "title2": "LOSING CONTROL.",
+            "description": "A clear development pipeline makes releases easier to review, test and deploy.",
+            "steps": ["Code", "Review", "Test", "Build", "Deploy", "Monitor"]
+        },
+        "Tomorrow": {
+            "category": "ENGINEERING QUALITY",
+            "title1": "BUILT TO BE WORKED ON AGAIN",
+            "title2": "TOMORROW.",
+            "items": [
+                {
+                    "number": "01",
+                    "title": "Maintainability",
+                    "desc": "Clear structure and conventions that make future changes easier."
+                },
+                {
+                    "number": "02",
+                    "title": "Reliability",
+                    "desc": "Testing and predictable behaviour across the important flows."
+                },
+                {
+                    "number": "03",
+                    "title": "Security",
+                    "desc": "Appropriate access, validation and secure engineering practices."
+                },
+                {
+                    "number": "04",
+                    "title": "Performance",
+                    "desc": "Responsive systems without unnecessary technical overhead."
+                }
+            ]
+        }
+    }
+}

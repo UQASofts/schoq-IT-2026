@@ -10,7 +10,11 @@
             "webDevelopment": "Web Development",
             "mobileDevelopment": "Mobile Development",
             "artificialIntelligence": "Artificial Intelligence",
-            "immersiveExperience": "Immersive Experience"
+            "immersiveExperience": "Immersive Experience",
+            "cloudInfrastructure": "Cloud & Infrastructure",
+            "customSoftware": "Custom Software",
+            "graphicDesign": "Graphic Design",
+            "programmingServices": "Programming Services"
         },
         "FooterMessage": {
             "quote1": "Great technology is not defined",

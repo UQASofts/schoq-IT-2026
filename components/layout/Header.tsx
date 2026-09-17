@@ -38,6 +38,7 @@ const Header: React.FC = () => {
       name: t("services"),
       href: "#",
       children: [
+        { title: t("customSoftware"), href: "/services/custom-software" },
         { title: t("webDevelopment"), href: "/services/web-development" },
         { title: t("mobileDevelopment"), href: "/services/mobile-development" },
         {
@@ -45,8 +46,16 @@ const Header: React.FC = () => {
           href: "/services/artificial-intelligence",
         },
         {
-          title: t("immersiveExperience"),
-          href: "/services/immersive-experience",
+          title: t("cloudInfrastructure"),
+          href: "/services/cloud-infrastructure",
+        },
+        {
+          title: t("graphicDesign"),
+          href: "/services/graphic-design",
+        },
+        {
+          title: t("programmingServices"),
+          href: "/services/programming-services",
         },
       ],
     },
@@ -217,12 +226,12 @@ const Header: React.FC = () => {
                     </Link>
 
                     {hasChildren && (
-                      <div className="invisible absolute top-full left-0 z-50 w-56 pt-3 translate-y-1 opacity-0 transition-all duration-200 ease-out group-hover:visible group-hover:translate-y-0 group-hover:opacity-100">
+                      <div className="invisible absolute top-full left-0 z-50 w-72 pt-3 translate-y-1 opacity-0 transition-all duration-200 ease-out group-hover:visible group-hover:translate-y-0 group-hover:opacity-100">
                         <div className="flex flex-col gap-1 rounded-global border border-gray-100 bg-white/95 p-2 shadow-[0_4px_24px_0_rgba(0,0,0,0.1)] backdrop-blur-md">
                           {link.children?.map((child) => {
                             const isChildActive = pathname === child.href;
                             return (
-                              <Link
+                              <Link   
                                 key={child.title}
                                 href={child.href}
                                 className={`rounded-lg px-3 py-2 transition-colors text-p-nav sm:text-p-nav-sm md:text-p-nav-md lg:text-p-nav-lg xl:text-p-nav-xl 2xl:text-p-nav-2xl ${isChildActive

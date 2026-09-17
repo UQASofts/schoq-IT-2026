@@ -1,0 +1,101 @@
+{
+    "CloudInfrastructure": {
+        "Page": {
+            "pipeline": {
+                "mainTitle": "FROM ARCHITECTURE TO RELIABLE INFRASTRUCTURE.",
+                "desc": "A rigorous, structured approach to translating complex technical requirements into performant digital realities.",
+                "items": [
+                    {
+                        "number": "01",
+                        "title": "Assess",
+                        "desc": "Align goals, constraints and risk."
+                    },
+                    {
+                        "number": "02",
+                        "title": "Architect",
+                        "desc": "Structure and environment."
+                    },
+                    {
+                        "number": "03",
+                        "title": "Build",
+                        "desc": "Infrastructure and migration."
+                    },
+                    {
+                        "number": "04",
+                        "title": "Improve",
+                        "desc": "Monitor and optimise."
+                    }
+                ]
+            },
+            "capabilities": {
+                "mainTitle": "CLOUD CAPABILITIES",
+                "subTitle": "WHAT WE CAN BUILD",
+                "items": [
+                    {
+                        "title": "Cloud Architecture",
+                        "desc": "Infrastructure designed around the needs of the product."
+                    },
+                    {
+                        "title": "Cloud Migration",
+                        "desc": "Move existing systems over to a modern cloud environment."
+                    },
+                    {
+                        "title": "DevOps & Deployment",
+                        "desc": "Create reliable, repeatable build and release workflows."
+                    },
+                    {
+                        "title": "Monitoring & Reliability",
+                        "desc": "Keep infrastructure in view so performance is visible."
+                    },
+                    {
+                        "title": "Infrastructure Modernization",
+                        "desc": "Simplify and improve older technical environments."
+                    }
+                ]
+            },
+            "experties": {
+                "subTitle": "CONNECTED EXPERTISE",
+                "mainTitle": "NEED INFRASTRUCTURE READY FOR WHAT COMES NEXT?",
+                "items": [
+                    {
+                        "id": "custom-software",
+                        "firstLine": "CUSTOM",
+                        "secondLine": "SOFTWARE"
+                    },
+                    {
+                        "id": "mobile-app",
+                        "firstLine": "MOBILE",
+                        "secondLine": "APP"
+                    },
+                    {
+                        "id": "product-design",
+                        "firstLine": "PRODUCT",
+                        "secondLine": "DESIGN"
+                    },
+                    {
+                        "id": "ai-solutions",
+                        "firstLine": "AI",
+                        "secondLine": "SOLUTIONS"
+                    },
+                    {
+                        "id": "immersive-experience",
+                        "firstLine": "IMMERSIVE",
+                        "secondLine": "EXPERIENCE"
+                    }
+                ]
+            },
+            "footer": {
+                "buttonText": "Discuss Your Infrastructure",
+                "desc": "Have a process that could work smarter?"
+            }
+        },
+        "Hero": {
+            "category": "CLOUD & INFRASTRUCTURE",
+            "title1": "BUILT TO STAY FAST.",
+            "title2": "READY TO SCALE.",
+            "description": "We design and manage cloud infrastructure that keeps digital products reliable, secure and ready for growth.",
+            "cta": "Discuss Your Infrastructure",
+            "imageAlt": "Cloud infrastructure dashboard"
+        }
+    }
+}

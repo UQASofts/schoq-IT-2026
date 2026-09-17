@@ -1,0 +1,101 @@
+{
+    "CloudInfrastructure": {
+        "Page": {
+            "pipeline": {
+                "mainTitle": "VON DER ARCHITEKTUR ZU ZUVERLÄSSIGER INFRASTRUKTUR.",
+                "desc": "Ein konsequenter, strukturierter Ansatz, um komplexe technische Anforderungen in leistungsfähige digitale Realitäten zu übersetzen.",
+                "items": [
+                    {
+                        "number": "01",
+                        "title": "Bewerten",
+                        "desc": "Ziele, Rahmenbedingungen und Risiken abstimmen."
+                    },
+                    {
+                        "number": "02",
+                        "title": "Architektur",
+                        "desc": "Struktur und Umgebung."
+                    },
+                    {
+                        "number": "03",
+                        "title": "Bauen",
+                        "desc": "Infrastruktur und Migration."
+                    },
+                    {
+                        "number": "04",
+                        "title": "Verbessern",
+                        "desc": "Überwachen und optimieren."
+                    }
+                ]
+            },
+            "capabilities": {
+                "mainTitle": "CLOUD-FÄHIGKEITEN",
+                "subTitle": "WAS WIR BAUEN KÖNNEN",
+                "items": [
+                    {
+                        "title": "Cloud-Architektur",
+                        "desc": "Infrastruktur, die um die Anforderungen des Produkts herum entworfen ist."
+                    },
+                    {
+                        "title": "Cloud-Migration",
+                        "desc": "Bestehende Systeme in eine moderne Cloud-Umgebung überführen."
+                    },
+                    {
+                        "title": "DevOps & Deployment",
+                        "desc": "Zuverlässige, wiederholbare Build- und Release-Workflows aufbauen."
+                    },
+                    {
+                        "title": "Monitoring & Zuverlässigkeit",
+                        "desc": "Infrastruktur im Blick behalten, damit Performance sichtbar bleibt."
+                    },
+                    {
+                        "title": "Infrastruktur-Modernisierung",
+                        "desc": "Ältere technische Umgebungen vereinfachen und verbessern."
+                    }
+                ]
+            },
+            "experties": {
+                "subTitle": "VERNETZTE EXPERTISE",
+                "mainTitle": "INFRASTRUKTUR, DIE FÜR DAS NÄCHSTE BEREIT IST?",
+                "items": [
+                    {
+                        "id": "custom-software",
+                        "firstLine": "INDIVIDUELLE",
+                        "secondLine": "SOFTWARE"
+                    },
+                    {
+                        "id": "mobile-app",
+                        "firstLine": "MOBILE",
+                        "secondLine": "APP"
+                    },
+                    {
+                        "id": "product-design",
+                        "firstLine": "PRODUKT-",
+                        "secondLine": "DESIGN"
+                    },
+                    {
+                        "id": "ai-solutions",
+                        "firstLine": "KI-",
+                        "secondLine": "LÖSUNGEN"
+                    },
+                    {
+                        "id": "immersive-experience",
+                        "firstLine": "IMMERSIVE",
+                        "secondLine": "ERLEBNISSE"
+                    }
+                ]
+            },
+            "footer": {
+                "buttonText": "Infrastruktur besprechen",
+                "desc": "Haben Sie einen Prozess, der intelligenter funktionieren könnte?"
+            }
+        },
+        "Hero": {
+            "category": "CLOUD & INFRASTRUKTUR",
+            "title1": "GEBAUT, UM SCHNELL ZU BLEIBEN.",
+            "title2": "BEREIT ZU SKALIEREN.",
+            "description": "Wir entwerfen und betreiben Cloud-Infrastruktur, die digitale Produkte zuverlässig, sicher und wachstumsbereit hält.",
+            "cta": "Infrastruktur besprechen",
+            "imageAlt": "Dashboard für Cloud-Infrastruktur"
+        }
+    }
+}

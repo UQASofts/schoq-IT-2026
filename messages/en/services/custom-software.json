@@ -1,0 +1,128 @@
+{
+    "CustomSoftware": {
+        "Page": {
+            "pipeline": {
+                "mainTitle": "FROM BUSINESS NEED TO WORKING SOFTWARE.",
+                "desc": "We understand how the business works first, then design and engineer software around the real process.",
+                "items": [
+                    {
+                        "number": "01",
+                        "title": "Understand",
+                        "desc": "Map users, workflows, requirements and existing systems."
+                    },
+                    {
+                        "number": "02",
+                        "title": "Architect",
+                        "desc": "Define the product structure, data model and technical foundation."
+                    },
+                    {
+                        "number": "03",
+                        "title": "Build & Integrate",
+                        "desc": "Develop the software and connect the required systems."
+                    },
+                    {
+                        "number": "04",
+                        "title": "Launch & Improve",
+                        "desc": "Test, deploy and continue improving the product."
+                    }
+                ]
+            },
+            "capabilities": {
+                "mainTitle": "CUSTOM SOFTWARE SHAPED AROUND REAL OPERATIONS.",
+                "subTitle": "WHAT WE CAN BUILD",
+                "items": [
+                    {
+                        "title": "Business Platforms",
+                        "desc": "Custom systems for internal operations and teams."
+                    },
+                    {
+                        "title": "Operational Dashboards",
+                        "desc": "Bring workflows, users and reporting into one interface."
+                    },
+                    {
+                        "title": "Workflow Systems",
+                        "desc": "Digitise requests, approvals and repeatable processes."
+                    },
+                    {
+                        "title": "APIs & Integrations",
+                        "desc": "Connect products, services and business systems."
+                    },
+                    {
+                        "title": "Legacy Modernisation",
+                        "desc": "Improve systems that are difficult to maintain or extend."
+                    }
+                ]
+            },
+            "experties": {
+                "subTitle": "CONNECTED EXPERTISE",
+                "mainTitle": "NEED INFRASTRUCTURE READY FOR WHAT COMES NEXT?",
+                "items": [
+                    {
+                        "id": "custom-software",
+                        "firstLine": "CUSTOM",
+                        "secondLine": "SOFTWARE"
+                    },
+                    {
+                        "id": "mobile-dev",
+                        "firstLine": "MOBILE",
+                        "secondLine": "DEV"
+                    },
+                    {
+                        "id": "product-design",
+                        "firstLine": "PRODUCT",
+                        "secondLine": "DESIGN"
+                    },
+                    {
+                        "id": "ai-solutions",
+                        "firstLine": "AI",
+                        "secondLine": "SOLUTIONS"
+                    },
+                    {
+                        "id": "immersive-experience",
+                        "firstLine": "IMMERSIVE",
+                        "secondLine": "EXPERIENCES"
+                    }
+                ]
+            },
+            "footer": {
+                "buttonText": "Discuss Your Software",
+                "desc": "Have a process that could work smarter?"
+            }
+        },
+        "Hero": {
+            "category": "CUSTOM SOFTWARE",
+            "title1": "SOFTWARE BUILT AROUND",
+            "title2": "THE WAY YOU WORK.",
+            "description": "Schoq designs and develops custom software that connects workflows, data and teams into reliable digital systems.",
+            "cta": "Discuss Your Software",
+            "imageAlt": "Custom software workflow diagram"
+        },
+        "FitSystems": {
+            "category": "BUILT AS A SYSTEM",
+            "title": "MORE THAN AN INTERFACE.",
+            "description": "Reliable custom software connects the experience people use with the logic, data and systems operating underneath it.",
+            "layers": [
+                {
+                    "title": "User Experience",
+                    "desc": "People interact here"
+                },
+                {
+                    "title": "Business Logic",
+                    "desc": "Rules and workflows"
+                },
+                {
+                    "title": "APIs & Integrations",
+                    "desc": "Connected systems"
+                },
+                {
+                    "title": "Data",
+                    "desc": "Structured information"
+                },
+                {
+                    "title": "Infrastructure",
+                    "desc": "Runtime and delivery"
+                }
+            ]
+        }
+    }
+}

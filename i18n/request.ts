@@ -15,6 +15,10 @@ async function loadMessages(locale: string) {
     import(`../messages/${locale}/services/shared.json`),
     import(`../messages/${locale}/services/web.json`),
     import(`../messages/${locale}/services/immersive.json`),
+    import(`../messages/${locale}/services/cloud.json`),
+    import(`../messages/${locale}/services/custom-software.json`),
+    import(`../messages/${locale}/services/graphic.json`),
+    import(`../messages/${locale}/services/programming.json`),
   ]);
 
   return files.reduce(

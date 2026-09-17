@@ -84,9 +84,21 @@ export default function ServicesSectionTwo({
   return (
     <section
       ref={sectionRef}
-      className="flex w-full items-center justify-center bg-linear-to-br from-[#eef2ff] via-[#f0f9ff] to-[#ecfdf5] px-[4%] py-global selection:bg-indigo-100 sm:py-global-sm md:py-global-md lg:px-[8%] lg:py-global-lg xl:py-global-xl 2xl:py-global-2xl"
+      className="relative flex w-full items-center justify-center overflow-hidden bg-white px-[4%] py-global selection:bg-indigo-100 sm:py-global-sm md:py-global-md lg:px-[8%] lg:py-global-lg xl:py-global-xl 2xl:py-global-2xl"
     >
-      <div className=" mx-auto w-full space-y-12 md:space-y-16">
+      <div
+        aria-hidden
+        className="pointer-events-none absolute top-1/2 left-1/2 z-0 -translate-x-1/2 -translate-y-6/7 blur-[186px] rotate-[0.639deg]"
+        style={{
+          width: "1905.102px",
+          height: "474.333px",
+          borderRadius: "1905.102px",
+          background:
+            "linear-gradient(90deg, rgba(87, 94, 227, 0.30) 0%, rgba(86, 213, 154, 0.30) 100%)",
+        }}
+      />
+
+      <div className="relative z-10 mx-auto w-full space-y-12 md:space-y-16">
         {/* Section Header */}
         <div className="text-center space-y-3 max-w-5xl mx-auto">
           <h2
@@ -111,19 +123,20 @@ export default function ServicesSectionTwo({
           {cardsContent.map((card) => (
             <div
               key={card.number}
-              className="bg-white/70 backdrop-blur-md rounded-2xl p-6 sm:p-8 border border-white/80 shadow-[0_10px_30px_rgba(0,0,0,0.03)] hover:shadow-[0_15px_35px_rgba(0,0,0,0.06)] hover:-translate-y-1 transition-shadow duration-300 will-change-[transform,opacity] flex flex-col justify-between"
+              className="flex flex-1 flex-col items-start gap-4 self-stretch p-6 will-change-[transform,opacity]"
+              style={{
+                borderRadius: "8.276px",
+                background: "rgba(255, 255, 255, 0.20)",
+                boxShadow: "0 4.138px 24.828px 0 rgba(0, 0, 0, 0.05)",
+              }}
             >
-              <div className="space-y-4">
-                <span className="block text-2xl font-bold text-indigo-400/90 tracking-tight">
-                  {card.number}
-                </span>
-
-                <h3 className="text-heading text-h3 sm:text-h3-sm md:text-h3-md lg:text-h3-lg xl:text-h3-xl 2xl:text-h3-2xl">
-                  {card.title}
-                </h3>
-              </div>
-
-              <p className="mt-2 text-neutral-500 text-p sm:text-p-sm md:text-p-md lg:text-p-lg xl:text-p-xl 2xl:text-p-2xl">
+              <span className="text-2xl font-bold tracking-tight text-indigo-400/90">
+                {card.number}
+              </span>
+              <h3 className="text-heading text-h3 sm:text-h3-sm md:text-h3-md lg:text-h3-lg xl:text-h3-xl 2xl:text-h3-2xl">
+                {card.title}
+              </h3>
+              <p className="text-neutral-500 text-p sm:text-p-sm md:text-p-md lg:text-p-lg xl:text-p-xl 2xl:text-p-2xl">
                 {card.desc}
               </p>
             </div>

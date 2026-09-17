@@ -2,7 +2,7 @@
     "GraphicDesign": {
         "Page": {
             "pipeline": {
-                "mainTitle": "VON DER IDEE ZU EINEM KOHÄRENTEN VISUELLEN SYSTEM.",
+                "mainTitle": "Von der Idee zu einem passenden, runden visuellen System.",
                 "desc": "",
                 "items": [
                     {
@@ -17,7 +17,7 @@
                     },
                     {
                         "number": "03",
-                        "title": "Gestalten",
+                        "title": "Design",
                         "desc": "Zentrale Oberflächen, Assets, Komponenten und das visuelle System erstellen."
                     },
                     {
@@ -30,7 +30,7 @@
             "capabilities": {
                 "mainTitle1": "VISUAL WORK BUILT AROUND",
                 "mainTitle2": "THE MESSAGE.",
-                "subTitle": "WAS WIR GESTALTEN",
+                "subTitle": "WAS WIR DESIGNEN",
                 "items": [
                     {
                         "number": "01",
@@ -92,8 +92,8 @@
         },
         "Hero": {
             "category": "GRAFIKDESIGN",
-            "title1": "DESIGN THAT MAKES",
-            "title2": "IDEAS FEEL CLEAR.",
+            "title1": "Design, das Ideen",
+            "title2": "klar werden lässt.",
             "description": "Von Produktoberflächen und Websites bis hin zu Markensystemen und Kampagnenvisuals entwickelt Schoq Design, das Klarheit, Konsistenz und Persönlichkeit an jedem Kontaktpunkt schafft.",
             "cta": "Sprechen Sie mit uns über Ihr Design",
             "imageAlt": "Visuelles System für Grafikdesign"

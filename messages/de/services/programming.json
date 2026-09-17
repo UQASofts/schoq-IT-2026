@@ -84,7 +84,7 @@
                 {
                     "number": "03",
                     "title": "APIs & Integrationen",
-                    "desc": "Plattformen, Drittanbieter-Services und interne Systeme verbinden."
+                    "desc": "Plattform, third party services und interne Systeme zusammenbringen."
                 },
                 {
                     "number": "04",
@@ -133,15 +133,15 @@
         },
         "ShipChanges": {
             "category": "Bereitstellungspipeline",
-            "title1": "SHIP CHANGES WITHOUT",
-            "title2": "LOSING CONTROL.",
+            "title1": "Kurswechsel ohne",
+            "title2": "Kontrollverlust.",
             "description": "Eine klare Entwicklungspipeline macht Releases einfacher zu prüfen, zu testen und bereitzustellen.",
-            "steps": ["CODE", "REVIEW", "TEST", "BUILD", "BEREITSTELLEN", "ÜBERWACHEN"]
+            "steps": ["CODE", "Überprüfung", "TEST", "Bauen", "BEREITSTELLEN", "ÜBERWACHEN"]
         },
         "Tomorrow": {
             "category": "Engineering-Qualität",
-            "title1": "BUILT TO BE WORKED ON AGAIN",
-            "title2": "TOMORROW.",
+            "title1": "Gebaut um",
+            "title2": "mitzuwachsen.",
             "items": [
                 {
                     "number": "01",

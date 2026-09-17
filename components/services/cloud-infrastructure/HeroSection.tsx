@@ -8,6 +8,7 @@ import { useGSAP } from "@gsap/react";
 import { useTranslations } from "next-intl";
 
 import HeroImg from "@/public/services/cloud_&_infracture.png";
+import HeroImgSmall from "@/public/services/cloud_&_infracture-small.png";
 
 export default function CloudHeroSection() {
   const containerRef = useRef<HTMLDivElement>(null);
@@ -87,10 +88,16 @@ export default function CloudHeroSection() {
       >
         <div className="relative w-full overflow-hidden rounded-global sm:rounded-global-sm md:rounded-global-md lg:rounded-global-lg xl:rounded-global-xl 2xl:rounded-global-2xl">
           <Image
+            src={HeroImgSmall}
+            alt={t("imageAlt")}
+            priority
+            className="h-auto w-full object-contain md:hidden"
+          />
+          <Image
             src={HeroImg}
             alt={t("imageAlt")}
             priority
-            className="h-auto w-full object-contain"
+            className="hidden h-auto w-full object-contain md:block"
           />
         </div>
       </div>

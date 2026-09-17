@@ -27,7 +27,13 @@
                 },
                 "projectDescriptionLabel": "BESCHREIBEN SIE IHR PROJEKT KURZ",
                 "projectDescriptionPlaceholder": "Wir möchten starten...",
-                "submitButton": "Projektdetails senden →"
+                "submitButton": "Projektdetails senden →",
+                "sending": "Wird gesendet...",
+                "successEyebrow": "Nachricht gesendet",
+                "successTitle": "Wir haben Ihre Projektdetails erhalten",
+                "success": "Vielen Dank. Unser Team prüft Ihre Anfrage und meldet sich mit dem nächsten praktischen Schritt.",
+                "successClose": "Schließen",
+                "error": "Etwas ist schiefgelaufen. Bitte versuchen Sie es erneut oder schreiben Sie an info@schoq.com."
             }
         },
         "GetInTouch": {

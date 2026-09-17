@@ -2,7 +2,6 @@
 
 import { useRef } from "react";
 import Link from "next/link";
-import { ArrowRight } from "lucide-react";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import { useGSAP } from "@gsap/react";
@@ -40,9 +39,6 @@ export default function SectionMain() {
         "<",
       );
 
-      // ----------------------------------------------------
-      // 2nd Timeline: Container-Two (Triggers at 30% into viewport)
-      // ----------------------------------------------------
       const tlTwo = gsap.timeline({
         scrollTrigger: {
           trigger: containerTwoRef.current,
@@ -95,7 +91,7 @@ export default function SectionMain() {
         {/* CTA Button */}
         <div ref={containerOneButtonRef} className="pt-2">
           <Link
-            href="#"
+            href="/contact"
             className="inline-block cursor-pointer bg-global px-7 py-3 text-sm font-semibold text-white shadow-md transition-all duration-300 hover:scale-105 hover:shadow-lg sm:text-base rounded-global sm:rounded-global-sm md:rounded-global-md lg:rounded-global-lg xl:rounded-global-xl 2xl:rounded-global-2xl"
           >
             {t("cta")}
@@ -103,10 +99,9 @@ export default function SectionMain() {
         </div>
       </div>
 
-      {/* Container-Two: Process Illustration Section */}
       <div
         ref={containerTwoRef}
-        className="mx-auto mt-8 flex w-full max-w-7xl flex-col items-center justify-center gap-6 sm:gap-6 md:mt-16 md:flex-row md:gap-2 lg:mt-20 lg:gap-4 xl:gap-10 2xl:gap-8"
+        className="mx-auto mt-8 flex w-full max-w-7xl flex-col items-center justify-center sm:gap-6 md:mt-16 md:flex-row md:gap-2 lg:mt-20 lg:gap-4 xl:gap-10 2xl:gap-8"
       >
         {/* Left Card: Static Page */}
         <div
@@ -123,15 +118,19 @@ export default function SectionMain() {
           </span>
         </div>
 
-        {/* Center: Dashed Arrow Line */}
         <div className="flex items-center justify-center py-2 md:py-0">
-          <div className="flex items-center gap-1 text-slate-300">
-            <div className="border-t-2 border-dashed border-slate-300 w-16 md:w-24" />
-            <img src="/arrow-right.png" alt="Arrow Right" className="h-full w-full text-slate-400 -ml-2" />
+          <img
+            src="/arrow-down.png"
+            alt=""
+            aria-hidden="true"
+            className="h-16 w-auto md:hidden"
+          />
+          <div className="hidden items-center gap-1 text-slate-300 md:flex">
+            <div className="w-16 border-t-2 border-dashed border-slate-300 md:w-24" />
+            <img src="/arrow-right.png" alt="" aria-hidden="true" className="-ml-2 h-full w-full text-slate-400" />
           </div>
         </div>
 
-        {/* Right Card: Dynamic Platform Grid (With Gradient Border) */}
         <div
           ref={rightCol}
           className="w-full md:w-8xl h-40 md:h-55 rounded-xl bg-global p-[1.5px] shadow-xs"

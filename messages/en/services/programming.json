@@ -28,7 +28,7 @@
                 ]
             },
             "experties": {
-                "subTitle": "CONNECTED EXPERTISE",
+                "subTitle": "Connected Expertise",
                 "mainTitle": "NEED INFRASTRUCTURE READY FOR WHAT COMES NEXT?",
                 "items": [
                     {
@@ -50,11 +50,6 @@
                         "id": "ai-solutions",
                         "firstLine": "AI",
                         "secondLine": "SOLUTIONS"
-                    },
-                    {
-                        "id": "immersive-experience",
-                        "firstLine": "IMMERSIVE",
-                        "secondLine": "EXPERIENCES"
                     }
                 ]
             },
@@ -64,7 +59,7 @@
             }
         },
         "Hero": {
-            "category": "PROGRAMMING SERVICES",
+            "category": "Programming Services",
             "title1": "ENGINEERING BUILT",
             "title2": "TO DELIVER.",
             "description": "Schoq delivers reliable, maintainable software across frontend, backend, APIs and integrations.",
@@ -72,7 +67,7 @@
             "imageAlt": "Programming workflow from code to deploy"
         },
         "Stack": {
-            "subTitle": "ENGINEERING CAPABILITIES",
+            "subTitle": "Engineering Capabilities",
             "mainTitle1": "PROGRAMMING SUPPORT ACROSS",
             "mainTitle2": "THE PRODUCT STACK.",
             "items": [
@@ -109,7 +104,7 @@
             ]
         },
         "CleanCode": {
-            "category": "BUILT AS A SYSTEM",
+            "category": "Built As A System",
             "title1": "CLEAN CODE IS ONLY ONE",
             "title2": "PART OF RELIABLE SOFTWARE.",
             "description": "Good engineering connects the interface, business logic, integrations, data and infrastructure into one maintainable system.",
@@ -137,14 +132,14 @@
             ]
         },
         "ShipChanges": {
-            "category": "DELIVERY PIPELINE",
+            "category": "Delivery Pipeline",
             "title1": "SHIP CHANGES WITHOUT",
             "title2": "LOSING CONTROL.",
             "description": "A clear development pipeline makes releases easier to review, test and deploy.",
-            "steps": ["Code", "Review", "Test", "Build", "Deploy", "Monitor"]
+            "steps": ["CODE", "REVIEW", "TEST", "BUILD", "DEPLOY", "MONITOR"]
         },
         "Tomorrow": {
-            "category": "ENGINEERING QUALITY",
+            "category": "Engineering Quality",
             "title1": "BUILT TO BE WORKED ON AGAIN",
             "title2": "TOMORROW.",
             "items": [

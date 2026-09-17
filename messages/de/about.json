@@ -1,33 +1,33 @@
 {
     "About": {
         "Page": {
-            "description": "Haben Sie eine Herausforderung, die es zu lösen lohnt?",
+            "description": "Haben Sie eine Herausforderung, die es zu lösen gilt?",
             "buttonText": "Projekt starten"
         },
         "Section1": {
-            "title1": "MENSCHLICHES",
-            "title2": "DENKEN",
+            "title1": "HUMAN",
+            "title2": "THINKING",
             "aboutSchoq": "ÜBER SCHOQ",
             "mainHeading": {
-                "part1": "TECHNOLOGIE SOLLTE KLAR",
-                "part2": "SEIN–",
-                "part3": "SELBST WENN DIE",
+                "part1": "TECHNOLOGIE SOLLTE KLAR WIRKEN –",
+                "part2": "",
+                "part3": "AUCH WENN DIE",
                 "part4": "HERAUSFORDERUNG KOMPLEX IST."
             },
-            "description": "Schoq vereint Produktdenken, nutzerzentriertes Design und Software-Engineering, um digitale Systeme zu schaffen, die auf reale Unternehmensbedürfnisse zugeschnitten sind.",
-            "engineeredDelivery1": "PREZISE",
-            "engineeredDelivery2": "UMSETZUNG"
+            "description": "Schoq verbindet Produktdenken, menschenzentriertes Design und Software Engineering, um digitale Systeme zu entwickeln, die auf realen Geschäftsanforderungen basieren.",
+            "engineeredDelivery1": "ENTWICKLUNG",
+            "engineeredDelivery2": "MIT SYSTEM"
         },
         "Section2": {
-            "heading": "EIN TECHNOLOGIEPARTNER, DER AUF KLARHEIT, ZUSAMMENARBEIT UND UMSETZUNG AUFBAUT.",
-            "description": "Schoq wurde gegründet, um anspruchsvolle digitale Technologie zugänglicher, praktischer und nützlicher zu machen. Wir arbeiten mit Unternehmen, Gründern und Organisationen zusammen, um Ideen und komplexe Anforderungen in Produkte zu verwandeln, die gestartet, gewartet und skaliert werden können.",
+            "heading": "EIN TECHNOLOGIEPARTNER, DER AUF KLARHEIT, ZUSAMMENARBEIT UND UMSETZUNG AUSGERICHTET IST.",
+            "description": "Schoq wurde gegründet, um anspruchsvolle digitale Technologie zugänglicher, praktischer und nützlicher zu machen. Wir arbeiten mit Unternehmen, Gründern und Organisationen zusammen, um Ideen und komplexe Anforderungen in Produkte zu verwandeln, die eingeführt, betrieben und skaliert werden können.",
             "team": {
-                "director": "DIREKTOR",
+                "director": "GESCHÄFTSFÜHRER",
                 "coFounder": "MITGRÜNDERIN",
                 "directorName": "UBAID FAROOQ",
                 "coFounderName": "MARIE LOUISE SCHNEIDER",
-                "directorBio": "Er verbindet Unternehmertum, soziales Denken und Technologie, um anspruchsvolle digitale Produkte zugänglicher zu machen.",
-                "coFounderBio": "Ihre Forschungserfahrung hat Schoqs Überzeugung geprägt, dass starke Ideen nicht an Kosten oder Komplexität der Technologie scheitern sollten."
+                "directorBio": "Er verbindet Unternehmertum, gesellschaftliches Denken und Technologie, um anspruchsvolle digitale Produkte zugänglicher zu machen.",
+                "coFounderBio": "Ihre Forschungserfahrung hat Schoqs Überzeugung geprägt, dass starke Ideen nicht durch die Kosten oder die Komplexität von Technologie ausgebremst werden sollten."
             }
         }
     }

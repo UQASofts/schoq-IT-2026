@@ -1,22 +1,26 @@
 {
     "Home": {
+        "Page": {
+            "description": "Haben Sie eine Herausforderung, die es zu lösen gilt?",
+            "buttonText": "Projekt starten"
+        },
         "Main": {
-            "titleOne": "AUFHÖREN ZU REDEN.",
-            "titleTwo": "ANFANGEN ZU BAUEN.",
-            "description": "Wir verbinden Schweizer Präzision mit tiefgreifender technischer Expertise, um erstklassige Softwarelösungen für ambitionierte Führungskräfte zu entwerfen, zu gestalten und zu entwickeln.",
-            "buttonDiscuss": "Besprechen Sie Ihr Projekt",
+            "titleOne": "STOP TALKING.",
+            "titleTwo": "START BUILDING.",
+            "description": "Wir verbinden deutsche Präzision mit tiefgreifender technischer Expertise, um erstklassige Softwarelösungen für ambitionierte Führungskräfte zu konzipieren, zu gestalten und zu entwickeln.",
+            "buttonDiscuss": "Lassen Sie uns über Ihr Projekt sprechen",
             "tags": [
-                "Strategy",
+                "Strategie",
                 "Code",
-                "Human Experience",
-                "Optimization",
-                "Quality"
+                "Handwerk",
+                "Optimierung",
+                "Qualität"
             ],
-            "scroll": "NACH UNTEN SCROLLEN"
+            "scroll": "SCROLL TO BUILD"
         },
         "Ideas": {
             "titleLine1": "IDEEN ZUM LEBEN",
-            "titleLine2": "ERWECKT",
+            "titleLine2": "ERWECKEN",
             "description": "Entdecken Sie ausgewählte Plattformen, Anwendungen und digitale Erlebnisse, die von Schoq konzipiert und entwickelt wurden.",
             "buttonStartProject": "Projekt starten",
             "aria": {
@@ -34,66 +38,72 @@
                     "id": "myanza",
                     "title": "MyAnza",
                     "category": "Soziale Plattform",
-                    "description": "MyAnza ist eine privacy-first soziale Plattform für sichere, authentische und bedeutungsvolle digitale Interaktionen. Nutzer können Inhalte teilen, sich vernetzen, Nachrichten austauschen und in Echtzeit kommunizieren – in einem modernen, responsiven Erlebnis, das auf Skalierbarkeit, Sicherheit und Vertrauen ausgelegt ist."
+                    "description": "MyAnza ist ein datenschutzorientiertes soziales Netzwerk für sichere, authentische und bedeutungsvolle digitale Interaktionen. Nutzer können Inhalte teilen, sich vernetzen, Nachrichten austauschen und in Echtzeit kommunizieren – über eine moderne responsive Oberfläche, die auf Skalierbarkeit, Sicherheit und Vertrauen ausgelegt ist.",
+                    "visitLabel": "Besuchen — myanza.com",
+                    "imageAlt": "MyAnza Fallstudie"
                 },
                 {
                     "id": "hilfehafen",
-                    "title": "Hilfehafen",
-                    "category": "Workforce-Plattform",
-                    "description": "Hilfehafen ist eine Plattform für Anwesenheit und Workforce-Management, entwickelt für Klarheit und Zuverlässigkeit. Sie vereinfacht den Tagesbetrieb mit intuitiven Workflows, präzisem Tracking und einem Produkterlebnis für Teams, die Tempo brauchen, ohne die Kontrolle zu verlieren."
+                    "title": "HilfeHafen Dashboard",
+                    "category": "Mitarbeiterplattform",
+                    "description": "Hilfehafen ist eine Plattform für Zeiterfassung und Workforce Management, die auf Klarheit und Zuverlässigkeit ausgelegt ist. Sie vereinfacht den täglichen Betrieb durch intuitive Workflows, präzise Erfassung und eine Produkterfahrung für Teams, die Geschwindigkeit ohne Kontrollverlust benötigen.",
+                    "visitLabel": "Besuchen — hilfehafen.de",
+                    "imageAlt": "HilfeHafen Dashboard Fallstudie"
                 },
                 {
                     "id": "amin-hotel",
                     "title": "Amin Hotel",
                     "category": "Hospitality-Erlebnis",
-                    "description": "Die Website von Amin Hotel bietet Gästen ein nahtloses digitales Erlebnis, um Zimmer, Ausstattung, Gastronomie und Services zu entdecken. Gäste können Zimmerdetails ansehen, online buchen und Speisen direkt aus dem hoteleigenen Restaurant bestellen. Einfach, bequem und angenehm. Für jeden Aufenthalt."
+                    "description": "Die Website des Amin Hotels bietet Gästen ein nahtloses digitales Erlebnis, um Zimmer, Ausstattung, Gastronomieangebote und Services zu entdecken. Gäste können Zimmerdetails ansehen, ihren Aufenthalt online buchen und Speisen direkt im Hotelrestaurant bestellen. Einfach, bequem und angenehm. Für jeden Aufenthalt entwickelt.",
+                    "visitLabel": "Besuchen — aminhotel.com",
+                    "imageAlt": "Amin Hotel Fallstudie"
                 }
             ]
         },
         "Launch": {
-            "titleLine1": "LAUNCHEN SIE",
+            "titleLine1": "BRINGEN SIE",
             "titleLine2": "IHR MVP IN",
-            "titleLine3": "6-8 WOCHEN.",
+            "titleLine3": "6–8 WOCHEN LIVE.",
             "subtitle": "Design • Entwicklung • Testing • Launch",
-            "description": "Alles aus einer Hand. Kein Lärm, nur erstklassige Softwareentwicklung.",
-            "noLabel": "KEIN",
+            "description": "Alles unter einem Dach. Kein unnötiges Drumherum, nur exzellente Engineering-Leistung.",
+            "noLabel": "NO",
             "painPoints": [
                 "Freelancer-Chaos",
-                "Ketten von Agenturen",
+                "Agenturketten",
                 "Reibungsverluste"
             ],
             "timeline": {
                 "weekPrefix": "Woche",
-                "steps": {
-                    "brief": "Briefing",
-                    "prototype": "Prototyp",
-                    "interface": "Interface",
-                    "development": "Entwicklung",
-                    "testing": "Testing",
-                    "launch": "Launch"
-                }
+                "steps": [
+                    { "week": "1", "label": "Briefing" },
+                    { "week": "2", "label": "Prototyp" },
+                    { "week": "3–4", "label": "Interface" },
+                    { "week": "5–6", "label": "Entwicklung" },
+                    { "week": "7", "label": "Testing" },
+                    { "week": "8", "label": "Launch" }
+                ]
             },
             "footerTag": "8 WOCHEN ZUM MVP"
         },
         "OneTeam": {
             "header": {
-                "title1": "EIN TEAM. VOLLSTÄNDIGE",
-                "title2": "PRODUKT-EXPERTISE.",
-                "description": "Von der Produktstrategie und UX bis hin zu Web, Mobile, KI und Cloud – Schoq bringt die nötige Expertise mit, um digitale Produkte zu entwerfen, zu entwickeln und zu skalieren.",
+                "title1": "EIN TEAM.",
+                "title2": "UMFASSENDE EXPERTISE.",
+                "description": "Von Produktstrategie und UX bis hin zu Web, Mobile, KI und Cloud bringt Schoq die nötige Expertise zusammen, um digitale Produkte zu konzipieren, zu entwickeln und zu skalieren.",
                 "cta": "Projekt starten"
             },
             "services": [
                 {
-                    "title": "Individual Software",
-                    "description": "Maßgeschneiderte Enterprise-Softwarelösungen und individuelle Systementwicklung für einzigartige Unternehmensanforderungen."
+                    "title": "Individuelle Software",
+                    "description": "Individuell zugeschnittene Unternehmenssoftware und maßgeschneiderte Systementwicklung für einzigartige Geschäftsanforderungen."
                 },
                 {
-                    "title": "KI & Maschinelles Lernen",
+                    "title": "KI & Machine Learning",
                     "description": "Fortschrittliche KI- und Machine-Learning-Lösungen zur Automatisierung, Vorhersage und Optimierung komplexer Geschäftsprozesse."
                 },
                 {
                     "title": "Webentwicklung",
-                    "description": "Von Unternehmens-Websites bis hin zu maßgeschneiderten Webanwendungen – für schnelle, zuverlässige und nutzerzentrierte digitale Erlebnisse."
+                    "description": "Von Unternehmenswebsites bis hin zu individuellen Webanwendungen – für schnelle, zuverlässige und nutzerorientierte digitale Erlebnisse."
                 },
                 {
                     "title": "Mobile Apps",
@@ -105,7 +115,7 @@
                 },
                 {
                     "title": "SaaS-Entwicklung",
-                    "description": "Entwicklung und globale Skalierung sicherer, mandantenfähiger Software-as-a-Service-Plattformen."
+                    "description": "Entwickeln und skalieren Sie sichere, mandantenfähige Software-as-a-Service-Plattformen weltweit."
                 },
                 {
                     "title": "DevOps & Cloud-Infrastruktur",

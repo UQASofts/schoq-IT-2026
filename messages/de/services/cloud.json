@@ -2,22 +2,22 @@
     "CloudInfrastructure": {
         "Page": {
             "pipeline": {
-                "mainTitle": "VON DER ARCHITEKTUR ZU ZUVERLÄSSIGER INFRASTRUKTUR.",
-                "desc": "Ein konsequenter, strukturierter Ansatz, um komplexe technische Anforderungen in leistungsfähige digitale Realitäten zu übersetzen.",
+                "mainTitle": "VON DER ARCHITEKTUR ZUR ZUVERLÄSSIGEN INFRASTRUKTUR.",
+                "desc": "Ein konsequenter, strukturierter Ansatz, um komplexe räumliche Konzepte in leistungsfähige digitale Lösungen zu übertragen.",
                 "items": [
                     {
                         "number": "01",
                         "title": "Bewerten",
-                        "desc": "Ziele, Rahmenbedingungen und Risiken abstimmen."
+                        "desc": "Produkt, Auslastung und Risiken."
                     },
                     {
                         "number": "02",
                         "title": "Architektur",
-                        "desc": "Struktur und Umgebung."
+                        "desc": "Strukturen und Umgebungen."
                     },
                     {
                         "number": "03",
-                        "title": "Bauen",
+                        "title": "Aufbauen",
                         "desc": "Infrastruktur und Migration."
                     },
                     {
@@ -28,38 +28,38 @@
                 ]
             },
             "capabilities": {
-                "mainTitle": "CLOUD-FÄHIGKEITEN",
-                "subTitle": "WAS WIR BAUEN KÖNNEN",
+                "mainTitle": "CLOUD-KOMPETENZEN",
+                "subTitle": "WAS WIR ENTWICKELN KÖNNEN",
                 "items": [
                     {
                         "title": "Cloud-Architektur",
-                        "desc": "Infrastruktur, die um die Anforderungen des Produkts herum entworfen ist."
+                        "desc": "Infrastruktur, die auf die Anforderungen des Produkts ausgerichtet ist."
                     },
                     {
                         "title": "Cloud-Migration",
-                        "desc": "Bestehende Systeme in eine moderne Cloud-Umgebung überführen."
+                        "desc": "Bestehende Anwendungen in eine moderne Cloud-Umgebung migrieren."
                     },
                     {
-                        "title": "DevOps & Deployment",
-                        "desc": "Zuverlässige, wiederholbare Build- und Release-Workflows aufbauen."
+                        "title": "DevOps & Bereitstellung",
+                        "desc": "Zuverlässige Entwicklungs- und Release-Workflows schaffen."
                     },
                     {
                         "title": "Monitoring & Zuverlässigkeit",
-                        "desc": "Infrastruktur im Blick behalten, damit Performance sichtbar bleibt."
+                        "desc": "Zustand und Performance der Infrastruktur transparent halten."
                     },
                     {
-                        "title": "Infrastruktur-Modernisierung",
+                        "title": "Modernisierung der Infrastruktur",
                         "desc": "Ältere technische Umgebungen vereinfachen und verbessern."
                     }
                 ]
             },
             "experties": {
-                "subTitle": "VERNETZTE EXPERTISE",
-                "mainTitle": "INFRASTRUKTUR, DIE FÜR DAS NÄCHSTE BEREIT IST?",
+                "subTitle": "Vernetzte Expertise",
+                "mainTitle": "BRAUCHEN SIE EINE INFRASTRUKTUR, DIE FÜR DIE NÄCHSTEN SCHRITTE GERÜSTET IST?",
                 "items": [
                     {
                         "id": "custom-software",
-                        "firstLine": "INDIVIDUELLE",
+                        "firstLine": "CUSTOM",
                         "secondLine": "SOFTWARE"
                     },
                     {
@@ -69,18 +69,13 @@
                     },
                     {
                         "id": "product-design",
-                        "firstLine": "PRODUKT-",
-                        "secondLine": "DESIGN"
+                        "firstLine": "PRODUKTDESIGN",
+                        "secondLine": ""
                     },
                     {
                         "id": "ai-solutions",
-                        "firstLine": "KI-",
-                        "secondLine": "LÖSUNGEN"
-                    },
-                    {
-                        "id": "immersive-experience",
-                        "firstLine": "IMMERSIVE",
-                        "secondLine": "ERLEBNISSE"
+                        "firstLine": "AI",
+                        "secondLine": "SOLUTIONS"
                     }
                 ]
             },
@@ -91,9 +86,9 @@
         },
         "Hero": {
             "category": "CLOUD & INFRASTRUKTUR",
-            "title1": "GEBAUT, UM SCHNELL ZU BLEIBEN.",
-            "title2": "BEREIT ZU SKALIEREN.",
-            "description": "Wir entwerfen und betreiben Cloud-Infrastruktur, die digitale Produkte zuverlässig, sicher und wachstumsbereit hält.",
+            "title1": "BUILT TO STAY FAST.",
+            "title2": "READY TO SCALE.",
+            "description": "Wir entwickeln und verwalten Cloud-Infrastrukturen, die digitale Produkte zuverlässig, sicher und wachstumsbereit halten.",
             "cta": "Infrastruktur besprechen",
             "imageAlt": "Dashboard für Cloud-Infrastruktur"
         }

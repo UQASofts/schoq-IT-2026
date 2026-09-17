@@ -1,8 +1,8 @@
 {
     "Mobile": {
         "Page": {
-            "productBlueprintTitle": "Produkt-Blueprint",
-            "productBlueprintTitleDesc": "Wir bieten ein vollständiges Produktbereitstellungs-Paket, von der Strategie bis zur Bereitstellung.",
+            "productBlueprintTitle": "Produktentwurf",
+            "productBlueprintTitleDesc": "Wir bieten einen vollständigen Produktentwicklungs-Stack – von der Strategie bis zum Deployment.",
             "Three": {
                 "category": "Wie wir arbeiten",
                 "title": "Flexible Zusammenarbeit"
@@ -11,32 +11,32 @@
                 {
                     "number": "01",
                     "title": "Produktrichtung",
-                    "desc": "Definition des MVP-Umfangs, Auswahl des Technologie-Stacks und Analyse der Markttauglichkeit."
+                    "desc": "Definition des MVP-Umfangs, Auswahl des technischen Stacks und Analyse des Product-Market-Fit."
                 },
                 {
                     "number": "02",
-                    "title": "Erlebnisdesign",
-                    "desc": "High-Fidelity-UI-Systeme, interaktive Prototypen und User-Journey-Mapping."
+                    "title": "Experience Design",
+                    "desc": "High-Fidelity-UI-Systeme, interaktive Prototypen und Mapping der User Journeys."
                 },
                 {
                     "number": "03",
-                    "title": "Entwicklung",
-                    "desc": "Native iOS/Android- oder plattformübergreifende Entwicklung mit einem robusten Backend."
+                    "title": "Engineering",
+                    "desc": "Native iOS-/Android- oder plattformübergreifende Entwicklung mit einem robusten Backend."
                 },
                 {
                     "number": "04",
                     "title": "Qualität",
-                    "desc": "Kontinuierliches Testen, automatisierte Qualitätssicherung und nahtlose Store-Bereitstellung."
+                    "desc": "Kontinuierliches Testing, automatisierte Qualitätssicherung und nahtloses Deployment in die Stores."
                 }
             ],
             "flexibleEngagement": [
                 {
-                    "title": "Neues Produkt entwickeln",
-                    "desc": "Vollständige Übernahme der mobilen Produktentwicklung von Grund auf."
+                    "title": "Neuentwicklung",
+                    "desc": "Vollständige Verantwortung für die Entwicklung des mobilen Produkts von Grund auf."
                 },
                 {
                     "title": "Legacy-Modernisierung",
-                    "desc": "Neuentwicklung und Optimierung bestehender mobiler Anwendungen."
+                    "desc": "Neuentwicklung und Weiterentwicklung bestehender mobiler Anwendungen."
                 },
                 {
                     "title": "Team-Erweiterung",
@@ -53,7 +53,7 @@
                 },
                 {
                     "id": "product-design",
-                    "firstLine": "PRODUKT-",
+                    "firstLine": "PRODUKT",
                     "secondLine": "DESIGN"
                 },
                 {
@@ -63,26 +63,26 @@
                 },
                 {
                     "id": "cloud-engineering",
-                    "firstLine": "CLOUD-",
+                    "firstLine": "CLOUD",
                     "secondLine": "ENGINEERING"
                 }
             ],
             "footerMessage": {
-                "description": "Haben Sie eine mobile App, die es wert ist, gebaut zu werden?",
-                "buttonText": "Mobile App entwickeln"
+                "description": "Haben Sie eine mobile App, die es wert ist, entwickelt zu werden?",
+                "buttonText": "Beginnen Sie mit der Entwicklung einer Mobile App"
             }
         },
         "ProductDemo": {
-            "title": "Produkt-Demonstration",
+            "title": "Produktdemonstration",
             "imageAlts": {
-                "mockup": "Produkt-Demonstrations-Mockup-Präsentation"
+                "mockup": "Mockup-Präsentation der Produktdemonstration"
             }
         },
         "Hero": {
             "category": "Mobile App-Entwicklung",
-            "title": "Mobile Produkte, die Menschen gerne dauerhaft nutzen.",
-            "description": "Schoq konzipiert und entwickelt intuitive, skalierbare mobile Anwendungen – von der frühen Produktstrategie und UX bis hin zur Entwicklung, dem Launch und der kontinuierlichen Verbesserung.",
-            "cta": "Mobile App entwickeln"
+            "title": "Mobile Produkte, die Menschen gerne weiter nutzen.",
+            "description": "Schoq konzipiert und entwickelt intuitive, skalierbare mobile Anwendungen – von der frühen Produktstrategie und UX über Engineering und Launch bis zur kontinuierlichen Weiterentwicklung.",
+            "cta": "Beginnen Sie mit der Entwicklung einer Mobile App"
         }
     }
 }

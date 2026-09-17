@@ -2,13 +2,13 @@
     "CustomSoftware": {
         "Page": {
             "pipeline": {
-                "mainTitle": "VOM GESCHÄFTSBEDARF ZU FUNKTIONIERENDER SOFTWARE.",
-                "desc": "Wir verstehen zuerst, wie das Geschäft funktioniert, und entwerfen und entwickeln Software dann um den echten Prozess herum.",
+                "mainTitle": "VON DER GESCHÄFTLICHEN ANFORDERUNG ZUR FUNKTIONIERENDEN SOFTWARE.",
+                "desc": "Wir verstehen zunächst, wie Ihr Unternehmen arbeitet, und entwickeln anschließend Software, die sich am tatsächlichen Prozess orientiert.",
                 "items": [
                     {
                         "number": "01",
                         "title": "Verstehen",
-                        "desc": "Nutzer, Workflows, Anforderungen und bestehende Systeme abbilden."
+                        "desc": "Benutzer, Workflows, Anforderungen und bestehende Systeme erfassen."
                     },
                     {
                         "number": "02",
@@ -17,49 +17,49 @@
                     },
                     {
                         "number": "03",
-                        "title": "Bauen & Integrieren",
-                        "desc": "Die Software entwickeln und die erforderlichen Systeme anbinden."
+                        "title": "Entwickeln & Integrieren",
+                        "desc": "Software entwickeln und die erforderlichen Systeme anbinden."
                     },
                     {
                         "number": "04",
-                        "title": "Starten & Verbessern",
-                        "desc": "Testen, bereitstellen und das Produkt kontinuierlich verbessern."
+                        "title": "Einführen & Weiterentwickeln",
+                        "desc": "Testen, bereitstellen und das Produkt kontinuierlich weiterentwickeln."
                     }
                 ]
             },
             "capabilities": {
-                "mainTitle": "INDIVIDUELLE SOFTWARE, DIE UM ECHTE PROZESSE HERUM GEBAUT IST.",
-                "subTitle": "WAS WIR BAUEN KÖNNEN",
+                "mainTitle": "CUSTOM SOFTWARE SHAPED AROUND\nREAL OPERATIONS.",
+                "subTitle": "WAS WIR ENTWICKELN KÖNNEN",
                 "items": [
                     {
-                        "title": "Business-Plattformen",
+                        "title": "Geschäftsplattformen",
                         "desc": "Individuelle Systeme für interne Abläufe und Teams."
                     },
                     {
                         "title": "Operative Dashboards",
-                        "desc": "Workflows, Nutzer und Reporting in einer Oberfläche vereinen."
+                        "desc": "Workflows, Benutzer und Berichte in einer Oberfläche zusammenführen."
                     },
                     {
                         "title": "Workflow-Systeme",
-                        "desc": "Anfragen, Freigaben und wiederholbare Prozesse digitalisieren."
+                        "desc": "Anfragen, Genehmigungen und wiederkehrende Prozesse digitalisieren."
                     },
                     {
                         "title": "APIs & Integrationen",
-                        "desc": "Produkte, Services und Business-Systeme verbinden."
+                        "desc": "Produkte, Dienste und Geschäftssysteme miteinander verbinden."
                     },
                     {
-                        "title": "Legacy-Modernisierung",
+                        "title": "Modernisierung bestehender Systeme",
                         "desc": "Systeme verbessern, die schwer zu warten oder zu erweitern sind."
                     }
                 ]
             },
             "experties": {
-                "subTitle": "VERNETZTE EXPERTISE",
-                "mainTitle": "INFRASTRUKTUR, DIE FÜR DAS NÄCHSTE BEREIT IST?",
+                "subTitle": "Vernetzte Expertise",
+                "mainTitle": "BRAUCHEN SIE EINE INFRASTRUKTUR, DIE FÜR DIE NÄCHSTEN SCHRITTE GERÜSTET IST?",
                 "items": [
                     {
                         "id": "custom-software",
-                        "firstLine": "INDIVIDUELLE",
+                        "firstLine": "CUSTOM",
                         "secondLine": "SOFTWARE"
                     },
                     {
@@ -69,42 +69,73 @@
                     },
                     {
                         "id": "product-design",
-                        "firstLine": "PRODUKT-",
-                        "secondLine": "DESIGN"
+                        "firstLine": "PRODUKTDESIGN",
+                        "secondLine": ""
                     },
                     {
                         "id": "ai-solutions",
-                        "firstLine": "KI-",
-                        "secondLine": "LÖSUNGEN"
-                    },
-                    {
-                        "id": "immersive-experience",
-                        "firstLine": "IMMERSIVE",
-                        "secondLine": "ERLEBNISSE"
+                        "firstLine": "AI",
+                        "secondLine": "SOLUTIONS"
                     }
                 ]
             },
             "footer": {
-                "buttonText": "Software besprechen",
+                "buttonText": "Sprechen Sie mit uns über Ihre Software",
                 "desc": "Haben Sie einen Prozess, der intelligenter funktionieren könnte?"
             }
         },
         "Hero": {
-            "category": "INDIVIDUELLE SOFTWARE",
+            "category": "Individuelle Software",
             "title1": "SOFTWARE, DIE SICH",
-            "title2": "AN IHRE ARBEIT ANPASST.",
-            "description": "Schoq entwirft und entwickelt individuelle Software, die Workflows, Daten und Teams zu zuverlässigen digitalen Systemen verbindet.",
-            "cta": "Software besprechen",
-            "imageAlt": "Workflow-Diagramm für individuelle Software"
+            "title2": "AN IHRE ARBEITSWEISE ANPASST.",
+            "description": "Schoq konzipiert und entwickelt individuelle Software, die Workflows, Daten und Teams zu zuverlässigen digitalen Systemen verbindet.",
+            "cta": "Sprechen Sie mit uns über Ihre Software",
+            "imageAlt": "Workflow-Diagramm für individuelle Software",
+            "diagram": {
+                "badge": "WORKFLOW / VERNETZT",
+                "nodes": [
+                    {
+                        "id": "orders",
+                        "title": "AUFTRÄGE",
+                        "desc": "eingehende Anfragen"
+                    },
+                    {
+                        "id": "tasks",
+                        "title": "AUFGABEN",
+                        "desc": "zugewiesene Aufgaben"
+                    },
+                    {
+                        "id": "customers",
+                        "title": "KUNDEN",
+                        "desc": "Personen & Konten"
+                    },
+                    {
+                        "id": "documents",
+                        "title": "DOKUMENTE",
+                        "desc": "Dateien & Aufzeichnungen"
+                    },
+                    {
+                        "id": "reporting",
+                        "title": "BERICHTSWESEN",
+                        "desc": "operative Übersicht"
+                    },
+                    {
+                        "id": "approvals",
+                        "title": "GENEHMIGUNGEN",
+                        "desc": "Prüfstatus"
+                    }
+                ]
+            }
         },
         "FitSystems": {
-            "category": "ALS SYSTEM GEBAUT",
-            "title": "MEHR ALS EINE OBERFLÄCHE.",
-            "description": "Zuverlässige Individualsoftware verbindet die Erfahrung, die Menschen nutzen, mit der Logik, den Daten und Systemen darunter.",
+            "category": "ALS SYSTEM ENTWICKELT",
+            "title1": "MORE THAN AN",
+            "title2": "INTERFACE.",
+            "description": "Zuverlässige Individualsoftware verbindet die Benutzeroberfläche mit der darunterliegenden Logik, den Daten und Systemen.",
             "layers": [
                 {
-                    "title": "Nutzererlebnis",
-                    "desc": "Hier interagieren Menschen"
+                    "title": "Benutzererlebnis",
+                    "desc": "Hier interagieren die Benutzer"
                 },
                 {
                     "title": "Geschäftslogik",
@@ -120,7 +151,7 @@
                 },
                 {
                     "title": "Infrastruktur",
-                    "desc": "Laufzeit und Bereitstellung"
+                    "desc": "Betrieb und Bereitstellung"
                 }
             ]
         }

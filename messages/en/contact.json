@@ -2,7 +2,7 @@
     "Contact": {
         "Page": {
             "description": "Have a challenge worth solving?",
-            "buttonText": "Start a project"
+            "buttonText": "Start a Project"
         },
         "Form": {
             "conversationLabel": "START A CONVERSATION",
@@ -20,8 +20,8 @@
                 "phoneLabel": "PHONE",
                 "phonePlaceholder": "Phone (optional)",
                 "languageLabel": "PREFERRED LANGUAGE",
+                "languagePlaceholder": "Select",
                 "languageOptions": {
-                    "enDe": "English / Deutsch",
                     "de": "Deutsch",
                     "en": "English"
                 },

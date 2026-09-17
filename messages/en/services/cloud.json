@@ -3,17 +3,17 @@
         "Page": {
             "pipeline": {
                 "mainTitle": "FROM ARCHITECTURE TO RELIABLE INFRASTRUCTURE.",
-                "desc": "A rigorous, structured approach to translating complex technical requirements into performant digital realities.",
+                "desc": "A rigorous, structured approach to translating complex spatial concepts into performant digital realities.",
                 "items": [
                     {
                         "number": "01",
                         "title": "Assess",
-                        "desc": "Align goals, constraints and risk."
+                        "desc": "Product, workload and risk."
                     },
                     {
                         "number": "02",
                         "title": "Architect",
-                        "desc": "Structure and environment."
+                        "desc": "Structure and environments."
                     },
                     {
                         "number": "03",
@@ -37,18 +37,18 @@
                     },
                     {
                         "title": "Cloud Migration",
-                        "desc": "Move existing systems over to a modern cloud environment."
+                        "desc": "Move existing applications into a modern cloud environment."
                     },
                     {
                         "title": "DevOps & Deployment",
-                        "desc": "Create reliable, repeatable build and release workflows."
+                        "desc": "Create reliable development and release workflows."
                     },
                     {
                         "title": "Monitoring & Reliability",
-                        "desc": "Keep infrastructure in view so performance is visible."
+                        "desc": "Keep infrastructure health and performance visible."
                     },
                     {
-                        "title": "Infrastructure Modernization",
+                        "title": "Infrastructure Modernisation",
                         "desc": "Simplify and improve older technical environments."
                     }
                 ]
@@ -76,11 +76,6 @@
                         "id": "ai-solutions",
                         "firstLine": "AI",
                         "secondLine": "SOLUTIONS"
-                    },
-                    {
-                        "id": "immersive-experience",
-                        "firstLine": "IMMERSIVE",
-                        "secondLine": "EXPERIENCE"
                     }
                 ]
             },

@@ -5,7 +5,7 @@ import { Geist } from "next/font/google";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import { useGSAP } from "@gsap/react";
-import { useTranslations, useLocale } from "next-intl";
+import { useTranslations } from "next-intl";
 
 const geist = Geist({
   subsets: ["latin"],
@@ -17,66 +17,54 @@ gsap.registerPlugin(ScrollTrigger);
 export default function Section1() {
   const containerRef = useRef<HTMLDivElement>(null);
   const t = useTranslations("About.Section1");
-  const isDe = useLocale() === "de";
 
   useGSAP(
     () => {
-      const ctx = gsap.context(() => {
-        // Create a master timeline linked to scroll
-        const tl = gsap.timeline({
-          scrollTrigger: {
-            trigger: containerRef.current,
-            start: "top 80%", // Triggers when top of section hits 80% of viewport height
-            toggleActions: "play none none reverse",
-          },
-        });
+      const tl = gsap.timeline({
+        scrollTrigger: {
+          trigger: containerRef.current,
+          start: "top 80%",
+          toggleActions: "play none none reverse",
+        },
+      });
 
-        // 1st: "about-schoq-1" slide-fades in from the right with "about-shoq-content" following it
-        tl.from(".about-schoq-1", {
-          x: 60,
+      tl.from(".about-schoq-1", {
+        x: 60,
+        opacity: 0,
+        duration: 2,
+        ease: "power3.out",
+      }).from(
+        ".about-shoq-content",
+        {
+          x: 30,
           opacity: 0,
-          duration: 2,
+          duration: 1.5,
           ease: "power3.out",
-        }).from(
-          ".about-shoq-content",
-          {
-            x: 30,
-            opacity: 0,
-            duration: 1.5,
-            ease: "power3.out",
-          },
-          "-=2", // Millisecond delay relative to previous animation start
-        );
+        },
+        "-=2",
+      );
 
-        // 2nd: "human-thinking-2" slides out from behind the vertical line (revealing rightwards)
-        tl.from(
-          ".human-thinking-2",
-          {
-            x: 80,
-            opacity: 0,
-            clipPath: "inset(0% 0% 0% 100%)", // Fully hidden from the right edge
-            duration: 1,
-            ease: "power3.out",
-          },
-          "-=0.3",
-        );
+      tl.from(
+        ".human-thinking-2",
+        {
+          x: 80,
+          opacity: 0,
+          duration: 1,
+          ease: "power3.out",
+        },
+        "-=0.3",
+      );
 
-        // 3rd: "delivery-3" slides out from behind the vertical line (revealing leftwards)
-        tl.from(
-          ".delivery-3",
-          {
-            x: -80,
-            opacity: 0,
-            clipPath: "inset(0% 100% 0% 0%)", // Fully hidden from the left edge
-            duration: 1,
-            ease: "power3.out",
-          },
-          "-=0.4",
-        );
-      }, containerRef);
-
-      // Clean up GSAP animations on unmount
-      return () => ctx.revert();
+      tl.from(
+        ".delivery-3",
+        {
+          x: -80,
+          opacity: 0,
+          duration: 1,
+          ease: "power3.out",
+        },
+        "-=0.4",
+      );
     },
     { scope: containerRef },
   );
@@ -91,13 +79,7 @@ export default function Section1() {
       <div className="hidden md:block absolute top-[64%] left-0 right-0 h-0.5 bg-linear-to-r from-emerald-400 to-blue-600 -translate-y-1/2 opacity-30" />
 
       <div className="human-thinking-2 flex items-end justify-center border-b border-gray-100 px-2 pb-8 pt-4 md:items-center md:border-none md:px-0 md:py-4">
-        <div
-          className={`w-full text-center uppercase text-heading md:text-left text-h1 sm:text-h1-sm md:text-h1-md ${
-            isDe
-              ? "pl-3 sm:pl-4 md:pl-2 lg:pl-4 xl:pl-6 2xl:pl-12 md:text-h1-sm lg:text-h1-md xl:text-h1-lg 2xl:text-h1-xl"
-              : "sm:pl-8 md:pl-10 lg:pl-[72px] xl:pl-24 2xl:pl-[200px] lg:text-h1-lg xl:text-h1-xl 2xl:text-h1-2xl"
-          }`}
-        >
+        <div className="w-full text-center uppercase text-heading md:text-left text-h1 sm:text-h1-sm md:text-h1-md sm:pl-8 md:pl-10 lg:pl-[72px] xl:pl-24 2xl:pl-[200px] lg:text-h1-lg xl:text-h1-xl 2xl:text-h1-2xl">
           {t("title1")}
           <br />
           {t("title2")}

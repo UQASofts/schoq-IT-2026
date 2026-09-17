@@ -31,86 +31,69 @@ export default function ServicesHero() {
 
   useGSAP(
     () => {
-      const ctx = gsap.context(() => {
-        // ----------------------------------------------------
-        // 1st Timeline: Container-One
-        // ----------------------------------------------------
-        const tlOne = gsap.timeline();
+      const tlOne = gsap.timeline();
 
-        // Text elements slide from above with a bounce
-        tlOne.from(textHeaderRef.current, {
-          y: -100,
+      tlOne.from(textHeaderRef.current, {
+        y: -100,
+        opacity: 0,
+        duration: 1.2,
+        ease: "circ.out",
+      });
+      tlOne.from(
+        containerOneButtonRef.current,
+        {
+          yPercent: -120,
           opacity: 0,
           duration: 1.2,
-          ease: "circ.out",
-        });
-        tlOne.from(
-          containerOneButtonRef.current,
-          {
-            yPercent: -120,
-            opacity: 0,
-            duration: 1.2,
-            ease: "power2.out",
-          },
-          "<",
-        );
+          ease: "power2.out",
+        },
+        "<",
+      );
 
-        // ----------------------------------------------------
-        // 2nd Timeline: Container-Two (Triggers at 30% into viewport)
-        // ----------------------------------------------------
-        const tlTwo = gsap.timeline({
-          scrollTrigger: {
-            trigger: containerTwoRef.current,
-            start: "top 70%", // Triggers when top of containerTwo is 30% above bottom of viewport
-            toggleActions: "play none none none",
-          },
-        });
+      const tlTwo = gsap.timeline({
+        scrollTrigger: {
+          trigger: containerTwoRef.current,
+          start: "top 70%",
+          toggleActions: "play none none none",
+        },
+      });
 
-        // a) Dashed Wireframe fades in
-        tlTwo.from(dashedWireframeRef.current, {
+      tlTwo.from(dashedWireframeRef.current, {
+        opacity: 0,
+        duration: 1.0,
+        ease: "power2.inOut",
+      });
+
+      tlTwo.from(
+        doubleArrowsRef.current,
+        {
           opacity: 0,
-          duration: 1.0,
-          ease: "power2.inOut",
-        });
+          duration: 0.6,
+          ease: "power2.out",
+        },
+        "-=0.3",
+      );
 
-        // b) Double Arrows fade in
-        tlTwo.from(
-          doubleArrowsRef.current,
-          {
-            opacity: 0,
-            duration: 0.6,
-            ease: "power2.out",
-          },
-          "-=0.3",
-        );
+      tlTwo.from(
+        curvedLineRef.current,
+        {
+          opacity: 0,
+          duration: 0.8,
+          ease: "power2.out",
+        },
+        "-=0.4",
+      );
 
-        // c) Curved Line fades in
-        tlTwo.from(
-          curvedLineRef.current,
-          {
-            opacity: 0,
-            duration: 0.8,
-            ease: "power2.out",
-          },
-          "-=0.4",
-        );
-
-        // d) Mockups appear from below with fade + slide-in + bounce
-        tlTwo.from(
-          wireframeGroupRef.current,
-          {
-            y: 100,
-            opacity: 0,
-            // duration: 1.2,
-            duration: 3,
-            // ease: "bounce.out",
-            ease: "elastic.out",
-          },
-          "-=0.7",
-        );
-      }, containerRef);
-
-      return () => ctx.revert();
+      tlTwo.from(
+        wireframeGroupRef.current,
+        {
+          y: 100,
+          opacity: 0,
+          duration: 3,
+          ease: "elastic.out",
+        },
+        "-=0.7",
+      );
     },
     { scope: containerRef },
   );

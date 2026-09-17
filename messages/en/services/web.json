@@ -73,15 +73,16 @@
                 }
             ],
             "footerMessage": {
-                "description": "Have a challenge worth solving? ",
+                "description": "Have a challenge worth solving?",
                 "buttonText": "Discuss Your Web Platform"
             }
         },
         "Hero": {
-            "category": "Web Platforms & Development.",
+            "category": "Web Platforms & Development",
             "title": "Web Platforms Built To Perform, Adapt And Grow.",
             "description": "We engineer high-performance web ecosystems that transcend static pages, enabling complex workflows and seamless user experiences at scale.",
             "cta": "Start a Project",
+            "arrowAlt": "Arrow Right",
             "leftCard": {
                 "title": "Static Page",
                 "subtitle": "Information Only"

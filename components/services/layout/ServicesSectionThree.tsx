@@ -94,7 +94,7 @@ export default function ServicesSectionThree({
           <h3 className="Conversation text-xs font-semibold tracking-[0.25em] uppercase text-neutral-500 mb-4">
             {subTitle}
           </h3>
-          <h2 className="uppercase text-heading text-h2 sm:text-h2-sm md:text-h2-md lg:text-h2-lg xl:text-h2-xl 2xl:text-h2-2xl">
+          <h2 className="whitespace-pre-line uppercase text-heading text-h2 sm:text-h2-sm md:text-h2-md lg:text-h2-lg xl:text-h2-xl 2xl:text-h2-2xl">
             {mainTitle}
           </h2>
         </div>

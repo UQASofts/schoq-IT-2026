@@ -1,17 +1,17 @@
 {
     "Contact": {
         "Page": {
-            "description": "Haben Sie eine Herausforderung, die es wert ist, gelöst zu werden?",
+            "description": "Haben Sie eine Herausforderung, die es zu lösen gilt?",
             "buttonText": "Projekt starten"
         },
         "Form": {
             "conversationLabel": "EIN GESPRÄCH BEGINNEN",
-            "mainTitle1": "SAGEN SIE",
-            "mainTitle2": "UNS, WAS.",
-            "mainTitle3": "SIE BAUEN.",
-            "subtitle": "Teilen Sie Ihre Idee, aktuelle Herausforderung oder Ihr bestehendes Produkt mit uns. Wir prüfen die Details und helfen dabei, den nächsten praktischen Schritt zu definieren.",
+            "mainTitle1": "ERZÄHLEN SIE UNS,",
+            "mainTitle2": "WAS SIE",
+            "mainTitle3": "ENTWICKELN.",
+            "subtitle": "Teilen Sie Ihre Idee, Ihre aktuelle Herausforderung oder Ihr bestehendes Produkt mit uns. Wir prüfen die Details und helfen dabei, den nächsten sinnvollen Schritt zu definieren.",
             "contactInfo": {
-                "directLineLabel": "DIREKTE DURCHWAHL",
+                "directLineLabel": "TELEFON",
                 "emailLabel": "E-MAIL-ADRESSE"
             },
             "form": {
@@ -20,12 +20,12 @@
                 "phoneLabel": "TELEFON",
                 "phonePlaceholder": "Telefon (optional)",
                 "languageLabel": "BEVORZUGTE SPRACHE",
+                "languagePlaceholder": "Auswählen",
                 "languageOptions": {
-                    "enDe": "Englisch / Deutsch",
                     "de": "Deutsch",
                     "en": "Englisch"
                 },
-                "projectDescriptionLabel": "BESCHREIBEN SIE IHR PROJEKT KURZ",
+                "projectDescriptionLabel": "BESCHREIBEN SIE KURZ IHR PROJEKT",
                 "projectDescriptionPlaceholder": "Wir möchten starten...",
                 "submitButton": "Projektdetails senden →",
                 "sending": "Wird gesendet...",
@@ -37,27 +37,27 @@
             }
         },
         "GetInTouch": {
-            "title1": "WAS PASSIERT, NACHDEM SIE",
-            "title2": "SICH GEMELDET HABEN?",
-            "description": "Unser Engineering-Audit-Prozess ist auf Klarheit und Schnelligkeit ausgelegt. Wir bewegen uns vom Erstkontakt bis zu einer konkreten technischen Empfehlung innerhalb von 5 Werktagen.",
+            "title1": "WAS PASSIERT, NACHDEM",
+            "title2": "SIE KONTAKT AUFGENOMMEN HABEN?",
+            "description": "Unser Engineering-Audit-Prozess ist auf Klarheit und Geschwindigkeit ausgelegt. Vom ersten Kontakt bis zu einer konkreten technischen Empfehlung vergehen bei uns fünf Werktage.",
             "steps": [
                 {
                     "stepNumber": "01",
                     "category": "PRÜFUNG",
                     "title": "INTERNE BEWERTUNG",
-                    "desc": "Wir analysieren Ihr Briefing anhand unserer Fachbereichsmodule. Wir identifizieren potenzielle technische Hürden und architektonische Chancen vor unserem ersten Gespräch."
+                    "desc": "Wir analysieren Ihr Briefing anhand unserer Kompetenzbereiche. Vor unserem ersten Gespräch identifizieren wir mögliche technische Hindernisse und architektonische Chancen."
                 },
                 {
                     "stepNumber": "02",
                     "category": "GESPRÄCH",
                     "title": "DISCOVERY-SESSION",
-                    "desc": "Ein fokussierter 30-minütiger technischer Vertiefungstermin. Kein Verkaufsgespräch – reiner technischer Austausch, um Ihren Stack, Zeitplan und Ihre Hauptziele zu verstehen."
+                    "desc": "Ein fokussierter 30-minütiger technischer Deep Dive. Kein Verkaufsgespräch – nur Engineering, um Ihren Stack, Zeitplan und Ihre Kernziele zu verstehen."
                 },
                 {
                     "stepNumber": "03",
                     "category": "EMPFEHLUNG",
                     "title": "ROADMAP & ANGEBOT",
-                    "desc": "Sie erhalten eine detaillierte Aufschlüsselung, wie wir es umsetzen würden, einschließlich vorgeschlagener Technologien, Teamstruktur und geschätzter Festpreismodule."
+                    "desc": "Sie erhalten eine detaillierte Aufschlüsselung, wie wir das Produkt entwickeln würden – einschließlich empfohlener Technologien, Teamstruktur und geschätzter Festpreismodule."
                 }
             ]
         }

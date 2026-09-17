@@ -8,10 +8,15 @@ type DetailRow = {
   value: string;
 };
 
+type Founder = {
+  label: string;
+  name: string;
+};
+
 type ExtraSection = {
   number: string;
   title: string;
-  body: string;
+  body: string | string[];
   link?: string;
   href?: string;
   note?: string;
@@ -23,7 +28,7 @@ export default function LegalInformation() {
   const registerLines = t.raw("sidebar.register") as string[];
   const directors = t.raw("sidebar.directors") as string[];
   const details = t.raw("details") as DetailRow[];
-  const founders = t.raw("founders") as string[];
+  const founders = t.raw("founders") as Founder[];
   const extraSections = t.raw("extraSections") as ExtraSection[];
   const email = t("sidebar.email");
   const phone = t("sidebar.phone");
@@ -144,12 +149,6 @@ export default function LegalInformation() {
               <h3 className="text-heading text-h3 sm:text-h3-sm md:text-h3-md lg:text-h3-lg xl:text-h3-xl 2xl:text-h3-2xl">
                 {t("sectionTitle")}
               </h3>
-              <p
-                translate="no"
-                className="mt-4 font-semibold text-heading text-p sm:text-p-sm md:text-p-md lg:text-p-lg"
-              >
-                {t("companyName")}
-              </p>
 
               <dl className="mt-6 divide-y divide-black/10">
                 {details.map((row) => (
@@ -171,19 +170,19 @@ export default function LegalInformation() {
               </dl>
 
               <div className="mt-6 grid grid-cols-1 gap-4 sm:grid-cols-2">
-                {founders.map((name) => (
+                {founders.map((founder) => (
                   <div
-                    key={name}
+                    key={founder.name}
                     className="rounded-global border border-black/5 bg-white px-5 py-4 sm:rounded-global-sm md:rounded-global-md lg:rounded-global-lg xl:rounded-global-xl 2xl:rounded-global-2xl"
                   >
                     <p className="text-xs font-semibold uppercase tracking-[0.18em] text-neutral-400">
-                      {t("founderLabel")}
+                      {founder.label}
                     </p>
                     <p
                       translate="no"
                       className="mt-2 font-semibold text-heading text-p sm:text-p-sm md:text-p-md lg:text-p-lg"
                     >
-                      {name}
+                      {founder.name}
                     </p>
                   </div>
                 ))}
@@ -217,9 +216,17 @@ export default function LegalInformation() {
                   <h3 className="text-heading text-h3 sm:text-h3-sm md:text-h3-md lg:text-h3-lg xl:text-h3-xl 2xl:text-h3-2xl">
                     {section.title}
                   </h3>
-                  <p className="mt-4 text-neutral-500 text-p sm:text-p-sm md:text-p-md lg:text-p-lg xl:text-p-xl 2xl:text-p-2xl">
-                    {section.body}
-                  </p>
+                  {(Array.isArray(section.body)
+                    ? section.body
+                    : [section.body]
+                  ).map((paragraph) => (
+                    <p
+                      key={paragraph.slice(0, 48)}
+                      className="mt-4 text-neutral-500 text-p sm:text-p-sm md:text-p-md lg:text-p-lg xl:text-p-xl 2xl:text-p-2xl"
+                    >
+                      {paragraph}
+                    </p>
+                  ))}
                   {section.link && section.href && (
                     <Link
                       href="#"

@@ -18,14 +18,10 @@ const Launch: React.FC = () => {
   const container = useRef<HTMLDivElement>(null);
   const t = useTranslations("Home.Launch");
 
-  const timelineSteps = [
-    { week: "1", key: "brief" },
-    { week: "2", key: "prototype" },
-    { week: "3 - 4", key: "interface" },
-    { week: "5 - 6", key: "development" },
-    { week: "7", key: "testing" },
-    { week: "8", key: "launch" },
-  ] as const;
+  const timelineSteps = t.raw("timeline.steps") as {
+    week: string;
+    label: string;
+  }[];
   const painPoints = t.raw("painPoints") as string[];
 
   useGSAP(
@@ -125,7 +121,7 @@ const Launch: React.FC = () => {
               <div className="header-three flex h-[150px] w-[min(100%,547px)] items-center rounded-r-none bg-global px-6 sm:h-[210px] sm:px-8 md:h-[200px] md:w-[550px] md:px-10 lg:w-[520px] xl:w-[550px] rounded-l-global sm:rounded-l-global-sm md:rounded-l-global-md lg:rounded-l-global-lg xl:rounded-l-global-xl 2xl:rounded-l-global-2xl">
                 <div className="flex h-full w-full items-center gap-2">
                   <div
-                    className={`${geist.className} origin-left shrink-0 scale-x-[0.85] scale-y-[2] text-[3.5rem] font-bold leading-none text-white uppercase tracking-wider sm:text-[4.5rem] md:text-[5rem] ${t("noLabel") === "KEIN" ? "md:text-[6rem]" : ""}`}
+                    className={`${geist.className} origin-left shrink-0 scale-x-[0.85] scale-y-[2] text-[3.5rem] font-bold leading-none text-white uppercase tracking-wider sm:text-[4.5rem] md:text-[5rem]`}
                   >
                     {t("noLabel")}
                   </div>
@@ -162,14 +158,14 @@ const Launch: React.FC = () => {
             <div className="relative grid grid-cols-6 ">
               {timelineSteps.map((step) => (
                 <div
-                  key={step.key}
+                  key={step.label}
                   className="timeline-item flex flex-col items-center"
                 >
                   <div className="relative z-10 flex h-10 w-10 items-center justify-center rounded-full bg-[#575EE3] text-sm font-bold text-white">
                     {step.week}
                   </div>
                   <div className="mt-3 text-heading text-p sm:text-p-sm md:text-p-md lg:text-p-lg xl:text-p-xl 2xl:text-p-2xl">
-                    {t(`timeline.steps.${step.key}`)}
+                    {step.label}
                   </div>
                 </div>
               ))}
@@ -179,14 +175,14 @@ const Launch: React.FC = () => {
           <div className="grid grid-cols-1 gap-3 sm:grid-cols-2 md:hidden">
             {timelineSteps.map((step) => (
               <div
-                key={step.key}
+                key={step.label}
                 className="timeline-item rounded-global border border-gray-100 bg-white p-4"
               >
                 <div className="mb-1 text-xs font-medium tracking-wider text-[#696B78] uppercase">
                   {t("timeline.weekPrefix")} {step.week}
                 </div>
                 <div className="text-base font-semibold text-[#1A1B21]">
-                  {t(`timeline.steps.${step.key}`)}
+                  {step.label}
                 </div>
               </div>
             ))}

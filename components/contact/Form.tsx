@@ -11,9 +11,7 @@ import { useTranslations } from "next-intl";
 const CONTACT_API_URL =
   process.env.NEXT_PUBLIC_CONTACT_API_URL;
 
-if (typeof window !== "undefined") {
-  gsap.registerPlugin(ScrollTrigger);
-}
+gsap.registerPlugin(ScrollTrigger);
 
 export default function Form() {
   const containerRef = useRef<HTMLElement>(null);
@@ -263,13 +261,14 @@ export default function Form() {
                 <select
                   name="language"
                   required
+                  defaultValue=""
                   className="w-full px-4 py-3 bg-white/70 backdrop-blur-sm border border-white/60 rounded-lg text-sm text-neutral-500 appearance-none focus:outline-none focus:ring-2 focus:ring-teal-400/50 transition-all cursor-pointer"
                 >
-                  <option value="en">{t("form.languageOptions.enDe")}</option>
-                  <option value="de">{t("form.languageOptions.de")}</option>
-                  <option value="en-only">
-                    {t("form.languageOptions.en")}
+                  <option value="" disabled>
+                    {t("form.languagePlaceholder")}
                   </option>
+                  <option value="en">{t("form.languageOptions.en")}</option>
+                  <option value="de">{t("form.languageOptions.de")}</option>
                 </select>
                 <div className="pointer-events-none absolute inset-y-0 right-0 flex items-center px-4 text-neutral-800">
                   <svg className="w-4 h-4 fill-current" viewBox="0 0 20 20">

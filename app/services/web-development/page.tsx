@@ -53,8 +53,8 @@ const WebServices = async () => {
         />
         <ServicesSectionThree
           descriptionData={flexibleEngagement}
-          mainTitle={webTitle}
-          subTitle={webSubtitle}
+          mainTitle={webSubtitle}
+          subTitle={webTitle}
         />
         <OnePlatform />
         <ServicesSectionFive

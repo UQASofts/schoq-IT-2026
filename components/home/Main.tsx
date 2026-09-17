@@ -18,18 +18,11 @@ const REVEAL_DURATION = 2;
 const REVEAL_DELAY = 1;
 const REVEAL_EASE = "power3.inOut";
 
-const TAGS = [
-  "Strategy",
-  "Code",
-  "Human Experience",
-  "Optimization",
-  "Quality",
-] as const;
-
 const Main: React.FC = () => {
   const container = useRef<HTMLElement>(null);
   const t = useTranslations("Home.Main");
   const locale = useLocale();
+  const tags = t.raw("tags") as string[];
 
   useGSAP(
     () => {
@@ -171,7 +164,7 @@ const Main: React.FC = () => {
             translate="no"
             className="main-tags m-main-tags relative z-10 hidden h-auto shrink-0 flex-col justify-evenly gap-3 overflow-visible lg:flex xl:gap-4 2xl:gap-6"
           >
-            {TAGS.map((tag) => (
+            {tags.map((tag) => (
               <span
                 key={tag}
                 className={`${geist.className} tags inline-block w-fit whitespace-nowrap text-[40px] font-bold not-italic leading-[120%] tracking-[-3px] text-[#696B78]`}
@@ -192,7 +185,7 @@ const Main: React.FC = () => {
           translate="no"
           className="mt-4 flex w-full flex-wrap justify-center gap-2 sm:mt-5 sm:gap-3 lg:hidden"
         >
-          {TAGS.map((tag) => (
+          {tags.map((tag) => (
             <span
               key={tag}
               className="m-tags rounded-full bg-white/80 px-3 py-1.5 text-xs font-medium text-gray-700 sm:px-4 sm:py-2 sm:text-sm"

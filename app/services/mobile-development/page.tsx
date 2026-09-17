@@ -4,7 +4,6 @@ import { getMessages, getTranslations } from "next-intl/server";
 
 import ServicesHero from "@/components/services/mobile-development/ServicesHero";
 import ProductDemonstration from "@/components/services/mobile-development/ProductDemonstration";
-import Section3 from "@/components/layout/FooterMessage";
 import ServicesSectionFive from "@/components/services/layout/ServicesSectionFive";
 import ServicesSectionThree from "@/components/services/layout/ServicesSectionThree";
 import ServicesSectionTwo from "@/components/services/layout/ServicesSectionTwo";
@@ -56,8 +55,8 @@ const MobileServices = async () => {
         />
         <ServicesSectionThree
           descriptionData={flexibleEngagement}
-          mainTitle={mobTitle}
-          subTitle={mobSubtitle}
+          mainTitle={mobSubtitle}
+          subTitle={mobTitle}
         />
         <ProductDemonstration />
         <ServicesSectionFive

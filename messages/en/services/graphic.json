@@ -3,7 +3,7 @@
         "Page": {
             "pipeline": {
                 "mainTitle": "FROM IDEA TO A COHERENT VISUAL SYSTEM.",
-                "desc": "We simplify what needs to be communicated, build the right visual language and make sure the design works consistently across every format.",
+                "desc": "",
                 "items": [
                     {
                         "number": "01",
@@ -60,7 +60,7 @@
                 ]
             },
             "experties": {
-                "subTitle": "CONNECTED EXPERTISE",
+                "subTitle": "Connected Expertise",
                 "mainTitle": "NEED INFRASTRUCTURE READY FOR WHAT COMES NEXT?",
                 "items": [
                     {
@@ -82,11 +82,6 @@
                         "id": "ai-solutions",
                         "firstLine": "AI",
                         "secondLine": "SOLUTIONS"
-                    },
-                    {
-                        "id": "immersive-experience",
-                        "firstLine": "IMMERSIVE",
-                        "secondLine": "EXPERIENCES"
                     }
                 ]
             },
@@ -104,8 +99,9 @@
             "imageAlt": "Graphic design visual system"
         },
         "ComplexToClear": {
-            "category": "FROM COMPLEX TO CLEAR",
-            "title": "GOOD DESIGN GIVES PEOPLE A CLEARER NEXT STEP.",
+            "category": "From Complex to Clear",
+            "title1": "GOOD DESIGN GIVES PEOPLE A",
+            "title2": "CLEARER NEXT STEP.",
             "description": "The goal is not decoration. It is hierarchy, confidence and consistency.",
             "beforeAlt": "Before: cluttered layout",
             "afterAlt": "After: clear visual hierarchy",

@@ -66,8 +66,8 @@ export default async function AiServices() {
         />
         <ServicesSectionThree
           descriptionData={practicalAI}
-          mainTitle={aiTitle}
-          subTitle={aiSubtitle}
+          mainTitle={aiSubtitle}
+          subTitle={aiTitle}
         />
         <ConceptAI />
         <PracticalAI />

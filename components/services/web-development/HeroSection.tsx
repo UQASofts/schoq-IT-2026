@@ -121,13 +121,16 @@ export default function SectionMain() {
         <div className="flex items-center justify-center py-2 md:py-0">
           <img
             src="/arrow-down.png"
-            alt=""
-            aria-hidden="true"
+            alt={t("arrowAlt")}
             className="h-16 w-auto md:hidden"
           />
           <div className="hidden items-center gap-1 text-slate-300 md:flex">
             <div className="w-16 border-t-2 border-dashed border-slate-300 md:w-24" />
-            <img src="/arrow-right.png" alt="" aria-hidden="true" className="-ml-2 h-full w-full text-slate-400" />
+            <img
+              src="/arrow-right.png"
+              alt={t("arrowAlt")}
+              className="-ml-2 h-full w-full text-slate-400"
+            />
           </div>
         </div>
 

@@ -2,13 +2,13 @@
     "Projects": {
         "Hero": {
             "category": "Unsere Arbeit",
-            "title1": "Digitale Produkte,",
-            "title2": "Die Wirkung Erzielen",
-            "description": "Wir arbeiten mit Unternehmen und Gründern zusammen, um digitale Produkte zu gestalten und zu entwickeln, die echte Probleme lösen und nachhaltigen Mehrwert schaffen.",
+            "title1": "Digitale Produkte, die",
+            "title2": "Wirkung zeigen",
+            "description": "Wir arbeiten mit Unternehmen und Gründern zusammen, um digitale Produkte zu konzipieren und zu entwickeln, die echte Probleme lösen und einen nachhaltigen Mehrwert schaffen.",
             "cta": "Projekt starten"
         },
         "Page": {
-            "description": "Haben Sie eine Herausforderung, die es zu lösen lohnt?",
+            "description": "Haben Sie eine Herausforderung, die es zu lösen gilt?",
             "buttonText": "Projekt starten"
         },
         "Tabs": {
@@ -16,7 +16,7 @@
             "all": "Alle Projekte",
             "web": "Webplattformen",
             "mobile": "Mobile Apps",
-            "custom": "Individual Software"
+            "custom": "Individuelle Software"
         },
         "List": {
             "visit": "Besuchen",
@@ -25,8 +25,9 @@
                     "id": "amin-hotel",
                     "category": "Hospitality-Erlebnis",
                     "title": "Amin Hotel",
-                    "description": "Die Website von Amin Hotel bietet Gästen ein nahtloses digitales Erlebnis, um Zimmer, Ausstattung, Gastronomie und Services zu entdecken. Gäste können Zimmerdetails ansehen, Verfügbarkeiten prüfen, ihren Aufenthalt online buchen und Speisen direkt aus dem hoteleigenen Restaurant bestellen. Die Plattform macht jeden Teil des Gästeerlebnisses einfach, bequem und angenehm.",
-                    "description2": "Die Website hat eine klare, moderne Oberfläche, die auf allen Geräten leicht zu bedienen ist. Gäste finden schnell die wichtigsten Hotelinformationen und entdecken die Angebote während ihres Aufenthalts. Detaillierte Zimmerdarstellungen helfen bei der Entscheidung vor der Buchung. Die Online-Buchung macht Reservierungen unkompliziert, und die integrierte Restaurantbestellung ermöglicht Speisen direkt über die Website. Das responsive Design sorgt für ein einheitliches Erlebnis auf Smartphone, Tablet und Desktop. Insgesamt stärkt die Plattform die Online-Präsenz von Amin Hotel und liefert ein reibungsloses digitales Gästeerlebnis.",
+                    "visitLabel": "Besuchen — aminhotel.com",
+                    "description": "Die Amin Hotel Website bietet Gästen ein nahtloses digitales Erlebnis, um die Zimmer, Ausstattung, gastronomischen Angebote und Services des Hotels zu entdecken. Gäste können bequem Zimmerdetails einsehen, verfügbare Optionen prüfen, ihren Aufenthalt online buchen und Speisen direkt aus dem hoteleigenen Restaurant bestellen. Die Plattform wurde entwickelt, um jeden Schritt des Gästeerlebnisses einfach und angenehm zu gestalten.",
+                    "description2": "Die Website verfügt über eine klare und moderne Benutzeroberfläche, die eine intuitive Navigation auf allen Geräten ermöglicht. Gäste können schnell wichtige Informationen zum Hotel finden und die während ihres Aufenthalts verfügbaren Einrichtungen und Services entdecken. Detaillierte Zimmerpräsentationen geben Besuchern einen umfassenden Überblick über die verschiedenen Unterkunftsmöglichkeiten, bevor sie eine Reservierung vornehmen.\n\nDer integrierte Online-Buchungsprozess bietet Gästen eine bequeme Möglichkeit, ihren Aufenthalt zu planen und direkt zu reservieren. Über die integrierte Restaurant-Bestellfunktion können Gäste zudem auf die gastronomischen Angebote des Hotels zugreifen und Speisen direkt über die Website bestellen.\n\nDas responsive Design gewährleistet eine konsistente und benutzerfreundliche Erfahrung auf Smartphones, Tablets und Desktop-Geräten.\n\nInsgesamt stärkt die Plattform die Online-Präsenz des Amin Hotels und bietet gleichzeitig ein modernes, reibungsloses und ansprechendes digitales Erlebnis für die Gäste.",
                     "features": [
                         "Zimmer entdecken & Details",
                         "Ausstattung & Services",
@@ -36,10 +37,11 @@
                 },
                 {
                     "id": "myanza",
-                    "category": "Soziale Plattform",
+                    "category": "Soziales Netzwerk",
                     "title": "MyAnza",
-                    "description": "MyAnza ist eine privacy-first soziale Plattform für sichere, authentische und bedeutungsvolle digitale Interaktionen. Nutzer können Inhalte teilen, sich vernetzen, Nachrichten austauschen und in Echtzeit kommunizieren – in einem responsiven Erlebnis, das auf Skalierbarkeit, Sicherheit und Vertrauen ausgelegt ist.",
-                    "description2": "Die Plattform bietet ein vollständiges soziales Erlebnis: Beiträge erstellen und teilen, Inhalte entdecken, mit anderen interagieren und über Direct Messaging kommunizieren. Ein klarer Fokus auf Privatsphäre und Sicherheit schafft Vertrauen. Verifizierte Nutzer können ein Video-Verification abschließen, um Authentizität zu stärken. Die intuitive Oberfläche führt reibungslos zwischen Feed, Profilen, Gesprächen und Social Features. Echtzeit-Kommunikation hält Nutzer verbunden, das responsive Design sorgt für Konsistenz auf Smartphone, Tablet und Desktop. MyAnza verbindet moderne Social-Networking-Funktionen mit privacy-first Design für sichere, bedeutungsvolle Verbindungen.",
+                    "visitLabel": "Besuchen — myanza.com",
+                    "description": "MyAnza bietet ein umfassendes Social-Networking-Erlebnis. Nutzer können Beiträge erstellen und teilen, neue Inhalte entdecken, mit anderen Nutzern interagieren und über private Nachrichten kommunizieren. Der starke Fokus auf Datenschutz und Sicherheit schafft eine vertrauensvolle Umgebung für authentische Online-Interaktionen.",
+                    "description2": "Nutzer können eine Videoverifizierung durchführen, um die Authentizität ihres Kontos zu stärken und Vertrauen innerhalb der Community aufzubauen. Die intuitive Benutzeroberfläche ermöglicht es Nutzern, mühelos zwischen Feed, Profilen, Unterhaltungen und Social-Features zu wechseln. Echtzeit-Kommunikation hält Nutzer verbunden, während das responsive Design eine durchgängig konsistente Erfahrung auf Smartphones, Tablets und Desktop-Geräten gewährleistet. Insgesamt verbindet MyAnza moderne Social-Networking-Funktionen mit einem datenschutzorientierten Design, um eine sichere und ansprechende Umgebung für bedeutungsvolle Online-Interaktionen zu schaffen.",
                     "features": [
                         "Social Feed & Content Sharing",
                         "Profile & Nutzerinteraktion",
@@ -50,9 +52,10 @@
                 {
                     "id": "hilfehafen",
                     "category": "Workforce-Plattform",
-                    "title": "HilfeHafen",
-                    "description": "HilfeHafen Dashboard ist eine Plattform für Anwesenheit und Workforce-Management, entwickelt für Klarheit, Zuverlässigkeit und effizienten Tagesbetrieb. Organisationen steuern Mitarbeitende, Anwesenheit, Arbeitszeiten, Schichten, Kommunikation und Aufgaben in einem zentralen Erlebnis, das Prozesse vereinfacht und operative Sichtbarkeit verbessert.",
-                    "description2": "Mitarbeitende kommunizieren direkt und treten Gruppen bei, die Admins oder Super-Admins anlegen. Sie können Urlaubsanträge stellen und andere um Schichtübernahme bitten. Admins und Super-Admins fügen Mitarbeitende hinzu, vergeben Schichten und verwalten Offices; Super-Admins legen Offices an, Admins steuern Schichten für ihre Offices. Anwesenheitsdaten können exportiert werden – Super-Admins auch die Admin-Anwesenheit. Broadcasts und Kalender-Events halten Teams informiert. Insgesamt verbindet HilfeHafen Dashboard Tracking, Schichtplanung, Kommunikation, Scheduling und Admin-Kontrolle in einer intuitiven Lösung.",
+                    "title": "HilfeHafen Dashboard",
+                    "visitLabel": "Besuchen — hilfehafen.de",
+                    "description": "HilfeHafen Dashboard ist eine Plattform zur Verwaltung von Mitarbeiteranwesenheit und Arbeitskräften, die für Übersichtlichkeit, Zuverlässigkeit und effiziente tägliche Abläufe entwickelt wurde. Das System unterstützt Organisationen bei der Verwaltung von Mitarbeitern, Arbeitszeiten, Schichten, Kommunikation und Aufgaben über eine zentrale Plattform, die Prozesse vereinfacht und die Transparenz im Arbeitsalltag verbessert.",
+                    "description2": "Die Plattform ermöglicht es Mitarbeitern, direkt miteinander zu kommunizieren und Gruppen beizutreten, die von Administratoren oder Super-Administratoren erstellt wurden. Mitarbeiter können Urlaubsanträge einreichen und andere Nutzer bitten, ihre Schichten zu übernehmen.\n\nAdministratoren und Super-Administratoren können Mitarbeiter hinzufügen, Schichten zuweisen und Standorte verwalten. Super-Administratoren können neue Standorte erstellen, während Administratoren die Schichten für ihre jeweils zugewiesenen Standorte verwalten können.\n\nAnwesenheitsdaten können von Administratoren und Super-Administratoren exportiert werden. Super-Administratoren haben zusätzlich die Möglichkeit, die Anwesenheitsdaten der Administratoren zu exportieren.\n\nDarüber hinaus unterstützt die Plattform Teammitteilungen und Kalendereinträge, sodass Mitarbeiter und Teams stets informiert und koordiniert bleiben.\n\nInsgesamt vereint das HilfeHafen Dashboard Anwesenheits- und Arbeitszeiterfassung, Schichtplanung, Kommunikation, Terminverwaltung und administrative Funktionen in einer intuitiven Lösung für ein effizientes Workforce Management.",
                     "features": [
                         "Anwesenheit & Arbeitszeiten",
                         "Schichtplanung & Abdeckung",

@@ -28,7 +28,7 @@
                 ]
             },
             "capabilities": {
-                "mainTitle": "CUSTOM SOFTWARE SHAPED AROUND REAL OPERATIONS.",
+                "mainTitle": "CUSTOM SOFTWARE SHAPED AROUND\nREAL OPERATIONS.",
                 "subTitle": "WHAT WE CAN BUILD",
                 "items": [
                     {
@@ -54,7 +54,7 @@
                 ]
             },
             "experties": {
-                "subTitle": "CONNECTED EXPERTISE",
+                "subTitle": "Connected Expertise",
                 "mainTitle": "NEED INFRASTRUCTURE READY FOR WHAT COMES NEXT?",
                 "items": [
                     {
@@ -76,11 +76,6 @@
                         "id": "ai-solutions",
                         "firstLine": "AI",
                         "secondLine": "SOLUTIONS"
-                    },
-                    {
-                        "id": "immersive-experience",
-                        "firstLine": "IMMERSIVE",
-                        "secondLine": "EXPERIENCES"
                     }
                 ]
             },
@@ -90,16 +85,52 @@
             }
         },
         "Hero": {
-            "category": "CUSTOM SOFTWARE",
+            "category": "Custom software",
             "title1": "SOFTWARE BUILT AROUND",
             "title2": "THE WAY YOU WORK.",
             "description": "Schoq designs and develops custom software that connects workflows, data and teams into reliable digital systems.",
             "cta": "Discuss Your Software",
-            "imageAlt": "Custom software workflow diagram"
+            "imageAlt": "Custom software workflow diagram",
+            "diagram": {
+                "badge": "WORKFLOW / CONNECTED",
+                "nodes": [
+                    {
+                        "id": "orders",
+                        "title": "ORDERS",
+                        "desc": "incoming requests"
+                    },
+                    {
+                        "id": "tasks",
+                        "title": "TASKS",
+                        "desc": "assigned work"
+                    },
+                    {
+                        "id": "customers",
+                        "title": "CUSTOMERS",
+                        "desc": "people & accounts"
+                    },
+                    {
+                        "id": "documents",
+                        "title": "DOCUMENTS",
+                        "desc": "files & records"
+                    },
+                    {
+                        "id": "reporting",
+                        "title": "REPORTING",
+                        "desc": "operational view"
+                    },
+                    {
+                        "id": "approvals",
+                        "title": "APPROVALS",
+                        "desc": "review states"
+                    }
+                ]
+            }
         },
         "FitSystems": {
-            "category": "BUILT AS A SYSTEM",
-            "title": "MORE THAN AN INTERFACE.",
+            "category": "Built As A System",
+            "title1": "MORE THAN AN",
+            "title2": "INTERFACE.",
             "description": "Reliable custom software connects the experience people use with the logic, data and systems operating underneath it.",
             "layers": [
                 {

@@ -46,6 +46,8 @@ type TranslatedCase = {
     title: string;
     category: string;
     description: string;
+    visitLabel?: string;
+    imageAlt?: string;
 };
 
 export default function IdeasBrought() {
@@ -58,6 +60,8 @@ export default function IdeasBrought() {
             title: copy?.title ?? asset.id,
             category: copy?.category ?? "",
             description: copy?.description ?? "",
+            visitLabel: copy?.visitLabel,
+            imageAlt: copy?.imageAlt,
         };
     });
     const [active, setActive] = useState(0);
@@ -550,7 +554,7 @@ export default function IdeasBrought() {
                             onClick={(e) => e.stopPropagation()}
                             className="inline-flex w-fit shrink-0 items-center gap-2 rounded-full bg-global px-4 py-1 text-xs text-white transition hover:opacity-95 md:py-2 md:text-sm md:font-semibold"
                           >
-                            {t("visit")}
+                            {item.visitLabel ?? t("visit")}
                             <ArrowUpRight size={16} />
                           </a>
                         )}
@@ -567,7 +571,7 @@ export default function IdeasBrought() {
                       >
                         <Image
                           src={item.image}
-                          alt={`${item.title} case study`}
+                          alt={item.imageAlt ?? `${item.title} case study`}
                           fill
                           draggable={false}
                           sizes="(max-width: 1023px) 100vw, 0px"
@@ -582,7 +586,7 @@ export default function IdeasBrought() {
                       >
                         <Image
                           src={item.image}
-                          alt={`${item.title} case study`}
+                          alt={item.imageAlt ?? `${item.title} case study`}
                           fill
                           draggable={false}
                           sizes="60vw"

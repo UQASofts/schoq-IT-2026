@@ -11,8 +11,9 @@ export default function LanguageSwitcher() {
 
   const onSelect = (next: Locale) => {
     if (next === locale) return;
-    startTransition(() => {
-      setUserLocale(next);
+    startTransition(async () => {
+      await setUserLocale(next);
+      window.location.reload();
     });
   };
 

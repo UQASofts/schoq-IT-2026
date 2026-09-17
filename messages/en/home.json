@@ -1,9 +1,13 @@
 {
     "Home": {
+        "Page": {
+            "description": "Have a challenge worth solving?",
+            "buttonText": "Start a Project"
+        },
         "Main": {
             "titleOne": "STOP TALKING.",
             "titleTwo": "START BUILDING.",
-            "description": "We combine Swiss precision with deep technical expertise to architect, design, and engineer world-class software solutions for ambitious leaders.",
+            "description": "We combine Swiss German precision with deep technical expertise to architect, design, and engineer world-class software solutions for ambitious leaders.",
             "buttonDiscuss": "Let's Discuss Your Project",
             "tags": [
                 "Strategy",
@@ -34,19 +38,25 @@
                     "id": "myanza",
                     "title": "MyAnza",
                     "category": "Social Platform",
-                    "description": "MyAnza is a privacy-first social platform built for secure, authentic, and meaningful digital interactions. Users can share content, connect, exchange messages, and engage in real-time conversations through a modern responsive experience designed for scalability, security, and trust."
+                    "description": "MyAnza is a privacy-first social platform built for secure, authentic, and meaningful digital interactions. Users can share content, connect, exchange messages, and engage in real-time conversations through a modern responsive experience designed for scalability, security, and trust.",
+                    "visitLabel": "Visit — myanza.com",
+                    "imageAlt": "MyAnza case study"
                 },
                 {
                     "id": "hilfehafen",
-                    "title": "Hilfehafen",
+                    "title": "HilfeHafen Dashboard",
                     "category": "Workforce Platform",
-                    "description": "Hilfehafen is an employee attendance and workforce management platform engineered for clarity and reliability. It streamlines daily operations with intuitive workflows, accurate tracking, and a product experience built for teams that need speed without sacrificing control."
+                    "description": "Hilfehafen is an employee attendance and workforce management platform engineered for clarity and reliability. It streamlines daily operations with intuitive workflows, accurate tracking, and a product experience built for teams that need speed without sacrificing control.",
+                    "visitLabel": "Visit — hilfehafen.de",
+                    "imageAlt": "HilfeHafen Dashboard case study"
                 },
                 {
                     "id": "amin-hotel",
                     "title": "Amin Hotel",
                     "category": "Hospitality Experience",
-                    "description": "Amin Hotel’s website offers guests a seamless digital experience to explore rooms, amenities, dining options, and services. Guests can browse room details, book their stay online, and order food directly from the hotel restaurant. Simple, convenient, enjoyable. Built for every stay."
+                    "description": "Amin Hotel’s website offers guests a seamless digital experience to explore rooms, amenities, dining options, and services. Guests can browse room details, book their stay online, and order food directly from the hotel restaurant. Simple, convenient, enjoyable. Built for every stay.",
+                    "visitLabel": "Visit — aminhotel.com",
+                    "imageAlt": "Amin Hotel case study"
                 }
             ]
         },
@@ -64,14 +74,14 @@
             ],
             "timeline": {
                 "weekPrefix": "Week",
-                "steps": {
-                    "brief": "Brief",
-                    "prototype": "Prototype",
-                    "interface": "Interface",
-                    "development": "Development",
-                    "testing": "Testing",
-                    "launch": "Launch"
-                }
+                "steps": [
+                    { "week": "1", "label": "Brief" },
+                    { "week": "2", "label": "Prototype" },
+                    { "week": "3 - 4", "label": "Interface" },
+                    { "week": "5 - 6", "label": "Development" },
+                    { "week": "7", "label": "Testing" },
+                    { "week": "8", "label": "Launch" }
+                ]
             },
             "footerTag": "8 WEEKS TO MVP"
         },

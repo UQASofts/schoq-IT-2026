@@ -52,12 +52,14 @@ export default function ServicesSectionTwo({
       );
 
       // 2. Subtitle slide
-      tl.fromTo(
-        descriptionRef.current,
-        { y: 20, opacity: 0 },
-        { y: 0, opacity: 1, duration: 0.6, ease: "power2.out" },
-        "-=0.4",
-      );
+      if (descriptionRef.current) {
+        tl.fromTo(
+          descriptionRef.current,
+          { y: 20, opacity: 0 },
+          { y: 0, opacity: 1, duration: 0.6, ease: "power2.out" },
+          "-=0.4",
+        );
+      }
 
       // 3. Ultra-smooth card sequence using power3.out and force3D
       tl.fromTo(
@@ -107,12 +109,14 @@ export default function ServicesSectionTwo({
           >
             {mainTitle}
           </h2>
-          <p
-            ref={descriptionRef}
-            className="text-neutral-500 text-p sm:text-p-sm md:text-p-md lg:text-p-lg xl:text-p-xl 2xl:text-p-2xl"
-          >
-            {mainDesc}
-          </p>
+          {mainDesc ? (
+            <p
+              ref={descriptionRef}
+              className="text-neutral-500 text-p sm:text-p-sm md:text-p-md lg:text-p-lg xl:text-p-xl 2xl:text-p-2xl"
+            >
+              {mainDesc}
+            </p>
+          ) : null}
         </div>
 
         {/* Cards Grid Container */}

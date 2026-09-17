@@ -44,7 +44,7 @@ const Footer: React.FC = async () => {
                 <li>
                   <Link
                     href="/contact"
-                    className="capitalize text-gray-500 transition-colors hover:text-black text-p-nav sm:text-p-nav-sm md:text-p-nav-md lg:text-p-nav-lg xl:text-p-nav-xl 2xl:text-p-nav-2xl"
+                    className="text-gray-500 transition-colors hover:text-black text-p-nav sm:text-p-nav-sm md:text-p-nav-md lg:text-p-nav-lg xl:text-p-nav-xl 2xl:text-p-nav-2xl"
                   >
                     {t("links.contactUs")}
                   </Link>
@@ -52,7 +52,7 @@ const Footer: React.FC = async () => {
                 <li>
                   <Link
                     href="/impressum"
-                    className="capitalize text-gray-500 transition-colors hover:text-black text-p-nav sm:text-p-nav-sm md:text-p-nav-md lg:text-p-nav-lg xl:text-p-nav-xl 2xl:text-p-nav-2xl"
+                    className="text-gray-500 transition-colors hover:text-black text-p-nav sm:text-p-nav-sm md:text-p-nav-md lg:text-p-nav-lg xl:text-p-nav-xl 2xl:text-p-nav-2xl"
                   >
                     {t("links.imprint")}
                   </Link>
@@ -91,7 +91,7 @@ const Footer: React.FC = async () => {
         {/* Copyright */}
         <div className="mt-10">
           <p className="text-center text-gray-500 text-p-nav sm:text-p-nav-sm md:text-p-nav-md lg:text-p-nav-lg xl:text-p-nav-xl 2xl:text-p-nav-2xl">
-            © {new Date().getFullYear()} Schoq IT Solutions. {t("copyright")}
+            © 2026 Schoq IT Solutions. {t("copyright")}
           </p>
         </div>
       </div>

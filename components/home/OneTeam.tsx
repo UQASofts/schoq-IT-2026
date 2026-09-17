@@ -13,10 +13,7 @@ import { image1, image2, image3, image4, image5, image6 } from "@/assets";
 import { heroBgImage } from "@/public";
 const images = [image1, image2, image3, image4, image5, image6, image2];
 
-// Register ScrollTrigger safely
-if (typeof window !== "undefined") {
-  gsap.registerPlugin(ScrollTrigger);
-}
+gsap.registerPlugin(ScrollTrigger);
 
 interface TranslatedService {
   title: string;

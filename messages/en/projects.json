@@ -25,6 +25,7 @@
                     "id": "amin-hotel",
                     "category": "Hospitality Experience",
                     "title": "Amin Hotel",
+                    "visitLabel": "Visit — aminhotel.com",
                     "description": "Amin Hotel website offers guests a seamless digital experience to explore the hotel's rooms, amenities, dining options, and services. Guests can easily browse room details, check available options, book their stay online, and order delicious food directly from the hotel's internal restaurant. The platform is designed to make every part of the guest experience simple, convenient, and enjoyable.",
                     "description2": "The website features a clean and modern interface that makes navigation effortless across all devices. Guests can quickly find essential hotel information and explore the facilities available during their stay. Detailed room presentations help visitors understand the available accommodation options before making a reservation. The online booking experience provides a convenient way for guests to plan and reserve their stay. The integrated restaurant ordering feature allows guests to access dining services directly through the website. The responsive design ensures a consistent experience across smartphones, tablets, and desktops. Overall, the platform strengthens Amin Hotel's online presence while delivering a smooth and engaging digital experience for its guests.",
                     "features": [
@@ -36,8 +37,9 @@
                 },
                 {
                     "id": "myanza",
-                    "category": "Social Platform",
+                    "category": "Social Media Platform",
                     "title": "MyAnza",
+                    "visitLabel": "Visit — myanza.com",
                     "description": "MyAnza is a privacy-first social platform built for secure, authentic, and meaningful digital interactions. Users can share content, connect with others, exchange messages, and engage in real-time conversations through a responsive experience designed for scalability, security, and trust.",
                     "description2": "The platform provides a complete social experience where users can create and share posts, discover content, interact with others, and communicate through direct messaging. A strong focus on privacy and security helps create a trusted environment for authentic online interactions. Verified users can complete video verification to strengthen account authenticity and build trust within the community. The intuitive interface allows users to move smoothly between their feed, profiles, conversations, and social features. Real-time communication keeps users connected, while the responsive design ensures a consistent experience across smartphones, tablets, and desktop devices. Overall, MyAnza combines modern social networking features with privacy-focused design to provide a secure and engaging environment for meaningful online connections.",
                     "features": [
@@ -50,7 +52,8 @@
                 {
                     "id": "hilfehafen",
                     "category": "Workforce Platform",
-                    "title": "HilfeHafen",
+                    "title": "HilfeHafen Dashboard",
+                    "visitLabel": "Visit — hilfehafen.de",
                     "description": "HilfeHafen Dashboard is an employee attendance and workforce management platform engineered for clarity, reliability, and efficient daily operations. The system helps organizations manage employees, attendance, working hours, shifts, communication, and workforce tasks through a centralized experience designed to simplify processes and improve operational visibility.",
                     "description2": "The platform enables employees to communicate directly and join groups created by admins or super admins. Employees can submit leave requests and ask other users to cover their shifts. Admins and super admins can add employees, assign shifts, manage offices, while super admins can create offices and admins can manage shifts for their assigned offices. Attendance records can be exported by admins and super admins, with super admins also able to export admin attendance. The platform also supports broadcast announcements and calendar events, keeping teams informed and coordinated. Overall, HilfeHafen Dashboard combines attendance tracking, shift management, communication, scheduling, and administrative controls in one intuitive workforce management solution.",
                     "features": [

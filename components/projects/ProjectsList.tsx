@@ -49,6 +49,7 @@ type TranslatedProject = {
   id: string;
   category: string;
   title: string;
+  visitLabel?: string;
   description: string;
   description2: string;
   features: string[];
@@ -66,6 +67,7 @@ export default function ProjectsList() {
       ...project,
       category: item?.category ?? "",
       title: item?.title ?? project.id,
+      visitLabel: item?.visitLabel,
       description: item?.description ?? "",
       description2: item?.description2 ?? "",
       features: item?.features ?? [],
@@ -156,10 +158,10 @@ export default function ProjectsList() {
                 >
                   {project.title}
                 </h2>
-                <p className="text-neutral-500 text-p sm:text-p-sm md:text-p-md lg:text-p-lg xl:text-p-xl 2xl:text-p-2xl">
+                <p className="whitespace-pre-wrap text-neutral-500 text-p sm:text-p-sm md:text-p-md lg:text-p-lg xl:text-p-xl 2xl:text-p-2xl">
                   {project.description}
                 </p>
-                <p className="text-neutral-500 text-p sm:text-p-sm md:text-p-md lg:text-p-lg xl:text-p-xl 2xl:text-p-2xl">
+                <p className="whitespace-pre-wrap text-neutral-500 text-p sm:text-p-sm md:text-p-md lg:text-p-lg xl:text-p-xl 2xl:text-p-2xl">
                   {project.description2}
                 </p>
 
@@ -192,7 +194,7 @@ export default function ProjectsList() {
                 >
                   <span className="inline-flex items-center justify-center rounded-global bg-white px-8 py-2.5 sm:rounded-global-sm md:rounded-global-md lg:rounded-global-lg xl:rounded-global-xl 2xl:rounded-global-2xl">
                     <span className="bg-global bg-clip-text font-semibold text-transparent text-p-nav sm:text-p-nav-sm md:text-p-nav-md lg:text-p-nav-lg xl:text-p-nav-xl 2xl:text-p-nav-2xl">
-                      {t("visit")}
+                      {project.visitLabel ?? t("visit")}
                     </span>
                   </span>
                 </a>

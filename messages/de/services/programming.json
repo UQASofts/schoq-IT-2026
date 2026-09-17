@@ -3,37 +3,37 @@
         "Page": {
             "pipeline": {
                 "mainTitle": "VON DER ANFORDERUNG ZUM ZUVERLÄSSIGEN RELEASE.",
-                "desc": "Wir klären, was funktionieren muss, wählen die richtige technische Struktur und liefern Software, die nach dem Launch leichter zu warten ist.",
+                "desc": "Wir verstehen, was funktionieren muss, wählen die richtige technische Struktur und liefern Software, die nach dem Launch leichter zu warten ist.",
                 "items": [
                     {
                         "number": "01",
                         "title": "Definieren",
-                        "desc": "Anforderungen, Rahmenbedingungen, Nutzer und technische Abhängigkeiten klären."
+                        "desc": "Anforderungen, Rahmenbedingungen, Benutzer und technische Abhängigkeiten klären."
                     },
                     {
                         "number": "02",
                         "title": "Architektur",
-                        "desc": "Anwendungsstruktur, Daten, APIs und den Entwicklungsansatz planen."
+                        "desc": "Anwendungsstruktur, Daten, APIs und Entwicklungsansatz planen."
                     },
                     {
                         "number": "03",
-                        "title": "Bauen & Testen",
-                        "desc": "In klaren Schritten entwickeln — mit Review, Tests und Qualitätschecks."
+                        "title": "Entwickeln & Testen",
+                        "desc": "In klaren Schritten entwickeln – mit Reviews, Tests und Qualitätsprüfungen."
                     },
                     {
                         "number": "04",
-                        "title": "Deployen & Verbessern",
-                        "desc": "Sicher releasen, das Verhalten überwachen und das System weiter verbessern."
+                        "title": "Bereitstellen & Weiterentwickeln",
+                        "desc": "Sicher veröffentlichen, Verhalten überwachen und das System kontinuierlich verbessern."
                     }
                 ]
             },
             "experties": {
-                "subTitle": "VERNETZTE EXPERTISE",
-                "mainTitle": "INFRASTRUKTUR, DIE FÜR DAS NÄCHSTE BEREIT IST?",
+                "subTitle": "Vernetzte Expertise",
+                "mainTitle": "BRAUCHEN SIE EINE INFRASTRUKTUR, DIE FÜR DIE NÄCHSTEN SCHRITTE GERÜSTET IST?",
                 "items": [
                     {
                         "id": "custom-software",
-                        "firstLine": "INDIVIDUELLE",
+                        "firstLine": "CUSTOM",
                         "secondLine": "SOFTWARE"
                     },
                     {
@@ -43,18 +43,13 @@
                     },
                     {
                         "id": "product-design",
-                        "firstLine": "PRODUKT-",
-                        "secondLine": "DESIGN"
+                        "firstLine": "PRODUKTDESIGN",
+                        "secondLine": ""
                     },
                     {
                         "id": "ai-solutions",
-                        "firstLine": "KI-",
-                        "secondLine": "LÖSUNGEN"
-                    },
-                    {
-                        "id": "immersive-experience",
-                        "firstLine": "IMMERSIVE",
-                        "secondLine": "ERLEBNISSE"
+                        "firstLine": "AI",
+                        "secondLine": "SOLUTIONS"
                     }
                 ]
             },
@@ -64,27 +59,27 @@
             }
         },
         "Hero": {
-            "category": "PROGRAMMIERLEISTUNGEN",
-            "title1": "ENGINEERING, DAS",
-            "title2": "AUSGELIEFERT WIRD.",
-            "description": "Schoq liefert zuverlässige, wartbare Software über Frontend, Backend, APIs und Integrationen.",
+            "category": "Programmierdienstleistungen",
+            "title1": "ENGINEERING BUILT",
+            "title2": "TO DELIVER.",
+            "description": "Schoq liefert zuverlässige und wartbare Software für Frontend, Backend, APIs und Integrationen.",
             "cta": "Programm besprechen",
             "imageAlt": "Programmier-Workflow vom Code bis zum Deploy"
         },
         "Stack": {
-            "subTitle": "ENGINEERING-FÄHIGKEITEN",
-            "mainTitle1": "PROGRAMMIERUNG ÜBER DEN",
-            "mainTitle2": "GESAMTEN PRODUKT-STACK.",
+            "subTitle": "Engineering-Kompetenzen",
+            "mainTitle1": "PROGRAMMING SUPPORT ACROSS",
+            "mainTitle2": "THE PRODUCT STACK.",
             "items": [
                 {
                     "number": "01",
                     "title": "Frontend-Engineering",
-                    "desc": "Responsive Oberflächen und Anwendungserlebnisse für echte Nutzer."
+                    "desc": "Responsive Oberflächen und Anwendungserlebnisse, entwickelt für echte Benutzer."
                 },
                 {
                     "number": "02",
                     "title": "Backend-Engineering",
-                    "desc": "Geschäftslogik, Services, Datenverarbeitung und Anwendungsfundament."
+                    "desc": "Geschäftslogik, Services, Datenverarbeitung und technische Anwendungsgrundlagen."
                 },
                 {
                     "number": "03",
@@ -93,30 +88,30 @@
                 },
                 {
                     "number": "04",
-                    "title": "Datenbank & Data Services",
-                    "desc": "Strukturierte Datenmodelle, Zugriffsmuster und zuverlässige Persistenz."
+                    "title": "Datenbanken & Datendienste",
+                    "desc": "Strukturierte Datenmodelle, Zugriffsmuster und zuverlässige Datenpersistenz."
                 },
                 {
                     "number": "05",
-                    "title": "Legacy-Code-Modernisierung",
-                    "desc": "Bestehende Anwendungen modernisieren, ohne unnötige Rewrites."
+                    "title": "Modernisierung von Legacy-Code",
+                    "desc": "Veraltete Anwendungen verbessern, ohne unnötige Neuentwicklungen."
                 },
                 {
                     "number": "06",
-                    "title": "Engineering-Team-Erweiterung",
-                    "desc": "Erfahrene Entwickler direkt in ein bestehendes Produktteam bringen."
+                    "title": "Erweiterung von Engineering-Teams",
+                    "desc": "Erfahrene Entwickler direkt in ein bestehendes Produktteam integrieren."
                 }
             ]
         },
         "CleanCode": {
-            "category": "ALS SYSTEM GEBAUT",
-            "title1": "SAUBERER CODE IST NUR EIN",
-            "title2": "TEIL ZUVERLÄSSIGER SOFTWARE.",
-            "description": "Gutes Engineering verbindet Oberfläche, Geschäftslogik, Integrationen, Daten und Infrastruktur zu einem wartbaren System.",
+            "category": "ALS SYSTEM ENTWICKELT",
+            "title1": "SAUBERER CODE IST NUR EIN TEIL",
+            "title2": "ZUVERLÄSSIGER SOFTWARE.",
+            "description": "Gutes Engineering verbindet Oberfläche, Geschäftslogik, Integrationen, Daten und Infrastruktur zu einem wartbaren Gesamtsystem.",
             "layers": [
                 {
                     "title": "Benutzeroberfläche",
-                    "desc": "Frontend-Erfahrung"
+                    "desc": "Frontend-Erlebnis"
                 },
                 {
                     "title": "Anwendungslogik",
@@ -124,49 +119,49 @@
                 },
                 {
                     "title": "APIs & Integrationen",
-                    "desc": "Verbundene Services"
+                    "desc": "Verbundene Dienste"
                 },
                 {
                     "title": "Daten",
-                    "desc": "Modelle und Persistenz"
+                    "desc": "Modelle und Datenpersistenz"
                 },
                 {
                     "title": "Infrastruktur",
-                    "desc": "Runtime und Delivery"
+                    "desc": "Betrieb und Bereitstellung"
                 }
             ]
         },
         "ShipChanges": {
-            "category": "DELIVERY-PIPELINE",
-            "title1": "ÄNDERUNGEN AUSLIEFERN,",
-            "title2": "OHNE DIE KONTROLLE ZU VERLIEREN.",
-            "description": "Eine klare Development-Pipeline macht Releases einfacher zu prüfen, zu testen und bereitzustellen.",
-            "steps": ["Code", "Review", "Test", "Build", "Deploy", "Monitor"]
+            "category": "Bereitstellungspipeline",
+            "title1": "SHIP CHANGES WITHOUT",
+            "title2": "LOSING CONTROL.",
+            "description": "Eine klare Entwicklungspipeline macht Releases einfacher zu prüfen, zu testen und bereitzustellen.",
+            "steps": ["CODE", "REVIEW", "TEST", "BUILD", "BEREITSTELLEN", "ÜBERWACHEN"]
         },
         "Tomorrow": {
-            "category": "ENGINEERING-QUALITÄT",
-            "title1": "GEBAUT, UM MORGEN",
-            "title2": "WEITERGEARBEITET ZU WERDEN.",
+            "category": "Engineering-Qualität",
+            "title1": "BUILT TO BE WORKED ON AGAIN",
+            "title2": "TOMORROW.",
             "items": [
                 {
                     "number": "01",
                     "title": "Wartbarkeit",
-                    "desc": "Klare Struktur und Konventionen, die künftige Änderungen erleichtern."
+                    "desc": "Klare Strukturen und Konventionen, die zukünftige Änderungen erleichtern."
                 },
                 {
                     "number": "02",
                     "title": "Zuverlässigkeit",
-                    "desc": "Tests und vorhersagbares Verhalten in den wichtigen Abläufen."
+                    "desc": "Tests und vorhersehbares Verhalten in den wichtigen Abläufen."
                 },
                 {
                     "number": "03",
                     "title": "Sicherheit",
-                    "desc": "Angemessener Zugriff, Validierung und sichere Engineering-Praktiken."
+                    "desc": "Angemessene Zugriffsrechte, Validierung und sichere Engineering-Praktiken."
                 },
                 {
                     "number": "04",
                     "title": "Performance",
-                    "desc": "Reaktionsfähige Systeme ohne unnötigen technischen Overhead."
+                    "desc": "Leistungsfähige Systeme ohne unnötigen technischen Overhead."
                 }
             ]
         }

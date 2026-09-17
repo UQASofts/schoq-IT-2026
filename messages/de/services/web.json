@@ -2,7 +2,7 @@
     "Web": {
         "Page": {
             "conceptToLaunchTitle": "Vom Konzept bis zum Launch.",
-            "conceptToLaunchDesc": "Wir bieten ein vollständiges Produktbereitstellungs-Paket, von der Strategie bis zur Bereitstellung.",
+            "conceptToLaunchDesc": "Wir bieten einen vollständigen Produktentwicklungs-Stack – von der Strategie bis zum Deployment.",
             "Three": {
                 "category": "Wie wir arbeiten",
                 "title": "Flexible Zusammenarbeit"
@@ -11,39 +11,39 @@
                 {
                     "number": "01",
                     "title": "Entdecken",
-                    "desc": "Definition des MVP-Umfangs, Auswahl des Technologie-Stacks und Analyse der Markttauglichkeit."
+                    "desc": "Definition des MVP-Umfangs, Auswahl des technischen Stacks und Analyse des Product-Market-Fit."
                 },
                 {
                     "number": "02",
                     "title": "Architektur",
-                    "desc": "High-Fidelity-UI-Systeme, interaktive Prototypen und User-Journey-Mapping."
+                    "desc": "High-Fidelity-UI-Systeme, interaktive Prototypen und Mapping der User Journeys."
                 },
                 {
                     "number": "03",
-                    "title": "Bauen",
-                    "desc": "Native iOS/Android- oder plattformübergreifende Entwicklung mit einem robusten Backend."
+                    "title": "Entwickeln",
+                    "desc": "Native iOS-/Android- oder plattformübergreifende Entwicklung mit einem robusten Backend."
                 },
                 {
                     "number": "04",
-                    "title": "Starten & Skalieren",
-                    "desc": "Kontinuierliches Testen, automatisierte Qualitätssicherung und nahtlose Store-Bereitstellung."
+                    "title": "Launch & Skalierung",
+                    "desc": "Kontinuierliches Testing, automatisierte Qualitätssicherung und nahtloses Deployment in die Stores."
                 }
             ],
             "flexibleEngagement": [
                 {
-                    "title": "Neue Web-Plattform",
+                    "title": "Neue Webplattform",
                     "desc": "End-to-End-Entwicklung eines modernen digitalen Ökosystems von Grund auf."
                 },
                 {
                     "title": "Modernisierung",
-                    "desc": "Migration von Altsystemen auf moderne, headless Frontend-Architekturen."
+                    "desc": "Migration von Legacy-Systemen zu modernen, Headless-Frontend-Architekturen."
                 },
                 {
                     "title": "Team-Erweiterung",
-                    "desc": "Frontend-, Backend- und Produktspezialisten, die in Ihr bestehendes Team integriert werden."
+                    "desc": "Frontend-, Backend- und Produktspezialisten, die direkt in Ihr bestehendes Team integriert werden."
                 }
             ],
-            "expertiseItemsTitle": "Alles, was Ihre Web-Plattform über die Benutzeroberfläche hinaus benötigen könnte.",
+            "expertiseItemsTitle": "Alles, was Ihre Webplattform über die Benutzeroberfläche hinaus benötigen könnte.",
             "expertiseItemsSubTitle": "Vernetzte Expertise",
             "expertiseItems": [
                 {
@@ -53,12 +53,12 @@
                 },
                 {
                     "id": "mobile-dev",
-                    "firstLine": "Mobile",
-                    "secondLine": "Entwicklung"
+                    "firstLine": "MOBILE",
+                    "secondLine": "ENTWICKLUNG"
                 },
                 {
                     "id": "product-design",
-                    "firstLine": "PRODUKT-",
+                    "firstLine": "PRODUKT",
                     "secondLine": "DESIGN"
                 },
                 {
@@ -68,20 +68,21 @@
                 },
                 {
                     "id": "cloud-engineering",
-                    "firstLine": "CLOUD-",
+                    "firstLine": "CLOUD",
                     "secondLine": "ENGINEERING"
                 }
             ],
             "footerMessage": {
-                "description": "Haben Sie eine Herausforderung, die es wert ist, gelöst zu werden? ",
-                "buttonText": "Web-Plattform besprechen"
+                "description": "Haben Sie eine Herausforderung, die es zu lösen gilt?",
+                "buttonText": "Besprechen Sie Ihre Webplattform"
             }
         },
         "Hero": {
-            "category": "Webplattformen & Entwicklung.",
-            "title": "Webplattformen – Entwickelt für Leistung, Anpassung und Wachstum.",
-            "description": "Wir entwickeln hochleistungsfähige Web-Ökosysteme, die über statische Seiten hinausgehen und fehlerfreie, skalierbare Arbeitsabläufe sowie nahtlose Nutzungserlebnisse ermöglichen.",
+            "category": "Webplattformen & Entwicklung",
+            "title": "Webplattformen, die leistungsfähig, anpassungsfähig und skalierbar sind.",
+            "description": "Wir entwickeln leistungsstarke Web-Ökosysteme, die über statische Seiten hinausgehen und komplexe Workflows sowie nahtlose Nutzererlebnisse in großem Maßstab ermöglichen.",
             "cta": "Projekt starten",
+            "arrowAlt": "Pfeil nach rechts",
             "leftCard": {
                 "title": "Statische Seite",
                 "subtitle": "Nur Informationen"
@@ -95,9 +96,9 @@
         },
         "OnePlatform": {
             "title": "Eine Plattform. Jeder Bildschirm.",
-            "subtitle": "Eine Codebasis, unendliche Darstellungsbereiche.",
+            "subtitle": "Eine Codebasis, unendlich viele Viewports.",
             "imageAlts": {
-                "desktop": "Desktop-Plattform-Ansicht",
+                "desktop": "Desktop-Plattformansicht",
                 "laptop": "Laptop-Ansichten",
                 "mobile": "Mobile Ansicht"
             }

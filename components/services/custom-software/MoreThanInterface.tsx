@@ -64,7 +64,9 @@ export default function MoreThanInterface() {
             {t("category")}
           </h3>
           <h2 className="uppercase text-heading text-h2 sm:text-h2-sm md:text-h2-md lg:text-h2-lg xl:text-h2-xl 2xl:text-h2-2xl">
-            {t("title")}
+            {t("title1")}
+            <br />
+            {t("title2")}
           </h2>
           <p className="text-neutral-500 text-p sm:text-p-sm md:text-p-md lg:text-p-lg xl:text-p-xl 2xl:text-p-2xl">
             {t("description")}

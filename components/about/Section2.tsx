@@ -7,9 +7,7 @@ import { ScrollTrigger } from "gsap/ScrollTrigger";
 import { useGSAP } from "@gsap/react";
 import { useTranslations } from "next-intl";
 
-if (typeof window !== "undefined") {
-  gsap.registerPlugin(ScrollTrigger);
-}
+gsap.registerPlugin(ScrollTrigger);
 
 export default function Section2() {
   const containerRef = useRef<HTMLElement>(null);
@@ -17,34 +15,30 @@ export default function Section2() {
 
   useGSAP(
     () => {
-      const ctx = gsap.context(() => {
-        gsap.from(".Techonology-Text", {
-          y: 40,
-          opacity: 0,
-          duration: 1,
-          ease: "power3.out",
-          scrollTrigger: {
-            trigger: ".Container-One",
-            start: "top 70%",
-            toggleActions: "play none none reverse",
-          },
-        });
+      gsap.from(".Techonology-Text", {
+        y: 40,
+        opacity: 0,
+        duration: 1,
+        ease: "power3.out",
+        scrollTrigger: {
+          trigger: ".Container-One",
+          start: "top 70%",
+          toggleActions: "play none none reverse",
+        },
+      });
 
-        gsap.from(".team-card", {
-          y: 40,
-          opacity: 0,
-          duration: 0.9,
-          stagger: 0.2,
-          ease: "power2.out",
-          scrollTrigger: {
-            trigger: ".Container-Two",
-            start: "top 70%",
-            toggleActions: "play none none reverse",
-          },
-        });
-      }, containerRef);
-
-      return () => ctx.revert();
+      gsap.from(".team-card", {
+        y: 40,
+        opacity: 0,
+        duration: 0.9,
+        stagger: 0.2,
+        ease: "power2.out",
+        scrollTrigger: {
+          trigger: ".Container-Two",
+          start: "top 70%",
+          toggleActions: "play none none reverse",
+        },
+      });
     },
     { scope: containerRef },
   );

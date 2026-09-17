@@ -1,7 +1,7 @@
 "use client";
 
 import { useRef } from "react";
-import Link from "next/link";
+import { Link } from "@/i18n/navigation";
 import { ChevronDown } from "lucide-react";
 import { Geist } from "next/font/google";
 import { gsap } from "gsap";
@@ -145,10 +145,6 @@ const Main: React.FC = () => {
               <br />
               {t("titleTwo")}
             </h1>
-
-            <p className="w-11/12 mx-auto mt-6 max-w-2xl text-center text-white text-p sm:mt-5 sm:text-p-sm md:mt-4 md:text-p-md lg:mx-0 lg:text-left lg:text-p-lg xl:text-p-xl 2xl:text-p-2xl">
-              {t("description")}
-            </p>
 
             <div className="mt-5 flex justify-center sm:mt-6 lg:mt-4 lg:justify-start xl:mt-6 2xl:mt-8">
               <Link

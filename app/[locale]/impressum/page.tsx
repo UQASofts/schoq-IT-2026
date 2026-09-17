@@ -5,7 +5,13 @@ import ImpressumHeroSection from "@/components/impressum/HeroSection";
 import LegalInformation from "@/components/impressum/legalInformation";
 import FooterMessage from "@/components/layout/FooterMessage";
 
-export default async function ImpressumPage() {
+import { enableStaticLocale } from "@/i18n/set-locale";
+export default async function ImpressumPage({
+  params,
+}: {
+  params: Promise<{ locale: string }>;
+}) {
+  await enableStaticLocale(params);
   const messages = await getMessages();
   const t = await getTranslations("Impressum.Page");
 

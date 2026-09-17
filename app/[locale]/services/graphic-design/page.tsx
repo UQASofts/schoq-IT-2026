@@ -9,6 +9,7 @@ import ComplexToClear from "@/components/services/graphic-design/ComplexToClear"
 import ServicesSectionFive from "@/components/services/layout/ServicesSectionFive";
 import FooterMessage from "@/components/layout/FooterMessage";
 
+import { enableStaticLocale } from "@/i18n/set-locale";
 interface Pipeline {
   number: string;
   title: string;
@@ -21,7 +22,12 @@ interface Expertise {
   secondLine: string;
 }
 
-export default async function GraphicDesignServices() {
+export default async function GraphicDesignServices({
+  params,
+}: {
+  params: Promise<{ locale: string }>;
+}) {
+  await enableStaticLocale(params);
   const messages = await getMessages();
   const t = await getTranslations("GraphicDesign.Page");
 

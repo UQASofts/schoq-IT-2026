@@ -22,7 +22,6 @@ const Launch: React.FC = () => {
     week: string;
     label: string;
   }[];
-  const painPoints = t.raw("painPoints") as string[];
 
   useGSAP(
     () => {
@@ -118,15 +117,19 @@ const Launch: React.FC = () => {
 
             </div>
             <div className="mt-8 flex justify-end lg:absolute lg:inset-y-0 lg:right-0 lg:z-30 lg:mt-0 lg:items-center">
-              <div className="header-three flex h-[150px] w-[min(100%,547px)] items-center rounded-r-none bg-global px-6 sm:h-[210px] sm:px-8 md:h-[200px] md:w-[550px] md:px-10 lg:w-[520px] xl:w-[550px] rounded-l-global sm:rounded-l-global-sm md:rounded-l-global-md lg:rounded-l-global-lg xl:rounded-l-global-xl 2xl:rounded-l-global-2xl">
+              <div
+                translate="no"
+                className="header-three flex h-[150px] w-[min(100%,547px)] items-center rounded-r-none bg-global px-6 sm:h-[210px] sm:px-8 md:h-[200px] md:w-[550px] md:px-10 lg:w-[520px] xl:w-[550px] rounded-l-global sm:rounded-l-global-sm md:rounded-l-global-md lg:rounded-l-global-lg xl:rounded-l-global-xl 2xl:rounded-l-global-2xl"
+              >
                 <div className="flex h-full w-full items-center gap-2">
                   <div
                     className={`${geist.className} origin-left shrink-0 scale-x-[0.85] scale-y-[2] text-[3.5rem] font-bold leading-none text-white uppercase tracking-wider sm:text-[4.5rem] md:text-[5rem]`}
                   >
-                    {t("noLabel")}
+                    NO
                   </div>
                   <div className="min-w-0">
-                    {painPoints.map((point) => (
+                    {["Freelancer chaos", "Agency chains", "Friction"].map(
+                      (point) => (
                       <div key={point} className="py-0.5 sm:py-1">
                         <span className="text-base leading-tight font-semibold tracking-tight text-white sm:text-xl md:text-[1.5rem]">
                           {point}

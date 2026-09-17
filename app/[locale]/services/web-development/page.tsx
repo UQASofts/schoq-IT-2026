@@ -2,69 +2,73 @@ import { NextIntlClientProvider } from "next-intl";
 import { pick } from "@/lib/pick-messages";
 import { getMessages, getTranslations } from "next-intl/server";
 
-import ServicesHero from "@/components/services/mobile-development/ServicesHero";
-import ProductDemonstration from "@/components/services/mobile-development/ProductDemonstration";
-import ServicesSectionFive from "@/components/services/layout/ServicesSectionFive";
-import ServicesSectionThree from "@/components/services/layout/ServicesSectionThree";
+import HeroSection from "@/components/services/web-development/HeroSection";
 import ServicesSectionTwo from "@/components/services/layout/ServicesSectionTwo";
-import FooterMessage from "@/components/layout/FooterMessage";
+import ServicesSectionThree from "@/components/services/layout/ServicesSectionThree";
+import OnePlatform from "@/components/services/web-development/OnePlatform";
+import ServicesSectionFive from "@/components/services/layout/ServicesSectionFive";
+import Section3 from "@/components/layout/FooterMessage";
 
-interface ProductBlueprint {
+import { enableStaticLocale } from "@/i18n/set-locale";
+interface ConceptToLaunch {
   number: string;
   title: string;
   desc: string;
 }
-
 interface FlexibleEngagement {
   title: string;
   desc: string;
 }
-
 interface ExpertiseItems {
   id: string;
   firstLine: string;
   secondLine: string;
 }
 
-const MobileServices = async () => {
+const WebServices = async ({
+  params,
+}: {
+  params: Promise<{ locale: string }>;
+}) => {
+  await enableStaticLocale(params);
   const messages = await getMessages();
-  const t = await getTranslations("Mobile.Page");
+  const t = await getTranslations("Web.Page");
   // Section 2
-  const productBlueprint = t.raw("productBlueprint") as ProductBlueprint[];
-  const productBlueprintTitle = t("productBlueprintTitle");
-  const productBlueprintTitleDesc = t("productBlueprintTitleDesc");
+  const conceptToLaunch = t.raw("conceptToLaunch") as ConceptToLaunch[];
+  const conceptToLaunchTitle = t("conceptToLaunchTitle");
+  const conceptToLaunchDesc = t("conceptToLaunchDesc");
+
   // Section 3
-  const mobTitle = t("Three.category");
-  const mobSubtitle = t("Three.title");
+  const webTitle = t("Three.category");
+  const webSubtitle = t("Three.title");
   const flexibleEngagement = t.raw(
     "flexibleEngagement",
   ) as FlexibleEngagement[];
-  // Section 5
   const expertiseItems = t.raw("expertiseItems") as ExpertiseItems[];
   const expertiseItemsTitle = t("expertiseItemsTitle");
   const expertiseItemsSubTitle = t("expertiseItemsSubTitle");
 
   return (
-    <NextIntlClientProvider messages={pick(messages, ["Mobile", "Shared"])}>
+    <NextIntlClientProvider messages={pick(messages, ["Web", "Shared"])}>
       <main className="min-h-screen bg-background text-foreground flex flex-col pt-10">
-        <ServicesHero />
+        <HeroSection />
         <ServicesSectionTwo
-          descriptionData={productBlueprint}
-          mainTitle={productBlueprintTitle}
-          mainDesc={productBlueprintTitleDesc}
+          descriptionData={conceptToLaunch}
+          mainTitle={conceptToLaunchTitle}
+          mainDesc={conceptToLaunchDesc}
         />
         <ServicesSectionThree
           descriptionData={flexibleEngagement}
-          mainTitle={mobSubtitle}
-          subTitle={mobTitle}
+          mainTitle={webSubtitle}
+          subTitle={webTitle}
         />
-        <ProductDemonstration />
+        <OnePlatform />
         <ServicesSectionFive
           descriptionData={expertiseItems}
           mainTitle={expertiseItemsTitle}
           subTitle={expertiseItemsSubTitle}
         />
-        <FooterMessage
+        <Section3
           description={t("footerMessage.description")}
           buttonText={t("footerMessage.buttonText")}
         />
@@ -73,4 +77,4 @@ const MobileServices = async () => {
   );
 };
 
-export default MobileServices;
+export default WebServices;

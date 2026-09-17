@@ -2,17 +2,20 @@ import { getTranslations, getMessages } from "next-intl/server";
 import { pick } from "@/lib/pick-messages";
 import { NextIntlClientProvider } from "next-intl";
 
-import ProgrammingHeroSection from "@/components/services/programming-services/HeroSection";
+import CloudHeroSection from "@/components/services/cloud-infrastructure/HeroSection";
 import ServicesSectionTwo from "@/components/services/layout/ServicesSectionTwo";
-import EngineeringStack from "@/components/services/programming-services/EngineeringStack";
-import CleanCode from "@/components/services/programming-services/CleanCode";
-import ShipChanges from "@/components/services/programming-services/ShipChanges";
-import BuiltTomorrow from "@/components/services/programming-services/BuiltTomorrow";
+import ServicesSectionThree from "@/components/services/layout/ServicesSectionThree";
 import ServicesSectionFive from "@/components/services/layout/ServicesSectionFive";
 import FooterMessage from "@/components/layout/FooterMessage";
 
+import { enableStaticLocale } from "@/i18n/set-locale";
 interface Pipeline {
   number: string;
+  title: string;
+  desc: string;
+}
+
+interface Capabilities {
   title: string;
   desc: string;
 }
@@ -23,13 +26,22 @@ interface Expertise {
   secondLine: string;
 }
 
-export default async function ProgrammingServicesPage() {
+export default async function CloudInfrastructureServices({
+  params,
+}: {
+  params: Promise<{ locale: string }>;
+}) {
+  await enableStaticLocale(params);
   const messages = await getMessages();
-  const t = await getTranslations("ProgrammingServices.Page");
+  const t = await getTranslations("CloudInfrastructure.Page");
 
   const pipelineTitle = t("pipeline.mainTitle");
   const pipelineDesc = t("pipeline.desc");
   const pipelineItems = t.raw("pipeline.items") as Pipeline[];
+
+  const capabilitiesTitle = t("capabilities.mainTitle");
+  const capabilitiesSubtitle = t("capabilities.subTitle");
+  const capabilitiesItems = t.raw("capabilities.items") as Capabilities[];
 
   const expertiseItemsSubTitle = t("experties.subTitle");
   const expertiseItemsTitle = t("experties.mainTitle");
@@ -40,19 +52,20 @@ export default async function ProgrammingServicesPage() {
 
   return (
     <NextIntlClientProvider
-      messages={pick(messages, ["ProgrammingServices", "Shared"])}
+      messages={pick(messages, ["CloudInfrastructure", "Shared"])}
     >
       <main className="min-h-screen bg-background text-foreground flex flex-col pt-10">
-        <ProgrammingHeroSection />
+        <CloudHeroSection />
         <ServicesSectionTwo
           descriptionData={pipelineItems}
           mainTitle={pipelineTitle}
           mainDesc={pipelineDesc}
         />
-        <EngineeringStack />
-        <CleanCode />
-        <ShipChanges />
-        <BuiltTomorrow />
+        <ServicesSectionThree
+          descriptionData={capabilitiesItems}
+          mainTitle={capabilitiesTitle}
+          subTitle={capabilitiesSubtitle}
+        />
         <ServicesSectionFive
           mainTitle={expertiseItemsTitle}
           subTitle={expertiseItemsSubTitle}

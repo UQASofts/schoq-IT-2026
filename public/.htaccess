@@ -1,0 +1,8 @@
+DirectoryIndex index.html
+
+RewriteEngine On
+
+# Shared hosting has no Node server. Send "/" to the default locale.
+RewriteRule ^$ /en/ [R=302,L]
+
+ErrorDocument 404 /404.html

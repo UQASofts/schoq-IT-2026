@@ -1,6 +1,6 @@
 import { getRequestConfig } from "next-intl/server";
-import { getUserLocale } from "@/lib/locale";
 import deepmerge from "deepmerge";
+import { defaultLocale, locales, type Locale } from "./config";
 
 async function loadMessages(locale: string) {
   const files = await Promise.all([
@@ -27,38 +27,14 @@ async function loadMessages(locale: string) {
   );
 }
 
-export default getRequestConfig(async () => {
-  const locale = await getUserLocale();
+export default getRequestConfig(async ({ requestLocale }) => {
+  const requested = await requestLocale;
+  const locale = locales.includes(requested as Locale)
+    ? (requested as Locale)
+    : defaultLocale;
 
   return {
     locale,
     messages: await loadMessages(locale),
   };
 });
-
-// --------------------------------------------------------- single json file
-// import { getRequestConfig } from "next-intl/server";
-// import { getUserLocale } from "@/lib/locale";
-
-// export default getRequestConfig(async () => {
-//   const locale = await getUserLocale();
-
-//   return {
-//     locale,
-//     messages: (await import(`../messages/${locale}.json`)).default,
-//   };
-// });
-
-// ---------------------------------------------------------
-// import { cookies } from "next/headers";
-// import { getRequestConfig } from "next-intl/server";
-
-// export default getRequestConfig(async () => {
-//   const store = await cookies();
-//   const locale = store.get("locale")?.value || "en";
-
-//   return {
-//     locale,
-//     messages: (await import(`../messages/${locale}.json`)).default,
-//   };
-// });

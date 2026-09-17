@@ -52,7 +52,7 @@ export default function Section2() {
     },
     {
       image: "/co-founder.png",
-      role: t("team.coFounder"),
+      role: t("team.director"),
       name: t("team.coFounderName"),
       bio: t("team.coFounderBio"),
     },
@@ -71,6 +71,9 @@ export default function Section2() {
           <p className="mx-auto mt-4 max-w-3xl text-neutral-500 text-p sm:text-p-sm md:text-p-md lg:text-p-lg xl:text-p-xl 2xl:text-p-2xl md:mt-6">
             {t("description")}
           </p>
+          <h3 className="mt-10 uppercase text-heading leading-[1.2] tracking-tight text-h3 sm:text-h3-sm md:mt-12 md:text-h3-md lg:text-h3-lg xl:text-h3-xl 2xl:text-h3-2xl">
+            {t("foundersHeading")}
+          </h3>
         </div>
       </div>
 

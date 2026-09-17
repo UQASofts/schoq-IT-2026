@@ -1,12 +1,14 @@
 import type { Metadata } from "next";
 import { Inter } from "next/font/google";
 import { NextIntlClientProvider } from "next-intl";
-import { getLocale, getMessages } from "next-intl/server";
+import { getMessages } from "next-intl/server";
 
-import "./globals.css";
+import "../globals.css";
 import Header from "@/components/layout/Header";
 import Footer from "@/components/layout/Footer";
 import { pick } from "@/lib/pick-messages";
+import { routing } from "@/i18n/routing";
+import { enableStaticLocale } from "@/i18n/set-locale";
 
 const inter = Inter({ subsets: ["latin"], variable: "--font-inter" });
 
@@ -15,12 +17,18 @@ export const metadata: Metadata = {
   description: "Ideas Brought to Life",
 };
 
+export function generateStaticParams() {
+  return routing.locales.map((locale) => ({ locale }));
+}
+
 export default async function RootLayout({
   children,
+  params,
 }: Readonly<{
   children: React.ReactNode;
+  params: Promise<{ locale: string }>;
 }>) {
-  const locale = await getLocale();
+  const locale = await enableStaticLocale(params);
   const messages = await getMessages();
 
   return (

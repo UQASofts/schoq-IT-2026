@@ -7,7 +7,6 @@
         "Main": {
             "titleOne": "STOP TALKING.",
             "titleTwo": "START BUILDING.",
-            "description": "Wir verbinden deutsche Präzision mit tiefgreifender technischer Expertise, um erstklassige Softwarelösungen für ambitionierte Führungskräfte zu konzipieren, zu gestalten und zu entwickeln.",
             "buttonDiscuss": "Lassen Sie uns über Ihr Projekt sprechen",
             "tags": [
                 "Strategie",
@@ -68,9 +67,9 @@
             "description": "Alles unter einem Dach. Kein unnötiges Drumherum, nur exzellente Engineering-Leistung.",
             "noLabel": "NO",
             "painPoints": [
-                "Freelancer-Chaos",
-                "Agenturketten",
-                "Reibungsverluste"
+                "Freelancer chaos",
+                "Agency chains",
+                "Friction"
             ],
             "timeline": {
                 "weekPrefix": "Woche",

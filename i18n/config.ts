@@ -1,4 +1,5 @@
-export type Locale = (typeof locales)[number];
+import { routing } from "./routing";
 
-export const locales = ["en", "de"] as const;
-export const defaultLocale: Locale = "en";
+export const locales = routing.locales;
+export const defaultLocale = routing.defaultLocale;
+export type Locale = (typeof routing.locales)[number];

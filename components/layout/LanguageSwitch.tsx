@@ -2,18 +2,19 @@
 
 import { useTransition } from "react";
 import { useLocale } from "next-intl";
-import { setUserLocale } from "../../lib/locale";
-import { Locale } from "../../i18n/config";
+import { usePathname, useRouter } from "@/i18n/navigation";
+import type { Locale } from "@/i18n/config";
 
 export default function LanguageSwitcher() {
   const locale = useLocale();
+  const pathname = usePathname();
+  const router = useRouter();
   const [isPending, startTransition] = useTransition();
 
   const onSelect = (next: Locale) => {
     if (next === locale) return;
-    startTransition(async () => {
-      await setUserLocale(next);
-      window.location.reload();
+    startTransition(() => {
+      router.replace(pathname, { locale: next });
     });
   };
 

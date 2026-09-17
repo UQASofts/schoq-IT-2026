@@ -9,6 +9,7 @@ import ConceptAI from "@/components/services/artificial-intelligence/ConceptAI";
 import PracticalAI from "@/components/services/artificial-intelligence/PracticalAI";
 import FooterMessage from "@/components/layout/FooterMessage";
 
+import { enableStaticLocale } from "@/i18n/set-locale";
 interface Opportunity {
   number: string;
   title: string;
@@ -20,7 +21,12 @@ interface PracticalAI {
   desc: string;
 }
 
-export default async function AiServices() {
+export default async function AiServices({
+  params,
+}: {
+  params: Promise<{ locale: string }>;
+}) {
+  await enableStaticLocale(params);
   const messages = await getMessages();
   const t = await getTranslations("AI.Page");
 

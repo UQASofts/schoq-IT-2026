@@ -9,7 +9,13 @@ import { pick } from "@/lib/pick-messages";
 import IdeasBrought from "@/components/home/IdeasBrought";
 import FooterMessage from "@/components/layout/FooterMessage";
 
-export default async function Home() {
+import { enableStaticLocale } from "@/i18n/set-locale";
+export default async function Home({
+  params,
+}: {
+  params: Promise<{ locale: string }>;
+}) {
+  await enableStaticLocale(params);
   const messages = await getMessages();
   const t = await getTranslations("Home.Page");
 

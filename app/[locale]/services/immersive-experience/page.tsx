@@ -2,12 +2,13 @@ import { getTranslations, getMessages } from "next-intl/server";
 import { pick } from "@/lib/pick-messages";
 import { NextIntlClientProvider } from "next-intl";
 
-import CloudHeroSection from "@/components/services/cloud-infrastructure/HeroSection";
+import ImmersiveHeroSection from "@/components/services/immersive-experience/HeroSection";
 import ServicesSectionTwo from "@/components/services/layout/ServicesSectionTwo";
 import ServicesSectionThree from "@/components/services/layout/ServicesSectionThree";
 import ServicesSectionFive from "@/components/services/layout/ServicesSectionFive";
 import FooterMessage from "@/components/layout/FooterMessage";
 
+import { enableStaticLocale } from "@/i18n/set-locale";
 interface Pipeline {
   number: string;
   title: string;
@@ -25,40 +26,48 @@ interface Expertise {
   secondLine: string;
 }
 
-export default async function CloudInfrastructureServices() {
+export default async function ImmersiveServices({
+  params,
+}: {
+  params: Promise<{ locale: string }>;
+}) {
+  await enableStaticLocale(params);
   const messages = await getMessages();
-  const t = await getTranslations("CloudInfrastructure.Page");
+  const t = await getTranslations("ImmersiveExperience.Page");
 
-  const pipelineTitle = t("pipeline.mainTitle");
-  const pipelineDesc = t("pipeline.desc");
-  const pipelineItems = t.raw("pipeline.items") as Pipeline[];
+  // Section 2
+  //   const opportunity = t.raw("opportunity") as Opportunity[];
+  const ieMainTitle = t("pipeline.mainTitle");
+  const ieDesc = t("pipeline.desc");
+  const ieItems = t.raw("pipeline.items") as Pipeline[];
+  // Section 3
+  //   const practicalAI = t.raw("practicalAI") as PracticalAI[];
+  const ieTitle = t("capabilities.mainTitle");
+  const ieSubtitle = t("capabilities.subTitle");
+  const ieCapabilities = t.raw("capabilities.items") as Capabilities[];
 
-  const capabilitiesTitle = t("capabilities.mainTitle");
-  const capabilitiesSubtitle = t("capabilities.subTitle");
-  const capabilitiesItems = t.raw("capabilities.items") as Capabilities[];
-
+  // Section 5
   const expertiseItemsSubTitle = t("experties.subTitle");
   const expertiseItemsTitle = t("experties.mainTitle");
   const expertiseItems = t.raw("experties.items") as Expertise[];
 
+  // Footer Message
   const footerBtnText = t("footer.buttonText");
   const footerDesc = t("footer.desc");
 
   return (
-    <NextIntlClientProvider
-      messages={pick(messages, ["CloudInfrastructure", "Shared"])}
-    >
+    <NextIntlClientProvider messages={pick(messages, ["ImmersiveExperience"])}>
       <main className="min-h-screen bg-background text-foreground flex flex-col pt-10">
-        <CloudHeroSection />
+        <ImmersiveHeroSection />
         <ServicesSectionTwo
-          descriptionData={pipelineItems}
-          mainTitle={pipelineTitle}
-          mainDesc={pipelineDesc}
+          descriptionData={ieItems}
+          mainTitle={ieMainTitle}
+          mainDesc={ieDesc}
         />
         <ServicesSectionThree
-          descriptionData={capabilitiesItems}
-          mainTitle={capabilitiesTitle}
-          subTitle={capabilitiesSubtitle}
+          descriptionData={ieCapabilities}
+          mainTitle={ieTitle}
+          subTitle={ieSubtitle}
         />
         <ServicesSectionFive
           mainTitle={expertiseItemsTitle}

@@ -6,7 +6,13 @@ import { NextIntlClientProvider } from "next-intl";
 import { pick } from "@/lib/pick-messages";
 import { getMessages, getTranslations } from "next-intl/server";
 
-const ContactPage = async () => {
+import { enableStaticLocale } from "@/i18n/set-locale";
+const ContactPage = async ({
+  params,
+}: {
+  params: Promise<{ locale: string }>;
+}) => {
+  await enableStaticLocale(params);
   const messages = await getMessages();
   const t = await getTranslations("Contact.Page");
 

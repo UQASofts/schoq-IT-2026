@@ -1,5 +1,5 @@
 import React from "react";
-import Link from "next/link";
+import { Link } from "@/i18n/navigation";
 import { Mail, Phone } from "lucide-react";
 import { getTranslations } from "next-intl/server";
 

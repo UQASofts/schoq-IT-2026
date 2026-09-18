@@ -21,6 +21,9 @@ const Header: React.FC = () => {
   const [expandedMobileMenu, setExpandedMobileMenu] = useState<string | null>(
     null,
   );
+  const [openDesktopMenu, setOpenDesktopMenu] = useState<string | null>(null);
+  const openedByRef = useRef<"hover" | "click" | null>(null);
+  const hoverCloseTimerRef = useRef<number>(0);
 
   const headerRef = useRef<HTMLElement>(null);
   const logoRef = useRef<HTMLDivElement>(null);
@@ -108,6 +111,35 @@ const Header: React.FC = () => {
     };
   }, [isMobileMenuOpen]);
 
+  useEffect(() => {
+    setOpenDesktopMenu(null);
+    openedByRef.current = null;
+  }, [pathname]);
+
+  useEffect(() => {
+    if (!openDesktopMenu) return;
+
+    const onPointerDown = (event: PointerEvent) => {
+      if (!navRef.current?.contains(event.target as Node)) {
+        setOpenDesktopMenu(null);
+        openedByRef.current = null;
+      }
+    };
+    const onKeyDown = (event: KeyboardEvent) => {
+      if (event.key === "Escape") {
+        setOpenDesktopMenu(null);
+        openedByRef.current = null;
+      }
+    };
+
+    document.addEventListener("pointerdown", onPointerDown);
+    document.addEventListener("keydown", onKeyDown);
+    return () => {
+      document.removeEventListener("pointerdown", onPointerDown);
+      document.removeEventListener("keydown", onKeyDown);
+    };
+  }, [openDesktopMenu]);
+
   useGSAP(
     () => {
       const mobileLinks =
@@ -170,17 +202,17 @@ const Header: React.FC = () => {
     <>
       <header
         ref={headerRef}
-        className="fixed inset-x-0 top-[24px] md:top-[28px] lg:top-[37px] z-50 flex justify-center px-4"
+        className="fixed inset-x-0 top-[24px] md:top-[28px] lg:top-[37px] z-50 flex justify-center px-2 sm:px-4"
       >
         <div className="flex w-full max-w-[1000px] items-center justify-between  bg-white/40 px-4 md:px-6 py-4 shadow-[0_4px_24px_0_rgba(0,0,0,0.1)] backdrop-blur-md rounded-global-sm md:rounded-global-md lg:rounded-global-lg xl:rounded-global-xl 2xl:rounded-global-2xl">
           <div ref={logoRef} className="shrink-0">
             <Link href="/" className={`${geist.className} relative isolate block`}>
               <img
-                src="/schoq-logo.svg"
+                src="/schoq-logo.svg?v=2"
                 alt="SCHOQ"
-                width={98}
-                height={39}
-                className="h-[39px] w-[98px] object-contain object-left"
+                width={120}
+                height={60}
+                className="h-[40px] w-[81px] object-contain object-left md:h-[48px] md:w-[97px]"
               />
             </Link>
           </div>
@@ -202,8 +234,65 @@ const Header: React.FC = () => {
                           pathname.startsWith(`${link.href}/`))) ||
                       (hasChildren && pathname.startsWith("/services"));
 
+                const isMenuOpen = hasChildren && openDesktopMenu === link.name;
+
                 return (
-                  <div key={link.name} className="relative group">
+                  <div
+                    key={link.name}
+                    className="relative"
+                    onPointerEnter={(event) => {
+                      if (!hasChildren || event.pointerType !== "mouse") return;
+                      window.clearTimeout(hoverCloseTimerRef.current);
+                      openedByRef.current = "hover";
+                      setOpenDesktopMenu(link.name);
+                    }}
+                    onPointerLeave={(event) => {
+                      if (!hasChildren || event.pointerType !== "mouse") return;
+                      if (openedByRef.current === "click") return;
+                      window.clearTimeout(hoverCloseTimerRef.current);
+                      hoverCloseTimerRef.current = window.setTimeout(() => {
+                        if (openedByRef.current === "click") return;
+                        openedByRef.current = null;
+                        setOpenDesktopMenu(null);
+                      }, 200);
+                    }}
+                  >
+                    {hasChildren ? (
+                      <button
+                        type="button"
+                        aria-expanded={isMenuOpen}
+                        aria-haspopup="menu"
+                        onClick={(event) => {
+                          event.preventDefault();
+                          event.stopPropagation();
+                          window.clearTimeout(hoverCloseTimerRef.current);
+                          if (
+                            openedByRef.current === "click" &&
+                            openDesktopMenu === link.name
+                          ) {
+                            openedByRef.current = null;
+                            setOpenDesktopMenu(null);
+                            return;
+                          }
+                          openedByRef.current = "click";
+                          setOpenDesktopMenu(link.name);
+                        }}
+                        className={`relative inline-flex items-center gap-1 transition-colors duration-200 ${isActive
+                            ? "text-[#1A1B21]"
+                            : "text-[#3B494B] hover:text-[#1A1B21]"
+                          }`}
+                      >
+                        <span className="relative inline-block">
+                          {link.name}
+                          {isActive && (
+                            <div className="absolute -bottom-1 left-0 right-0">
+                              <HeaderBorderStyle className="h-1.5 w-full" />
+                            </div>
+                          )}
+                        </span>
+                        <ChevronDown className={`h-4 w-4 shrink-0 transition-transform duration-200 ${isMenuOpen ? "rotate-180" : ""}`} />
+                      </button>
+                    ) : (
                     <Link
                       href={link.href}
                       className={`relative inline-flex items-center gap-1 transition-colors duration-200 ${isActive
@@ -219,13 +308,17 @@ const Header: React.FC = () => {
                           </div>
                         )}
                       </span>
-                      {hasChildren && (
-                        <ChevronDown className="h-4 w-4 shrink-0 transition-transform duration-200 group-hover:rotate-180" />
-                      )}
                     </Link>
+                    )}
 
                     {hasChildren && (
-                      <div className="invisible absolute top-full left-0 z-50 w-72 pt-3 translate-y-1 opacity-0 transition-all duration-200 ease-out group-hover:visible group-hover:translate-y-0 group-hover:opacity-100">
+                      <div
+                        className={`absolute top-full left-0 z-50 w-72 pt-3 transition-all duration-200 ease-out ${
+                          isMenuOpen
+                            ? "visible translate-y-0 opacity-100"
+                            : "pointer-events-none invisible translate-y-1 opacity-0"
+                        }`}
+                      >
                         <div className="flex flex-col gap-1 rounded-global border border-gray-100 bg-white/95 p-2 shadow-[0_4px_24px_0_rgba(0,0,0,0.1)] backdrop-blur-md">
                           {link.children?.map((child) => {
                             const isChildActive = pathname === child.href;
@@ -233,6 +326,10 @@ const Header: React.FC = () => {
                               <Link   
                                 key={child.title}
                                 href={child.href}
+                                onClick={() => {
+                                  setOpenDesktopMenu(null);
+                                  openedByRef.current = null;
+                                }}
                                 className={`rounded-lg px-3 py-2 transition-colors text-p-nav sm:text-p-nav-sm md:text-p-nav-md lg:text-p-nav-lg xl:text-p-nav-xl 2xl:text-p-nav-2xl ${isChildActive
                                     ? "text-[#1A1B21] underline"
                                     : "text-[#3B494B] hover:bg-gray-50 hover:text-[#1A1B21]"
@@ -296,24 +393,29 @@ const Header: React.FC = () => {
         className="fixed top-0 right-0 z-50 flex h-full w-full flex-col bg-white shadow-2xl lg:hidden"
         style={{ transform: "translateX(100%)", opacity: 0 }}
       >
-        <div className="flex items-center justify-between border-b border-gray-100 p-6">
+        <div className="flex items-center justify-between border-b border-gray-100 px-3 py-4">
           <Link
             href="/"
             className={`${geist.className} text-2xl font-extrabold`}
             onClick={() => setIsMobileMenuOpen(false)}
           >
-            <span className="text-[#575EE3]">SCHO</span>
-            <span className="text-[#56D59A]">Q</span>
+           <img
+                src="/schoq-logo.svg?v=2"
+                alt="SCHOQ"
+                width={120}
+                height={60}
+                className="h-[40px] w-[81px] object-contain object-left md:h-[48px] md:w-[97px]"
+              />
           </Link>
           <button
             onClick={() => setIsMobileMenuOpen(false)}
-            className="rounded-lg p-2 transition-colors hover:bg-gray-100"
+            className="absolute right-1 top-1 rounded-lg p-2 transition-colors hover:bg-gray-100"
           >
-            <X className="h-6 w-6 text-[#1A1B21]" />
+            <X className="h-5 w-5 text-[#1A1B21]" />
           </button>
         </div>
 
-        <div className="flex-1 space-y-2 overflow-y-auto p-6">
+        <div className="flex-1 space-y-2 overflow-y-auto p-2">
           {NAV_LINKS.map((link) => {
             const isActive = pathname === link.href;
             const hasChildren = Boolean(
@@ -323,10 +425,29 @@ const Header: React.FC = () => {
 
             return (
               <div key={link.name} className="mobile-link">
-                <div className="flex items-center justify-between">
+                {hasChildren ? (
+                  <button
+                    type="button"
+                    onClick={() => toggleMobileSubmenu(link.name)}
+                    className={`flex w-full items-center justify-between rounded-lg px-4 py-3 text-left transition-colors text-p-nav sm:text-p-nav-sm md:text-p-nav-md lg:text-p-nav-lg xl:text-p-nav-xl 2xl:text-p-nav-2xl ${
+                      isActive || isExpanded
+                        ? "bg-gray-50/80 text-[#1A1B21]"
+                        : "text-[#3B494B] hover:bg-gray-50"
+                    }`}
+                    aria-expanded={isExpanded}
+                    aria-label={`Toggle ${link.name} submenu`}
+                  >
+                    <span>{link.name}</span>
+                    <ChevronDown
+                      className={`h-5 w-5 shrink-0 text-gray-500 transition-transform duration-200 ${
+                        isExpanded ? "rotate-180" : ""
+                      }`}
+                    />
+                  </button>
+                ) : (
                   <Link
                     href={link.href}
-                    className={`relative flex-1 rounded-lg px-4 py-3 transition-colors text-p-nav sm:text-p-nav-sm md:text-p-nav-md lg:text-p-nav-lg xl:text-p-nav-xl 2xl:text-p-nav-2xl ${link.href === "/contact" ? "capitalize " : ""}${isActive
+                    className={`relative block rounded-lg px-4 py-2 transition-colors text-p-nav sm:text-p-nav-sm md:text-p-nav-md lg:text-p-nav-lg xl:text-p-nav-xl 2xl:text-p-nav-2xl ${link.href === "/contact" ? "capitalize " : ""}${isActive
                         ? "bg-gray-50/80 text-[#1A1B21]"
                         : "text-[#3B494B] hover:bg-gray-50"
                       }`}
@@ -334,19 +455,7 @@ const Header: React.FC = () => {
                   >
                     {link.name}
                   </Link>
-                  {hasChildren && (
-                    <button
-                      onClick={() => toggleMobileSubmenu(link.name)}
-                      className="p-3 text-gray-500 hover:text-gray-800"
-                      aria-label={`Toggle ${link.name} submenu`}
-                    >
-                      <ChevronDown
-                        className={`h-5 w-5 transition-transform duration-200 ${isExpanded ? "rotate-180" : ""
-                          }`}
-                      />
-                    </button>
-                  )}
-                </div>
+                )}
 
                 {hasChildren && isExpanded && (
                   <div className="mt-1 ml-4 space-y-1 border-l-2 border-gray-100 pl-2">
@@ -354,7 +463,7 @@ const Header: React.FC = () => {
                       <Link
                         key={child.title}
                         href={child.href}
-                        className="block rounded-md px-4 py-2 text-[#3B494B] transition-colors hover:bg-gray-50 hover:text-[#1A1B21] text-p-nav sm:text-p-nav-sm md:text-p-nav-md lg:text-p-nav-lg xl:text-p-nav-xl 2xl:text-p-nav-2xl"
+                        className="block rounded-md px-2 py-2 text-[#3B494B] transition-colors hover:bg-gray-50 hover:text-[#1A1B21] text-p-nav sm:text-p-nav-sm md:text-p-nav-md lg:text-p-nav-lg xl:text-p-nav-xl 2xl:text-p-nav-2xl"
                         onClick={() => setIsMobileMenuOpen(false)}
                       >
                         {child.title}
@@ -366,10 +475,10 @@ const Header: React.FC = () => {
             );
           })}
 
-          <div className="mobile-link mt-6 border-t border-gray-100 pt-6">
+          <div className="mobile-link mt-6 border-t border-gray-100 pt-4">
             <Link
               href="/contact"
-              className="block w-full rounded-global bg-global py-3.5 text-center font-semibold text-white transition-all duration-300 hover:shadow-lg sm:rounded-global-sm md:rounded-global-md lg:rounded-global-lg xl:rounded-global-xl 2xl:rounded-global-2xl"
+              className="block w-full rounded-global bg-global px-4 py-2.5 text-center font-semibold text-white transition-all duration-300 hover:shadow-lg sm:rounded-global-sm md:rounded-global-md lg:rounded-global-lg xl:rounded-global-xl 2xl:rounded-global-2xl"
               onClick={() => setIsMobileMenuOpen(false)}
             >
               {t("startProject")}

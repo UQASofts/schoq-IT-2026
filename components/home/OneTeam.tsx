@@ -96,36 +96,27 @@ const OneTeam: React.FC = () => {
         ease: "power4.out",
       });
 
-      // ---- Service Cards - One-by-One from Below (view trigger only) ----
       const servicesTL = gsap.timeline({
         scrollTrigger: {
           trigger: ".services-section",
           start: "top 80%",
-          end: "bottom 20%",
-          toggleActions: "play none play reverse",
+          once: true,
+          toggleActions: "play none none none",
         },
       });
 
-      // Get all service cards
-      const allCards = document.querySelectorAll(".service-card");
-
-      // Set initial state - hidden below
-      gsap.set(allCards, {
-        y: 80,
+      gsap.set(".service-card", {
+        y: 48,
         opacity: 0,
-        scale: 0.95,
       });
 
-      // Animate each card one-by-one from below
-      servicesTL.to(allCards, {
+      servicesTL.to(".service-card", {
         y: 0,
         opacity: 1,
-        scale: 1,
-        duration: 0.2,
-        delay: 0.3,
-        stagger: 0.12,
+        duration: 0.45,
+        delay: 0.15,
+        stagger: 0.1,
         ease: "power3.out",
-        clearProps: "transform,opacity",
       });
     },
     { scope: container },
@@ -135,7 +126,7 @@ const OneTeam: React.FC = () => {
     <section
       // style={{ backgroundImage: `url(${heroBgImage.src})` }}
       ref={container}
-      className="bg-white w-full px-[4%] md:px-[8.61%] py-16 md:py-24 lg:py-18 overflow-hidden"
+      className="bg-white w-full px-[4%] md:px-[8.61%] py-16 md:py-24 lg:py-18 overflow-x-clip"
     >
       <div className="header-trigger">
         {/* Header with wrapper mask */}
@@ -167,23 +158,22 @@ const OneTeam: React.FC = () => {
             </div>
           </div>
         </div>
-        <div className="mt-16 relative services-section space-y-4 lg:space-y-6 relative">
-          <div className="pointer-events-none absolute inset-0 z-0 flex items-center justify-center">
+        <div className="mt-16 relative isolate services-section space-y-4 lg:space-y-6">
+          <div className="pointer-events-none absolute inset-0 -z-10 overflow-hidden">
             <div
-              className="w-full h-full md:h-[30%] rotate-90 scale-[2.2]   blur-[186px] rounded-[1750px] md:rotate-0 md:scale-100"
+              className="absolute left-1/2 top-1/2 h-[80%] md:h-[55%] w-[40%] md:w-[50%] -translate-x-1/2 -translate-y-1/2 rounded-full blur-[250px]"
               style={{
                 background:
-                  "linear-gradient(90deg, rgba(87, 94, 227, 0.60) 0%, rgba(86, 213, 154, 0.60) 100%)",
+                  "linear-gradient(90deg, rgba(87, 94, 227, 0.45) 0%, rgba(86, 213, 154, 0.45) 100%)",
               }}
             />
           </div>
-        <div className="absolute h-400 sm:h-250 lg:h-100 2xl:h-90 w-full left-0 top-20 lg:top-[40%] services-section space-y-8 px-10 blur-3xl"></div>
           {/* First Row Container */}
-          <div className="service-wrapper1 grid sm:grid-cols-2 lg:grid-cols-4 gap-4 lg:gap-6 z-10">
+          <div className="relative z-10 grid sm:grid-cols-2 lg:grid-cols-4 gap-4 lg:gap-6">
             {firstRow.map((service, index) => (
               <div
                 key={index}
-                className="flex flex-col gap-2 service-card group rounded-global p-6 border border-gray-100 hover:border-gray-300 transition-all duration-300 hover:shadow-lg shadow-lg z-20 sm:rounded-global-sm md:rounded-global-md lg:rounded-global-lg xl:rounded-global-xl 2xl:rounded-global-2xl"
+                className="service-card group relative z-10 isolate flex flex-col gap-2 rounded-global bg-white p-6 border border-gray-100 shadow-lg [transform:translateZ(0)] [backface-visibility:hidden] [-webkit-backface-visibility:hidden] hover:border-gray-300 hover:shadow-lg transition-colors duration-300 sm:rounded-global-sm md:rounded-global-md lg:rounded-global-lg xl:rounded-global-xl 2xl:rounded-global-2xl"
               >
                 <div className="w-15 h-15 rounded-global bg-gray-900/5 flex items-center justify-center group-hover:bg-gray-900/10 transition-colors sm:rounded-global-sm md:rounded-global-md lg:rounded-global-lg xl:rounded-global-xl 2xl:rounded-global-2xl">
                   <Image
@@ -206,16 +196,16 @@ const OneTeam: React.FC = () => {
           </div>
 
           {/* Second Row Container */}
-          <div className="w-fit service-wrapper1 grid sm:grid-cols-2 lg:grid-cols-3 gap-4 lg:gap-6 z-10">
+          <div className="relative z-10 w-fit grid sm:grid-cols-2 lg:grid-cols-3 gap-4 lg:gap-6">
             {secondRow.map((service, index) => (
               <div
                 key={index}
-                className="flex flex-col gap-2 service-card group rounded-global p-6 border border-gray-100 hover:border-gray-300 transition-all duration-300 hover:shadow-lg shadow-lg z-20 sm:rounded-global-sm md:rounded-global-md lg:rounded-global-lg xl:rounded-global-xl 2xl:rounded-global-2xl"
+                className="service-card group relative z-10 isolate flex flex-col gap-2 rounded-global bg-white p-6 border border-gray-100 shadow-lg [transform:translateZ(0)] [backface-visibility:hidden] [-webkit-backface-visibility:hidden] hover:border-gray-300 hover:shadow-lg transition-colors duration-300 sm:rounded-global-sm md:rounded-global-md lg:rounded-global-lg xl:rounded-global-xl 2xl:rounded-global-2xl"
               >
                 <div className="w-15 h-15 rounded-global bg-gray-900/5 flex items-center justify-center mb-4 group-hover:bg-gray-900/10 transition-colors sm:rounded-global-sm md:rounded-global-md lg:rounded-global-lg xl:rounded-global-xl 2xl:rounded-global-2xl">
                   <Image
                     alt={service.title}
-                    src={service.image}
+                    src={service.image.src}
                     width={100}
                     height={100}
                   />

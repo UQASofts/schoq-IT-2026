@@ -66,11 +66,11 @@ export default function IdeasBrought() {
     });
     const [active, setActive] = useState(0);
     const [paused, setPaused] = useState(false);
-    const [dragOffset, setDragOffset] = useState(0);
     const [isDragging, setIsDragging] = useState(false);
     const [isInView, setIsInView] = useState(false);
     const [previewId, setPreviewId] = useState<string | null>(null);
     const [isSmallScreen, setIsSmallScreen] = useState(false);
+    const [isTabletScreen, setIsTabletScreen] = useState(false);
 
     const sectionRef = useRef<HTMLElement>(null);
     const headingRef = useRef<HTMLDivElement>(null);
@@ -81,12 +81,17 @@ export default function IdeasBrought() {
     const dragStartX = useRef(0);
     const dragOffsetRef = useRef(0);
     const didDrag = useRef(false);
+    const draggingRef = useRef(false);
+    const animatingRef = useRef(false);
+    const activeRef = useRef(0);
+    const isSmallScreenRef = useRef(false);
+    const swipeTweenRef = useRef<gsap.core.Tween | null>(null);
+    const dragRafRef = useRef(0);
+    const pendingDirectionRef = useRef<1 | -1 | null>(null);
+    const swipeProgressRef = useRef(0);
+    const stackRef = useRef<HTMLDivElement>(null);
 
-    /*
-    |--------------------------------------------------------------------------
-    | VIEWPORT OBSERVER
-    |--------------------------------------------------------------------------
-    */
+   
 
     useEffect(() => {
         const section = sectionRef.current;
@@ -108,47 +113,312 @@ export default function IdeasBrought() {
     }, []);
 
     useEffect(() => {
-        const media = window.matchMedia("(max-width: 767px)");
-        const update = () => setIsSmallScreen(media.matches);
+        const small = window.matchMedia("(max-width: 767px)");
+        const tablet = window.matchMedia(
+            "(min-width: 768px) and (max-width: 1399px)",
+        );
+        const update = () => {
+            setIsSmallScreen(small.matches);
+            setIsTabletScreen(tablet.matches);
+        };
         update();
-        media.addEventListener("change", update);
-        return () => media.removeEventListener("change", update);
+        small.addEventListener("change", update);
+        tablet.addEventListener("change", update);
+        return () => {
+            small.removeEventListener("change", update);
+            tablet.removeEventListener("change", update);
+        };
     }, []);
 
-    /*
-    |--------------------------------------------------------------------------
-    | NAVIGATION
-    |--------------------------------------------------------------------------
-    */
+ 
+
+    useEffect(() => {
+        isSmallScreenRef.current = isSmallScreen;
+    }, [isSmallScreen]);
+
+    useEffect(() => {
+        const el = stackRef.current;
+        if (!el) return;
+
+        const onTouchMove = (event: TouchEvent) => {
+            if (draggingRef.current && didDrag.current) {
+                event.preventDefault();
+            }
+        };
+
+        el.addEventListener("touchmove", onTouchMove, { passive: false });
+        return () => el.removeEventListener("touchmove", onTouchMove);
+    }, []);
+
+    useEffect(() => {
+        if (draggingRef.current || animatingRef.current) return;
+        activeRef.current = active;
+    }, [active]);
+
+    const cardCount = cases.length;
+
+    const getLayouts = (small: boolean) => [
+        {
+            width: small ? 75 : 58,
+            height: 92,
+            left: small ? 25 : 42,
+            zIndex: 30,
+        },
+        {
+            width: small ? 65 : 50,
+            height: 82,
+            left: small ? 10 : 18,
+            zIndex: 20,
+        },
+        {
+            width: small ? 58 : 46,
+            height: 72,
+            left: 0,
+            zIndex: 10,
+        },
+    ];
+
+    const mixLayout = (
+        from: { width: number; height: number; left: number; zIndex: number },
+        to: { width: number; height: number; left: number; zIndex: number },
+        t: number,
+    ) => ({
+        width: from.width + (to.width - from.width) * t,
+        height: from.height + (to.height - from.height) * t,
+        left: from.left + (to.left - from.left) * t,
+        zIndex: t > 0.4 ? to.zIndex : from.zIndex,
+    });
+
+    const applyCard = (
+        el: HTMLElement,
+        layout: { width: number; height: number; left: number; zIndex: number },
+        extras: gsap.TweenVars = {},
+    ) => {
+        gsap.set(el, {
+            width: `${layout.width}%`,
+            height: `${layout.height}%`,
+            left: `${layout.left}%`,
+            top: `${(100 - layout.height) / 2}%`,
+            zIndex: layout.zIndex,
+            yPercent: 0,
+            y: 0,
+            ...extras,
+        });
+    };
+
+    const applySwipe = useCallback(
+        (offset: number, progress: number) => {
+            const layouts = getLayouts(true);
+            const t = Math.min(Math.max(progress, 0), 1);
+            const pop = t;
+            const goingLeft = offset <= 0;
+            const activeIndex = activeRef.current;
+            const front = cardItemRefs.current[activeIndex];
+            const height = front?.offsetHeight || 400;
+            const ratio = Math.max(-0.98, Math.min(0.98, offset / height));
+            const rotation = (Math.asin(ratio) * 180) / Math.PI;
+
+            cardItemRefs.current.forEach((el, index) => {
+                if (!el) return;
+                const position =
+                    (index - activeIndex + cardCount) % cardCount;
+
+                if (position === 0) {
+                    applyCard(el, { ...layouts[0], zIndex: 40 }, {
+                        x: 0,
+                        y: 0,
+                        scale: 1,
+                        force3D: true,
+                        transformOrigin: goingLeft ? "0% 100%" : "100% 100%",
+                        rotation,
+                    });
+                    return;
+                }
+
+                if (goingLeft) {
+                    if (position === 1) {
+                        applyCard(el, mixLayout(layouts[1], layouts[0], pop), {
+                            x: 0,
+                            scale: 1,
+                            rotation: 0,
+                            force3D: true,
+                            transformOrigin: "50% 50%",
+                        });
+                    } else {
+                        applyCard(el, mixLayout(layouts[2], layouts[1], pop), {
+                            x: 0,
+                            scale: 1,
+                            rotation: 0,
+                            force3D: true,
+                            transformOrigin: "50% 50%",
+                        });
+                    }
+                    return;
+                }
+
+                if (position === 2) {
+                    applyCard(el, mixLayout(layouts[2], layouts[0], pop), {
+                        x: 0,
+                        scale: 1,
+                        rotation: 0,
+                        force3D: true,
+                        transformOrigin: "50% 50%",
+                    });
+                } else {
+                    applyCard(el, mixLayout(layouts[1], layouts[2], pop), {
+                        x: 0,
+                        scale: 1,
+                        rotation: 0,
+                        force3D: true,
+                        transformOrigin: "50% 50%",
+                    });
+                }
+            });
+        },
+        [cardCount],
+    );
+
+    const layoutCards = useCallback(
+        (activeIndex: number) => {
+            const layouts = getLayouts(isSmallScreenRef.current);
+            cardItemRefs.current.forEach((el, index) => {
+                if (!el) return;
+                const position =
+                    (index - activeIndex + cardCount) % cardCount;
+                const layout = layouts[Math.min(position, layouts.length - 1)];
+                gsap.set(el, {
+                    width: `${layout.width}%`,
+                    height: `${layout.height}%`,
+                    left: `${layout.left}%`,
+                    top: isSmallScreenRef.current
+                        ? `${(100 - layout.height) / 2}%`
+                        : "50%",
+                    zIndex: layout.zIndex,
+                    x: 0,
+                    y: 0,
+                    scale: 1,
+                    rotation: 0,
+                    yPercent: isSmallScreenRef.current ? 0 : -50,
+                    transformOrigin: "50% 50%",
+                });
+            });
+        },
+        [cardCount],
+    );
+
+    const settleSwipe = useCallback(
+        (commit: boolean, syncState = true) => {
+            swipeTweenRef.current?.kill();
+            swipeTweenRef.current = null;
+            animatingRef.current = false;
+            dragOffsetRef.current = 0;
+            swipeProgressRef.current = 0;
+
+            if (commit && pendingDirectionRef.current) {
+                const to =
+                    (activeRef.current + pendingDirectionRef.current + cardCount) %
+                    cardCount;
+                pendingDirectionRef.current = null;
+                activeRef.current = to;
+                layoutCards(to);
+                if (syncState) setActive(to);
+                return;
+            }
+
+            pendingDirectionRef.current = null;
+            layoutCards(activeRef.current);
+        },
+        [cardCount, layoutCards],
+    );
+
+    const animateSwipe = useCallback(
+        (direction: 1 | -1) => {
+            swipeTweenRef.current?.kill();
+            animatingRef.current = true;
+            pendingDirectionRef.current = direction;
+            setPreviewId(null);
+
+            const from = activeRef.current;
+            const to = (from + direction + cardCount) % cardCount;
+            const startOffset = dragOffsetRef.current;
+            const startProgress = Math.min(Math.abs(startOffset) / 90, 1);
+            const front = cardItemRefs.current[from];
+            const height = front?.offsetHeight || 400;
+            const endOffset =
+                direction === 1
+                    ? -Math.max(Math.abs(startOffset), height * 0.72)
+                    : Math.max(Math.abs(startOffset), height * 0.72);
+            const proxy = { t: 0 };
+
+            swipeTweenRef.current = gsap.to(proxy, {
+                t: 1,
+                duration: 0.4 * Math.max(0.35, 1 - startProgress * 0.6),
+                ease: "power3.out",
+                overwrite: true,
+                onUpdate: () => {
+                    const offset = startOffset + (endOffset - startOffset) * proxy.t;
+                    const progress = startProgress + (1 - startProgress) * proxy.t;
+                    swipeProgressRef.current = progress;
+                    applySwipe(offset, progress);
+                },
+                onComplete: () => {
+                    pendingDirectionRef.current = null;
+                    setActive(to);
+                    activeRef.current = to;
+                    dragOffsetRef.current = 0;
+                    swipeProgressRef.current = 0;
+                    layoutCards(to);
+                    animatingRef.current = false;
+                    swipeTweenRef.current = null;
+                },
+                onInterrupt: () => {
+                    animatingRef.current = false;
+                    swipeTweenRef.current = null;
+                },
+            });
+        },
+        [applySwipe, cardCount, layoutCards],
+    );
 
     const goTo = useCallback((index: number) => {
-        setActive(
-            (index + cases.length) % cases.length
-        );
-        setDragOffset(0);
-    }, []);
+        const nextIndex = (index + cardCount) % cardCount;
+        if (nextIndex === activeRef.current) return;
+        setPreviewId(null);
+
+        if (isSmallScreenRef.current) {
+            const forward =
+                (nextIndex - activeRef.current + cardCount) % cardCount;
+            animateSwipe(forward === 1 ? 1 : -1);
+            return;
+        }
+
+        setActive(nextIndex);
+        activeRef.current = nextIndex;
+    }, [animateSwipe, cardCount]);
 
     const next = useCallback(() => {
-        setActive((prev) => (prev + 1) % cases.length);
-        setDragOffset(0);
+        if (isSmallScreenRef.current) {
+            animateSwipe(1);
+            return;
+        }
+
+        setActive((current) => (current + 1) % cardCount);
         setPreviewId(null);
-    }, []);
+    }, [animateSwipe, cardCount]);
 
     const prev = useCallback(() => {
-        setActive(
-            (prev) =>
-                (prev - 1 + cases.length) %
-                cases.length
-        );
-        setDragOffset(0);
-        setPreviewId(null);
-    }, []);
+        if (isSmallScreenRef.current) {
+            animateSwipe(-1);
+            return;
+        }
 
-    /*
-    |--------------------------------------------------------------------------
-    | AUTOPLAY
-    |--------------------------------------------------------------------------
-    */
+        setActive(
+            (current) => (current - 1 + cardCount) % cardCount
+        );
+        setPreviewId(null);
+    }, [animateSwipe, cardCount]);
+
+   
 
     useEffect(() => {
         if (!isInView || paused || isDragging || previewId) {
@@ -156,42 +426,98 @@ export default function IdeasBrought() {
         }
 
         const timer = setInterval(() => {
+            if (animatingRef.current || draggingRef.current) return;
             next();
         }, 5500);
 
         return () => clearInterval(timer);
     }, [isInView, paused, isDragging, previewId, next]);
 
-    /*
-    |--------------------------------------------------------------------------
-    | DRAG
-    |--------------------------------------------------------------------------
-    */
+   
 
-    const resetDragTransform = useCallback(() => {
+    const snapBack = useCallback(() => {
+        if (isSmallScreenRef.current) {
+            const startOffset = dragOffsetRef.current;
+            const startProgress = Math.min(Math.abs(startOffset) / 90, 1);
+            if (startProgress === 0) {
+                layoutCards(activeRef.current);
+                dragOffsetRef.current = 0;
+                return;
+            }
+            swipeTweenRef.current?.kill();
+            animatingRef.current = true;
+            const proxy = { t: startProgress };
+            swipeTweenRef.current = gsap.to(proxy, {
+                t: 0,
+                duration: 0.28,
+                ease: "power3.out",
+                overwrite: true,
+                onUpdate: () => {
+                    applySwipe(
+                        startOffset * (proxy.t / Math.max(startProgress, 0.001)),
+                        proxy.t,
+                    );
+                },
+                onComplete: () => {
+                    dragOffsetRef.current = 0;
+                    swipeProgressRef.current = 0;
+                    layoutCards(activeRef.current);
+                    animatingRef.current = false;
+                    swipeTweenRef.current = null;
+                },
+                onInterrupt: () => {
+                    animatingRef.current = false;
+                    swipeTweenRef.current = null;
+                },
+            });
+            return;
+        }
+
         cardItemRefs.current.forEach((el) => {
             if (!el) return;
-            gsap.set(el, { x: 0, yPercent: -50 });
+            gsap.to(el, { x: 0, yPercent: -50, duration: 0.3, ease: "power3.out" });
         });
-    }, []);
+        dragOffsetRef.current = 0;
+    }, [applySwipe, layoutCards]);
 
     const finishDrag = useCallback(() => {
         const offset = dragOffsetRef.current;
 
-        dragOffsetRef.current = 0;
+        draggingRef.current = false;
         setIsDragging(false);
-        setDragOffset(0);
-        resetDragTransform();
+        setPaused(false);
+        setActive((current) =>
+            current === activeRef.current ? current : activeRef.current,
+        );
 
-        if (offset < -70) {
+        const threshold = isSmallScreenRef.current ? 48 : 70;
+
+        if (offset < -threshold) {
+            if (!isSmallScreenRef.current) {
+                cardItemRefs.current.forEach((el) => {
+                    if (!el) return;
+                    gsap.set(el, { x: 0, yPercent: -50 });
+                });
+                dragOffsetRef.current = 0;
+            }
             next();
             return;
         }
 
-        if (offset > 70) {
+        if (offset > threshold) {
+            if (!isSmallScreenRef.current) {
+                cardItemRefs.current.forEach((el) => {
+                    if (!el) return;
+                    gsap.set(el, { x: 0, yPercent: -50 });
+                });
+                dragOffsetRef.current = 0;
+            }
             prev();
+            return;
         }
-    }, [next, prev, resetDragTransform]);
+
+        snapBack();
+    }, [next, prev, snapBack]);
 
     const handlePointerDown = (
         event: React.PointerEvent<HTMLDivElement>
@@ -204,39 +530,76 @@ export default function IdeasBrought() {
             return;
         }
 
-        didDrag.current = false;
+        if (dragRafRef.current) {
+            cancelAnimationFrame(dragRafRef.current);
+            dragRafRef.current = 0;
+        }
 
+        if (isSmallScreenRef.current) {
+            settleSwipe(swipeProgressRef.current > 0.55, false);
+        } else {
+            swipeTweenRef.current?.kill();
+            swipeTweenRef.current = null;
+            animatingRef.current = false;
+        }
+
+        didDrag.current = false;
+        draggingRef.current = true;
         dragStartX.current = event.clientX;
         dragOffsetRef.current = 0;
+        swipeProgressRef.current = 0;
 
-        setIsDragging(true);
-        setPaused(true);
+        if (isSmallScreenRef.current) {
+            event.currentTarget.style.touchAction = "none";
+        }
 
-        event.currentTarget.setPointerCapture(
-            event.pointerId
-        );
+        event.currentTarget.setPointerCapture(event.pointerId);
     };
 
     const handlePointerMove = (
         event: React.PointerEvent<HTMLDivElement>
     ) => {
-        if (!isDragging) return;
+        if (!draggingRef.current) return;
 
-        const offset =
-            event.clientX - dragStartX.current;
+        const offset = event.clientX - dragStartX.current;
 
         if (Math.abs(offset) > 6) {
             didDrag.current = true;
+            event.preventDefault();
         }
 
         dragOffsetRef.current = offset;
-        setDragOffset(offset);
+
+        if (!isSmallScreenRef.current) {
+            const activeEl = cardItemRefs.current[activeRef.current];
+            if (activeEl) {
+                gsap.set(activeEl, { x: offset, yPercent: -50 });
+            }
+            return;
+        }
+
+        if (dragRafRef.current) return;
+        dragRafRef.current = requestAnimationFrame(() => {
+            dragRafRef.current = 0;
+            if (!draggingRef.current) return;
+            const current = dragOffsetRef.current;
+            const front = cardItemRefs.current[activeRef.current];
+            const height = front?.offsetHeight || 400;
+            const progress = Math.min(Math.abs(current) / (height * 0.42), 1);
+            swipeProgressRef.current = progress;
+            applySwipe(current, progress);
+        });
     };
 
     const handlePointerUp = (
         event: React.PointerEvent<HTMLDivElement>
     ) => {
-        if (!isDragging) return;
+        if (!draggingRef.current) return;
+
+        if (dragRafRef.current) {
+            cancelAnimationFrame(dragRafRef.current);
+            dragRafRef.current = 0;
+        }
 
         if (
             event.currentTarget.hasPointerCapture(
@@ -248,20 +611,21 @@ export default function IdeasBrought() {
             );
         }
 
+        event.currentTarget.style.touchAction = "pan-y";
+        if (isSmallScreenRef.current) {
+            const current = dragOffsetRef.current;
+            const front = cardItemRefs.current[activeRef.current];
+            const height = front?.offsetHeight || 400;
+            applySwipe(
+                current,
+                Math.min(Math.abs(current) / (height * 0.42), 1),
+            );
+        }
         finishDrag();
     };
 
-    /*
-    |--------------------------------------------------------------------------
-    | GET CARD POSITION
-    |--------------------------------------------------------------------------
-    |
-    | 0 = Active
-    | 1 = Behind active
-    | 2 = Behind second
-    |--------------------------------------------------------------------------
-    */
 
+ 
     const getPosition = (index: number) => {
         return (
             (index - active + cases.length) %
@@ -272,12 +636,34 @@ export default function IdeasBrought() {
     const getCardStyle = (
         position: number
     ): React.CSSProperties => {
+        const stack = isSmallScreen
+            ? [
+                  { width: "75%", left: "25%", height: 92 },
+                  { width: "65%", left: "10%", height: 82 },
+                  { width: "58%", left: "0%", height: 72 },
+              ]
+            : isTabletScreen
+              ? [
+                    { width: "82%", left: "16%", height: 92 },
+                    { width: "72%", left: "7%", height: 82 },
+                    { width: "64%", left: "0%", height: 72 },
+                ]
+              : [
+                    { width: "58%", left: "42%", height: 92 },
+                    { width: "50%", left: "18%", height: 82 },
+                    { width: "46%", left: "0%", height: 72 },
+                ];
+        const size = stack[Math.min(position, stack.length - 1)];
+        const top = isSmallScreen
+            ? `${(100 - size.height) / 2}%`
+            : "50%";
+
         if (position === 0) {
             return {
-                width: isSmallScreen ? "75%" : "58%",
-                height: "92%",
-                left: isSmallScreen ? "25%" : "42%",
-                top: "50%",
+                width: size.width,
+                height: `${size.height}%`,
+                left: size.left,
+                top,
                 opacity: 1,
                 zIndex: 30,
                 background: "#ffffff",
@@ -289,10 +675,10 @@ export default function IdeasBrought() {
 
         if (position === 1) {
             return {
-              width: isSmallScreen ? "65%" : "50%",
-              height: "82%",
-              left: isSmallScreen ? "10%" : "18%",
-              top: "50%",
+              width: size.width,
+              height: `${size.height}%`,
+              left: size.left,
+              top,
               opacity: 1,
               zIndex: 20,
               background: "white",
@@ -303,10 +689,10 @@ export default function IdeasBrought() {
         }
 
         return {
-          width: isSmallScreen ? "58%" : "46%",
-          height: "72%",
-          left: "0%",
-          top: "50%",
+          width: size.width,
+          height: `${size.height}%`,
+          left: size.left,
+          top,
           opacity: 1,
           zIndex: 10,
           background: "white",
@@ -316,20 +702,14 @@ export default function IdeasBrought() {
         };
     };
 
-    /*
-    |--------------------------------------------------------------------------
-    | HEADER ANIMATION
-    |--------------------------------------------------------------------------
-    */
-
     useGSAP(
         () => {
             const headerTimeline = gsap.timeline({
                 scrollTrigger: {
                     trigger: sectionRef.current,
-                    start: "top 60%",
-                    end: "bottom 60%",
-                    toggleActions: "play reverse play reverse",
+                    start: "top 80%",
+                    once: true,
+                    toggleActions: "play none none none",
                 },
             });
 
@@ -345,6 +725,11 @@ export default function IdeasBrought() {
 
     useGSAP(
         () => {
+            if (window.matchMedia("(max-width: 767px)").matches) {
+                layoutCards(activeRef.current);
+                return;
+            }
+
             const entranceConfigs = [
                 { x: 250, y: 0, rotation: 8 },
                 { x: 0, y: 180, rotation: -5 },
@@ -360,7 +745,8 @@ export default function IdeasBrought() {
                 scrollTrigger: {
                     trigger: ".start-btn",
                     start: "top 85%",
-                    toggleActions: "play none play reverse",
+                    once: true,
+                    toggleActions: "play none none none",
                 },
                 defaults: {
                     duration: 0.9,
@@ -400,15 +786,25 @@ export default function IdeasBrought() {
     );
 
     useEffect(() => {
-        cardItemRefs.current.forEach((el, index) => {
-            if (!el) return;
-            const isActiveCard = getPosition(index) === 0;
-            gsap.set(el, {
-                x: isDragging && isActiveCard ? dragOffset : 0,
-                yPercent: -50,
+        if (!isSmallScreen) {
+            cardItemRefs.current.forEach((el) => {
+                if (!el) return;
+                gsap.set(el, {
+                    x: 0,
+                    y: 0,
+                    scale: 1,
+                    rotation: 0,
+                    yPercent: -50,
+                    top: "50%",
+                    transformOrigin: "50% 50%",
+                });
             });
-        });
-    }, [dragOffset, isDragging, active]);
+            return;
+        }
+
+        if (animatingRef.current || draggingRef.current) return;
+        layoutCards(activeRef.current);
+    }, [isSmallScreen, layoutCards]);
 
     return (
       <section
@@ -423,7 +819,7 @@ export default function IdeasBrought() {
 
         <div className="relative mx-auto flex w-full  flex-col items-center gap-2 px-[4%] sm:gap-3 md:px-[8.61%]">
 
-          <div className="relative z-10 w-full">
+          <div className="relative z-20 w-full">
             <div className="header-one mb-2">
               <h2 className="text-center uppercase text-heading text-h2 sm:text-h2-sm md:text-h2-md lg:text-h2-lg xl:text-h2-xl 2xl:text-h2-2xl">
                 {t("titleLine1")}
@@ -466,7 +862,7 @@ export default function IdeasBrought() {
 
           <div
             ref={cardsRef}
-            className="relative flex w-full flex-col gap-2 [overflow-anchor:none] sm:gap-3"
+            className="relative z-0 isolate flex w-full flex-col gap-2 [overflow-anchor:none] sm:gap-3"
             onMouseEnter={() => setPaused(true)}
             onMouseLeave={() => setPaused(false)}
           >
@@ -475,13 +871,16 @@ export default function IdeasBrought() {
 
             <div className="pointer-events-none absolute bottom-0 left-0 z-0 h-[55%] w-full bg-gradient-to-r from-[#4BE191]/15 via-white to-[#4BE191]/15 blur-3xl" />
             <div
-              className={`relative mx-auto h-[420px] w-full touch-pan-y select-none [overflow-anchor:none] sm:h-[460px] md:h-[500px] xl:h-[560px] ${
+              ref={stackRef}
+              className={`relative mx-auto h-[420px] w-full select-none overflow-visible [overflow-anchor:none] sm:h-[460px] md:h-[500px] xl:h-[560px] ${
                 isDragging ? "cursor-grabbing" : "cursor-grab"
               }`}
+              style={{ touchAction: isSmallScreen || isDragging ? "none" : "pan-y" }}
               onPointerDown={handlePointerDown}
               onPointerMove={handlePointerMove}
               onPointerUp={handlePointerUp}
               onPointerCancel={handlePointerUp}
+              onLostPointerCapture={handlePointerUp}
             >
               {cases.map((item, index) => {
                 const position = getPosition(index);
@@ -513,20 +912,20 @@ export default function IdeasBrought() {
                     className="group absolute overflow-hidden rounded-global sm:rounded-global-sm md:rounded-global-md lg:rounded-global-lg xl:rounded-global-xl 2xl:rounded-global-2xl"
                     style={{
                       ...cardStyle,
-
-                      transition: isDragging
+                      willChange: isSmallScreen ? "transform" : undefined,
+                      transition: isSmallScreen || isDragging
                         ? "none"
                         : "left 0.7s cubic-bezier(0.215, 0.61, 0.355, 1), width 0.7s cubic-bezier(0.215, 0.61, 0.355, 1), height 0.7s cubic-bezier(0.215, 0.61, 0.355, 1), opacity 0.7s cubic-bezier(0.215, 0.61, 0.355, 1)",
                     }}
                   >
-                    <div className={`flex h-full w-full flex-col ${isActive ? "lg:flex-row" : ""}`}>
+                    <div className={`flex h-full w-full flex-col ${isActive ? "xl:flex-row" : ""}`}>
 
                       <div
-                        className={`flex h-full w-full shrink-0 flex-col justify-between gap-1 p-3 transition-opacity duration-300 md:gap-3 md:p-4 xl:p-6 md:max-lg:group-hover:opacity-0 ${
+                        className={`flex h-full w-full shrink-0 flex-col justify-between gap-1 p-3 transition-opacity duration-300 md:gap-3 md:p-4 xl:p-6 md:max-xl:group-hover:opacity-0 ${
                           previewId === item.id ? "max-md:opacity-0" : ""
                         } ${
                           isActive
-                            ? "bg-white lg:w-[42%] lg:overflow-hidden"
+                            ? "bg-white xl:w-[42%] xl:overflow-hidden"
                             : "pointer-events-none bg-gradient-to-r from-[#575EE3]/10 to-[#56D59A]/10"
                         }`}
                       >
@@ -560,12 +959,10 @@ export default function IdeasBrought() {
                         )}
                       </div>
 
-                      {/* ==================================================
-                                                IMAGE
-                                            ================================================== */}
+                    
 
                       <div
-                        className={`pointer-events-none absolute inset-0 z-10 opacity-0 transition-opacity duration-300 md:group-hover:opacity-100 lg:hidden ${
+                        className={`pointer-events-none absolute inset-0 z-10 opacity-0 transition-opacity duration-300 md:group-hover:opacity-100 xl:hidden ${
                           previewId === item.id ? "max-md:opacity-100" : ""
                         }`}
                       >
@@ -581,7 +978,7 @@ export default function IdeasBrought() {
 
                       <div
                         className={`relative hidden h-full w-[60%] bg-[#F7F8FC]/40 ${
-                          isActive ? "lg:block" : ""
+                          isActive ? "xl:block" : ""
                         }`}
                       >
                         <Image

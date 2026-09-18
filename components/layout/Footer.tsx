@@ -11,9 +11,15 @@ const Footer: React.FC = async () => {
       <div className="max-w-6xl">
         <div className="flex flex-col gap-10 lg:flex-row lg:justify-between lg:gap-16">
           <div className="space-y-4 lg:max-w-md">
-            <h2 className="text-3xl font-bold tracking-tight bg-linear-to-r from-[#4A4CE6] via-[#34A1B4] to-[#4BE191] bg-clip-text text-transparent transition-transform">
-              SCHOQ
-            </h2>
+            <Link href="/" className="inline-block">
+              <img
+                src="/schoq-logo.svg?v=2"
+                alt="SCHOQ"
+                width={160}
+                height={80}
+                className="h-12 w-auto object-contain object-left"
+              />
+            </Link>
             <p className="max-w-md text-gray-600 text-p sm:text-p-sm md:text-p-md lg:text-p-lg xl:text-p-xl 2xl:text-p-2xl">
               {t("description")}
             </p>

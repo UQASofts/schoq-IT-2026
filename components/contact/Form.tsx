@@ -222,7 +222,7 @@ export default function Form() {
                 type="text"
                 required
                 placeholder="John Doe"
-                className="w-full px-4 py-3 bg-white/70 backdrop-blur-sm border border-white/60 rounded-lg text-sm text-neutral-800 placeholder-neutral-400 focus:outline-none focus:ring-2 focus:ring-teal-400/50 transition-all"
+                className="w-full px-4 py-3 bg-white/70 backdrop-blur-sm border border-white/60 rounded-lg text-base text-neutral-800 placeholder-neutral-400 focus:outline-none focus:ring-2 focus:ring-teal-400/50 transition-all"
               />
             </div>
 
@@ -235,7 +235,7 @@ export default function Form() {
                 type="text"
                 required
                 placeholder="AZ Tech"
-                className="w-full px-4 py-3 bg-white/70 backdrop-blur-sm border border-white/60 rounded-lg text-sm text-neutral-800 placeholder-neutral-400 focus:outline-none focus:ring-2 focus:ring-teal-400/50 transition-all"
+                className="w-full px-4 py-3 bg-white/70 backdrop-blur-sm border border-white/60 rounded-lg text-base text-neutral-800 placeholder-neutral-400 focus:outline-none focus:ring-2 focus:ring-teal-400/50 transition-all"
               />
             </div>
 
@@ -248,7 +248,7 @@ export default function Form() {
                 name="phone"
                 type="tel"
                 placeholder={t("form.phonePlaceholder")}
-                className="w-full px-4 py-3 bg-white/70 backdrop-blur-sm border border-white/60 rounded-lg text-sm text-neutral-800 placeholder-neutral-400 focus:outline-none focus:ring-2 focus:ring-teal-400/50 transition-all"
+                className="w-full px-4 py-3 bg-white/70 backdrop-blur-sm border border-white/60 rounded-lg text-base text-neutral-800 placeholder-neutral-400 focus:outline-none focus:ring-2 focus:ring-teal-400/50 transition-all"
               />
             </div>
 
@@ -262,7 +262,7 @@ export default function Form() {
                   name="language"
                   required
                   defaultValue=""
-                  className="w-full px-4 py-3 bg-white/70 backdrop-blur-sm border border-white/60 rounded-lg text-sm text-neutral-500 appearance-none focus:outline-none focus:ring-2 focus:ring-teal-400/50 transition-all cursor-pointer"
+                  className="w-full px-4 py-3 bg-white/70 backdrop-blur-sm border border-white/60 rounded-lg text-base text-neutral-500 appearance-none focus:outline-none focus:ring-2 focus:ring-teal-400/50 transition-all cursor-pointer"
                 >
                   <option value="" disabled>
                     {t("form.languagePlaceholder")}
@@ -288,7 +288,7 @@ export default function Form() {
                 required
                 rows={4}
                 placeholder={t("form.projectDescriptionPlaceholder")}
-                className="w-full px-4 py-3 bg-white/70 backdrop-blur-sm border border-white/60 rounded-lg text-sm text-neutral-800 placeholder-neutral-400 focus:outline-none focus:ring-2 focus:ring-teal-400/50 transition-all resize-none"
+                className="w-full px-4 py-3 bg-white/70 backdrop-blur-sm border border-white/60 rounded-lg text-base text-neutral-800 placeholder-neutral-400 focus:outline-none focus:ring-2 focus:ring-teal-400/50 transition-all resize-none"
               />
             </div>
 

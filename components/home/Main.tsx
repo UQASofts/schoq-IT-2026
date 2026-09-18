@@ -134,11 +134,11 @@ const Main: React.FC = () => {
     <section
       ref={container}
       style={{ backgroundImage: `url(${heroBgImage.src})` }}
-      className="relative flex h-screen w-full flex-col bg-cover bg-center bg-no-repeat"
+      className="relative flex h-auto w-full flex-col bg-cover bg-center bg-no-repeat lg:h-screen"
     >
-      <div className="flex min-h-0 flex-1 flex-col items-center justify-center px-5 pt-[120px]">
+      <div className="flex min-h-0 flex-col items-center justify-start px-3 pt-[150px] pb-20 sm:px-5 lg:flex-1 lg:justify-center lg:pb-0">
         <div className="flex w-full items-center justify-center">
-          <div className="flex w-fit max-w-full items-center gap-[8px] lg:flex-row">
+          <div className="flex w-full max-w-full items-center gap-[8px] lg:w-fit lg:flex-row">
           <div className="main-container m-main-container w-full min-w-0 bg-global rounded-global-sm md:rounded-global-md lg:w-[58vw] lg:rounded-global-lg xl:w-[60vw] xl:rounded-global-xl xl:p-10 2xl:rounded-global-2xl p-5 sm:p-6 md:p-8 lg:px-6 2xl:p-12">
             <h1 className="text-center text-white uppercase text-h1 sm:text-h1-sm md:text-h1-md lg:text-left lg:text-h1-lg xl:text-h1-xl 2xl:text-h1-2xl">
               {t("titleOne")}
@@ -149,7 +149,7 @@ const Main: React.FC = () => {
             <div className="mt-5 flex justify-center sm:mt-6 lg:mt-4 lg:justify-start xl:mt-6 2xl:mt-8">
               <Link
                 href="/contact"
-                className="inline-flex h-11 w-full max-w-sm items-center justify-center px-5 text-sm font-medium whitespace-nowrap text-white rounded-global border border-white/25 bg-transparent shadow-[0_4px_16px_0_rgba(0,0,0,0.12)] transition-colors hover:bg-white/10 sm:h-12 sm:w-auto sm:px-6 sm:text-base sm:rounded-global-sm md:rounded-global-md lg:h-12 lg:rounded-global-lg lg:px-6 lg:text-sm xl:rounded-global-xl xl:text-base 2xl:h-14 2xl:rounded-global-2xl 2xl:px-8 2xl:text-lg"
+                className="inline-flex h-11 w-full items-center justify-center px-5 text-sm font-medium whitespace-nowrap text-white rounded-global border border-white/25 bg-transparent shadow-[0_4px_16px_0_rgba(0,0,0,0.12)] transition-colors hover:bg-white/10 sm:h-12 sm:w-auto sm:max-w-sm sm:px-6 sm:text-base sm:rounded-global-sm md:rounded-global-md lg:h-12 lg:rounded-global-lg lg:px-6 lg:text-sm xl:rounded-global-xl xl:text-base 2xl:h-14 2xl:rounded-global-2xl 2xl:px-8 2xl:text-lg"
               >
                 {t("buttonDiscuss")}
               </Link>

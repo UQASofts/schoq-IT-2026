@@ -14,7 +14,7 @@
                 "label": "Company Information",
                 "company": "Schoq UG",
                 "registeredOfficeLabel": "Registered Office",
-                "registeredOffice": ["Bochumer Str. 17", "10555 Berlin", "Germany"],
+                "registeredOffice": ["Bochumer Str. 24", "10555 Berlin", "Germany"],
                 "registerLabel": "Commercial Register",
                 "register": ["Amtsgericht Charlottenburg", "HRB 276178"],
                 "directorsLabel": "Managing Directors",
@@ -34,7 +34,7 @@
             "details": [
                 { "label": "Company", "value": "Schoq UG" },
                 { "label": "Handelsregister", "value": "Amtsgericht Charlottenburg, HRB 276178" },
-                { "label": "Business Address", "value": "Bochumer Str. 17, 10555 Berlin, Germany" },
+                { "label": "Business Address", "value": "Bochumer Str. 24, 10555 Berlin, Germany" },
                 { "label": "Represented by", "value": "Marie Louise Schneider & Ubaid Farooq" }
             ],
             "founders": [
